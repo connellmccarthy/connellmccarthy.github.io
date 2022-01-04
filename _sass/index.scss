@@ -58,4 +58,8 @@ video {
   margin: 2em 0;
   border-radius: $border-radius-normal;
   text-decoration: none;
+
+  .contents i {
+    margin-right: 0.2em;
+  }
 }

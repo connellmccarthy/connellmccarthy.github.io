@@ -1,0 +1,72 @@
+---
+layout: default
+title: Work
+---
+
+{% if site.data.content.homepage.announcement.display %}
+  <a class="announcement-banner" href="{{ site.data.content.homepage.announcement.link.url }}" {% if site.data.content.homepage.announcement.link.external %}target="_blank" rel="noopener nofollow"{% endif %}>
+    <div class="contents">
+      <i class="far fa-{{ site.data.content.homepage.announcement.icon }}"></i>
+      {{ site.data.content.homepage.announcement.title }}
+    </div>
+    <div class="link">
+      {{ site.data.content.homepage.announcement.link.title }}
+      <i class="far fa-arrow-right{% if site.data.content.homepage.announcement.link.external %} external{%endif %}"></i>
+    </div>
+  </a>
+{% endif %}
+
+<div class="section{% if site.data.content.homepage.announcement.display %} mt-0{% endif %}">
+  <h2>{{ site.data.content.homepage.showreel.title }}</h2>
+  <div class="video__container">
+    <button id="video-controller" class="border-radius__round">
+      <span id="button-text" class="visually-hidden">Pause video</span>
+      <i id="button-icon" class="fas fa-pause" aria-hidden="true"></i>
+    </button>
+    <video id="showreel" class="border-radius__large" autoplay muted loop playsinline>
+      <source src="/assets/img/showreel.mp4" type="video/mp4">
+      <source src="/assets/img/showreel.webm" type="video/webm">
+    </video>
+  </div>
+  <script>
+    if (document.querySelector('button#video-controller')) {
+      const button = document.querySelector('button#video-controller');
+      const button_text = document.querySelector('span#button-text');
+      const button_icon = document.querySelector('i#button-icon');
+      button.addEventListener('click', () => {
+        if (button_icon.classList.contains('fa-pause')) {
+          document.getElementById('showreel').pause();
+          button_icon.classList.replace('fa-pause', 'fa-play');
+          button_text.innerText = 'Play video';
+        } else {
+          document.getElementById('showreel').play();
+          button_icon.classList.replace('fa-play', 'fa-pause');
+          button_text.innerText = 'Pause video';
+        }
+      });
+    }
+  </script>
+</div>
+
+<div class="section">
+  <h2>{{ site.data.content.homepage.projects.title }}</h2>
+  <div class="projects">
+    {% for project in site.data.content.homepage.projects.items %}
+      <a class="card" href="{{ project.url }}" {% if project.external %}target="_blank"{% endif %}>
+        <div class="details">
+          <div class="thumbnail thumbnail__small{% if project.border %} border{% endif %}">
+            <img src="/assets/img/projects/{{ project.image }}">
+          </div>
+          <div class="info">
+            <p class="title m-0">{{ project.title }}</p>
+            <p class="muted m-0">{{ project.description }}</p>
+          </div>
+        </div>
+        <div class="arrow">
+          <span class="visually-hidden">Visit project website</span>
+          <i class="far fa-arrow-right {% if project.external %}external{% endif %}" aria-hidden="true"></i>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</div>

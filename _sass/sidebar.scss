@@ -1,0 +1,53 @@
+$sidebar-width: 25vw;
+$sidebar-max: 400px;
+
+.sidebar {
+  &__container {
+    width: $sidebar-max;
+    height: 100vh;
+    position: relative;
+  }
+  width: $sidebar-max;
+  height: 100vh;
+  border-right: 1px solid $color-border;
+  padding: 3em;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  h1,
+  p.h1 {
+    font-size: 1.2em;
+    font-weight: 600;
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+
+  .employer {
+    a {
+      color: $color-blue;
+      text-decoration: none;
+    }
+  }
+
+  .socials {
+    padding: 0;
+    list-style-type: none;
+    font-size: 1.2em;
+
+    li {
+      display: inline-block;
+      margin-right: 0.4em;
+
+      a {
+        color: $color-ink-muted;
+      }
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+}

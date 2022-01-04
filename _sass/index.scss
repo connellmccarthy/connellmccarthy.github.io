@@ -1,0 +1,61 @@
+video {
+  width: 100%;
+}
+.video__container {
+  width: 100%;
+  height: auto;
+  position: relative;
+
+  button {
+    position: absolute;
+    bottom: 2em;
+    right: 2em;
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    background: $color-black;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $color-white;
+    cursor: pointer;
+    z-index: 2;
+    box-shadow: 0px 5px 15px -2px #00000040;
+
+    i {
+      top: 1px;
+      position: relative;
+      &.fa-play {
+        left: 1px;
+      }
+    }
+  }
+}
+
+.projects {
+  width: 100%;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  .card {
+    width: calc(50% - 0.3em);
+    margin-bottom: 0.6em;
+  }
+}
+
+.announcement-banner {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 400;
+  background: $color-blue;
+  color: $color-white;
+  padding: 1em;
+  margin: 2em 0;
+  border-radius: $border-radius-normal;
+  text-decoration: none;
+}

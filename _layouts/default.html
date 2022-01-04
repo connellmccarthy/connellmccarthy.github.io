@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include head.html %}
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar__container">
+        {% include sidebar.html %}
+      </div>
+      <div class="app_pane">
+        {% include navigation.html %}
+        <main>
+          {{ content }}
+        </main>
+        <p class="muted small center m-6">&copy; 2022 {{ site.title }}</p>
+      </div>
+    </div>
+  </bodyD>
+</html>

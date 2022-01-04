@@ -1,0 +1,58 @@
+sidebar:
+  tagline: Multi-faceted, Canadian creative.
+  links:
+  - name: Dribbble
+    icon: dribbble
+    url: https://dribbble.com/connellmccarthy
+  - name: Twitter
+    icon: twitter
+    url: https://twitter.com/connellmccarthy
+  - name: Instagram
+    icon: instagram
+    url: https://instagram.com/connellmccarthy
+  - name: Linkedin
+    icon: linkedin
+    url: https://www.linkedin.com/in/connellmccarthy/
+  employer:
+    role: Senior Designer
+    name: Shopify
+    url: https://shopify.com
+  description: I call myself an all-encompassing creative because I love working on everything from design, photography, and motion design to development, interior design, and video editing. I have a passion for finding the blend between aesthetic and functionality.
+  inquires:
+    title: General inquires
+    content: me@connellmccarthy.com
+homepage:
+  announcement:
+    display: true
+    icon: info-circle
+    title: My latest COVEO single ‘Still Dreaming’ is now available worldwide.
+    link:
+      title: Check it out
+      url: http://coveomusic.com/still-dreaming
+      external: true
+  showreel:
+    title: 2022 Demo Reel
+  projects:
+    title: Personal Projects
+    items:
+    - title: Moon Rocks
+      description: My Audio / Visual NFT series.
+      url: https://moonrocks.ai
+      external: true
+      image: moonrocks.jpg
+    - title: One Bill
+      description: An app designed to keep track of sharing monthly expenses with ease.
+      url: https://onebill.sh
+      external: true
+      image: onebill.jpg
+      border: true
+    - title: COVEO Music
+      description: Chill, euphoric, dreampop music.
+      url: http://coveomusic.com
+      external: true
+      image: coveomusic.jpg
+    - title: Salété Music
+      description: Dark, and upbeat electronic music.
+      url: https://saletemusic.com
+      external: true
+      image: saletemusic.jpg

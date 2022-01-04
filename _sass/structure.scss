@@ -1,0 +1,138 @@
+$mobile: 768px;
+$gutter: 6em;
+$max-width: 1000px;
+
+$border-radius-normal: 6px;
+$border-radius-large: 12px;
+
+* {
+  box-sizing: border-box;
+}
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: $color-white;
+  color: $color-ink;
+  font-family: "Metro Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+}
+
+h1,h2,h3,p {
+  line-height: 1.6em;
+}
+h2 {
+  font-size: 1em;
+  font-weight: 600;
+  font-style: italic;
+}
+.small {
+  font-size: 0.8em;
+}
+.center {
+  text-align: center;
+  margin: auto;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+.app_pane {
+  position: relative;
+}
+main {
+  padding: 0 $gutter;
+  max-width: $max-width;
+  margin: auto;
+}
+
+.section {
+  margin: 4em 0;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+}
+
+i.fa-arrow-right.external {
+  transform: rotate(-45deg);
+}
+
+.card {
+  border: 1px solid $color-border;
+  padding: 1em;
+  border-radius: $border-radius-normal;
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    background: $color-grey;
+  }
+
+  .details {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  p {
+    line-height: 1.2em;
+  }
+
+  .arrow {
+    margin-left: 1em;
+  }
+
+  .thumbnail {
+    border-radius: $border-radius-large;
+    overflow: hidden;
+    margin-right: 1em;
+    flex-shrink: 0;
+
+    &.border {
+      border: 1px solid $color-border;
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    &__small {
+      height: 45px;
+      width: 45px;
+    }
+  }
+
+  p.title {
+    font-weight: 600;
+  }
+}
+
+.border-radius {
+  &__normal {
+    border-radius: $border-radius-normal;
+  }
+  &__large {
+    border-radius: $border-radius-large;
+  }
+  &__round {
+    border-radius: 50%;
+  }
+}

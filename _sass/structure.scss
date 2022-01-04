@@ -28,6 +28,13 @@ body {
   font-size: 13px;
 }
 
+a {
+  &:focus,
+  &:active {
+    outline: 3px solid lighten($color-blue, 20);
+  }
+}
+
 h1,h2,h3,p {
   line-height: 1.6em;
 }

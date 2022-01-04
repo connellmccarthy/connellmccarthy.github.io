@@ -22,14 +22,21 @@ sidebar:
     title: General inquires
     content: me@connellmccarthy.com
 homepage:
-  announcement:
-    display: true
-    icon: info-circle
-    title: My latest COVEO single ‘Still Dreaming’ is now available worldwide.
-    link:
-      title: Check it out
-      url: http://coveomusic.com/still-dreaming
-      external: true
+  announcements:
+    - display: true
+      icon: info-circle
+      title: The latest drop for the Moon Rock NFT Series is live!
+      link:
+        title: Check it out
+        url: http://moonrocks.ai
+        external: true
+    - display: true
+      icon: info-circle
+      title: My latest COVEO single ‘Still Dreaming’ is now available worldwide.
+      link:
+        title: Check it out
+        url: http://coveomusic.com/still-dreaming
+        external: true
   showreel:
     title: 2022 Demo Reel
   projects:

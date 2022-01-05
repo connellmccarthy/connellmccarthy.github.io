@@ -57,12 +57,11 @@ video {
   padding: 0.6em 1em;
   margin: 0.4em 0;
   text-decoration: none;
-  transition: 0.2s ease-in-out;
   position: relative;
   background: #1e1e1e;
   border-radius: $border-radius-normal;
   box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.5);
-  transition: all 0.4s ease-in-out;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   transform: scale(1);
   z-index: 1;
 
@@ -125,10 +124,33 @@ video {
 }
 
 .announcement__container {
-  max-height: 70px;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  
+  &.size-1 {
+    height: 40px;
+  }
+  &.size-2 {
+    height: 50px;
+  }
+  &.size-3 {
+    height: 60px;
+  }
+  &.size-4 {
+    height: 70px;
+  }
   &:hover {
-    max-height: 300px;
+    &.size-1 {
+      height: 40px;
+    }
+    &.size-2 {
+      height: 90px;
+    }
+    &.size-3 {
+      height: 130px;
+    }
+    &.size-4 {
+      height: 180px;
+    }
     .announcement__banner {
       transform: scale(1) translateY(0) !important;
       box-shadow: none;

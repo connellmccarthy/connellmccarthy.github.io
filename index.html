@@ -7,7 +7,7 @@ title: Work
 {% if announcements.size > 0 %}
   <div class="section">
     <h2>Latest Announcements</h2>
-    <div class="announcement__container">
+    <div class="announcement__container size-{{ announcements | size }}">
       {% for announcement in announcements limit: 4 %}
         <a class="announcement__banner" href="{{ announcement.link.url }}" {% if announcement.link.external %}target="_blank" rel="noopener nofollow"{% endif %}>
           <div class="contents">

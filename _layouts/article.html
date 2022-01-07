@@ -10,14 +10,36 @@
       </div>
       <div class="app_pane">
         {% include navigation.html %}
-        <main id="swup" class="transition-fade article">
+        <main id="swup" class="transition-fade article" aria-live="polite">
           <div class="article-info">
-            {{ page.title }}
-            {{ page.date | date: "%a, %b %d, %Y" }}
-
-            <span id="count">0</span> likes
+            <div class="wrapper">
+              <a href="/articles" id="back" class="btn btn__plain">
+                <span class="visually-hidden">Go back</span>
+                <i class="far fa-arrow-left" aria-hidden="true"></i>
+              </a>
+              <div class="details">
+                <p class="title">{{ page.title }}</p>
+                <p class="muted">{{ page.date | date: "%B %d, %Y" }}</p>
+              </div>
+              <button id="like_button" class="btn btn__basic">
+                <i id="like_button_icon" class="far fa-heart"></i>
+                <span id="count">•</span>
+              </button>
+            </div>
           </div>
-          {{ content }}
+          <div class="wrapper">
+            <div class="article-info-static">
+              {% assign article_words = content | strip_html | strip_newlines | downcase | replace: 'and','' | replace: 'the','' | split:' ' %}
+              {% assign word_count = article_words | size %}
+
+              <p class="muted">{{ page.title }} • {{ page.date | date: "%B %d, %Y" }}</p>
+              <p class="muted">
+                <i class="far fa-book mr-1" aria-hidden="true"></i>
+                {{ word_count | times: 0.0076 | round }} minute read
+                </p>
+            </div>
+            {{ content }}
+          </div>
         </main>
         <p class="muted small center m-6">&copy; 2022 {{ site.title }}</p>
       </div>

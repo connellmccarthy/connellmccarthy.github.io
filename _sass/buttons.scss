@@ -1,3 +1,19 @@
+@import "sparkles";
+
+$sparkle-diameter: 0.3rem;
+$sparkle-radius: $sparkle-diameter * 0.5;
+
+@keyframes sparkles {
+  0%,
+  5% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+    @include sparkles-generator(0, $sparkle-diameter);
+  }
+}
+
 a.btn,
 button.btn {
   -webkit-appearance: none;
@@ -12,6 +28,14 @@ button.btn {
   text-decoration: none;
   font-weight: 500;
   font-size: 0.95em;
+
+  &__plain {
+    background: $color-grey;
+    padding: 0.8em;
+    &:hover {
+      background: darken($color-grey, 4);
+    }
+  }
   
   &__basic {
     background: $color-white;
@@ -19,6 +43,70 @@ button.btn {
     box-shadow: 0px 3px 2px -2px #0000001A;
     &:hover {
       background: $color-grey;
+    }
+  }
+
+  &#like_button {
+    position: relative;
+    &:after {
+      content: '';
+      z-index: 1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: inline-block;
+      width: $sparkle-diameter;
+      height: $sparkle-diameter;
+      margin: -1 * $sparkle-radius;
+      border-radius: 50%;
+      will-change: opacity, box-shadow;
+      @include sparkles-generator(1, $sparkle-diameter);
+    }
+
+    &.liked {
+      i {
+        color: $color-heart;
+      }
+    }
+
+    &.animate {
+      i {
+        animation-name: icon-animate;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+        animation-duration: 1s;
+      }
+      @keyframes icon-animate {
+        0% {
+          transform: scale(1) rotate(0deg);
+        }
+        35% {
+          transform: scale(1.4) rotate(0deg);
+        }
+        40% {
+          transform: scale(1.4) rotate(15deg);
+        }
+        50% {
+          transform: scale(1.4) rotate(-15deg);
+        }
+        60% {
+          transform: scale(1.4) rotate(15deg);
+        }
+        70% {
+          transform: scale(1.4) rotate(-15deg);
+        }
+        75% {
+          transform: scale(1.4) rotate(0deg);
+        }
+        85% {
+          transform: scale(1) rotate(0deg);
+        }
+      }
+      &:after {
+        animation: sparkles 2s cubic-bezier(0.17, 0.89, 0.32, 1.49);
+        will-change: opacity, box-shadow;
+        animation-fill-mode: forwards;
+      }
     }
   }
 }

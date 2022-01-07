@@ -1,20 +1,8 @@
 <nav>
   <div class="nav__container">
     <div class="active"></div>
-    <a href="/" class="nav__link{% if page.url == '/' %} active{% endif %}">Work</a>
-    <a class="nav__link{% if page.url contains 'articles' %} active{% endif %}" href="/articles/">Articles</a>
+    <a id="nav-work" href="/" class="nav__link{% if page.url == '/' %} active{% endif %}">Work</a>
+    <a id="nav-articles" class="nav__link{% if page.url contains 'articles' %} active{% endif %}" href="/articles/">Articles</a>
     <a href="https://shop.connellmccarthy.com/">Shop</a>
   </div>
-  <script>
-    var cp = document.querySelector('a.active');
-    document.querySelectorAll('a.nav__link').forEach((el) => {
-      el.addEventListener('click', () => {
-        if (!el.classList.contains('active')) {
-          cp.classList.remove('active');
-          el.classList.add('active');
-          cp = el;
-        }
-      });
-    });
-  </script>
 </nav>

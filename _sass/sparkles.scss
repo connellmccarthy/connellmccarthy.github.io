@@ -1,0 +1,36 @@
+@import "math";
+
+/// @param {Number} $k - The value to be used to calculate sparkles group distribution and spread radius.
+/// @param {Number} $diameter - The sparkle diameter in rems.
+/// Returns the list of box-shadows.
+
+@mixin sparkles-generator($k, $diameter) {
+  $shadow-list: ();
+  $radius: 0.5 * $diameter;
+  $n-groups: 7;
+  $group-base-angle: 360deg / $n-groups;
+  $group-distr-r: (1 + $k * 0.5) * 2.25rem;
+  $n-particles: 2;
+  $particle-base-angle: 360deg / $n-particles;
+  $particle-off-angle: 60deg; // offset angle from radius
+  $spread-r: -1 * $k * $radius;
+
+  @for $i from 0 to $n-groups {
+    $group-curr-angle: $i * $group-base-angle - 90deg;
+    $xg: $group-distr-r * cos($group-curr-angle);
+    $yg: $group-distr-r * sin($group-curr-angle);
+
+    @for $j from 0 to $n-particles {
+      $particle-curr-angle: $group-curr-angle +
+        $particle-off-angle +
+        $j *
+        $particle-base-angle;
+      $xs: $xg + $diameter * cos($particle-curr-angle);
+      $ys: $yg + $diameter * sin($particle-curr-angle);
+
+      $shadow-list: $shadow-list,
+        $xs $ys 0 $spread-r hsl(0, 100%, 75%);
+    }
+  }
+  box-shadow: $shadow-list;
+}

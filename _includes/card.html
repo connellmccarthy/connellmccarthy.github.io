@@ -1,0 +1,19 @@
+<a class="card" href="{{ include.url }}" {% if include.external %}target="_blank"{% endif %}>
+  <div class="details">
+    <div class="thumbnail thumbnail__{{ include.size }}{% if include.icon %} icon{% endif %}">
+      {% if include.icon %}
+        <i class="far fa-{{ include.icon }} muted"></i>
+      {% elsif include.image %}
+        <img src="/assets/img/projects/{{ include.image }}">
+      {% endif %}
+    </div>
+    <div class="info">
+      <p class="title m-0">{{ include.title }}</p>
+      <p class="muted m-0">{{ include.description }}</p>
+    </div>
+  </div>
+  <div class="arrow">
+    <span class="visually-hidden">{{ include.cta }}</span>
+    <i class="far fa-arrow-right {% if include.external %}external{% endif %}" aria-hidden="true"></i>
+  </div>
+</a>

@@ -63,3 +63,5 @@ homepage:
       url: https://saletemusic.com
       external: true
       image: saletemusic.jpg
+  articles:
+    title: Articles

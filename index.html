@@ -42,44 +42,30 @@ title: Work
   <h2>{{ site.data.content.homepage.projects.title }}</h2>
   <div class="projects">
     {% for project in site.data.content.homepage.projects.items %}
-      <a class="card" href="{{ project.url }}" {% if project.external %}target="_blank"{% endif %}>
-        <div class="details">
-          <div class="thumbnail thumbnail__small{% if project.border %} border{% endif %}">
-            <img src="/assets/img/projects/{{ project.image }}">
-          </div>
-          <div class="info">
-            <p class="title m-0">{{ project.title }}</p>
-            <p class="muted m-0">{{ project.description }}</p>
-          </div>
-        </div>
-        <div class="arrow">
-          <span class="visually-hidden">Visit project website</span>
-          <i class="far fa-arrow-right {% if project.external %}external{% endif %}" aria-hidden="true"></i>
-        </div>
-      </a>
+      {% include card.html
+        url = project.url
+        image = project.image
+        size = 'small'
+        title = project.title
+        description = project.description
+        cta = 'Visit project website'
+        external = project.external %}
     {% endfor %}
   </div>
 </div>
 
 <div class="section">
-  <h2>Articles</h2>
+  <h2>{{ site.data.content.homepage.articles.title }}</h2>
   <div class="articles">
     {% for article in site.articles %}
-      <a class="card" href="{{ article.url }}">
-        <div class="details">
-          <div class="thumbnail thumbnail_small">
-            <i class="far fa-book"></i>
-          </div>
-          <div class="info">
-            <p class="title m-0">{{ article.title }}</p>
-            <p class="muted m-0">{{ article.description }}</p>
-          </div>
-        </div>
-        <div class="arrow">
-          <span class="visually-hidden">Read article</span>
-          <i class="far fa-arrow-right" aria-hidden="true"></i>
-        </div>
-      </a>
+      {% include card.html
+        url = article.url
+        icon = 'book'
+        size = 'small'
+        title = article.title
+        description = article.description
+        cta = 'Read article'
+        external = false %}
     {% endfor %}
   </div>
 </div>

@@ -2,4 +2,16 @@
 layout: default
 ---
 
-<h1>Articles</h1>
+<h1 class="visually-hidden">Articles</h1>
+<div class="articles mt-6">
+  {% for article in site.articles %}
+    {% include card.html
+      url = article.url
+      icon = 'book'
+      size = 'large'
+      title = article.title
+      description = article.description
+      cta = 'Read article'
+      external = false %}
+  {% endfor %}
+</div>

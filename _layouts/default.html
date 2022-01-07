@@ -10,8 +10,10 @@
       </div>
       <div class="app_pane">
         {% include navigation.html %}
-        <main id="swup" class="transition-fade">
-          {{ content }}
+        <main id="swup" class="transition-fade" aria-live="polite">
+          <div class="wrapper">
+            {{ content }}
+          </div>
         </main>
         <p class="muted small center m-6">&copy; 2022 {{ site.title }}</p>
       </div>

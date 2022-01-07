@@ -1,0 +1,34 @@
+<script>
+  const swup = new Swup({
+    plugins: [new SwupSlideTheme()]
+  });
+  init();
+  swup.on('contentReplaced', init);
+  async function init() {
+    if (document.querySelector('button#video-controller')) {
+      const button = document.querySelector('button#video-controller');
+      const button_text = document.querySelector('span#button-text');
+      const button_icon = document.querySelector('i#button-icon');
+      button.addEventListener('click', () => {
+        if (button_icon.classList.contains('fa-pause')) {
+          document.getElementById('showreel').pause();
+          button_icon.classList.replace('fa-pause', 'fa-play');
+          button_text.innerText = 'Play video';
+        } else {
+          document.getElementById('showreel').play();
+          button_icon.classList.replace('fa-play', 'fa-pause');
+          button_text.innerText = 'Pause video';
+        }
+      });
+    }
+    if (document.getElementById('count')) {
+      const count_element = document.getElementById('count');
+      let xhttp = new XMLHttpRequest();
+      xhttp.open("GET", "https://data.connellmccarthy.com/.netlify/functions/api/article?ref={{ page.slug }}", true);
+      xhttp.send();
+      xhttp.onload = function() {
+        count_element.innerText = JSON.parse(xhttp.response).count;
+      }
+    }
+  }
+</script>

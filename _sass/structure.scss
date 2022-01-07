@@ -5,6 +5,40 @@ $max-width: 1000px;
 $border-radius-normal: 6px;
 $border-radius-large: 12px;
 
+.swup-transition-main {
+  opacity: 1;
+  transition: opacity .3s, transform .4s;
+  transform: translate3d(0, 0, 0);
+}
+
+html {
+	&.is-animating {
+		.swup-transition-main {
+			opacity: 0;
+			transform: translate3d(0, -30px, 0);
+		}
+		&.is-leaving {
+			.swup-transition-main {
+				opacity: 0;
+				transform: translate3d(0, 30px, 0);
+			}
+		}
+		&.swup-theme-reverse {
+			.swup-transition-main {
+				opacity: 0;
+				transform: translate3d(0, 30px, 0);
+			}
+			&.is-leaving {
+				.swup-transition-main {
+					opacity: 0;
+					transform: translate3d(0, -30px, 0);
+				}
+			}
+		}
+	}
+}
+
+
 * {
   box-sizing: border-box;
 }
@@ -85,7 +119,6 @@ i.fa-arrow-right.external {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: 0.2s ease-in-out;
 
   &:hover {
     background: $color-grey;

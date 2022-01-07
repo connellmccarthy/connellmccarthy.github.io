@@ -23,6 +23,12 @@ video {
     cursor: pointer;
     z-index: 2;
     box-shadow: 0px 5px 15px -2px #00000040;
+    transition: 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    &:hover {
+      background: lighten($color-black, 15);
+      transform: scale(1.12);
+    }
 
     i {
       top: 1px;
@@ -104,11 +110,9 @@ video {
     align-items: center;
     padding: 0.6em 1em;
     border-radius: 50px;
-    transition: background 0.4s ease-in-out;
 
     &__text {
       opacity: 0;
-      transition: opacity 0.4s ease-in-out;
     }
 
     i {

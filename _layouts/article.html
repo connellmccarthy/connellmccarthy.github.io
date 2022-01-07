@@ -10,7 +10,13 @@
       </div>
       <div class="app_pane">
         {% include navigation.html %}
-        <main id="swup" class="transition-fade">
+        <main id="swup" class="transition-fade article">
+          <div class="article-info">
+            {{ page.title }}
+            {{ page.date | date: "%a, %b %d, %Y" }}
+
+            <span id="count">0</span> likes
+          </div>
           {{ content }}
         </main>
         <p class="muted small center m-6">&copy; 2022 {{ site.title }}</p>

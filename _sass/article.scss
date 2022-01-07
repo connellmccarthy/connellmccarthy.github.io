@@ -1,0 +1,13 @@
+.article p {
+  font-size: 1.2em;
+}
+.article-info {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 2em;
+  width: 100%;
+  background: rgba(255,255,255,0.85);
+  border-bottom: 1px solid $color-border;
+  backdrop-filter: blur(25px);
+}

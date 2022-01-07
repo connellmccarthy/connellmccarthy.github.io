@@ -1,6 +1,6 @@
 <div class="sidebar">
-  <a href="/">
-    {% include logo.html %}
+  <a class="logo" href="/">
+    <img src="/assets/img/avatar.jpg">
   </a>
   {% if page.url == '/' %}
     <h1 class="m-0 mt-6">
@@ -34,6 +34,10 @@
   </ul>
 
   <p class="mt-6 muted">{{ site.data.content.sidebar.description }}</p>
+
+  <a class="btn btn__basic mt-2" href="https://read.cv/connellmccarthy" target="_blank" rel="nofollow noopener">
+    <i class="far fa-file-alt mr-1"></i> Read my CV
+  </a>
 
   <h2 class="m-0 mt-6">{{ site.data.content.sidebar.inquires.title }}</h2>
   <p class="m-0 muted">{{ site.data.content.sidebar.inquires.content }}</p>

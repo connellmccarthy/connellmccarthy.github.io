@@ -22,8 +22,8 @@ nav {
     font-weight: 600;
     font-size: 1em;
     border: 1px solid $color-white;
-    transition: 0.15s ease-in-out;
     margin-right: 0.4em;
+    position: relative;
 
     &:last-of-type {
       margin-right: 0;

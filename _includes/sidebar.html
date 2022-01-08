@@ -1,44 +1,47 @@
 <div class="sidebar">
-  <a class="logo" href="/">
-    <img src="/assets/img/avatar.jpg">
-  </a>
-  {% if page.url == '/' %}
-    <h1 class="m-0 mt-6">
-      <a href="/">
-        {{ site.title }}
-      </a>
-    </h1>
-  {% else %}
-    <p class="h1 m-0 mt-6">
-      <a href="/">
-        {{ site.title }}
+  <div class="main">
+    <a class="logo" href="/">
+      <img src="/assets/img/avatar.jpg">
+    </a>
+    {% if page.url == '/' %}
+      <h1 class="m-0 mt-6">
+        <a href="/">
+          {{ site.title }}
+        </a>
+      </h1>
+    {% else %}
+      <p class="h1 m-0 mt-6">
+        <a href="/">
+          {{ site.title }}
+        </a>
+      </p>
+    {% endif %}
+    <p class="m-0 muted">{{ site.data.content.sidebar.tagline }}</p>
+    <p class="m-0 employer">
+      <a href="{{ site.data.content.sidebar.employer.url }}" target="_blank" rel="noopener nofollow">
+        {{ site.data.content.sidebar.employer.role }} @ {{ site.data.content.sidebar.employer.name }}
       </a>
     </p>
-  {% endif %}
-  <p class="m-0 muted">{{ site.data.content.sidebar.tagline }}</p>
-  <p class="m-0 employer">
-    <a href="{{ site.data.content.sidebar.employer.url }}" target="_blank" rel="noopener nofollow">
-      {{ site.data.content.sidebar.employer.role }} @ {{ site.data.content.sidebar.employer.name }}
+
+    <ul class="socials mt-6">
+      {% for network in site.data.content.sidebar.links %}
+        <li>
+          <a href="{{ network.url }}" target="_blank" rel="noopener nofollow">
+            <span class="visually-hidden">{{ network.name }}</span>
+            <i class="fab fa-{{ network.icon }}" aria-hidden="true"></i>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <p class="mt-6 muted">{{ site.data.content.sidebar.description }}</p>
+
+    <a class="btn btn__basic mt-2" href="https://read.cv/connellmccarthy" target="_blank" rel="nofollow noopener">
+      <i class="far fa-file-alt mr-1"></i> Read my CV
     </a>
-  </p>
 
-  <ul class="socials mt-6">
-    {% for network in site.data.content.sidebar.links %}
-      <li>
-        <a href="{{ network.url }}" target="_blank" rel="noopener nofollow">
-          <span class="visually-hidden">{{ network.name }}</span>
-          <i class="fab fa-{{ network.icon }}" aria-hidden="true"></i>
-        </a>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="mt-6 muted">{{ site.data.content.sidebar.description }}</p>
-
-  <a class="btn btn__basic mt-2" href="https://read.cv/connellmccarthy" target="_blank" rel="nofollow noopener">
-    <i class="far fa-file-alt mr-1"></i> Read my CV
-  </a>
-
-  <h2 class="m-0 mt-6">{{ site.data.content.sidebar.inquires.title }}</h2>
-  <p class="m-0 muted">{{ site.data.content.sidebar.inquires.content }}</p>
+    <h2 class="m-0 mt-6">{{ site.data.content.sidebar.inquires.title }}</h2>
+    <p class="m-0 muted">{{ site.data.content.sidebar.inquires.content }}</p>
+  </div>
+  <p class="muted small mt-6">&copy; 2022 {{ site.title }}</p>
 </div>

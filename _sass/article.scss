@@ -1,4 +1,5 @@
 .article {
+  padding-bottom: 6em;
   h1 {
     font-weight: 500;
     font-size: 2.6em;
@@ -53,11 +54,6 @@
     transform: translateY(0);
     pointer-events: all;
   }
-
-  // #back {
-  //   position: absolute;
-  //   left: 1.6em;
-  // }
   
   .wrapper {
     display: flex;

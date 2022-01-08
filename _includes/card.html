@@ -1,6 +1,6 @@
 <a class="card" href="{{ include.url }}" {% if include.external %}target="_blank"{% endif %}>
   <div class="details">
-    <div class="thumbnail thumbnail__{{ include.size }}{% if include.icon %} icon{% endif %}">
+    <div class="thumbnail thumbnail__{{ include.size }}{% if include.icon %} icon{% endif %}{% if include.border %} border{% endif %}">
       {% if include.icon %}
         <i class="far fa-{{ include.icon }} muted"></i>
       {% elsif include.image %}

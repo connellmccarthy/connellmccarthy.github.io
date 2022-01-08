@@ -38,18 +38,37 @@ function init() {
     }
   }
   if (like_button) {
+    const slug = window.location.href.split('/')[4];
+    if (window.localStorage.getItem(slug)) {
+      document.getElementById('like_button_icon').classList.replace('far', 'fas');
+      like_button.classList.add('liked');
+    }
     like_button.addEventListener('click', () => {
       if (!like_button.classList.contains('liked')) {
-        const slug = window.location.href.split('/')[4];
         let xhttp = new XMLHttpRequest();
         xhttp.open("POST", `https://data.connellmccarthy.com/.netlify/functions/api/article?ref=${slug}`, true);
         xhttp.send();
-        xhttp.onload = function() {
+        xhttp.onload = () => {
           like_button.classList.toggle('animate');
           document.getElementById('like_button_icon').classList.replace('far', 'fas');
           like_button.classList.add('liked');
+          window.localStorage.setItem(slug, true);
           const count_element = document.getElementById('count');
           let count = parseInt(count_element.innerText) + 1;
+          count_element.innerText = count;
+        }
+      } else {
+        //Remove like
+        let xhttp = new XMLHttpRequest();
+        xhttp.open("DELETE", `https://data.connellmccarthy.com/.netlify/functions/api/article?ref=${slug}`, true);
+        xhttp.send();
+        xhttp.onload = () => {
+          like_button.classList.toggle('animate');
+          document.getElementById('like_button_icon').classList.replace('fas', 'far');
+          like_button.classList.remove('liked');
+          window.localStorage.removeItem(slug);
+          const count_element = document.getElementById('count');
+          let count = parseInt(count_element.innerText) - 1;
           count_element.innerText = count;
         }
       }
@@ -58,15 +77,9 @@ function init() {
   if (article_info) {
     window.addEventListener('scroll', () => {
       if (window.scrollY > 350 && !article_info.classList.contains('active')) {
-        // article_info.style.display = 'block';
         article_info.classList.toggle('active');
-        // setTimeout(() => {
-        // },1);
       } else if (window.scrollY < 350 && article_info.classList.contains('active')) {
         article_info.classList.toggle('active');
-        // setTimeout(() => {
-        //   article_info.style.display = 'none';
-        // }, 400);
       }
     });
   }

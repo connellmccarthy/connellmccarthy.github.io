@@ -1,5 +1,8 @@
 .article {
   padding-bottom: 6em;
+  position: relative;
+  top: -100px;
+
   h1 {
     font-weight: 500;
     font-size: 2.6em;
@@ -8,6 +11,7 @@
   p {
     font-size: 1.2em;
     color: $color-ink-muted;
+    margin: 2em 0;
   }
   a:not(.btn) {
     font-weight: 600;
@@ -25,6 +29,25 @@
       background: $color-ink;
     }
   }
+  img {
+    border-radius: $border-radius-large;
+    width: 100%;
+    margin: 2em 0 0;
+
+    &.inline {
+      width: calc(50% - 4px);
+      display: inline-block;
+      margin: 0;
+    }
+  }
+  img + em {
+    font-size: 0.9em;
+    color: lighten($color-ink-muted, 10);
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+    margin: 0 0 2em;
+  }
 }
 .article-info-static {
   margin-top: 4em;
@@ -36,7 +59,7 @@
   position: sticky;
   opacity: 0;
   pointer-events: none;
-  display: none;
+  // display: none;
   top: 0;
   left: 0;
   margin-top: 2em;

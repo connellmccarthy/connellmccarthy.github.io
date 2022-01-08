@@ -5,6 +5,8 @@ nav {
   padding: 3em $gutter 0;
   display: flex;
   justify-content: flex-end;
+  position: relative;
+  z-index: 5;
 }
 .nav__container {
   border: 1px solid $color-border;

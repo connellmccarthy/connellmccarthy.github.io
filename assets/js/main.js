@@ -58,15 +58,15 @@ function init() {
   if (article_info) {
     window.addEventListener('scroll', () => {
       if (window.scrollY > 350 && !article_info.classList.contains('active')) {
-        article_info.style.display = 'block';
-        setTimeout(() => {
-          article_info.classList.toggle('active');
-        },1);
+        // article_info.style.display = 'block';
+        article_info.classList.toggle('active');
+        // setTimeout(() => {
+        // },1);
       } else if (window.scrollY < 350 && article_info.classList.contains('active')) {
         article_info.classList.toggle('active');
-        setTimeout(() => {
-          article_info.style.display = 'none';
-        }, 400);
+        // setTimeout(() => {
+        //   article_info.style.display = 'none';
+        // }, 400);
       }
     });
   }

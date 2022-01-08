@@ -6,11 +6,18 @@ title: Articles
 <h1 class="visually-hidden">Articles</h1>
 <div class="articles mt-6">
   {% for article in site.articles %}
+    {% assign article_words = article.content | strip_html | strip_newlines | downcase | replace: 'and','' | replace: 'the','' | split:' ' %}
+    {% assign word_count = article_words | size %}
+
+    {% assign reading_time = word_count | times: 0.0076 | round %}
+
     {% include card.html
       url = article.url
       icon = 'book'
       size = 'large'
       title = article.title
+      date = article.date
+      reading_time = reading_time
       description = article.description
       cta = 'Read article'
       external = false %}

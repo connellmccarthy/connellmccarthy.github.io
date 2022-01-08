@@ -42,8 +42,7 @@
   padding: 1.4em 0;
   width: 100%;
   z-index: 4;
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(20px);
+  background: $color-white;
   border-bottom: 1px solid $color-border;
   transition: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   transform: translateY(-100%);

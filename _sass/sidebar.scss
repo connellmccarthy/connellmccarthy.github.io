@@ -38,6 +38,9 @@ $sidebar-tablet: 120px;
   @media screen and (max-width: $break-tablet) {
     display: block;
   }
+  @media screen and (max-width: $break-mobile) {
+    display: none;
+  }
 }
 
 @media screen and (max-width: $break-tablet) {
@@ -78,6 +81,10 @@ $sidebar-tablet: 120px;
     @media screen and (max-width: $break-tablet) {
       width: $sidebar-tablet;
     }
+    @media screen and (max-width: $break-mobile) {
+      width: 0;
+      height: 0;
+    }
   }
   width: $sidebar-max;
   height: 100vh;
@@ -98,6 +105,10 @@ $sidebar-tablet: 120px;
     &.active {
       transform: translateX(0);
     }
+  }
+  @media screen and (max-width: $break-mobile) {
+    width: 100%;
+    border-right: none;
   }
 
   .logo {

@@ -37,6 +37,20 @@ homepage:
         title: Take a listen
         url: http://coveomusic.com/still-dreaming
         external: true
+    - display: true
+      icon: music
+      title: My latest COVEO single ‘Still Dreaming’ is now available worldwide.
+      link:
+        title: Take a listen
+        url: http://coveomusic.com/still-dreaming
+        external: true
+    - display: true
+      icon: music
+      title: My latest COVEO single ‘Still Dreaming’ is now available worldwide.
+      link:
+        title: Take a listen
+        url: http://coveomusic.com/still-dreaming
+        external: true
   showreel:
     title: 2022 Demo Reel
   projects:

@@ -5,7 +5,7 @@ title: Work
 
 {% assign announcements = site.data.content.homepage.announcements | where: 'display', 'true' %}
 {% if announcements.size > 0 %}
-  <div class="section">
+  <div class="section announcements">
     <h2>Latest Announcements</h2>
     <div class="announcement__container size-{{ announcements | size }}">
       {% for announcement in announcements limit: 4 %}
@@ -21,6 +21,10 @@ title: Work
         </a>
       {% endfor %}
     </div>
+    <button id="mobile-announcements" class="btn btn__basic btn__circle">
+      <i class="far fa-chevron-down" aria-hidden="true"></i>
+      <span class="mobile-announcements-text visually-hidden">Expand announcements</span>
+    </button>
   </div>
 {% endif %}
 

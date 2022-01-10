@@ -86,10 +86,21 @@ h2 {
   text-align: center;
   margin: auto;
 }
-
+.flex {
+  display: flex;
+  &.between {
+    justify-content: space-between;
+  }
+  &.a-center {
+    align-items: center;
+  }
+}
 .container {
   display: grid;
   grid-template-columns: auto 1fr;
+  @media screen and (max-width: $break-mobile) {
+    display: block;
+  }
 }
 .app_pane {
   position: relative;
@@ -99,6 +110,10 @@ h2 {
   padding: 0 $gutter;
   max-width: $max-width;
   margin: auto;
+
+  @media screen and (max-width: $break-mobile) {
+    padding: 0 ($gutter / 4);
+  }
 }
 
 .section {
@@ -106,6 +121,10 @@ h2 {
 
   &:first-of-type {
     margin-top: 0;
+  }
+
+  @media screen and (max-width: $break-mobile) {
+    margin: 2em 0;
   }
 }
 

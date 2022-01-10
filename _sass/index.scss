@@ -51,6 +51,9 @@ video {
   .card {
     width: calc(50% - 0.3em);
     margin-bottom: 0.6em;
+    @media screen and (max-width: $break-mobile) {
+      width: 100%;
+    }
   }
 }
 
@@ -71,8 +74,12 @@ video {
   transform: scale(1);
   z-index: 1;
 
+  @media screen and (max-width: $break-mobile) {
+    padding: 1.4em 1em;
+  }
+
   $scale: (1, 0.96, 0.92, 0.88);
-  $slide: (0, -39px, -81px, -128px);
+  $slide: (0, -80%, -170%, -270%);
   $zindex: (4,3,2,1);
   @for $i from 1 through 4 {
     &:nth-of-type(#{$i}) {
@@ -113,6 +120,15 @@ video {
 
     &__text {
       opacity: 0;
+      @media screen and (max-width: $break-mobile) {
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+      }
     }
 
     i {
@@ -122,8 +138,17 @@ video {
     }
   }
 
-  .contents i {
-    margin-right: 0.2em;
+  .contents {
+    @media screen and (max-width: $break-mobile) {
+      display: flex;
+      align-items: center;
+    }
+    i {
+      margin-right: 0.2em;
+      @media screen and (max-width: $break-mobile) {
+        margin-right: 0.6em;
+      }
+    }
   }
 }
 
@@ -141,8 +166,12 @@ video {
   }
   &.size-4 {
     height: 70px;
+    @media screen and (max-width: $break-mobile) {
+      height: 125px;
+    }
   }
-  &:hover {
+  &:hover,
+  &.active {
     &.size-1 {
       height: 40px;
     }
@@ -154,10 +183,24 @@ video {
     }
     &.size-4 {
       height: 180px;
+      @media screen and (max-width: $break-mobile) {
+        height: 320px;
+      }
     }
     .announcement__banner {
       transform: scale(1) translateY(0) !important;
       box-shadow: none;
     }
+  }
+}
+
+.announcements button#mobile-announcements {
+  display: none;
+  @media screen and (max-width: $break-mobile) {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    top: -25px;
+    z-index: 5;
   }
 }

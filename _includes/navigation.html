@@ -1,7 +1,7 @@
 <div class="mobile-controller">
   <div class="fade menu-trigger"></div>
   <div class="wrapper flex between a-center">
-    <button class="sidebar-trigger btn btn__plain">
+    <button class="sidebar-trigger btn btn__plain btn__icon">
       <span class="visually-hidden">Open information panel</span>
       <i class="far fa-user-alt"></i>
     </button>
@@ -21,7 +21,7 @@
       {% endif %}
       <p class="m-0 muted">{{ site.data.content.sidebar.tagline }}</p>
     </div>
-    <button class="menu-trigger btn btn__plain">
+    <button class="menu-trigger btn btn__plain btn__icon">
       <span class="visually-hidden">Open navigation panel</span>
       <i class="far fa-bars"></i>
     </button>
@@ -49,7 +49,7 @@
     <h3 class="mt-6 mobile-only">On the web</h3>
     {% for network in site.data.content.sidebar.links %}
       <a class="nav__link mobile-only" href="{{ network.url }}" target="_blank" rel="noopener nofollow">
-        <i class="fab fa-{{ network.icon }}" aria-hidden="true"></i>
+        <i class="fab fa-{{ network.icon }} mr-2" aria-hidden="true"></i>
         {{ network.name }}
       </a>
     {% endfor %}

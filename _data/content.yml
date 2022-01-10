@@ -23,14 +23,14 @@ sidebar:
     content: me@connellmccarthy.com
 homepage:
   announcements:
-    - display: true
+    - display: false
       icon: images
       title: The latest drop for the Moon Rock NFT Series is live!
       link:
         title: Check it out
         url: http://moonrocks.ai
         external: true
-    - display: true
+    - display: false
       icon: music
       title: My latest COVEO single ‘Still Dreaming’ is now available worldwide.
       link:

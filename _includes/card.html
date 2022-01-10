@@ -8,11 +8,11 @@
       {% endif %}
     </div>
     <div class="info">
-      <p class="title m-0">{{ include.title }}</p>
+      <p class="title m-0 mb-1">{{ include.title }}</p>
       {% if include.date %}
-        <p class="muted m-0 mt-1 mb-1">{{ include.date | date: "%B %d, %Y" }}{% if include.reading_time %} • {{ include.reading_time }} minute read{% endif %}</p>
+        <p class="muted-light m-0">{{ include.date | date: "%B %d, %Y" }}{% if include.reading_time %} • {{ include.reading_time }} minute read{% endif %}</p>
       {% endif %}
-      <p class="muted m-0">{{ include.description }}</p>
+      <p class="muted m-0 mt-1">{{ include.description }}</p>
     </div>
   </div>
   <div class="arrow">

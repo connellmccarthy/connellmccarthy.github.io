@@ -14,7 +14,7 @@
   margin-left: 0;
 }
 
-$step: 0.4;
+$step: 0.2;
 @for $i from 1 through 10 {
   .m-#{$i} {
     margin: #{$i * $step}em;

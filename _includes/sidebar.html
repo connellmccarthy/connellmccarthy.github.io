@@ -1,4 +1,18 @@
+<div class="sidebar-trigger-container">
+  <a class="logo" href="/">
+    <img src="/assets/img/avatar.jpg">
+  </a>
+  <button class="sidebar-trigger btn btn__basic btn__circle">
+    <span class="visually-hidden">About me</span>
+    <i class="far fa-arrow-to-right muted"></i>
+  </button>
+</div>
+<div class="fade sidebar-trigger"></div>
 <div class="sidebar">
+  <button class="sidebar-trigger btn btn__basic btn__circle">
+    <span class="visually-hidden">Close</span>
+    <i class="far fa-arrow-to-left muted"></i>
+  </button>
   <div class="main">
     <a class="logo" href="/">
       <img src="/assets/img/avatar.jpg">
@@ -45,3 +59,11 @@
   </div>
   <p class="muted small mt-6">&copy; 2022 {{ site.title }}</p>
 </div>
+<script>
+  document.querySelectorAll('.sidebar-trigger').forEach((el) => {
+    el.addEventListener('click', () => {
+      document.querySelector('.sidebar').classList.toggle('active');
+      document.querySelector('.fade').classList.toggle('active');
+    });
+  });
+</script>

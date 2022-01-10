@@ -46,6 +46,21 @@ button.btn {
     }
   }
 
+  &__circle {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    padding: 0;
+    i {
+      position: relative;
+      top: 1px;
+    }
+  }
+
   &#like_button {
     position: relative;
     &:after {

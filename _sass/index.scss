@@ -40,7 +40,7 @@ video {
   }
 }
 
-.projects {
+.list {
   width: 100%;
   padding: 0;
   list-style-type: none;
@@ -160,9 +160,15 @@ video {
   }
   &.size-2 {
     height: 50px;
+    @media screen and (max-width: $break-mobile) {
+      height: 90px;
+    }
   }
   &.size-3 {
     height: 60px;
+    @media screen and (max-width: $break-mobile) {
+      height: 110px;
+    }
   }
   &.size-4 {
     height: 70px;
@@ -177,12 +183,27 @@ video {
     }
     &.size-2 {
       height: 90px;
+      @media screen and (max-width: $break-tablet) {
+        height: 115px;
+      }
+      @media screen and (max-width: $break-mobile) {
+        height: 180px;
+      }
     }
     &.size-3 {
       height: 130px;
+      @media screen and (max-width: $break-tablet) {
+        height: 170px;
+      }
+      @media screen and (max-width: $break-mobile) {
+        height: 250px;
+      }
     }
     &.size-4 {
       height: 180px;
+      @media screen and (max-width: $break-tablet) {
+        height: 220px;
+      }
       @media screen and (max-width: $break-mobile) {
         height: 320px;
       }
@@ -196,11 +217,25 @@ video {
 
 .announcements button#mobile-announcements {
   display: none;
-  @media screen and (max-width: $break-mobile) {
+  i {
+    transition: transform 0.4s ease;
+    transform: rotate(0);
+    position: relative;
+  }
+  &.active {
+    i {
+      transform: rotate(180deg);
+      top: -1px;
+    }
+  }
+  @media screen and (max-width: $break-tablet) {
     display: block;
     margin: 0 auto;
     position: relative;
-    top: -25px;
+    top: -5px;
     z-index: 5;
+  }
+  @media screen and (max-width: $break-mobile) {
+    top: -25px;
   }
 }

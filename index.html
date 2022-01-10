@@ -21,10 +21,12 @@ title: Work
         </a>
       {% endfor %}
     </div>
-    <button id="mobile-announcements" class="btn btn__basic btn__circle">
-      <i class="far fa-chevron-down" aria-hidden="true"></i>
-      <span class="mobile-announcements-text visually-hidden">Expand announcements</span>
-    </button>
+    {% if announcements.size > 1 %}
+      <button id="mobile-announcements" class="btn btn__basic btn__circle">
+        <i class="far fa-chevron-down" aria-hidden="true"></i>
+        <span class="mobile-announcements-text visually-hidden">Expand announcements</span>
+      </button>
+    {% endif %}
   </div>
 {% endif %}
 
@@ -35,7 +37,7 @@ title: Work
       <span id="button-text" class="visually-hidden">Pause video</span>
       <i id="button-icon" class="fas fa-pause" aria-hidden="true"></i>
     </button>
-    <video id="showreel" class="border-radius__large" autoplay muted loop playsinline>
+    <video id="showreel" class="border-radius__large" muted loop playsinline>
       <source src="/assets/img/showreel.mp4" type="video/mp4">
       <source src="/assets/img/showreel.webm" type="video/webm">
     </video>
@@ -44,7 +46,7 @@ title: Work
 
 <div class="section">
   <h2>{{ site.data.content.homepage.projects.title }}</h2>
-  <div class="projects">
+  <div class="list">
     {% for project in site.data.content.homepage.projects.items %}
       {% include card.html
         url = project.url
@@ -61,7 +63,7 @@ title: Work
 
 <div class="section">
   <h2>{{ site.data.content.homepage.articles.title }}</h2>
-  <div class="articles">
+  <div class="list">
     {% for article in site.articles %}
       {% include card.html
         url = article.url
@@ -73,4 +75,10 @@ title: Work
         external = false %}
     {% endfor %}
   </div>
+</div>
+
+<div class="section">
+  <h2 class="m-0">Location</h2>
+  <p class="muted m-0 mb-2">I work remotely from a town just outside of Canada’s capital city, Ottawa.</p>
+  <img class="border-radius__large" src="/assets/img/ottawa-map.jpg">
 </div>

@@ -90,6 +90,7 @@ function init() {
   if (document.getElementById('mobile-announcements')) {
     document.getElementById('mobile-announcements').addEventListener('click', () => {
       document.querySelector('.announcement__container').classList.toggle('active');
+      document.querySelector('button#mobile-announcements').classList.toggle('active');
     });
   }
   document.querySelectorAll('a').forEach((el) => {

@@ -18,23 +18,23 @@ html {
 	&.is-animating {
 		.swup-transition-main {
 			opacity: 0;
-			transform: translate3d(0, -30px, 0);
+			transform: translate3d(0, 30px, 0);
 		}
 		&.is-leaving {
 			.swup-transition-main {
 				opacity: 0;
-				transform: translate3d(0, 30px, 0);
+				transform: translate3d(0, -30px, 0);
 			}
 		}
 		&.swup-theme-reverse {
 			.swup-transition-main {
 				opacity: 0;
-				transform: translate3d(0, 30px, 0);
+				transform: translate3d(0, -30px, 0);
 			}
 			&.is-leaving {
 				.swup-transition-main {
 					opacity: 0;
-					transform: translate3d(0, -30px, 0);
+					transform: translate3d(0, 30px, 0);
 				}
 			}
 		}
@@ -104,6 +104,9 @@ h2 {
 }
 .app_pane {
   position: relative;
+}
+img {
+  width: 100%;
 }
 
 .wrapper {

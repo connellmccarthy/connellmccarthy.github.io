@@ -157,6 +157,9 @@ video {
   
   &.size-1 {
     height: 40px;
+    @media screen and (max-width: $break-mobile) {
+      height: 70px;
+    }
   }
   &.size-2 {
     height: 50px;
@@ -180,6 +183,9 @@ video {
   &.active {
     &.size-1 {
       height: 40px;
+      @media screen and (max-width: $break-mobile) {
+        height: 70px;
+      }
     }
     &.size-2 {
       height: 90px;
@@ -237,5 +243,22 @@ video {
   }
   @media screen and (max-width: $break-mobile) {
     top: -25px;
+  }
+}
+
+.location-image {
+  position: relative;
+  &:after {
+    content: '';
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #2F7CF6;
+    border: 3px solid $color-white;
+    box-shadow: 1.07692px 2.15385px 10.7692px rgba(0, 0, 0, 0.4);
   }
 }

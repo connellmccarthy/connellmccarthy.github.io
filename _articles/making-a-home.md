@@ -4,13 +4,9 @@ date: 2020-10-04T11:37:59-04:00
 layout: article
 draft: false
 description: "In the middle of a worldwide pandemic, we decided it was a good idea to buy a house."
-images:
-- /article/making-a-home/mah-thumbnail.jpg
 cta_heading: "Follow along on my journey of making this house, a home"
 slug: "making-a-home"
-resources:
-- name: thumbnail
-  src: mah-thumbnail.jpg
+thumbnail: mah-thumbnail.jpg
 ---
 
 # In the middle of a worldwide pandemic, we decided it was a good idea to buy a house.

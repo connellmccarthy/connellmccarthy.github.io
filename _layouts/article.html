@@ -28,6 +28,9 @@
             </div>
           </div>
           <div class="wrapper">
+            <div class="thumbnail">
+              <img src="/assets/articles/{{ page.slug }}/{{ page.thumbnail }}">
+            </div>
             <div class="article-info-static">
               {% assign article_words = content | strip_html | strip_newlines | downcase | replace: 'and','' | replace: 'the','' | split:' ' %}
               {% assign word_count = article_words | size %}

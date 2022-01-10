@@ -107,8 +107,7 @@ $sidebar-tablet: 120px;
     }
   }
   @media screen and (max-width: $break-mobile) {
-    width: 100%;
-    border-right: none;
+    width: 85%;
   }
 
   .logo {

@@ -1,8 +1,57 @@
+<div class="mobile-controller">
+  <div class="fade menu-trigger"></div>
+  <div class="wrapper flex between a-center">
+    <button class="sidebar-trigger btn btn__plain">
+      <span class="visually-hidden">Open information panel</span>
+      <i class="far fa-user-alt"></i>
+    </button>
+    <div class="title">
+      {% if page.url == '/' %}
+        <h1 class="m-0">
+          <a href="/">
+            {{ site.title }}
+          </a>
+        </h1>
+      {% else %}
+        <p class="h1 m-0">
+          <a href="/">
+            {{ site.title }}
+          </a>
+        </p>
+      {% endif %}
+      <p class="m-0 muted">{{ site.data.content.sidebar.tagline }}</p>
+    </div>
+    <button class="menu-trigger btn btn__plain">
+      <span class="visually-hidden">Open navigation panel</span>
+      <i class="far fa-bars"></i>
+    </button>
+  </div>
+</div>
 <nav>
+  <button class="menu-trigger btn btn__basic btn__circle">
+    <span class="visually-hidden">Close</span>
+    <i class="far fa-arrow-to-right muted"></i>
+  </button>
   <div class="nav__container">
-    <div class="active"></div>
-    <a id="nav-work" href="/" class="nav__link{% if page.url == '/' %} active{% endif %}">Work</a>
-    <a id="nav-articles" class="nav__link{% if page.url contains 'articles' %} active{% endif %}" href="/articles/">Articles</a>
-    <a href="https://shop.connellmccarthy.com/">Shop</a>
+    <h3 class="mobile-only muted">Site</h3>
+    <a id="nav-work" href="/" class="nav__link{% if page.url == '/' %} active{% endif %}">
+      <i class="far fa-briefcase mobile-only mr-2" aria-hidden="true"></i>
+      Work
+    </a>
+    <a id="nav-articles" class="nav__link{% if page.url contains 'articles' %} active{% endif %}" href="/articles/">
+      <i class="far fa-book mobile-only mr-2" aria-hidden="true"></i>
+      Articles
+    </a>
+    <a href="https://shop.connellmccarthy.com/">
+      <i class="far fa-shopping-bag mobile-only mr-2" aria-hidden="true"></i>
+      Shop
+    </a>
+    <h3 class="mt-6 mobile-only">On the web</h3>
+    {% for network in site.data.content.sidebar.links %}
+      <a class="nav__link mobile-only" href="{{ network.url }}" target="_blank" rel="noopener nofollow">
+        <i class="fab fa-{{ network.icon }}" aria-hidden="true"></i>
+        {{ network.name }}
+      </a>
+    {% endfor %}
   </div>
 </nav>

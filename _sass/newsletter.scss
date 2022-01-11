@@ -1,0 +1,61 @@
+.newsletter {
+  text-align: center;
+
+  @media screen and (max-width: $break-mobile) {
+    text-align: left;
+  }
+
+  h2 {
+    margin: 0 auto;
+  }
+  p {
+    font-size: 1em;
+    width: 100%;
+    max-width: 320px;
+    margin: 0.4em auto;
+    @media screen and (max-width: $break-mobile) {
+      max-width: unset;
+    }
+  }
+
+  form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @media screen and (max-width: $break-mobile) {
+      margin-top: 1.4em;
+
+      .input-group {
+        width: 100%;
+      }
+      button {
+        margin-top: 0.6em;
+        width: 100%;
+      }
+    }
+
+    input {
+      margin-right: 0.4em;
+
+      @media screen and (max-width: $break-mobile) {
+        width: 100%;
+      }
+    }
+  }
+
+  &__icon {
+    height: 45px;
+    width: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $color-white;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%), #5200FF;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15), inset 0px 1px 1px rgba(255, 255, 255, 0.25);
+    border-radius: $border-radius-large;
+    font-size: 1.4em;
+    margin: 0 auto 1em;
+  }
+}

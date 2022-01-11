@@ -65,3 +65,5 @@ homepage:
       image: saletemusic.jpg
   articles:
     title: Featured Articles
+newsletter:
+  body: Get notified whenever I publish a new article, and I promise I will never spam your inbox.

@@ -94,6 +94,16 @@ function init() {
       document.querySelector('button#mobile-announcements').classList.toggle('active');
     });
   }
+  if (document.querySelector('form.newsletter_form')) {
+    document.querySelector('form.newsletter_form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      subscribe();
+      document.querySelector('.newsletter__submit').classList.add('loading');
+      document.querySelector('.newsletter__submit').setAttribute('disabled', true);
+      document.querySelector('.newsletter__email').setAttribute('disabled', true);
+    })
+  }
+
   document.querySelectorAll('a').forEach((el) => {
     el.addEventListener('click', () => {
       switchPage(el.getAttribute('href'));
@@ -131,3 +141,26 @@ document.querySelectorAll('.menu-trigger').forEach((el) => {
     document.querySelector('.fade.menu-trigger').classList.toggle('active');
   });
 });
+
+function subscribe() {
+  var email = encodeURIComponent(document.forms['newsletter_form']['email'].value);
+  var ref = encodeURIComponent(document.forms['newsletter_form']['ref'].value);
+  var entry_email = 'entry.1684792530';
+  var entry_ref = 'entry.1800592224';
+  var base_url = 'https://docs.google.com/forms/d/e/1FAIpQLSdmipvslotruk2_Mg8S9R_Ux6IJklJgRKW1yUEd0225CjLWdg/formResponse?';
+  var submitURL = (base_url + entry_email + '=' + email + '&' + entry_ref + '=' + ref + '&submit=Submit');
+
+  if (email && ref) {
+    document.querySelector('.newsletter_subscribe').setAttribute('src', submitURL);
+    document.querySelector('.newsletter_subscribe').addEventListener('load', () => {
+      confetti.start();
+      setTimeout(function() {
+        confetti.stop();
+      },500);
+      document.querySelector('#newsletter__body').innerText = 'Thanks for subscribing!';
+      document.querySelector('form.newsletter_form').remove();
+    });
+  } else {
+      console.log('Error: No values passed to function.');
+  }
+}

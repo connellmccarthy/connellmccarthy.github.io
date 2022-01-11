@@ -133,6 +133,16 @@ img {
     margin-top: 0;
   }
 
+  &.grey {
+    padding: 3em;
+    background: $color-grey;
+    border: 1px solid $color-border;
+
+    @media screen and (max-width: $break-mobile) {
+      padding: 2em;
+    }
+  }
+
   @media screen and (max-width: $break-mobile) {
     margin: 2em 0;
   }

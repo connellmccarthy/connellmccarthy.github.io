@@ -1,0 +1,16 @@
+<div class="newsletter section grey border-radius__normal">
+  <div class="newsletter__icon">
+    <i class="fas fa-paper-plane"></i>
+  </div>
+  <h2>{{ page.cta_heading }}</h2>
+  <p id="newsletter__body">{{ site.data.content.newsletter.body }}</p>
+  <form name="newsletter_form" class="newsletter_form mt-8">
+    <input name="ref" type="hidden" value="{{ page.slug }}">
+    <div class="input-group">
+      <label for="email" class="visually-hidden">Email address</label>
+      <input class="newsletter__email" name="email" id="email" type="email" autocomplete="email" placeholder="your@email.com" required>
+    </div>
+    <button type="submit" class="btn btn__basic newsletter__submit">Subscribe</button>
+  </form>
+  <iframe class="newsletter_subscribe" hidden></iframe>
+</div>

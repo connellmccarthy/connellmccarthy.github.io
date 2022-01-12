@@ -150,13 +150,14 @@ function subscribe() {
   var ref = encodeURIComponent(document.forms['newsletter_form']['ref'].value);
   var entry_email = 'entry.1684792530';
   var entry_ref = 'entry.1800592224';
-  // var base_url = 'https://docs.google.com/forms/d/e/1FAIpQLSdmipvslotruk2_Mg8S9R_Ux6IJklJgRKW1yUEd0225CjLWdg/formResponse?';
-  var base_url = 'https://google.com?'
+  var base_url = 'https://docs.google.com/forms/d/e/1FAIpQLSdmipvslotruk2_Mg8S9R_Ux6IJklJgRKW1yUEd0225CjLWdg/formResponse?';
   var submitURL = (base_url + entry_email + '=' + email + '&' + entry_ref + '=' + ref + '&submit=Submit');
 
   if (email && ref) {
-    document.querySelector('.newsletter_subscribe').setAttribute('src', submitURL);
-    document.querySelector('.newsletter_subscribe').addEventListener('load', () => {
+    let iframe = document.createElement('iframe');
+    iframe.setAttribute('src', submitURL);
+    iframe.setAttribute('hidden', 'true');
+    iframe.addEventListener('load', () => {
       document.querySelector('.newsletter__icon').classList.add('success');
       document.querySelector('i#newsletter__icon').classList.replace('fa-paper-plane', 'fa-check');
       document.querySelector('#newsletter__heading').innerText = 'Thanks for subscribing!';
@@ -164,6 +165,7 @@ function subscribe() {
       document.querySelector('form.newsletter_form').remove();
       confetti.start();
     });
+    document.body.append(iframe);
   } else {
       console.log('Error: No values passed to function.');
   }

@@ -9,6 +9,8 @@ slug: "my-home-office"
 thumbnail: mho-thumbnail.jpg
 ---
 
+{% assign image_path = site.image_path | append: page.slug %}
+
 # Designing a productive space that’s conducive to creativity for both work, and personal projects.
 
 When looking for our home I was very adamant about finding a place that served my needs for my work from home day-job, but also my after-hours creative projects like music, design, photography, etc. While I was working from home prior to moving, my drive to create personal work dropped since I was spending my 8-hour working day in the same place as where I would continue to work at night. Much like when your hobbies start to feel like work, you need that separation between projects that are for yourself, and projects that are directed for/by others. That meant, the new home needed to have the space to allow two different workstations either in the same, or different rooms.
@@ -17,7 +19,7 @@ I’m extremely grateful that I found a home that allowed for this. The office w
 
 With that being said, I started designing this office to further create that divide between work and play. I modeled my office in a 3D environment so I could check that all the stuff I needed would fit properly.
 
-![3D render of my office used for planning]({{ site.image_path }}{{ page.slug }}/office-3d-render.jpg)
+![3D render of my office used for planning]({{ image_path }}/office-3d-render.jpg)
 _3D render of my office used for planning_
 
 I tried out painting various walls, different setups, and locations, but in the end, I made the decision to paint the one wall behind my music desk black, so the atmosphere of one side of the office is entirely different from the other side. The black color was chosen mindfully because I wanted my surroundings to fade away into the darkness and let my creativity flow out onto whatever I was working on.
@@ -45,8 +47,8 @@ Everything I use to make music is within reach so that I never have to take anyt
 
 My chair and desk were chosen purely based on aesthetics, however, the size of my desk was a big deciding factor. I needed something with a lot of space to put headphones, notebooks, an audio interface, and a thunderbolt system. Being mindful of the real estate you have to work with, and what requirements you have for them will go a long way in helping make a decision on desk sizes.
 
-![A wider view of my home office setup]({{ site.image_path }}{{ page.slug }}/home-office-panout.jpg){: .inline}
-![My workspace dedicated for my Shopify work]({{ site.image_path }}{{ page.slug }}/work-office-panout.jpg){: .inline}
+![A wider view of my home office setup]({{ image_path }}/home-office-panout.jpg){: .inline}
+![My workspace dedicated for my Shopify work]({{ image_path }}/work-office-panout.jpg){: .inline}
 
 Moving on to my Shopify daytime workstation, it’s entirely different. The desk is a lot smaller and has standing capabilities so I’m not sitting the entire day. The wall is white, and the surrounding area is very plain. It was designed so that the minimal workspace was free of distractions and clutter. The walls were also kept plain white to aid in lighting for video calls seeing as though all my meetings are virtual now. Please ignore the bad cable management as I have yet to install the cable management rack that’s sitting in the right corner.
 
@@ -54,11 +56,11 @@ There is still more to do, and there always will be. You should be constantly it
 
 At the end of the day, designing a creative space is a very personal thing. It’s imperative to add little touchpoints that put you in the right headspace for each element of your work that you do. The mental state is where you should start your planning. Look back on times you’ve been most creative, and ask yourself _“What made that moment special”_? Was it the lighting? The atmosphere, or the tools you had available? When you find the answer to questions like those, you’ll have a better idea of where to begin.
 
-![A closer look at my desk setup]({{ site.image_path }}{{ page.slug }}/cm-home-office.jpg)
+![A closer look at my desk setup]({{ image_path }}/cm-home-office.jpg)
 _A closer look at my desk setup_
 
-![My home office setup for music production]({{ site.image_path }}{{ page.slug }}/cm-home-office-2.jpg){: .inline}
-![A closer look at my ergonomic mouse]({{ site.image_path }}{{ page.slug }}/cm-home-office-3.jpg){: .inline}
+![My home office setup for music production]({{ image_path }}/cm-home-office-2.jpg){: .inline}
+![A closer look at my ergonomic mouse]({{ image_path }}/cm-home-office-3.jpg){: .inline}
 
 Here's a list of my peripherals and hardware that I use for everyday working.
 
@@ -174,7 +176,7 @@ Here's an additional list of my hardware that I use for music production.
     external = true %}
 </div>
 
-![My workspace setup for Shopify work]({{ site.image_path }}{{ page.slug }}/cm-home-office-4.jpg)
+![My workspace setup for Shopify work]({{ image_path }}/cm-home-office-4.jpg)
 _My workspace setup for Shopify work_
 
 For my minimal Shopify setup, here's the products I use daily.

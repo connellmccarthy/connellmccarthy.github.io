@@ -107,7 +107,7 @@ var confetti = {
 			canvas.setAttribute("style", "display:block;z-index:3;pointer-events:none;position:absolute;top:0;left:0;");
 			document.querySelector('.section.newsletter').prepend(canvas);
 			canvas.width = document.querySelector('.section.newsletter').offsetWidth;
-			canvas.height = height;
+			canvas.height = document.querySelector('.section.newsletter').offsetHeight;
 			window.addEventListener("resize", function() {
 				canvas.width = document.querySelector('.section.newsletter').offsetWidth * 1.5;
 				canvas.height = document.querySelector('.section.newsletter').offsetHeight * 1.5;

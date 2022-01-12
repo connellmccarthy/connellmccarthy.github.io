@@ -1,0 +1,29 @@
+{% if page.next or page.previous %}
+  <div class="section border pagination">
+    <div class="wrapper flex between a-center">
+      {% if page.previous %}
+        <a href="{{ page.previous.url }}" class="btn btn__basic">
+          <i class="far fa-arrow-left mr-1" aria-hidden="true"></i>
+          Previous article
+        </a>
+      {% else %}
+        <button class="btn btn__basic disabled" disabled>
+          <i class="far fa-arrow-left mr-1" aria-hidden="true"></i>
+          Previous article
+        </button>
+      {% endif %}
+      
+      {% if page.next %}
+        <a href="{{ page.next.url }}" class="btn btn__basic">
+          Next article
+          <i class="far fa-arrow-right ml-1" aria-hidden="true"></i>
+        </a>
+      {% else %}
+        <button class="btn btn__basic disabled" disabled>
+          Next article
+          <i class="far fa-arrow-right ml-1" aria-hidden="true"></i>
+        </button>
+      {% endif %}
+    </div>
+  </div>
+{% endif %}

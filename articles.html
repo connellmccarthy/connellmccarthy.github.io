@@ -1,11 +1,14 @@
 ---
 layout: default
 title: Articles
+cta_heading: Looking for more articles?
+slug: articles
 ---
 
 <h1 class="visually-hidden">Articles</h1>
 <div class="articles mt-6">
-  {% for article in site.articles %}
+  {% assign articles = site.articles | sort: "date" | reverse %}
+  {% for article in articles %}
     {% assign article_words = article.content | strip_html | strip_newlines | downcase | replace: 'and','' | replace: 'the','' | split:' ' %}
     {% assign word_count = article_words | size %}
 
@@ -23,3 +26,5 @@ title: Articles
       external = false %}
   {% endfor %}
 </div>
+
+{% include newsletter.html %}

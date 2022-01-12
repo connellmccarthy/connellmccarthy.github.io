@@ -1,17 +1,20 @@
-var token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJob3N0IjpbImh0dHA6Ly9sb2NhbGhvc3Q6NDAwMCIsImh0dHBzOi8vY29ubmVsbG1jY2FydGh5LmNvbSJdLCJpYXQiOjE2NDE3NDQ2Njd9.7Dv0xI60IIANn0PxyCf_4UR-1usidXMPYiKa3eyLHuk';
 const swup = new Swup({
-  plugins: [new SwupSlideTheme()],
-  animateHistoryBrowsing: true
+  plugins: [new SwupSlideTheme()]
 });
 init();
+
 swup.on('contentReplaced', init);
-swup.on('contentReplaced', function () {
-  window.scrollTo(0, 0);
-});
+
 function init() {
+  window.scrollTo(0,0);
+
   const like_button = document.getElementById('like_button');
   const article_info = document.querySelector('.article-info');
   const back_button = document.querySelector('button#back');
+  
+  if (confetti.isRunning()) {
+    confetti.stop()
+  }
 
   if (document.querySelector('button#video-controller')) {
     const button = document.querySelector('button#video-controller');
@@ -101,7 +104,7 @@ function init() {
       document.querySelector('.newsletter__submit').classList.add('loading');
       document.querySelector('.newsletter__submit').setAttribute('disabled', true);
       document.querySelector('.newsletter__email').setAttribute('disabled', true);
-    })
+    });
   }
 
   document.querySelectorAll('a').forEach((el) => {
@@ -147,18 +150,19 @@ function subscribe() {
   var ref = encodeURIComponent(document.forms['newsletter_form']['ref'].value);
   var entry_email = 'entry.1684792530';
   var entry_ref = 'entry.1800592224';
-  var base_url = 'https://docs.google.com/forms/d/e/1FAIpQLSdmipvslotruk2_Mg8S9R_Ux6IJklJgRKW1yUEd0225CjLWdg/formResponse?';
+  // var base_url = 'https://docs.google.com/forms/d/e/1FAIpQLSdmipvslotruk2_Mg8S9R_Ux6IJklJgRKW1yUEd0225CjLWdg/formResponse?';
+  var base_url = 'https://google.com?'
   var submitURL = (base_url + entry_email + '=' + email + '&' + entry_ref + '=' + ref + '&submit=Submit');
 
   if (email && ref) {
     document.querySelector('.newsletter_subscribe').setAttribute('src', submitURL);
     document.querySelector('.newsletter_subscribe').addEventListener('load', () => {
-      confetti.start();
-      setTimeout(function() {
-        confetti.stop();
-      },500);
-      document.querySelector('#newsletter__body').innerText = 'Thanks for subscribing!';
+      document.querySelector('.newsletter__icon').classList.add('success');
+      document.querySelector('i#newsletter__icon').classList.replace('fa-paper-plane', 'fa-check');
+      document.querySelector('#newsletter__heading').innerText = 'Thanks for subscribing!';
+      document.querySelector('#newsletter__body').innerText = 'You\'ll now receive email notifications whenever a new article is published.';
       document.querySelector('form.newsletter_form').remove();
+      confetti.start();
     });
   } else {
       console.log('Error: No values passed to function.');

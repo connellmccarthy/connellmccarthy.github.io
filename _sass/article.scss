@@ -1,9 +1,8 @@
 .article {
-  position: relative;
-  top: -100px;
+  margin-top: -100px;
 
   @media screen and (max-width: $break-mobile) {
-    top: -130px;
+    margin-top: -130px;
   }
 
   h1 {
@@ -12,12 +11,12 @@
     line-height: 1.4em;
     margin-top: 0;
   }
-  p {
+  p:not(.section p, .details p, .article-info-static p) {
     font-size: 1.2em;
     color: $color-ink-muted;
     margin: 2em 0;
   }
-  a:not(.btn) {
+  a:not(.btn, .card) {
     font-weight: 500;
     color: $color-ink;
     text-decoration: none;
@@ -55,7 +54,7 @@
 }
 .article-info-static {
   margin-top: 4em;
-  font-size: 0.8em;
+  font-size: 0.95em;
   display: flex;
   justify-content: space-between;
   @media screen and (max-width: $break-mobile) {
@@ -117,5 +116,16 @@
         font-size: 1.2em;
       }
     }
+  }
+}
+.articles {
+  margin-top: 2em;
+  a {
+    margin-bottom: 0.6em;
+  }
+}
+.product-list {
+  a.card:not(:last-of-type) {
+    margin-bottom: 0.6em;
   }
 }

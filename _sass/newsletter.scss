@@ -57,5 +57,29 @@
     border-radius: $border-radius-large;
     font-size: 1.4em;
     margin: 0 auto 1em;
+    transition: background 0.4s ease-in-out;
+    i {
+      position: relative;
+      top: -0.5px;
+      left: -0.5px;
+      text-shadow: 0px 2px 3px rgba(0,0,0,0.2);
+    }
+    &.success {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%), #1C9C38;
+
+      i {
+        top: 1px;
+        left: 1px;
+      }
+    }
+  }
+  canvas#confetti-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    pointer-events: none;
   }
 }

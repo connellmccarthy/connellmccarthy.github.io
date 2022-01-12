@@ -65,6 +65,13 @@ button.btn {
     }
   }
 
+  &.disabled {
+    background: $color-grey;
+    color: darken($color-grey, 25);
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+
   &.loading {
     color: transparent;
     position: relative;

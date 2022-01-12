@@ -7,6 +7,7 @@ url: "https://connellmccarthy.com" # the base hostname & protocol for your site,
 twitter_username: connellmccarthy
 github_username:  connellmccarthy
 permalink: pretty
+image_path: /assets/articles/
 
 sass:
   sass_dir: _sass

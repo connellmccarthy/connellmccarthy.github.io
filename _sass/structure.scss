@@ -10,7 +10,7 @@ $border-radius-large: 12px;
 
 .swup-transition-main {
   opacity: 1;
-  transition: opacity .3s, transform .4s;
+  transition: opacity 0.3s, transform 0.4s;
   transform: translate3d(0, 0, 0);
 }
 
@@ -47,7 +47,6 @@ html {
     display: inline-block !important;
   }
 }
-
 
 * {
   box-sizing: border-box;
@@ -137,10 +136,21 @@ img {
     padding: 3em;
     background: $color-grey;
     border: 1px solid $color-border;
+    position: relative;
 
     @media screen and (max-width: $break-mobile) {
       padding: 2em;
     }
+  }
+
+  &.border {
+    width: 100%;
+    border-top: 1px solid $color-border;
+  }
+
+  &.pagination {
+    margin: 4em 0 0;
+    padding: 2em 0;
   }
 
   @media screen and (max-width: $break-mobile) {
@@ -153,6 +163,7 @@ i.fa-arrow-right.external {
 }
 
 .card {
+  background: $color-white;
   border: 1px solid $color-border;
   padding: 1em;
   border-radius: $border-radius-normal;

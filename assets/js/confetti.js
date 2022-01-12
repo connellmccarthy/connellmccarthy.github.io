@@ -1,5 +1,5 @@
 var confetti = {
-	maxCount: 200,		//set max confetti count
+	maxCount: 30,		//set max confetti count
 	speed: 1,			//set the particle animation speed
 	frameInterval: 15,	//the confetti animation frame interval in milliseconds
 	alpha: 1.0,			//the alpha opacity of the confetti (between 0 and 1, where 1 is opaque and 0 is invisible)
@@ -40,9 +40,9 @@ var confetti = {
 		particle.color2 = colors[(Math.random() * colors.length) | 0] + (confetti.alpha + ")");
 		particle.x = Math.random() * width;
 		particle.y = Math.random() * height - height;
-		particle.diameter = Math.random() * 10 + 5;
+		particle.diameter = Math.random() * 4 + 5;
 		particle.tilt = Math.random() * 10 - 10;
-		particle.tiltAngleIncrement = Math.random() * 0.07 + 0.05;
+		particle.tiltAngleIncrement = Math.random() * 0.02 + 0.07;
 		particle.tiltAngle = Math.random() * Math.PI;
 		return particle;
 	}
@@ -87,8 +87,9 @@ var confetti = {
 	}
 
 	function startConfetti(timeout, min, max) {
-		var width = window.innerWidth;
-		var height = window.innerHeight;
+    var width = document.querySelector('.section.newsletter').offsetWidth * 1.5;
+    var height = document.querySelector('.section.newsletter').offsetHeight * 1.5;
+
 		window.requestAnimationFrame = (function() {
 			return window.requestAnimationFrame ||
 				window.webkitRequestAnimationFrame ||
@@ -103,13 +104,13 @@ var confetti = {
 		if (canvas === null) {
 			canvas = document.createElement("canvas");
 			canvas.setAttribute("id", "confetti-canvas");
-			canvas.setAttribute("style", "display:block;z-index:999999;pointer-events:none;position:fixed;top:0");
-			document.body.prepend(canvas);
-			canvas.width = width;
+			canvas.setAttribute("style", "display:block;z-index:3;pointer-events:none;position:absolute;top:0;left:0;");
+			document.querySelector('.section.newsletter').prepend(canvas);
+			canvas.width = document.querySelector('.section.newsletter').offsetWidth;
 			canvas.height = height;
 			window.addEventListener("resize", function() {
-				canvas.width = window.innerWidth;
-				canvas.height = window.innerHeight;
+				canvas.width = document.querySelector('.section.newsletter').offsetWidth * 1.5;
+				canvas.height = document.querySelector('.section.newsletter').offsetHeight * 1.5;
 			}, true);
 			context = canvas.getContext("2d");
 		} else if (context === null)
@@ -181,6 +182,7 @@ var confetti = {
 				context.strokeStyle = particle.color;
 			context.moveTo(x, particle.y);
 			context.lineTo(x2, y2);
+      // context.lineCap = 'round';
 			context.stroke();
 		}
 	}
@@ -189,16 +191,16 @@ var confetti = {
 		var width = window.innerWidth;
 		var height = window.innerHeight;
 		var particle;
-		waveAngle += 0.01;
+		waveAngle += 0.005;
 		for (var i = 0; i < particles.length; i++) {
 			particle = particles[i];
 			if (!streamingConfetti && particle.y < -15)
-				particle.y = height + 100;
+				particle.y = height + 500;
 			else {
 				particle.tiltAngle += particle.tiltAngleIncrement;
 				particle.x += Math.sin(waveAngle) - 0.5;
 				particle.y += (Math.cos(waveAngle) + particle.diameter + confetti.speed) * 0.5;
-				particle.tilt = Math.sin(particle.tiltAngle) * 15;
+				particle.tilt = Math.sin(particle.tiltAngle) * 10;
 			}
 			if (particle.x > width + 20 || particle.x < -20 || particle.y > height) {
 				if (streamingConfetti && particles.length <= confetti.maxCount)

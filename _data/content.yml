@@ -46,23 +46,23 @@ homepage:
       description: My Audio / Visual NFT series.
       url: https://moonrocks.ai
       external: true
-      image: moonrocks.jpg
+      image: /assets/img/projects/moonrocks.jpg
     - title: One Bill
       description: An app designed to keep track of sharing monthly expenses with ease.
       url: https://onebill.sh
       external: true
-      image: onebill.jpg
+      image: /assets/img/projects/onebill.jpg
       border: true
     - title: COVEO Music
       description: Chill, euphoric, dreampop music.
       url: http://coveomusic.com
       external: true
-      image: coveomusic.jpg
+      image: /assets/img/projects/coveomusic.jpg
     - title: Salété Music
       description: Dark, and upbeat electronic music.
       url: https://saletemusic.com
       external: true
-      image: saletemusic.jpg
+      image: /assets/img/projects/saletemusic.jpg
   articles:
     title: Featured Articles
 newsletter:

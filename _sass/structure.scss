@@ -5,6 +5,11 @@ $max-width: 1000px;
 $break-tablet: 1200px;
 $break-mobile: 768px;
 
+$sidebar-width: 25vw;
+$sidebar-max: 400px;
+
+$sidebar-tablet: 120px;
+
 $border-radius-normal: 6px;
 $border-radius-large: 12px;
 
@@ -110,6 +115,14 @@ h2 {
 }
 .app_pane {
   position: relative;
+  
+  max-width: calc(100vw - #{$sidebar-max});
+  @media screen and (max-width: $break-tablet) {
+    max-width: calc(100vw - #{$sidebar-tablet});
+  }
+  @media screen and (max-width: $break-mobile) {
+    max-width: 100%;
+  }
 }
 img {
   width: 100%;

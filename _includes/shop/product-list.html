@@ -1,0 +1,10 @@
+<div id="swup-product-list" class="transition-fade product-list">
+  {% for product in products %}
+    <div class="product">
+      <a href="{{ product.items[0].URL }}">
+        <img class="border-radius__large" src="{{ product.items[0].image_src }}">
+        <p>{{ product.name }}</p>
+      </a>
+    </div>
+  {% endfor %}
+</div>

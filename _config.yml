@@ -18,3 +18,11 @@ collections:
     sort_by: date
     permalink: "/:collection/:path/"
     future: false
+  collection:
+    output: true
+    sort_by: title
+    permalink: "/:collection/:path"
+  products:
+    output: true
+    sort_by: title
+    permalink: "/:collection/:path"

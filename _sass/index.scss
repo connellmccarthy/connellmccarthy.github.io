@@ -10,33 +10,7 @@ video {
     position: absolute;
     bottom: 2em;
     right: 2em;
-    -webkit-appearance: none;
-    appearance: none;
-    border: none;
-    background: $color-black;
-    height: 40px;
-    width: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: $color-white;
-    cursor: pointer;
     z-index: 2;
-    box-shadow: 0px 5px 15px -2px #00000040;
-    transition: 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-
-    &:hover {
-      background: lighten($color-black, 15);
-      transform: scale(1.12);
-    }
-
-    i {
-      top: 1px;
-      position: relative;
-      &.fa-play {
-        left: 1px;
-      }
-    }
   }
 }
 

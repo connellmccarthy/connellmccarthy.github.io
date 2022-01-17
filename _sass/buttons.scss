@@ -14,6 +14,29 @@ $sparkle-radius: $sparkle-diameter * 0.5;
   }
 }
 
+.toast {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: $color-black;
+  color: $color-white;
+  padding: 0.4em 1em;
+  width: max-content;
+  border-radius: $border-radius-normal / 2;
+  transform: translateY(calc(100% + 20px));
+  pointer-events: none;
+  box-shadow: 0px 5px 10px -5px #00000066;
+  opacity: 0;
+  transition: 0.4s ease-in-out;
+
+  &.left {
+    left: 0;
+  }
+  &.right {
+    right: 0;
+  }
+}
+
 a.btn,
 button.btn {
   -webkit-appearance: none;
@@ -28,6 +51,23 @@ button.btn {
   text-decoration: none;
   font-weight: 500;
   font-size: 0.95em;
+  position: relative;
+
+  &:hover {
+    .toast {
+      opacity: 1;
+      transform: translateY(calc(100% + 10px));
+    }
+  }
+
+  &__link {
+    background: transparent;
+    padding: 0;
+    color: $color-ink-muted;
+    &:hover {
+      color: $color-blue;
+    }
+  }
 
   &__plain {
     background: $color-grey;
@@ -43,6 +83,15 @@ button.btn {
     box-shadow: 0px 3px 2px -2px #0000001A;
     &:hover {
       background: $color-grey;
+    }
+  }
+
+  &__dark {
+    background: $color-black;
+    color: $color-white;
+    box-shadow: 0px 5px 15px -2px #00000040;
+    &:hover {
+      background: lighten($color-black, 15);
     }
   }
 
@@ -62,6 +111,17 @@ button.btn {
     i {
       position: relative;
       top: 1px;
+      &.fa-play {
+        left: 1px;
+      }
+    }
+  }
+
+  &__scale {
+    transform: scale(1);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    &:hover {
+      transform: scale(1.12);
     }
   }
 
@@ -74,7 +134,6 @@ button.btn {
 
   &.loading {
     color: transparent;
-    position: relative;
     pointer-events: none;
     background: darken($color-grey, 4);
     box-shadow: none;
@@ -109,7 +168,6 @@ button.btn {
   }
 
   &#like_button {
-    position: relative;
     &:after {
       content: '';
       z-index: 1;
@@ -179,7 +237,7 @@ input[type="email"] {
   border-radius: $border-radius-normal;
   border: 1px solid $color-border;
   color: inherit;
-  font-family: "Metro Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: $font-family;
   text-decoration: none;
   font-weight: 500;
   font-size: 0.95em;

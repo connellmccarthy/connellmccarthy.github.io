@@ -1,0 +1,14 @@
+<div class="audio border-radius__normal">
+  <div class="waveform" id="waveform-{{ include.id }}"></div>
+  <div class="flex a-center">
+    <div class="player">
+      <button class="btn btn__circle btn__dark btn__scale audio_wavesurfer" id="trigger-{{ include.id }}" data-id="{{ include.id }}" data-src="{{ include.src_prefix }}/{{ include.src }}">
+        <i id="icon-{{ include.id }}" class="fas fa-play" aria-hidden="true"></i>
+        <span class="visually-hidden">Play / Pause Audio</span>
+      </button>
+    </div>
+    <div class="info">
+      <p>{{ include.title }}</p>
+    </div>
+  </div>
+</div>

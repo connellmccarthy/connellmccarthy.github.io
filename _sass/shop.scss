@@ -1,0 +1,21 @@
+.filters {
+  width: 100%;
+  display: flex;
+  &.collections {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 2em 0 4em;
+
+    a {
+      margin: 0 0.2em 0.6em;
+    }
+  }
+}
+.product-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  .product {
+    padding: 0.4em;
+  }
+}

@@ -1,3 +1,9 @@
+code.highlighter-rouge {
+  padding: 0 0.4em;
+  border-radius: $border-radius-normal / 2;
+  background: darken($color-grey, 3);
+  color: #d93864;
+}
 .highlight pre { 
   background-color: $color-grey; 
   width: 100%;

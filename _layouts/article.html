@@ -13,22 +13,32 @@
         <main id="swup" class="transition-fade article" aria-live="polite">
           <div class="article-info">
             <div class="wrapper">
-              <a href="/articles" id="back" class="btn btn__basic">
-                <span class="visually-hidden">Go back</span>
+              <a href="/articles" class="btn btn__basic">
+                <span class="visually-hidden">Back to articles</span>
                 <i class="far fa-arrow-left" aria-hidden="true"></i>
               </a>
               <div class="details">
                 <p class="title">{{ page.title }}</p>
                 <p class="muted">{{ page.date | date: "%B %d, %Y" }}</p>
               </div>
-              <button id="like_button" class="btn btn__basic">
-                <i id="like_button_icon" class="far fa-heart"></i>
-                <span id="count">•</span>
+              <button id="like_button" class="btn btn__basic like_button">
+                <i class="far fa-heart like_button_icon"></i>
+                <span class="count">•</span>
               </button>
             </div>
           </div>
           <div class="wrapper">
-            <div class="thumbnail">
+            <div class="article-info-static">
+              <a href="/articles" id="back-link">
+                <i class="far fa-arrow-left mr-2" aria-hidden="true"></i>
+                <span>Back to articles</span>
+              </a>
+              <button id="like_button" class="btn btn__link like_button">
+                <i class="far fa-heart like_button_icon"></i>
+                <span class="count">•</span> likes
+              </button>
+            </div>
+            <div class="article_thumbnail">
               <img src="/assets/articles/{{ page.slug }}/{{ page.thumbnail }}">
             </div>
             <div class="article-info-static">

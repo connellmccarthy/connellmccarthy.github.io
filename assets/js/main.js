@@ -1,4 +1,6 @@
 const swup = new Swup({
+  linkSelector:
+    'a[href^="https://shop.connellmccarthy.com"]:not([data-no-swup]), a[href^="/"]:not([data-no-swup]), a[href^="#"]:not([data-no-swup])',
   plugins: [new SwupSlideTheme()]
 });
 init();
@@ -8,9 +10,11 @@ swup.on('contentReplaced', init);
 function init() {
   window.scrollTo(0,0);
 
-  const like_button = document.getElementById('like_button');
+  const like_button = document.querySelector('.like_button');
   const article_info = document.querySelector('.article-info');
   const back_button = document.querySelector('button#back');
+
+  var audio_playing;
   
   if (confetti.isRunning()) {
     confetti.stop()
@@ -32,55 +36,72 @@ function init() {
       }
     });
   }
-  if (document.getElementById('count')) {
-    const count_element = document.getElementById('count');
+  if (document.querySelector('.count')) {
     const slug = window.location.href.split('/')[4];
     let xhttp = new XMLHttpRequest();
     xhttp.open("GET", `https://data.connellmccarthy.com/.netlify/functions/api/article?ref=${slug}`, true);
     xhttp.setRequestHeader('Authorization', `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJob3N0IjpbImh0dHA6Ly9sb2NhbGhvc3Q6NDAwMCIsImh0dHBzOi8vY29ubmVsbG1jY2FydGh5LmNvbSJdLCJpYXQiOjE2NDE3NDQ2Njd9.7Dv0xI60IIANn0PxyCf_4UR-1usidXMPYiKa3eyLHuk`);
     xhttp.send();
     xhttp.onload = function() {
-      count_element.innerText = JSON.parse(xhttp.response).count;
+      document.querySelectorAll('.count').forEach((count_element) => {
+        count_element.innerText = JSON.parse(xhttp.response).count;
+      });
     }
   }
   if (like_button) {
     const slug = window.location.href.split('/')[4];
     if (window.localStorage.getItem(slug)) {
-      document.getElementById('like_button_icon').classList.replace('far', 'fas');
-      like_button.classList.add('liked');
+      document.querySelectorAll('.like_button_icon').forEach((el) => {
+        el.classList.replace('far', 'fas');
+      });
+      document.querySelectorAll('.like_button').forEach((el) => {
+        el.classList.add('liked');
+      });
     }
-    like_button.addEventListener('click', () => {
-      if (!like_button.classList.contains('liked')) {
-        let xhttp = new XMLHttpRequest();
-        xhttp.open("POST", `https://data.connellmccarthy.com/.netlify/functions/api/article?ref=${slug}`, true);
-        xhttp.setRequestHeader('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJob3N0IjpbImh0dHA6Ly9sb2NhbGhvc3Q6NDAwMCIsImh0dHBzOi8vY29ubmVsbG1jY2FydGh5LmNvbSJdLCJpYXQiOjE2NDE3NDQ2Njd9.7Dv0xI60IIANn0PxyCf_4UR-1usidXMPYiKa3eyLHuk');
-        xhttp.send();
-        xhttp.onload = () => {
-          like_button.classList.toggle('animate');
-          document.getElementById('like_button_icon').classList.replace('far', 'fas');
-          like_button.classList.add('liked');
-          window.localStorage.setItem(slug, true);
-          const count_element = document.getElementById('count');
-          let count = parseInt(count_element.innerText) + 1;
-          count_element.innerText = count;
+    document.querySelectorAll('.like_button').forEach((el) => {
+      el.addEventListener('click', () => {
+        if (!el.classList.contains('liked')) {
+          let xhttp = new XMLHttpRequest();
+          xhttp.open("POST", `https://data.connellmccarthy.com/.netlify/functions/api/article?ref=${slug}`, true);
+          xhttp.setRequestHeader('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJob3N0IjpbImh0dHA6Ly9sb2NhbGhvc3Q6NDAwMCIsImh0dHBzOi8vY29ubmVsbG1jY2FydGh5LmNvbSJdLCJpYXQiOjE2NDE3NDQ2Njd9.7Dv0xI60IIANn0PxyCf_4UR-1usidXMPYiKa3eyLHuk');
+          xhttp.send();
+          xhttp.onload = () => {
+            el.classList.toggle('animate');
+            document.querySelectorAll('.like_button_icon').forEach((icon) => {
+              icon.classList.replace('far', 'fas');
+            });
+            document.querySelectorAll('.like_button').forEach((like_button_all) => {
+              like_button_all.classList.add('liked');
+            });
+            window.localStorage.setItem(slug, true);
+            document.querySelectorAll('.count').forEach((count_element) => {
+              let count = parseInt(count_element.innerText) + 1;
+              count_element.innerText = count;
+            });
+          }
+        } else {
+          //Remove like
+          let xhttp = new XMLHttpRequest();
+          xhttp.open("DELETE", `https://data.connellmccarthy.com/.netlify/functions/api/article?ref=${slug}`, true);
+          xhttp.setRequestHeader('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJob3N0IjpbImh0dHA6Ly9sb2NhbGhvc3Q6NDAwMCIsImh0dHBzOi8vY29ubmVsbG1jY2FydGh5LmNvbSJdLCJpYXQiOjE2NDE3NDQ2Njd9.7Dv0xI60IIANn0PxyCf_4UR-1usidXMPYiKa3eyLHuk');
+          xhttp.send();
+          xhttp.onload = () => {
+            el.classList.toggle('animate');
+            document.querySelectorAll('.like_button_icon').forEach((icon) => {
+              icon.classList.replace('fas', 'far');
+            });
+            document.querySelectorAll('.like_button').forEach((like_button_all) => {
+              like_button_all.classList.remove('liked');
+            });
+            window.localStorage.removeItem(slug);
+            document.querySelectorAll('.count').forEach((count_element) => {
+              let count = parseInt(count_element.innerText) - 1;
+              count_element.innerText = count;
+            });
+          }
         }
-      } else {
-        //Remove like
-        let xhttp = new XMLHttpRequest();
-        xhttp.open("DELETE", `https://data.connellmccarthy.com/.netlify/functions/api/article?ref=${slug}`, true);
-        xhttp.setRequestHeader('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJob3N0IjpbImh0dHA6Ly9sb2NhbGhvc3Q6NDAwMCIsImh0dHBzOi8vY29ubmVsbG1jY2FydGh5LmNvbSJdLCJpYXQiOjE2NDE3NDQ2Njd9.7Dv0xI60IIANn0PxyCf_4UR-1usidXMPYiKa3eyLHuk');
-        xhttp.send();
-        xhttp.onload = () => {
-          like_button.classList.toggle('animate');
-          document.getElementById('like_button_icon').classList.replace('fas', 'far');
-          like_button.classList.remove('liked');
-          window.localStorage.removeItem(slug);
-          const count_element = document.getElementById('count');
-          let count = parseInt(count_element.innerText) - 1;
-          count_element.innerText = count;
-        }
-      }
-    });
+      });
+    })
   }
   if (article_info) {
     window.addEventListener('scroll', () => {
@@ -107,6 +128,45 @@ function init() {
     });
   }
 
+  if (document.querySelector('.audio_wavesurfer')) {
+    document.querySelectorAll('.audio_wavesurfer').forEach((el) => {
+      let id = el.getAttribute('data-id');
+      let newAudio = WaveSurfer.create({
+        container: `#waveform-${id}`,
+        id: id,
+        barWidth: 3,
+        barHeight: 1,
+        barRadius: 3,
+        barGap: 3,
+        normalize: true,
+        waveColor: '#DADADA',
+        progressColor: '#5200FF',
+        cursorWidth: 0,
+        responsive: true,
+        fillParent: true
+      });
+      newAudio.load(el.getAttribute('data-src'));
+      const icon = document.getElementById(`icon-${id}`);
+      el.addEventListener('click', () => {
+        if (icon.classList.contains('fa-play')) {
+          if (audio_playing) {
+            audio_playing.pause();
+            document.getElementById(`icon-${audio_playing.params.id}`).classList.replace('fa-pause', 'fa-play');
+            audio_playing = newAudio;
+          } else {
+            audio_playing = newAudio;
+          }
+          newAudio.play();
+          icon.classList.replace('fa-play', 'fa-pause');
+        } else {
+          newAudio.pause();
+          icon.classList.replace('fa-pause', 'fa-play');
+          audio_playing = null;
+        }
+      });
+    });
+  }
+
   document.querySelectorAll('a').forEach((el) => {
     el.addEventListener('click', () => {
       switchPage(el.getAttribute('href'));
@@ -119,15 +179,26 @@ function switchPage(url) {
     document.querySelector('.fade.menu-trigger').classList.toggle('active');
   }
   if (url.includes('/articles')) {
-    if (document.getElementById('nav-work').classList.contains('active')) {
-      document.getElementById('nav-articles').classList.add('active');
-      document.getElementById('nav-work').classList.remove('active');
-    }
+    document.querySelectorAll('.nav__link').forEach((el) => {
+      if (el.classList.contains('active')) {
+        el.classList.toggle('active');
+      }
+    });
+    document.getElementById('nav-articles').classList.add('active');
   } else if (url == '/') {
-    if (document.getElementById('nav-articles').classList.contains('active')) {
-      document.getElementById('nav-work').classList.add('active');
-      document.getElementById('nav-articles').classList.remove('active');
-    }
+    document.querySelectorAll('.nav__link').forEach((el) => {
+      if (el.classList.contains('active')) {
+        el.classList.toggle('active');
+      }
+    });
+    document.getElementById('nav-work').classList.add('active');
+  } else if (url.includes('/shop')) {
+    document.querySelectorAll('.nav__link').forEach((el) => {
+      if (el.classList.contains('active')) {
+        el.classList.toggle('active');
+      }
+    });
+    document.getElementById('nav-shop').classList.add('active');
   }
 }
 

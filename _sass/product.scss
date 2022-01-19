@@ -47,15 +47,16 @@
       width: fit-content;
     }
     h1 {
-      font-weight: 500;
-      font-size: 2em;
-      line-height: 1em;
+      font-weight: 600;
+      font-size: 2.6em;
+      line-height: 1.4em;
       margin: 0;
       width: -moz-fit-content;
       width: fit-content;
     }
-    p.pricing {
-      font-size: 0.8em;
+    p.price {
+      margin: 0.2em 0 1em;
+      font-size: 1.2em;
     }
   }
 
@@ -65,7 +66,7 @@
     h1 {
       color: $color-white;
     }
-    p.pricing {
+    p.price {
       color: darken($color-white, 5);
     }
   }
@@ -113,5 +114,27 @@
         font-size: 0.8em;
       }
     }
+  }
+}
+.product-description {
+  width: 100%;
+  max-width: 800px;
+  margin: 120px auto;
+  text-align: center;
+  font-size: 1.2em;
+  line-height: 2em;
+
+  p {
+    color: $color-ink-muted;
+
+    &:first-of-type {
+      font-size: 1.2em;
+      font-weight: 600;
+      color: $color-ink;
+    }
+  }
+
+  @media screen and (max-width: $break-mobile) {
+    text-align: left;
   }
 }

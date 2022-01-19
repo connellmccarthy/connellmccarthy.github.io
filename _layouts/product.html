@@ -29,7 +29,9 @@
           </div>
           {% include shop/product-features.html %}
           <div class="wrapper">
-            {{ page.body_html }}
+            <div class="product-description">
+              {{ page.body_html }}
+            </div>
           </div>
           {% include pagination.html type='product' %}
         </main>

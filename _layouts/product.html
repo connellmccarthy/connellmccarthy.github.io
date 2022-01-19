@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include head.html %}
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar__container">
+        {% include sidebar.html %}
+      </div>
+      <div class="app_pane">
+        {% include navigation.html %}
+        <main id="swup" class="transition-fade" aria-live="polite">
+          <div class="product-header {% if page.style == 'dark' %}dark{% endif %}">
+            <img src="{{ page.images[2].src }}">
+            <div class="wrapper">
+              <a class="btn btn__link" href="/shop">
+                <i class="fal fa-arrow-left mr-2" aria-hidden="true"></i>
+                Shop all products
+              </a>
+              <div class="product-info">
+                <h1 class="title">{{ page.title }}</h1>
+                <p class="muted price">Starting from ${{ page.variants[0].price | money }}</p>
+                <button id="buying_options" class="btn btn__dark">
+                  Buying options
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="wrapper">
+            {{ page.body_html }}
+          </div>
+          {% include pagination.html type='product' %}
+        </main>
+      </div>
+    </div>
+    {% include scripts.html %}
+  </body>
+</html>

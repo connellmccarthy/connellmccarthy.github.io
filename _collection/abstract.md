@@ -1,14 +1,6 @@
 ---
-title: "Abstract"
-identifier: "abstract"
+title: Abstract
+identifier: abstract
 collection_list: true
-layout: default
-draft: false
-slug: "abstract"
+layout: collection
 ---
-
-{% include shop/collections.html %}
-
-{% assign products = site.data.products | where: "Tags", page.identifier | group_by: "Title" %}
-
-{% include shop/product-list.html %}

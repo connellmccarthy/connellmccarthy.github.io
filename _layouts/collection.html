@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include head.html %}
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar__container">
+        {% include sidebar.html %}
+      </div>
+      <div class="app_pane">
+        {% include navigation.html %}
+        <main id="swup" class="transition-fade" aria-live="polite">
+          <div class="wrapper">
+            {% include shop/collections.html %}
+            <div class="shop-product-list">
+              {% for product in site.products %}
+                {% assign page_tags = page.identifier | split: ', ' %}
+                {% assign product_tags = product.tags | replace: ',', ', ' %}
+                {% assign display = false %}
+                {% for tag in page_tags %}
+                  {% if product_tags contains tag %}
+                    {% assign display = true %}
+                  {% endif %}
+                {% endfor %}
+                {% if display %}
+                  {% include shop/product-card.html %}
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    {% include scripts.html %}
+  </body>
+</html>

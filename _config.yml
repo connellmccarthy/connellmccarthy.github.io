@@ -21,8 +21,8 @@ collections:
   collection:
     output: true
     sort_by: title
-    permalink: "/:collection/:path"
+    permalink: "shop/:collection/:path"
   products:
     output: true
     sort_by: title
-    permalink: "/:collection/:path"
+    permalink: "shop/:collection/:path"

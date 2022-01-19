@@ -47,23 +47,27 @@ homepage:
       url: https://moonrocks.ai
       external: true
       image: /assets/img/projects/moonrocks.jpg
+      icon: photo-video
     - title: One Bill
       description: An app designed to keep track of sharing monthly expenses with ease.
       url: https://onebill.sh
       external: true
       image: /assets/img/projects/onebill.jpg
+      icon: wallet
       border: true
     - title: COVEO Music
       description: Chill, euphoric, dreampop music.
       url: http://coveomusic.com
       external: true
       image: /assets/img/projects/coveomusic.jpg
+      icon: music
     - title: Salété Music
       description: Dark, and upbeat electronic music.
       url: https://saletemusic.com
       external: true
       image: /assets/img/projects/saletemusic.jpg
+      icon: music
   articles:
     title: Featured Articles
 newsletter:
-  body: Get notified whenever I publish a new article, and I promise I will never spam your inbox.
+  body: Get notified whenever I publish something new, like a new article or a new product.

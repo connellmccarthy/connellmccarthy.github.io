@@ -9,7 +9,9 @@ slug: shop
 
 {% include shop/collections.html %}
 
-{% assign products = site.data.products | group_by: "Title" %}
+{{ site.products.size }} products
+
+{% assign products = site.products %}
 {% include shop/product-list.html %}
 
 {% include newsletter.html %}

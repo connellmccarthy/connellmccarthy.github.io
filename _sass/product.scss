@@ -5,7 +5,7 @@
   overflow: hidden;
   position: relative;
   margin-top: -151px;
-  border-bottom: 1px solid $color-border;
+  // border-bottom: 1px solid $color-border;
 
   @media screen and (max-width: $break-mobile) {
     height: 90vh;
@@ -67,6 +67,51 @@
     }
     p.pricing {
       color: darken($color-white, 5);
+    }
+  }
+}
+.product-features {
+  width: 100%;
+  border-top: 1px solid $color-border;
+  border-bottom: 1px solid $color-border;
+  margin-bottom: 40px;
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    
+    li {
+      padding: 30px;
+      width: 25%;
+      text-align: center;
+      border-right: 1px solid $color-border;
+
+      &:last-of-type {
+        border-right: none;
+      }
+
+      @media screen and (max-width: $break-mobile) {
+        width: 50%;
+
+        &:nth-of-type(1),
+        &:nth-of-type(2) {
+          border-bottom: 1px solid $color-border;
+        }
+        &:nth-of-type(even) {
+          border-right: none;
+        }
+      }
+
+      p {
+        margin: 8px 0 0;
+        line-height: 1em;
+        font-size: 0.8em;
+      }
     }
   }
 }

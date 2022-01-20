@@ -20,7 +20,7 @@
               </a>
               <div class="product-info">
                 <h1 class="title">{{ page.title }}</h1>
-                <p class="muted price">Starting from ${{ page.variants[0].price | money }}</p>
+                <p class="muted price">Starting from ${{ page.variants[0].price | money }} CAD</p>
                 <button id="buying_options" class="btn btn__dark">
                   Buying options
                 </button>
@@ -31,6 +31,44 @@
           <div class="wrapper">
             <div class="product-description">
               {{ page.body_html }}
+            </div>
+            <div class="product_page">
+              <div class="product_image">
+                <img id="product_image" src="{{ page.images[0].src }}">
+              </div>
+              <div class="product_form">
+                <p class="title">{{ page.title }}</p>
+                <p class="price" id="product_price">${{ page.variants[0].price | money }} CAD</p>
+                <hr />
+
+                <form id="AddToCartForm">
+                  <div class="options">
+                    {% assign options = page.options | reverse %}
+                    {% for option in options %}
+                      {% assign option_index = forloop.index0 %}
+                      {% assign is_color = false %}
+                      {% assign downcased_option = option.name | downcase %}
+                      {% if downcased_option contains 'color' or downcased_option contains 'colour' %}
+                        {% assign is_color = true %}
+                      {% endif %}
+                      <p class="header muted">{{ option.name }}</p>
+                      {% for value in option.values %}
+                        <div data-value="{{ value | escape }}" class="swatch-element {% if is_color %}color {% endif %}{{ value | slugify }}">
+                          <input class="{% if is_color %}color {% endif %} {{ value | slugify }}" id="swatch-{{ option_index }}-{{ value | slugify }}" type="radio" name="option-{{ option_index }}" value="{{ value | escape }}"{% if forloop.first %} checked{% endif %} />
+                          <label class="{% if is_color %}color {% endif %} {{ value | slugify }}" for="swatch-{{ option_index }}-{{ value | slugify }}">
+                            {{ value }}
+                          </label>
+                        </div>
+                      {% endfor %}
+                    {% endfor %}
+                    <select name="variant_id">
+                      {% for variant in page.variants %}
+                        <option value="{{ variant.id }}">{{ variant.title }} - ${{ variant.price }}CAD</option>
+                      {% endfor %}
+                    </select>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
           {% include pagination.html type='product' %}

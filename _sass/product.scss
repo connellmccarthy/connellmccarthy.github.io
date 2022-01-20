@@ -5,10 +5,9 @@
   overflow: hidden;
   position: relative;
   margin-top: -151px;
-  // border-bottom: 1px solid $color-border;
 
   @media screen and (max-width: $break-mobile) {
-    height: 90vh;
+    height: 76vh;
   }
 
   img {
@@ -68,6 +67,20 @@
     }
     p.price {
       color: darken($color-white, 5);
+    }
+
+    a.btn__link {
+      color: $color-white;
+      &:hover {
+        color: lighten($color-blue, 30);
+      }
+    }
+    button.btn__dark {
+      background: $color-white;
+      color: $color-ink;
+      &:hover {
+        background: darken($color-white, 10);
+      }
     }
   }
 }
@@ -134,5 +147,208 @@
 
   @media screen and (max-width: $break-mobile) {
     text-align: left;
+  }
+}
+.product_page {
+  width: 100%;
+  margin:auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: $break-tablet) {
+    width: 100%;
+  }
+
+  .product_image {
+    width: 55%;
+
+    @media screen and (max-width: $break-tablet) {
+      width: 50%;
+    }
+    @media screen and (max-width: $break-mobile) {
+      width: 100%;
+    }
+
+    img {
+      width: 100%;
+      border-radius: $border-radius-large;
+    }
+  }
+
+  .product_form {
+    width: 45%;
+    padding-left: 40px;
+
+    p {
+      &.title {
+        font-size: 1.6em;
+        font-weight: 500;
+        margin: 0;
+      }
+      &.price {
+        margin: 0.2em 0 2em;
+        font-size: 1.2em;
+      }
+    }
+    hr {
+      border: none;
+      border-bottom: 1px solid $color-border;
+      margin-bottom: 40px;
+    }
+
+    .options {
+      .selector-wrapper {
+        display: none;
+      }
+    }
+
+    .quantity {
+      margin: 40px 0;
+    }
+
+    .quant_select {
+      display: flex;
+      margin-top: 1em;
+
+      input {
+        appearance: none;
+        -webkit-appearance: none;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        border-radius: 0;
+        border-top: 1px solid $color-border;
+        border-bottom: 1px solid $color-border;
+        width: 5em;
+        height: 43px;
+        text-align: center;
+      }
+
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      input[type=number] {
+        -moz-appearance: textfield;
+      }
+
+      button {
+        border-color: $color-border;
+        border-radius: 0;
+        padding: 12px 18px;
+        margin: 0;
+
+        &:first-of-type {
+          border-radius: 25px 0 0 25px;
+        }
+        &:last-of-type {
+          border-radius: 0 25px 25px 0;
+        }
+
+        i {
+          left: 0;
+        }
+        &:hover {
+          background: lighten($color-border, 18%);
+          color: $color-ink;
+          i {
+            left: 0;
+          }
+        }
+      }
+    }
+
+    button[type="submit"] {
+      width: 100%;
+    }
+
+    .print-info {
+      font-size: 0.8em;
+      line-height: 2em;
+      margin-top: 2em;
+    }
+
+    @media screen and (max-width: $break-tablet) {
+      width: 50%;
+    }
+    @media screen and (max-width: $break-mobile) {
+      width: 100%;
+      padding-left: 0;
+      margin-top: 40px;
+    }
+  }
+}
+.swatch-element {
+  display: inline-block;
+  position: relative;
+  margin: 0 4px 8px 0;
+
+  input {
+    appearance: none;
+    -webkit-appearance: none;
+    background: none;
+    border: 2px solid;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    opacity: 0.0001;
+    cursor: pointer;
+
+    &:hover + label {
+      background: darken($color-white, 5%);
+      color: $color-ink;
+    }
+    &:checked + label {
+      background: $color-ink;
+      border-color: $color-ink;
+      color: $color-white;
+
+      &:hover + label {
+        background: $color-ink;
+        color: $color-white;
+      }
+    }
+  }
+  label {
+    background: $color-white;
+    position: relative;
+    display: block;
+    border-radius: 50px;
+    font-weight: 500;
+    border: 1px solid $color-border;
+    box-shadow: 0px 4px 15px -15px rgb(0, 0, 0);
+    padding: 12px 24px 12px 24px;
+
+    &.color {
+      padding: 12px 24px 12px 42px;
+
+      &:after {
+        content: '';
+        height: 22px;
+        width: 22px;
+        position: absolute;
+        top: 50%;
+        left: 12px;
+        transform: translateY(-50%);
+        border-radius: 50%;
+      }
+
+      &.full-colour {
+        &:after {
+          background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), conic-gradient(from 180deg at 50% 50%, #E45959 0deg, #E4B559 80.63deg, #96E194 170.63deg, #588DDC 264.38deg, #E45959 360deg), linear-gradient(0deg, #D9D9D9, #D9D9D9);
+        }
+      }
+      &.black-white {
+        &:after {
+          background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), conic-gradient(from 180deg at 50% 50%, #414141 0deg, #222222 105deg, #868686 241.88deg, #414141 360deg), linear-gradient(0deg, #000000, #000000);
+        }
+      }
+    }
   }
 }

@@ -167,6 +167,15 @@ function init() {
     });
   }
 
+  if (document.querySelector('#buying_options')) {
+    document.querySelector('#buying_options').addEventListener('click', () => {
+      window.scrollTo({
+        top: document.querySelector('.product_page').offsetTop,
+        behavior: 'smooth'
+      });
+    });
+  }
+
   document.querySelectorAll('a').forEach((el) => {
     el.addEventListener('click', () => {
       switchPage(el.getAttribute('href'));

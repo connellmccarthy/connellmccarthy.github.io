@@ -87,7 +87,7 @@
     list-style-type: none;
     
     li {
-      padding: 30px;
+      padding: 2em;
       width: 25%;
       text-align: center;
       border-right: 1px solid $color-border;
@@ -109,9 +109,7 @@
       }
 
       p {
-        margin: 8px 0 0;
-        line-height: 1em;
-        font-size: 0.8em;
+        margin: 0.4em 0 0;
       }
     }
   }

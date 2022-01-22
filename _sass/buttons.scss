@@ -95,8 +95,16 @@ button.btn {
     }
   }
 
+  &__padding-large {
+    padding: 1.2em 2em;
+  }
+
   &__icon {
     font-size: 1.2em;
+  }
+
+  &__round {
+    border-radius: 50px;
   }
 
   &__circle {

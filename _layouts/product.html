@@ -4,6 +4,7 @@
     {% include head.html %}
   </head>
   <body>
+    {% assign product = page %}
     <div class="container">
       <div class="sidebar__container">
         {% include sidebar.html %}
@@ -21,7 +22,7 @@
               <div class="product-info">
                 <h1 class="title">{{ page.title }}</h1>
                 <p class="muted price">Starting from ${{ page.variants[0].price | money }} CAD</p>
-                <button id="buying_options" class="btn btn__dark">
+                <button id="buying_options" class="btn btn__dark btn__round btn__padding-large">
                   Buying options
                 </button>
               </div>
@@ -53,28 +54,91 @@
                       {% endif %}
                       <p class="header muted">{{ option.name }}</p>
                       {% for value in option.values %}
-                        <div data-value="{{ value | escape }}" class="swatch-element {% if is_color %}color {% endif %}{{ value | slugify }}">
-                          <input class="{% if is_color %}color {% endif %} {{ value | slugify }}" id="swatch-{{ option_index }}-{{ value | slugify }}" type="radio" name="option-{{ option_index }}" value="{{ value | escape }}"{% if forloop.first %} checked{% endif %} />
+                        <div data-value="{{ value | slugify }}" class="swatch-element {% if is_color %}color {% endif %}{{ value | slugify }}">
+                          <input class="{% if is_color %}color {% endif %} {{ value | slugify }}" id="swatch-{{ option_index }}-{{ value | slugify }}" type="radio" name="option-{{ option_index }}" value="{{ value | slugify }}"{% if forloop.first %} checked{% endif %} data-value="{{ value }}"/>
                           <label class="{% if is_color %}color {% endif %} {{ value | slugify }}" for="swatch-{{ option_index }}-{{ value | slugify }}">
                             {{ value }}
                           </label>
                         </div>
                       {% endfor %}
                     {% endfor %}
-                    <select name="variant_id">
-                      {% for variant in page.variants %}
-                        <option value="{{ variant.id }}">{{ variant.title }} - ${{ variant.price }}CAD</option>
-                      {% endfor %}
-                    </select>
+                    <input type="hidden" name="id" id="product-select" value="{{ product.variants.first.id }}" />
+                    <input type="hidden" name="id" id="product-image" value="{{ product.images[0].src }}" />
+                    <button type="submit" class="btn btn__dark btn__round btn__padding-large">
+                      Add to cart
+                    </button>
                   </div>
                 </form>
               </div>
             </div>
           </div>
+          <script data-swup-reload-script>
+            document.querySelectorAll('input[type="radio"]').forEach(el => {
+              el.addEventListener('change', () => {
+                letsDoThis();
+              });
+            });
+            function letsDoThis() {
+              {% if product.options[0] %}var opt2 = document.querySelector('input[type="radio"][name="option-0"]:checked').value;{% endif %}
+              {% if product.options[1] %}var opt1 = document.querySelector('input[type="radio"][name="option-1"]:checked').value;{% endif %}
+
+              console.log(`opt1: ${opt1} | opt2: ${opt2}`);
+
+              var id = '';
+              {% for v in product.variants %}
+              if(opt1=="{{ v.option1 | slugify }}"{% if product.options[1] %} && opt2=="{{ v.option2 | slugify }}"{% endif %}) {
+                  var id = {{ v.id }};
+                  var price = "{{ v.price | money }}";
+                  {% assign image = product.images | where: 'id', v.image_id %}
+                  var image = '{{ image[0].src }}';
+                }
+              {% endfor %}
+              if(id!='') {
+                document.getElementById('product-select').value = id;
+                document.getElementById('product-image').value = image;
+                document.getElementById('product_image').src = image;
+                document.getElementById('product_price').innerText = `$${price} CAD`;
+
+              } else {
+                document.getElementById('product-select').value = '';
+                document.getElementById('product-image').value = '';
+                document.getElementById('product_price').innerText = 'Unavailable';
+              }
+            }
+            document.getElementById('AddToCartForm').addEventListener('submit', (event) => {
+              event.preventDefault();
+              let id = document.getElementById('product-select').value;
+              let image = document.getElementById('product-image').value;
+              let option1 = document.querySelector('[name="option-0"]:checked').getAttribute('data-value');
+              let option2 = document.querySelector('[name="option-1"]:checked').getAttribute('data-value');
+              let price = document.getElementById('product_price').innerText;
+              var product = {
+                id: id,
+                image: image,
+                option1: option1,
+                option2: option2,
+                price: price
+              };
+              if (window.localStorage.getItem('cart')) {
+                let cart = window.localStorage.getItem('cart');
+                cart = cart.substring(0, cart.length, -1) + ', "product": ' + JSON.stringify(product) + '}';
+                window.localStorage.setItem('cart', cart);
+              } else {
+                //Need to reevaluate the JSON formatting on these.
+                //https://www.codegrepper.com/code-examples/javascript/json+with+multiple+objects
+                let cart = `{"product": ${JSON.stringify(product) }}`;
+                document.querySelector('.notif').classList.toggle('.active');
+                window.localStorage.setItem('cart', cart);
+              }
+              toggleModal();
+              getCartItems();
+            });
+          </script>
           {% include pagination.html type='product' %}
         </main>
       </div>
     </div>
+    {% include cart.html %}
     {% include scripts.html %}
   </body>
 </html>

@@ -1,0 +1,49 @@
+<button class="btn cart cart-trigger">
+  <div class="notif"></div>
+  <i class="fal fa-shopping-bag"></i>
+  <span class="visually-hidden">Cart</span>
+</button>
+
+<div class="fade cart-trigger"></div>
+<div class="cart__modal">
+  <h2>Your cart</h2>
+  <div class="loading"></div>
+</div>
+
+<script>
+  if (window.localStorage.getItem('cart')) {
+    document.querySelector('.notif').classList.toggle('.active');
+  }
+
+  document.querySelectorAll('.cart-trigger').forEach((el) => {
+    el.addEventListener('click', () => {
+      if (!document.querySelector('.cart__modal').classList.contains('active')) {
+        toggleModal();
+        getCartItems();
+      } else {
+        toggleModal();
+      }
+    });
+  });
+  function toggleModal() {
+    document.querySelector('.cart__modal').classList.toggle('active');
+    document.querySelector('.fade.cart-trigger').classList.toggle('active');
+  }
+  function getCartItems() {
+    console.log('loading');
+    document.querySelector('.cart__modal .loading').classList.toggle('active');
+    if (window.localStorage.getItem('cart')) {
+
+    } else {
+      //No items
+      document.querySelector('.cart__modal .loading').classList.toggle('active');
+      if (!document.getElementById('cart__result')) {
+        let result = document.createElement('p');
+        result.classList.add('muted');
+        result.setAttribute('id', 'cart__result');
+        result.innerText = 'No products in your cart.';
+        document.querySelector('.cart__modal').appendChild(result);
+      }
+    }
+  }
+</script>

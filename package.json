@@ -6,7 +6,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "fetch_products": "node products.js"
+    "fetch_products": "node products.js",
+    "serve": "bundle exec jekyll serve --host=0.0.0.0"
   },
   "repository": {
     "type": "git",

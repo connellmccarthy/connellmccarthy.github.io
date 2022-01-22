@@ -6,8 +6,8 @@
 </p>
 
 <div class="filters collections">
-  <a href="/shop" class="btn {% if page.url == '/shop/' %}btn__dark{% else %}btn__basic{% endif %}">All</a>  
+  <a href="/shop" class="btn {% if page.url == '/shop/' %}btn__dark{% else %}btn__basic{% endif %} btn__round">All</a>  
   {% for collection in site.collection %}
-    <a class="btn {% if page.url == collection.url %}btn__dark{% else %}btn__basic{% endif %}" href="{{ collection.url }}">{{ collection.title }}</a>
+    <a class="btn {% if page.url == collection.url %}btn__dark{% else %}btn__basic{% endif %} btn__round" href="{{ collection.url }}">{{ collection.title }}</a>
   {% endfor %}
 </div>

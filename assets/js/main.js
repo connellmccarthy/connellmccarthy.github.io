@@ -1,7 +1,11 @@
 const swup = new Swup({
   linkSelector:
     'a[href^="https://shop.connellmccarthy.com"]:not([data-no-swup]), a[href^="/"]:not([data-no-swup]), a[href^="#"]:not([data-no-swup])',
-  plugins: [new SwupSlideTheme()]
+  plugins: [new SwupSlideTheme(), new SwupScriptsPlugin({
+    optin: true,
+    head: false,
+    body: true
+  })]
 });
 init();
 

@@ -1,6 +1,6 @@
-.mobile-controller {
+.mobile-controller { 
   display: none;
-  padding: 3em 0;
+  padding: 3em 0 2em;
   position: relative;
   z-index: 3;
   @media screen and (max-width: $break-mobile) {

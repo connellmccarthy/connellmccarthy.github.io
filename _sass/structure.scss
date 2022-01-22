@@ -83,6 +83,11 @@ a,button {
     outline: 2px solid lighten($color-blue, 30);
   }
 }
+main {
+  @media screen and (max-width: $break-mobile) {
+    padding-bottom: 8em;
+  }
+}
 
 h1,h2,h3,p {
   line-height: 1.6em;

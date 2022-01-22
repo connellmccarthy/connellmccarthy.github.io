@@ -75,10 +75,11 @@ body {
   background: $color-white;
   color: $color-ink;
   font-family: $font-family;
-  font-size: 13px;
+  font-size: 14px;
 }
 
-a,button {
+a,button,
+input {
   &:focus {
     outline: 2px solid lighten($color-blue, 30);
   }

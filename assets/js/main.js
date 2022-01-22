@@ -187,17 +187,21 @@ function init() {
   }
 
   let nav = document.querySelector('.mobile-controller');
+  let desktop_nav = document.querySelector('.nav__container');
   if (document.querySelector('.product-header')) {
     if (document.querySelector('.product-header').classList.contains('dark')) {
       nav.classList.add('dark');
+      desktop_nav.classList.add('dark');
     } else {
       if (nav.classList.contains('dark')) {
         nav.classList.remove('dark');
+        desktop_nav.classList.remove('dark');
       }
     }
   } else {
     if (nav.classList.contains('dark')) {
       nav.classList.remove('dark');
+      desktop_nav.classList.remove('dark');
     }
   }
 

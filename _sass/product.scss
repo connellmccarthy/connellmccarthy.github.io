@@ -314,6 +314,10 @@
         color: $color-white;
       }
     }
+    &:focus + label,
+    &:active + label {
+      outline: 2px solid lighten($color-blue, 30);
+    }
   }
   label {
     background: $color-white;

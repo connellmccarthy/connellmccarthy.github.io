@@ -66,6 +66,7 @@
                     <input type="hidden" name="url" id="product-url" value="{{ page.url }}" />
                     <input type="hidden" name="id" id="product-select" value="{{ product.variants.first.id }}" />
                     <input type="hidden" name="image" id="product-image" value="{{ product.images[0].src }}" />
+                    <input type="hidden" name="price" id="product-price" value="{{ product.variants.first.price }}" />
                     <button type="submit" class="btn btn__dark btn__round btn__padding-large">
                       Add to cart
                     </button>
@@ -88,7 +89,7 @@
               {% for v in product.variants %}
               if(opt1=="{{ v.option1 | slugify }}"{% if product.options[1] %} && opt2=="{{ v.option2 | slugify }}"{% endif %}) {
                   var id = {{ v.id }};
-                  var price = "{{ v.price | money }}";
+                  var price = {{ v.price }};
                   {% assign image = product.images | where: 'id', v.image_id %}
                   var image = '{{ image[0].src }}';
                 }
@@ -97,6 +98,7 @@
                 document.getElementById('product-select').value = id;
                 document.getElementById('product-image').value = image;
                 document.getElementById('product_image').src = image;
+                document.getElementById('product-price').value = price;
                 document.getElementById('product_price').innerText = `$${price} CAD`;
 
               } else {
@@ -112,7 +114,7 @@
               let title = document.getElementById('product-title').value;
               let option1 = document.querySelector('[name="option-0"]:checked').getAttribute('data-value');
               let option2 = document.querySelector('[name="option-1"]:checked').getAttribute('data-value');
-              let price = document.getElementById('product_price').innerText;
+              let price = document.getElementById('product-price').value;
               let url = document.getElementById('product-url').value;
               var product = {
                 id: id,

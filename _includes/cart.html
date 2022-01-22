@@ -7,8 +7,20 @@
 <div class="fade cart-trigger"></div>
 <div class="cart__modal">
   <h2>Your cart</h2>
+  <div class="cart_buttons mb-10">
+    <button id="checkout" form="cart_form" class="btn btn__dark btn__round btn__padding-large disabled" type="submit" name="checkout" disabled>Checkout</button>
+    <span class="muted">or</span>
+    <a class="btn btn__link cart-trigger" href="/shop">
+      Continue shopping
+      <i class="fal fa-arrow-right ml-1" aria-hidden="true"></i>
+    </a>
+  </div>
+  <div class="subtotal">
+    <p class="title">Subtotal</p>
+    <p class="price">$<span id="subtotal">0</span> CAD</p>
+  </div>
   <div class="loading"></div>
-  <div id="cart__items"></div>
+  <form id="cart_form"></form>
 </div>
 
 <script>
@@ -30,19 +42,38 @@
     document.querySelector('.cart__modal').classList.toggle('active');
     document.querySelector('.fade.cart-trigger').classList.toggle('active');
   }
+  function createEmptyText() {
+    if (!document.getElementById('cart__result')) {
+      let result = document.createElement('p');
+      result.classList.add('muted');
+      result.setAttribute('id', 'cart__result');
+      result.innerText = 'No products in your cart.';
+      document.querySelector('.cart__modal').appendChild(result);
+    }
+  }
+
   function getCartItems() {
-    console.log('loading');
     document.querySelector('.cart__modal .loading').classList.toggle('active');
     if (window.localStorage.getItem('cart')) {
       if (document.getElementById('cart__result')) {
         document.getElementById('cart__result').remove();
       }
-      document.getElementById('cart__items').innerHTML = '';
+      document.getElementById('checkout').classList.remove('disabled');
+      document.getElementById('checkout').setAttribute('disabled', false);
+      document.getElementById('cart_form').innerHTML = '';
       const cart = JSON.parse(window.localStorage.getItem('cart')).reverse();
+      var subtotal = 0;
       cart.forEach((product) => {
+        subtotal += Number(product.price);
         //Create wrapper
         let result = document.createElement('div');
         result.classList.add('product');
+        result.setAttribute('id', `product-${product.id}`);
+
+        let id = document.createElement('input');
+        id.setAttribute('type', 'hidden');
+        id.value = product.id;
+        result.appendChild(id);
 
         //Create contents
 
@@ -83,6 +114,7 @@
 
         let remove_item = document.createElement('button');
         remove_item.classList.add('btn', 'btn__circle', 'btn__basic', 'btn__icon');
+        remove_item.setAttribute('data-id', `product-${product.id}`);
         let remove_item_icon = document.createElement('i');
         remove_item_icon.classList.add('far', 'fa-times');
         remove_item_icon.setAttribute('aria-hidden', true);
@@ -105,18 +137,31 @@
         result.appendChild(controls);
 
         //Add it to the cart
-        document.getElementById('cart__items').appendChild(result);
+        document.getElementById('cart_form').appendChild(result);
+        remove_item.addEventListener('click', () => {
+          document.getElementById(remove_item.getAttribute('data-id')).remove();
+          if (cart.length == 1) {
+            window.localStorage.removeItem('cart');
+            document.querySelector('.notif').classList.toggle('active');
+            document.getElementById('checkout').classList.add('disabled');
+            document.getElementById('checkout').setAttribute('disabled', true);
+            createEmptyText();
+          } else {
+            let index = cart.indexOf(product);
+            if (index != -1) {
+              cart.splice(index, 1);
+            }
+            window.localStorage.setItem('cart', JSON.stringify(cart));
+          }
+          subtotal -= Number(product.price);
+          document.getElementById('subtotal').innerText = subtotal;
+        });
       });
+      document.getElementById('subtotal').innerText = subtotal;
       document.querySelector('.cart__modal .loading').classList.toggle('active');
     } else {
       document.querySelector('.cart__modal .loading').classList.toggle('active');
-      if (!document.getElementById('cart__result')) {
-        let result = document.createElement('p');
-        result.classList.add('muted');
-        result.setAttribute('id', 'cart__result');
-        result.innerText = 'No products in your cart.';
-        document.querySelector('.cart__modal').appendChild(result);
-      }
+      createEmptyText();
     }
   }
 </script>

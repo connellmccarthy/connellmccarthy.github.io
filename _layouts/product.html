@@ -62,8 +62,10 @@
                         </div>
                       {% endfor %}
                     {% endfor %}
+                    <input type="hidden" name="title" id="product-title" value="{{ product.title }}" />
+                    <input type="hidden" name="url" id="product-url" value="{{ page.url }}" />
                     <input type="hidden" name="id" id="product-select" value="{{ product.variants.first.id }}" />
-                    <input type="hidden" name="id" id="product-image" value="{{ product.images[0].src }}" />
+                    <input type="hidden" name="image" id="product-image" value="{{ product.images[0].src }}" />
                     <button type="submit" class="btn btn__dark btn__round btn__padding-large">
                       Add to cart
                     </button>
@@ -75,14 +77,12 @@
           <script data-swup-reload-script>
             document.querySelectorAll('input[type="radio"]').forEach(el => {
               el.addEventListener('change', () => {
-                letsDoThis();
+                selectVariant();
               });
             });
-            function letsDoThis() {
+            function selectVariant() {
               {% if product.options[0] %}var opt2 = document.querySelector('input[type="radio"][name="option-0"]:checked').value;{% endif %}
               {% if product.options[1] %}var opt1 = document.querySelector('input[type="radio"][name="option-1"]:checked').value;{% endif %}
-
-              console.log(`opt1: ${opt1} | opt2: ${opt2}`);
 
               var id = '';
               {% for v in product.variants %}
@@ -109,27 +109,29 @@
               event.preventDefault();
               let id = document.getElementById('product-select').value;
               let image = document.getElementById('product-image').value;
+              let title = document.getElementById('product-title').value;
               let option1 = document.querySelector('[name="option-0"]:checked').getAttribute('data-value');
               let option2 = document.querySelector('[name="option-1"]:checked').getAttribute('data-value');
               let price = document.getElementById('product_price').innerText;
+              let url = document.getElementById('product-url').value;
               var product = {
                 id: id,
+                title: title,
                 image: image,
                 option1: option1,
                 option2: option2,
-                price: price
+                price: price,
+                url: url
               };
+              var cart;
               if (window.localStorage.getItem('cart')) {
-                let cart = window.localStorage.getItem('cart');
-                cart = cart.substring(0, cart.length, -1) + ', "product": ' + JSON.stringify(product) + '}';
-                window.localStorage.setItem('cart', cart);
+                cart = JSON.parse(window.localStorage.getItem('cart'));
               } else {
-                //Need to reevaluate the JSON formatting on these.
-                //https://www.codegrepper.com/code-examples/javascript/json+with+multiple+objects
-                let cart = `{"product": ${JSON.stringify(product) }}`;
-                document.querySelector('.notif').classList.toggle('.active');
-                window.localStorage.setItem('cart', cart);
+                cart = new Array;
+                document.querySelector('.notif').classList.toggle('active');
               }
+              cart.push(product)
+              window.localStorage.setItem('cart', JSON.stringify(cart));
               toggleModal();
               getCartItems();
             });

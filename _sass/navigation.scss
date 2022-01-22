@@ -3,6 +3,20 @@
   padding: 3em 0 2em;
   position: relative;
   z-index: 3;
+
+  &.dark {
+    h1,
+    p.h1 {
+      color: $color-white;
+    }
+    p.muted {
+      color: darken($color-white, 15);
+    }
+    .btn__plain {
+      background: $color-black;
+      color: $color-white;
+    }
+  }
   @media screen and (max-width: $break-mobile) {
     display: block;
     text-align: center;

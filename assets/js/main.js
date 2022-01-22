@@ -180,6 +180,27 @@ function init() {
     });
   }
 
+  if (document.querySelector('.notif')) {
+    if (window.localStorage.getItem('cart')) {
+      document.querySelector('.notif').classList.add('active');
+    }
+  }
+
+  let nav = document.querySelector('.mobile-controller');
+  if (document.querySelector('.product-header')) {
+    if (document.querySelector('.product-header').classList.contains('dark')) {
+      nav.classList.add('dark');
+    } else {
+      if (nav.classList.contains('dark')) {
+        nav.classList.remove('dark');
+      }
+    }
+  } else {
+    if (nav.classList.contains('dark')) {
+      nav.classList.remove('dark');
+    }
+  }
+
   document.querySelectorAll('a').forEach((el) => {
     el.addEventListener('click', () => {
       switchPage(el.getAttribute('href'));

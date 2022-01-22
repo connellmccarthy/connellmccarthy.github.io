@@ -8,6 +8,7 @@
 <div class="cart__modal">
   <h2>Your cart</h2>
   <div class="loading"></div>
+  <div id="cart__items"></div>
 </div>
 
 <script>
@@ -33,9 +34,81 @@
     console.log('loading');
     document.querySelector('.cart__modal .loading').classList.toggle('active');
     if (window.localStorage.getItem('cart')) {
+      if (document.getElementById('cart__result')) {
+        document.getElementById('cart__result').remove();
+      }
+      document.getElementById('cart__items').innerHTML = '';
+      const cart = JSON.parse(window.localStorage.getItem('cart')).reverse();
+      cart.forEach((product) => {
+        //Create wrapper
+        let result = document.createElement('div');
+        result.classList.add('product');
 
+        //Create contents
+
+        //Create image + link
+        let image = document.createElement('div');
+        image.classList.add('image', 'border-radius__normal');
+        let link = document.createElement('a');
+        link.setAttribute('href', product.url);
+        link.addEventListener('click', toggleModal);
+        let img = document.createElement('img');
+        img.setAttribute('src', product.image);
+        img.setAttribute('alt', `${product.title} - ${product.option1} / ${product.option2}`)
+
+        link.appendChild(img);
+        image.appendChild(link);
+
+        //Create controls
+        let controls = document.createElement('div');
+        controls.classList.add('controls');
+        
+        //Top
+        let top = document.createElement('div');
+        top.classList.add('top');
+        let details = document.createElement('div');
+        details.classList.add('details');
+
+        let text_link = document.createElement('a');
+        text_link.setAttribute('href', product.url);
+        text_link.addEventListener('click', toggleModal);
+        text_link.innerHTML = `<p class="title">${product.title}</p>`;
+        details.appendChild(text_link);
+
+        let variant = document.createElement('p');
+        variant.classList.add('variant', 'muted');
+        variant.innerText = `${product.option1} / ${product.option2}`;
+        details.appendChild(variant);
+        top.appendChild(details);
+
+        let remove_item = document.createElement('button');
+        remove_item.classList.add('btn', 'btn__circle', 'btn__basic', 'btn__icon');
+        let remove_item_icon = document.createElement('i');
+        remove_item_icon.classList.add('far', 'fa-times');
+        remove_item_icon.setAttribute('aria-hidden', true);
+        let remove_item_text = document.createElement('span');
+        remove_item_text.innerText = 'Remove product';
+        remove_item_text.classList.add('visually-hidden');
+        remove_item.appendChild(remove_item_icon).appendChild(remove_item_text);
+        top.appendChild(remove_item);
+
+        controls.appendChild(top);
+
+        let bottom = document.createElement('div');
+        bottom.classList.add('bottom');
+
+        controls.appendChild(bottom);
+
+
+        //Put it together
+        result.appendChild(image);
+        result.appendChild(controls);
+
+        //Add it to the cart
+        document.getElementById('cart__items').appendChild(result);
+      });
+      document.querySelector('.cart__modal .loading').classList.toggle('active');
     } else {
-      //No items
       document.querySelector('.cart__modal .loading').classList.toggle('active');
       if (!document.getElementById('cart__result')) {
         let result = document.createElement('p');

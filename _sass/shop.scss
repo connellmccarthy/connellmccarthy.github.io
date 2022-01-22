@@ -88,7 +88,11 @@ button.cart {
     transform: translate(-50%, 0);
   }
 
-  .loading {
+  input[type="text"] {
+    width: 100%;
+  }
+
+  .loading_spinner {
     height: 45px;
     width: 45px;
     border-top: 4px solid $color-blue;
@@ -96,7 +100,7 @@ button.cart {
     border-bottom: 4px solid rgba(0,0,0,0.2);
     border-left: 4px solid rgba(0,0,0,0.2);
     border-radius: 50%;
-    animation-name: loading;
+    animation-name: loading_spinner;
     animation-duration: 1s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
@@ -108,7 +112,7 @@ button.cart {
       display: block;
     }
   }
-  @keyframes loading {
+  @keyframes loading_spinner {
     from {
       transform: rotate(0deg);
     }
@@ -211,7 +215,11 @@ button.cart {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        margin-top: 30px;
+
+        p.price {
+          font-weight: 500;
+          font-size: 1em;
+        }
       }
 
       @media screen and (max-width: $break-mobile) {

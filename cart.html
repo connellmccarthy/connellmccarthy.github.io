@@ -1,0 +1,15 @@
+---
+layout: default
+title: Cart
+permalink: '/shop/cart'
+---
+
+<script>
+  var checkCart = setInterval(() => {
+    if (document.querySelector('.cart__modal')) {
+      toggleModal();
+      getCartItems();
+      clearInterval(checkCart);
+    }
+  },10);
+</script>

@@ -41,7 +41,6 @@
                 <p class="title">{{ page.title }}</p>
                 <p class="price" id="product_price">${{ page.variants[0].price | money }} CAD</p>
                 <hr />
-
                 <form id="AddToCartForm">
                   <div class="options">
                     {% assign options = page.options | reverse %}
@@ -67,9 +66,13 @@
                     <input type="hidden" name="id" id="product-select" value="{{ product.variants.first.id }}" />
                     <input type="hidden" name="image" id="product-image" value="{{ product.images[0].src }}" />
                     <input type="hidden" name="price" id="product-price" value="{{ product.variants.first.price }}" />
+                    <hr class="mt-10" />
                     <button type="submit" class="btn btn__dark btn__round btn__padding-large">
                       Add to cart
                     </button>
+                    {% if page.product_type == 'Photo Print' %}
+                      <p class="muted print-info">This gorgeous photograph is printed on a premium 240gsm paper with a satin lustre finish, and subtle pearl-like texture. It’s printed using water based inks, contains no plastic and is sustainably sourced from FSC-approved forests.</p>
+                    {% endif %}
                   </div>
                 </form>
               </div>

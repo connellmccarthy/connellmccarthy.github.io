@@ -46,12 +46,16 @@
       width: fit-content;
     }
     h1 {
-      font-weight: 600;
+      font-weight: 500;
       font-size: 2.6em;
       line-height: 1.4em;
       margin: 0;
       width: -moz-fit-content;
       width: fit-content;
+
+      @media screen and (max-width: $break-mobile) {
+        max-width: 50vw;
+      }
     }
     p.price {
       margin: 0.2em 0 1em;
@@ -140,7 +144,7 @@
 
     &:first-of-type {
       font-size: 1.2em;
-      font-weight: 600;
+      font-weight: 500;
       color: $color-ink;
     }
   }

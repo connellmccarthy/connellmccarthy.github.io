@@ -6,21 +6,24 @@
 
 <div class="fade cart-trigger"></div>
 <div class="cart__modal">
-  <h2>Your cart</h2>
-  <div class="cart_buttons mb-10">
-    <button id="checkout" form="cart_form" class="btn btn__dark btn__round btn__padding-large disabled" type="submit" name="checkout" disabled>Checkout</button>
-    <span class="muted">or</span>
-    <a class="btn btn__link cart-trigger" href="/shop/collections/all">
-      Continue shopping
-      <i class="fal fa-arrow-right ml-1" aria-hidden="true"></i>
-    </a>
+  <button class="btn cart__modal__resizer"></button>
+  <div class="cart__modal__contents">
+    <h2>Your cart</h2>
+    <div class="cart_buttons mb-10">
+      <button id="checkout" form="cart_form" class="btn btn__dark btn__round btn__padding-large disabled" type="submit" name="checkout" disabled>Checkout</button>
+      <span class="muted">or</span>
+      <a class="btn btn__link cart-trigger" href="/shop/collections/all">
+        Continue shopping
+        <i class="fal fa-arrow-right ml-1" aria-hidden="true"></i>
+      </a>
+    </div>
+    <div class="subtotal">
+      <p class="title">Subtotal</p>
+      <p class="price">$<span id="subtotal">0</span> CAD</p>
+    </div>
+    <div class="loading_spinner"></div>
+    <form id="cart_form"></form>
   </div>
-  <div class="subtotal">
-    <p class="title">Subtotal</p>
-    <p class="price">$<span id="subtotal">0</span> CAD</p>
-  </div>
-  <div class="loading_spinner"></div>
-  <form id="cart_form"></form>
 </div>
 
 <script>
@@ -41,6 +44,7 @@
   function toggleModal() {
     document.querySelector('.cart__modal').classList.toggle('active');
     document.querySelector('.fade.cart-trigger').classList.toggle('active');
+    document.querySelector('body').classList.toggle('no-scroll');
   }
   function createEmptyText() {
     if (!document.getElementById('cart__result')) {
@@ -48,7 +52,7 @@
       result.classList.add('muted');
       result.setAttribute('id', 'cart__result');
       result.innerText = 'No products in your cart.';
-      document.querySelector('.cart__modal').appendChild(result);
+      document.querySelector('.cart__modal__contents').appendChild(result);
     }
   }
 
@@ -193,4 +197,26 @@
       createEmptyText();
     }
   }
+
+  document.querySelector('.cart__modal__resizer').addEventListener('click', () => {
+    toggleModal();
+  });
+
+  // var touchstart = 0;
+  // var allowsize = true;
+  // document.querySelector('.cart__modal__resizer').addEventListener('touchmove', (touch) => {
+  //   const modal = document.querySelector('.cart__modal');
+  //   modal.style.height = `${modal.clientHeight}px`;
+  //   if (touchstart == 0) {
+  //     touchstart = touch.touches[0].screenY;
+  //   }
+  //   var touchdiff = touchstart - touch.touches[0].screenY;
+  //   console.log(touchdiff);
+  //   if (allowsize) {
+  //     modal.style.height = `${Number(modal.style.height) + Math.round(touchdiff)}px`;
+  //   } else {
+
+  //   }
+  //   console.log(`height: ${document.querySelector('.cart__modal').style.height}`);
+  // })
 </script>

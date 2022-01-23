@@ -18,7 +18,7 @@
     .image {
       margin-left: 8em;
       @media screen and (max-width: $break-mobile) {
-        margin: 0;
+        margin: 0 0 2em;
       }
     }
   }
@@ -27,7 +27,7 @@
     .image {
       margin-right: 8em;
       @media screen and (max-width: $break-mobile) {
-        margin: 0;
+        margin: 0 0 2em;
       }
     }
   }
@@ -49,7 +49,6 @@
     width: calc(50% - 4em);
 
     @media screen and (max-width: $break-mobile) {
-      margin-bottom: 2em;
       width: 100%;
     }
     .product-tag {
@@ -141,7 +140,7 @@
       margin: 0;
       &.title {
         font-size: 1.1em;
-        font-weight: 600;
+        font-weight: 500;
         margin-top: 0.6em;
       }
     }
@@ -204,13 +203,44 @@ button.cart {
   max-height: 80vh;
   bottom: -1px;
   left: 50%;
-  overflow-y: scroll;
   z-index: 99;
   border-radius: 2em 2em 0 0;
-  padding: 3em 3em 10em;
+  padding: 3em 0 0;
   text-align: center;
   transform: translate(-50%, 100%);
   transition: transform 0.6s cubic-bezier(0.76, 0, 0.24, 1);
+
+  &__contents {
+    max-height: calc(80vh - 2em);
+    overflow-y: scroll;
+    padding: 0 3em 3em;
+  }
+  &__resizer {
+    position: absolute !important;
+    background: none !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3em;
+
+    &:before,
+    &:after {
+      content: '';
+      height: 4px;
+      width: 20px;
+      background: $color-border;
+      border-radius: 5px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+    }
+    &:before {
+      transform: translate(-10%, -50%) rotate(-20deg);
+    }
+    &:after {
+      transform: translate(-90%, -50%) rotate(20deg);
+    }
+  }
 
   &.active {
     transform: translate(-50%, 0);
@@ -251,7 +281,7 @@ button.cart {
 
   h2 {
     font-size: 2.4em;
-    font-weight: 600;
+    font-weight: 500;
     font-style: normal;
   }
 
@@ -414,7 +444,7 @@ button.cart {
 
     p {
       &.price {
-        font-weight: 600;
+        font-weight: 500;
       }
     }
   }

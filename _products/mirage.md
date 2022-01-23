@@ -1,5 +1,6 @@
 ---
 layout: product
+product_id: 2062531067966
 id: 2062531067966
 title: Mirage
 body_html: >-

@@ -1,0 +1,9 @@
+{% assign products = include.product_ids | split: ',' %}
+{% for id in products %}
+  {% assign products = site.products | where: 'product_id', id %}
+  {% for product in products %}
+    {% include shop/product-card.html 
+        compressed = include.compressed
+      %}
+  {% endfor %}
+{% endfor %}

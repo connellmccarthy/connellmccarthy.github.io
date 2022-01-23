@@ -1,5 +1,6 @@
 ---
 layout: product
+product_id: 1491351765054
 id: 1491351765054
 title: Walking Amongst Giants
 body_html: >-

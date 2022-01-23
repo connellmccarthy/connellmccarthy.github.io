@@ -1,5 +1,6 @@
 ---
 layout: product
+product_id: 1491333611582
 id: 1491333611582
 title: Columbia Icefield
 body_html: >-

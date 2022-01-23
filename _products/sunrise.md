@@ -1,8 +1,9 @@
 ---
 layout: product
+product_id: 6628428906558
+style: dark
 id: 6628428906558
 title: Sunrise
-style: dark
 body_html: >-
   <p>Handcrafted in Ottawa, Ontario.</p>
 
@@ -11,12 +12,12 @@ vendor: Connell McCarthy
 product_type: Fine art
 created_at: 2021-07-27T17:02:08-04:00
 handle: sunrise
-updated_at: 2022-01-18T10:42:45-05:00
+updated_at: 2022-01-23T11:51:05-05:00
 published_at: 2021-07-27T17:09:56-04:00
 template_suffix: dark
 status: active
 published_scope: global
-tags: "abstract"
+tags: abstract
 admin_graphql_api_id: gid://shopify/Product/6628428906558
 variants:
   - id: 39544989024318

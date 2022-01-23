@@ -18,7 +18,7 @@ collections:
     sort_by: date
     permalink: "/:collection/:path/"
     future: false
-  collection:
+  collections:
     output: true
     sort_by: title
     permalink: "shop/:collection/:path"
@@ -26,3 +26,9 @@ collections:
     output: true
     sort_by: title
     permalink: "shop/:collection/:path"
+
+pagination:
+  enabled: true
+  collection: 'products'
+  per_page: 9
+  permalink: '/page/:num'

@@ -1,5 +1,6 @@
 ---
 layout: product
+product_id: 1491337609278
 id: 1491337609278
 title: Foggy Babel
 body_html: >-

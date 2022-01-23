@@ -1,5 +1,6 @@
 ---
 layout: product
+product_id: 1491340460094
 id: 1491340460094
 title: Lake Louise
 body_html: >-

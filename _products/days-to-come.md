@@ -1,8 +1,9 @@
 ---
 layout: product
+product_id: 6626197864510
+style: dark
 id: 6626197864510
 title: Days to Come
-style: dark
 body_html: >-
   <p>Handcrafted in Ottawa, Ontario.</p>
 
@@ -11,12 +12,12 @@ vendor: Connell McCarthy
 product_type: Fine art
 created_at: 2021-07-26T11:39:32-04:00
 handle: days-to-come
-updated_at: 2022-01-18T10:42:45-05:00
+updated_at: 2022-01-23T11:51:05-05:00
 published_at: 2021-07-27T17:09:55-04:00
 template_suffix: dark
 status: active
 published_scope: global
-tags: "abstract"
+tags: abstract
 admin_graphql_api_id: gid://shopify/Product/6626197864510
 variants:
   - id: 39543081566270

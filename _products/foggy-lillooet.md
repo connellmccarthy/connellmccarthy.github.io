@@ -1,5 +1,6 @@
 ---
 layout: product
+product_id: 1419063164990
 id: 1419063164990
 title: Foggy Lillooet
 body_html: >-

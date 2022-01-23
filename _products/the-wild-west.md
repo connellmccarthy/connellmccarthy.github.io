@@ -1,5 +1,6 @@
 ---
 layout: product
+product_id: 1419072864318
 id: 1419072864318
 title: The Wild West
 body_html: >-

@@ -67,6 +67,13 @@ button.btn {
     &:hover {
       color: $color-blue;
     }
+
+    &.blue {
+      color: $color-blue;
+      &:hover {
+        color: darken($color-blue, 20);
+      }
+    }
   }
 
   &__plain {

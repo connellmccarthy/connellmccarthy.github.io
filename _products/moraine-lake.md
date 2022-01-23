@@ -1,5 +1,6 @@
 ---
 layout: product
+product_id: 1491345014846
 id: 1491345014846
 title: Moraine Lake
 body_html: >-

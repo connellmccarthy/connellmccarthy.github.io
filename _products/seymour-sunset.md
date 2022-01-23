@@ -1,5 +1,6 @@
 ---
 layout: product
+product_id: 1419067555902
 id: 1419067555902
 title: Seymour Sunset
 body_html: >-

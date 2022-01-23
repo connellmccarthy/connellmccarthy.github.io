@@ -1,6 +1,7 @@
-<div class="product">
+<div class="product{% if include.compressed %} compressed{%endif%}">
   <a href="{{ product.url }}">
     <img class="border-radius__large" src="{{ product.image.src }}">
-    <p>{{ product.title }}</p>
+    <p class="title">{{ product.title }}</p>
+    <p class="muted-light">Starting at ${{ product.variants.first.price }} CAD</p>
   </a>
 </div>

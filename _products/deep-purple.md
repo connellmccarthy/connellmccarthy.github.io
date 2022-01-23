@@ -1,5 +1,6 @@
 ---
 layout: product
+product_id: 1419062116414
 id: 1419062116414
 title: Deep Purple
 body_html: >-

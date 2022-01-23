@@ -1,16 +1,13 @@
 ---
 layout: default
-title: Shop
+title: All
 cta_heading: Looking for more products?
-slug: shop
-permalink: '/shop/collection/all'
+slug: shop-all
 ---
 
 <h1 class="visually-hidden">Shop</h1>
 
 {% include shop/collections.html %}
-
-{{ site.products.size }} products
 
 {% assign products = site.products %}
 {% include shop/product-list.html %}

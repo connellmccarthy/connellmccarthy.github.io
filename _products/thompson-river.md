@@ -1,5 +1,6 @@
 ---
 layout: product
+product_id: 2062562492478
 id: 2062562492478
 title: Thompson River
 body_html: >-

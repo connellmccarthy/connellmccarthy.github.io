@@ -1,5 +1,6 @@
 ---
 layout: product
+product_id: 1491348783166
 id: 1491348783166
 title: Pilot Mountain
 body_html: >-

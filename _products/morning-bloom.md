@@ -1,5 +1,6 @@
 ---
 layout: product
+product_id: 1491345965118
 id: 1491345965118
 title: Morning Bloom
 body_html: >-

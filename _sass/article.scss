@@ -21,7 +21,7 @@
     color: $color-ink-muted;
     margin: 2em 0;
   }
-  a:not(.btn, .card, #back-link) {
+  a:not(.btn, .card, #back-link, .product a) {
     font-weight: 500;
     color: $color-ink;
     text-decoration: none;

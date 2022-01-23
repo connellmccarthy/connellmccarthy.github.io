@@ -1,5 +1,6 @@
 ---
 layout: product
+product_id: 1419071258686
 id: 1419071258686
 title: The Cold Ones
 body_html: >-

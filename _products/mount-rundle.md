@@ -1,5 +1,6 @@
 ---
 layout: product
+product_id: 1491347767358
 id: 1491347767358
 title: Mount Rundle
 body_html: >-

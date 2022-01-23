@@ -1,3 +1,98 @@
+.intro-text {
+  text-align: center;
+  margin: 4em 0;
+}
+.shop-section {
+  margin: 10em 0;
+
+  @media screen and (max-width: $break-mobile) {
+    margin: 6em 0;
+  }
+
+  &.flex {
+    flex-wrap: wrap;
+  }
+
+  &.image-right {
+    flex-wrap: wrap-reverse;
+    .image {
+      margin-left: 8em;
+      @media screen and (max-width: $break-mobile) {
+        margin: 0;
+      }
+    }
+  }
+  &.image-left {
+    flex-wrap: wrap;
+    .image {
+      margin-right: 8em;
+      @media screen and (max-width: $break-mobile) {
+        margin: 0;
+      }
+    }
+  }
+
+  &.full {
+    .content {
+      max-width: 400px;
+      margin: auto;
+      text-align: center;
+
+      @media screen and (max-width: $break-mobile) {
+        text-align: left;
+        max-width: unset;
+      }
+    }
+  }
+  .image {
+    position: relative;
+    width: calc(50% - 4em);
+
+    @media screen and (max-width: $break-mobile) {
+      margin-bottom: 2em;
+      width: 100%;
+    }
+    .product-tag {
+      position: absolute;
+      bottom: 1em;
+      left: 1em;
+
+      &:hover {
+        &:after {
+          opacity: 1;
+        }
+      }
+
+      &:after {
+        content: attr(data-pop);
+        position: absolute;
+        top: 50%;
+        left: 50px;
+        transform: translateY(-50%);
+        background: $color-black;
+        color: $color-white;
+        padding: 0.4em;
+        font-size: 0.8em;
+        height: fit-content;
+        width: max-content;
+        opacity: 0;
+        padding: 0.4em 1em;
+        border-radius: 50px;
+        transition: .4s ease-in-out;
+        pointer-events: none;
+        @media screen and (max-width: $break-mobile) {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .content:not(.shop-section.full .content) {
+    width: calc(50% - 4em);
+    @media screen and (max-width: $break-mobile) {
+      width: 100%;
+    }
+  }
+}
 .filters {
   width: 100%;
   display: flex;
@@ -15,8 +110,41 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 
+  &.two {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (max-width: $break-mobile) {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .product {
     padding: 0.4em;
+    margin: 0 0 3em;
+
+    &.compressed {
+      img {
+        object-fit: cover;
+        max-height: 400px;
+      }
+    }
+
+    img.image-block {
+      object-fit: cover;
+      height: calc(100% - 0.4em - 75px);
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    p {
+      margin: 0;
+      &.title {
+        font-size: 1.1em;
+        font-weight: 600;
+        margin-top: 0.6em;
+      }
+    }
   }
 }
 

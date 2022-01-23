@@ -1,5 +1,6 @@
 ---
 layout: product
+product_id: 1419071094846
 id: 1419071094846
 title: Tantalus Valley
 body_html: >-

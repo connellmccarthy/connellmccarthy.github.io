@@ -1,5 +1,6 @@
 ---
 layout: product
+product_id: 1419058446398
 id: 1419058446398
 title: Britannia Sunrise
 body_html: >-

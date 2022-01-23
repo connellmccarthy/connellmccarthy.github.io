@@ -19,8 +19,13 @@ const products = await shopify.product.list({
 
 products.forEach(product => {
   const layout = {
-    layout: 'product'
+    layout: 'product',
+    product_id: product.id
   }
+  if (product.product_type == 'Fine art') {
+    layout.style = 'dark'
+  }
+  
   const contents = `---
 ${YAML.stringify(Object.assign(layout, product))}
 ---`

@@ -1,5 +1,6 @@
 ---
 layout: product
+product_id: 1491350323262
 id: 1491350323262
 title: Snow Dome
 body_html: >-

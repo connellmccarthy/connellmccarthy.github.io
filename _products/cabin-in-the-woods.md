@@ -1,5 +1,6 @@
 ---
 layout: product
+product_id: 1419059527742
 id: 1419059527742
 title: Cabin in the Woods
 body_html: >-

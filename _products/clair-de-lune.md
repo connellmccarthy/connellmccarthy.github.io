@@ -1,5 +1,6 @@
 ---
 layout: product
+product_id: 1419060740158
 id: 1419060740158
 title: Clair de Lune
 body_html: >-

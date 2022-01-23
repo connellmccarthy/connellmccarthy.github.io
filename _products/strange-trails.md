@@ -1,5 +1,6 @@
 ---
 layout: product
+product_id: 1419068670014
 id: 1419068670014
 title: Strange Trails
 body_html: >-

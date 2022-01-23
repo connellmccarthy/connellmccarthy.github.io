@@ -1,5 +1,6 @@
 ---
 layout: product
+product_id: 1419064148030
 id: 1419064148030
 title: Hotel California
 body_html: >-

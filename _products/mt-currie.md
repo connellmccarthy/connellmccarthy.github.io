@@ -1,5 +1,6 @@
 ---
 layout: product
+product_id: 2062539653182
 id: 2062539653182
 title: Mt. Currie
 body_html: >-

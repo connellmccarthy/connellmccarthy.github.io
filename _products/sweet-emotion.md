@@ -1,5 +1,6 @@
 ---
 layout: product
+product_id: 1419070013502
 id: 1419070013502
 title: Sweet Emotion
 body_html: >-

@@ -122,6 +122,7 @@ h2 {
 .center {
   text-align: center;
   margin: auto;
+  width: fit-content;
 }
 .flex {
   display: flex;
@@ -190,7 +191,7 @@ img {
 .section {
   margin: 4em 0;
 
-  &:first-of-type {
+  &:first-of-type:not(.shop-section) {
     margin-top: 0;
   }
 
@@ -199,6 +200,10 @@ img {
     background: $color-grey;
     border: 1px solid $color-border;
     position: relative;
+
+    &.no-border {
+      border: none;
+    }
 
     @media screen and (max-width: $break-mobile) {
       padding: 2em;

@@ -1,9 +1,57 @@
+.modal {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background: $color-black;
+  z-index: 999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: 0.4s ease-in-out;
+
+  .btn.close {
+    font-size: 1em;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 12px 17px;
+    background: $color-white;
+    z-index: 999;
+
+    @media screen and (max-width: $break-mobile) {
+      top: 10px;
+      right: 10px;
+    }
+  }
+
+  .video_wrapper {
+    transform: scale(0.5);
+    transition: 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  &.active {
+    display: flex;
+    opacity: 1;
+
+    .video_wrapper {
+      transform: scale(1);
+    }
+  }
+}
+
 .intro-text {
-  text-align: center;
+  text-align: left;
   margin: 4em 0;
 }
 .shop-section {
   margin: 10em 0;
+
+  &:first-of-type {
+    margin-top: 2em;
+  }
 
   @media screen and (max-width: $break-mobile) {
     margin: 6em 0;

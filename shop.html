@@ -1,13 +1,11 @@
 ---
 layout: default
 title: Shop
-cta_heading: Looking for more products?
+cta_heading: Looking for a different photograph of mine?
 slug: shop
 ---
 
-<!-- <h1 class="visually-hidden">Shop</h1> -->
-
-<div class="section shop-section grey no-border border-radius__large">
+<div class="section shop-section shop-hero grey no-border border-radius__large">
   <div class="intro-text">
     <h1 class="m-0">Bring the outdoors &#8212; indoors</h1>
     <p class="m-0 mt-4 mb-4 muted">Beautiful wilderness prints, at affordable prices</p>
@@ -18,12 +16,7 @@ slug: shop
   </div>
 </div>
 
-<div class="section shop-section image-right flex a-center">
-  <div class="content">
-    <h3>Photos of nature, helping nature</h3>
-    <p>I've partnered with One Tree Planted to assist in global reforestation projects, so for every single print purchased, $10 will go directly to planting trees across the globe.</p>
-    <a class="btn btn__link blue" href="/shop/pages/environmental-impact-promise">Read my environmental impact promise <i class="far fa-arrow-right ml-1" aria-hidden="true"></i></a>
-  </div>
+<div class="section shop-section image-left flex a-center">
   <div class="image">
     <a href="/shop/products/foggy-babel" class="btn btn__circle btn__basic btn__icon product-tag" data-pop="Foggy Babel">
       <i class="far fa-tag" aria-hidden="true"></i>
@@ -31,20 +24,25 @@ slug: shop
     </a>
     <img class="border-radius__large" src="/assets/img/shop/environment-babel.jpg">
   </div>
+  <div class="content">
+    <h3>Photos of nature, helping nature</h3>
+    <p>I've partnered with One Tree Planted to assist in global reforestation projects, so for every single print purchased, $10 will go directly to planting trees across the globe.</p>
+    <a class="btn btn__link blue" href="/shop/pages/environmental-impact-promise">Read my environmental impact promise <i class="far fa-arrow-right ml-1" aria-hidden="true"></i></a>
+  </div>
 </div>
 
-<div class="section shop-section image-left flex a-center">
+<div class="section shop-section image-right flex a-center">
+  <div class="content">
+    <h3>Museum grade quality</h3>
+    <p>All photos are printed through Giclée, meaning your print will never fade, or turn yellow. Printed on premium photographic paper with a satin lustre finish, brings out the intense colours and rich details.</p>
+    <a class="btn btn__link blue" href="/shop/collections/all">Shop all products <i class="far fa-arrow-right ml-1" aria-hidden="true"></i></a>
+  </div>
   <div class="image">
     <a href="/shop/products/love-after-dusk" class="btn btn__circle btn__basic btn__icon product-tag" data-pop="Love After Dusk">
       <i class="far fa-tag" aria-hidden="true"></i>
       <span class="visually-hidden">Go to tagged product - Love After Dusk</span>
     </a>
     <img class="border-radius__large" src="/assets/img/shop/quality-dusk.jpg">
-  </div>
-  <div class="content">
-    <h3>Museum grade quality</h3>
-    <p>All photos are printed through Giclée, meaning your print will never fade, or turn yellow. Printed on premium photographic paper with a satin lustre finish, brings out the intense colours and rich details.</p>
-    <a class="btn btn__link blue" href="/shop/collections/all">Shop all products <i class="far fa-arrow-right ml-1" aria-hidden="true"></i></a>
   </div>
 </div>
 
@@ -55,3 +53,27 @@ slug: shop
   </div>
   <img class="border-radius__large mt-10" src="/assets/img/shop/connell-brandywine.jpg">
 </div>
+
+<div class="section shop-section image-left flex a-center">
+  <div class="image">
+    <a href="/shop/products/time" class="btn btn__circle btn__basic btn__icon product-tag" data-pop="Time">
+      <i class="far fa-tag" aria-hidden="true"></i>
+      <span class="visually-hidden">Go to tagged product - Time</span>
+    </a>
+    <img class="border-radius__large" src="/assets/img/shop/abstract-desk.jpg">
+  </div>
+  <div class="content">
+    <h3>Abstract Series</h3>
+    <p>After much request, the abstract art pieces I made for my home are now available for everyone.</p>
+    <a class="btn btn__link blue" href="/shop/collections/abstract">Browse the collection <i class="far fa-arrow-right ml-1" aria-hidden="true"></i></a>
+  </div>
+</div>
+<div class="shop-product-list">
+  {% assign products = "6628430348350,6626197864510,6628428906558" %}
+  {% include shop/select_products.html 
+    product_ids = products 
+    compressed = false
+  %}
+</div>
+
+{% include newsletter.html %}

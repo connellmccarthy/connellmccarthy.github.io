@@ -54,7 +54,7 @@
       width: fit-content;
 
       @media screen and (max-width: $break-mobile) {
-        max-width: 50vw;
+        max-width: 55vw;
       }
     }
     p.price {
@@ -331,10 +331,10 @@
     font-weight: 500;
     border: 1px solid $color-border;
     box-shadow: 0px 4px 15px -15px rgb(0, 0, 0);
-    padding: 12px 24px 12px 24px;
+    padding: 0.8em 1.2em;
 
     &.color {
-      padding: 12px 24px 12px 42px;
+      padding: 0.8em 1.2em 0.8em 3em;
 
       &:after {
         content: '';
@@ -342,7 +342,7 @@
         width: 22px;
         position: absolute;
         top: 50%;
-        left: 12px;
+        left: 0.8em;
         transform: translateY(-50%);
         border-radius: 50%;
       }

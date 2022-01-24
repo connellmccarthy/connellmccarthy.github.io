@@ -1,3 +1,43 @@
+.sidebar-resize {
+  height: 100vh;
+  width: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: ew-resize;
+
+  @media screen and (max-width: $break-tablet) {
+    display: none;
+  }
+}
+
+.container.collapse {
+  .sidebar-resize#sidebar {
+    display: none;
+  }
+  .fade.sidebar-trigger {
+    display: block;
+  }
+  .sidebar__container {
+    width: $sidebar-tablet;
+  }
+  .app_pane {
+    max-width: calc(100vw - #{$sidebar-tablet});
+  }
+  .sidebar-trigger-container {
+    display: block;
+  }
+  .sidebar {
+    transform: translateX(-100%);
+    &.active {
+      transform: translateX(0);
+    }
+    button.sidebar-trigger { 
+      display: block;
+    }
+  }
+}
+
 .sidebar-trigger-container {
   display: none;
   height: 100vh;
@@ -69,11 +109,11 @@
 .sidebar {
   button.sidebar-trigger {
     display: none;
+    position: absolute;
+    top: 3em;
+    right: 3em;
     @media screen and (max-width: $break-tablet) {
       display: block;
-      position: absolute;
-      top: 3em;
-      right: 3em;
     }
   }
   &__container {
@@ -90,6 +130,7 @@
     }
   }
   width: $sidebar-max;
+  max-width: $sidebar-max;
   height: 100vh;
   border-right: 1px solid $color-border;
   background: $color-white;

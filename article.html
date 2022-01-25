@@ -7,7 +7,7 @@ slug: articles
 
 <h1 class="visually-hidden">Articles</h1>
 <div class="articles mt-6">
-  {% assign articles = site.articles | sort: "date" | reverse %}
+  {% assign articles = site.article | sort: "date" | reverse %}
   {% for article in articles %}
     {% assign article_words = article.content | strip_html | strip_newlines | downcase | replace: 'and','' | replace: 'the','' | split:' ' %}
     {% assign word_count = article_words | size %}

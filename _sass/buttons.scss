@@ -182,7 +182,7 @@ button.btn {
     }
   }
 
-  &#like_button {
+  &.like_button {
     &:after {
       content: '';
       z-index: 1;

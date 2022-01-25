@@ -13,7 +13,7 @@ sass:
   sass_dir: _sass
   style: compressed
 collections:
-  articles:
+  article:
     output: true
     sort_by: date
     permalink: "/:collection/:path/"

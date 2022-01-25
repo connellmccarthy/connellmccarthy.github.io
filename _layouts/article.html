@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     {% include head.html %}
   </head>
@@ -13,7 +13,7 @@
         <main id="swup" class="transition-fade article" aria-live="polite">
           <div class="article-info">
             <div class="wrapper">
-              <a href="/articles" class="btn btn__basic">
+              <a href="/article" class="btn btn__basic">
                 <span class="visually-hidden">Back to articles</span>
                 <i class="far fa-arrow-left" aria-hidden="true"></i>
               </a>
@@ -21,7 +21,7 @@
                 <p class="title">{{ page.title }}</p>
                 <p class="muted">{{ page.date | date: "%B %d, %Y" }}</p>
               </div>
-              <button id="like_button" class="btn btn__basic like_button">
+              <button id="like_button_sticky" class="btn btn__basic like_button">
                 <i class="far fa-heart like_button_icon"></i>
                 <span class="count">•</span>
               </button>
@@ -29,17 +29,17 @@
           </div>
           <div class="wrapper">
             <div class="article-info-static">
-              <a href="/articles" id="back-link">
+              <a href="/article" id="back-link">
                 <i class="far fa-arrow-left mr-2" aria-hidden="true"></i>
                 <span>Back to articles</span>
               </a>
-              <button id="like_button" class="btn btn__link like_button">
+              <button id="like_button_static" class="btn btn__link like_button">
                 <i class="far fa-heart like_button_icon"></i>
                 <span class="count">•</span> likes
               </button>
             </div>
             <div class="article_thumbnail">
-              <img src="/assets/articles/{{ page.slug }}/{{ page.thumbnail }}">
+              <img src="/assets/articles/{{ page.slug }}/{{ page.thumbnail }}" alt="{{ page.title }} thumbnail image.">
             </div>
             <div class="article-info-static">
               {% assign article_words = content | strip_html | strip_newlines | downcase | replace: 'and','' | replace: 'the','' | split:' ' %}

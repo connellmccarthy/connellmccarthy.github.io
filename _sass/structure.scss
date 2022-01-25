@@ -21,6 +21,11 @@ $font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, 
   transform: translate3d(0, 0, 0);
 }
 
+::selection {
+  background-color: $color-black;
+  color: $color-white;
+}
+
 html {
 	&.is-animating {
 		.swup-transition-main {
@@ -201,6 +206,19 @@ img {
 
   &:first-of-type:not(.shop-section) {
     margin-top: 0;
+  }
+
+  &.green {
+    background: #E5EEE5;
+    padding: 6em 3em;
+
+    p.muted {
+      color: #637263;
+    }
+
+    @media screen and (max-width: $break-mobile) {
+      padding: 2em;
+    }
   }
 
   &.grey {

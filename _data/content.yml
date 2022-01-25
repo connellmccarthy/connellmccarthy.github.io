@@ -23,7 +23,7 @@ sidebar:
     content: me@connellmccarthy.com
 homepage:
   announcements:
-    - display: false
+    - display: true
       icon: images
       title: The latest drop for the Moon Rock NFT Series is live!
       link:
@@ -42,12 +42,11 @@ homepage:
   projects:
     title: Personal Projects
     items:
-    - title: Moon Rocks
-      description: My Audio / Visual NFT series.
-      url: https://moonrocks.ai
-      external: true
-      image: /assets/img/projects/moonrocks.jpg
-      icon: photo-video
+    - title: Photography Prints
+      description: Beautiful wilderness prints, at affordable prices
+      url: /shop
+      external: false
+      icon: camera-retro
     - title: One Bill
       description: An app designed to keep track of sharing monthly expenses with ease.
       url: https://onebill.sh
@@ -71,3 +70,9 @@ homepage:
     title: Featured Articles
 newsletter:
   body: Get notified whenever I publish something new, like a new article or a new product.
+shop:
+  headline: Bring the outdoors &#8212; indoors
+  description: Beautiful wilderness prints, at affordable prices.
+  cta:
+    url: /shop/collections/all
+    text: Shop all products

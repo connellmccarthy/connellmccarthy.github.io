@@ -332,6 +332,14 @@ i.fa-arrow-right.external {
   p.title {
     font-weight: 500;
   }
+  span.badge {
+    background: lighten($color-blue, 45);
+    // border: 1px solid $color-blue;
+    color: $color-blue;
+    border-radius: 20px;
+    padding: 0.2em 0.6em;
+    font-size: 0.8em;
+  }
 }
 
 .border-radius {

@@ -46,19 +46,13 @@ title: Work
 
 <div class="section">
   <h2>{{ site.data.content.homepage.projects.title }}</h2>
-  <!-- <div class="section shop-section shop-hero grey no-border border-radius__large no-margin">
-    <div class="intro-text">
-      <h1 class="m-0">{{ site.data.content.shop.headline }}</h1>
-      <p class="m-0 mt-4 mb-4 muted">{{ site.data.content.shop.description }}</p>
-      <a class="btn btn__link" href="{{ site.data.content.shop.cta.url }}">{{ site.data.content.shop.cta.text }} <i class="far fa-arrow-right ml-1" aria-hidden="true"></i></a>
-    </div>
-  </div> -->
   <div class="list">
     {% for project in site.data.content.homepage.projects.items %}
       {% include card.html
         url = project.url
         icon = project.icon
         size = 'small'
+        badge = project.badge
         title = project.title
         description = project.description
         cta = 'Visit project website'

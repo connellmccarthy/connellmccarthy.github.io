@@ -23,13 +23,13 @@ sidebar:
     content: me@connellmccarthy.com
 homepage:
   announcements:
-    - display: true
-      icon: images
-      title: The latest drop for the Moon Rock NFT Series is live!
+    - display: false
+      icon: camera-retro
+      title: New photos were just added to my print shop.
       link:
-        title: Check it out
-        url: http://moonrocks.ai
-        external: true
+        title: Browse the shop
+        url: /shop/
+        external: false
     - display: false
       icon: music
       title: My latest COVEO single ‘Still Dreaming’ is now available worldwide.
@@ -44,6 +44,7 @@ homepage:
     items:
     - title: Photography Prints
       description: Beautiful wilderness prints, at affordable prices
+      badge: New
       url: /shop
       external: false
       icon: camera-retro

@@ -8,7 +8,12 @@
       {% endif %}
     </div>
     <div class="info">
-      <p class="title m-0 mb-1">{{ include.title }}</p>
+      <p class="title m-0 mb-1">
+        {{ include.title }}
+        {% if include.badge %}
+          <span class="badge">{{ include.badge }}</span>
+        {% endif %}
+      </p>
       {% if include.date %}
         <p class="muted-light m-0">{{ include.date | date: "%B %d, %Y" }}{% if include.reading_time %} • {{ include.reading_time }} minute read{% endif %}</p>
       {% endif %}

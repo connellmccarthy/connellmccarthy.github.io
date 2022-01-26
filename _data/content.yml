@@ -23,20 +23,13 @@ sidebar:
     content: me@connellmccarthy.com
 homepage:
   announcements:
-    - display: false
-      icon: camera-retro
-      title: New photos were just added to my print shop.
+    - display: true
+      icon: sparkles
+      title: My new site is now live! Check out the changelog for the full history.
       link:
-        title: Browse the shop
-        url: /shop/
+        title: Visit the changelog
+        url: /changelog/
         external: false
-    - display: false
-      icon: music
-      title: My latest COVEO single ‘Still Dreaming’ is now available worldwide.
-      link:
-        title: Take a listen
-        url: http://coveomusic.com/still-dreaming
-        external: true
   showreel:
     title: 2022 Demo Reel
   projects:

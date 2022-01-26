@@ -1,6 +1,37 @@
 <title>{{ site.title }} — {{ page.title }}</title>
-<link rel="stylesheet" href="/assets/css/main.css">
-<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-rqn26AG5Pj86AF4SO72RK5fyefcQ/x32DNQfChxWvbXIyXFePlEktwD18fEz+kQU" crossorigin="anonymous">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="title" content="{{ site.title }} - {{ page.title }}">
+<meta property="og:title" content="{{ site.title }} - {{ page.title }}">
+<meta name="twitter:title" content="{{ site.title }} - {{ page.title }}">
+<meta name="author" content="{{ site.title }}">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+{% if page.description %}
+  <meta name="description" content="{{ page.description }}">
+  <meta name="twitter:description" content="{{ page.description }}">
+{% elsif page.body_html %}
+  {% assign description = page.body_html | strip_html | truncate: 125 %}
+  <meta name="description" content="{{ description }}">
+  <meta name="twitter:description" content="{{ description }}">
+{% else %}
+  <meta name="description" content="{{ site.description }}">
+  <meta name="twitter:description" content="{{ site.description }}">
+{% endif %}
+{% if page.thumbnail %}
+  <meta name="image" content="{{ site.image_path }}{{ page.slug }}/{{ page.thumbnail }}">
+  <meta property="og:image" content="{{ site.image_path }}{{ page.slug }}/{{ page.thumbnail }}">
+  <meta name="twitter:image" content="{{ site.image_path }}{{ page.slug }}/{{ page.thumbnail }}">
+{% elsif page.url contains '/shop/' %}
+  <meta name="image" content="/assets/img/social-share-shop.jpg">
+  <meta property="og:image" content="/assets/img/social-share-shop.jpg">
+  <meta name="twitter:image" content="/assets/img/social-share-shop.jpg">
+{% else %}
+  <meta name="image" content="/assets/img/social-share.jpg">
+  <meta property="og:image" content="/assets/img/social-share.jpg">
+  <meta name="twitter:image" content="/assets/img/social-share.jpg">
+{% endif %}
+<meta name="twitter:site" content="@{{ site.twitter_username }}">
+<meta name="twitter:card" content="summary_large_image">
 
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
@@ -10,9 +41,9 @@
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="msapplication-config" content="/assets/favicon/browserconfig.xml">
 <meta name="theme-color" content="#ffffff">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="{{ site.description }}">
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-rqn26AG5Pj86AF4SO72RK5fyefcQ/x32DNQfChxWvbXIyXFePlEktwD18fEz+kQU" crossorigin="anonymous">
 
 <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>
 <script src="/assets/js/swup-slide.min.js"></script>

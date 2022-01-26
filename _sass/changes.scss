@@ -1,0 +1,46 @@
+.timeline {
+  position: relative;
+  padding: 2em 0 0;
+  
+  .section {
+    background: $color-white;
+    padding: 2em 0;
+    position: relative;
+
+    &:before {
+      content: '';
+      height: 10px;
+      width: 10px;
+      background: $color-border;
+      position: absolute;
+      border-radius: 50%;
+      border: 5px solid $color-white;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    h3 {
+      text-align: center;
+      margin: 0 0 1em;
+    }
+    p { 
+      text-align: left;
+      max-width: 600px;
+      margin: 2em auto 0;
+      color: $color-ink-muted-light;
+      line-height: 1.8em;
+    }
+  }
+  &:after {
+    content: '';
+    height: 100%;
+    width: 2px;
+    background: $color-border;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    z-index: -1;
+  }
+}

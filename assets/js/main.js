@@ -1,7 +1,5 @@
 const swup = new Swup({
-  linkSelector:
-    'a[href^="https://shop.connellmccarthy.com"]:not([data-no-swup]), a[href^="/"]:not([data-no-swup]), a[href^="#"]:not([data-no-swup])',
-  plugins: [new SwupSlideTheme(), new SwupScriptsPlugin({
+  plugins: [new SwupSlideTheme(), new SwupGaPlugin(), new SwupScriptsPlugin({
     optin: true,
     head: false,
     body: true
@@ -14,6 +12,10 @@ swup.on('contentReplaced', init);
 var collapsing = false;
 
 function init() {
+  window.ga('set', 'title', document.title);
+  window.ga('set', 'page', window.location.pathname + window.location.search);
+  window.ga('send', 'pageview');
+
   window.scrollTo(0,0);
 
   const like_button = document.querySelector('.like_button');

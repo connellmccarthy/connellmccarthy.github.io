@@ -32,17 +32,33 @@ function init() {
     const button = document.querySelector('button#video-controller');
     const button_text = document.querySelector('span#button-text');
     const button_icon = document.querySelector('i#button-icon');
+    const video = document.getElementById('showreel');
     button.addEventListener('click', () => {
-      if (button_icon.classList.contains('fa-pause')) {
-        document.getElementById('showreel').pause();
+      if (video.getAttribute('state') == 'playing') {
+        video.pause();
+        video.setAttribute('state', 'paused');
         button_icon.classList.replace('fa-pause', 'fa-play');
         button_text.innerText = 'Play video';
+      } else if (video.getAttribute('state') == 'replay') {
+        video.play();
+        video.setAttribute('state', 'playing');
+        button_icon.classList.replace('fa-redo', 'fa-pause');
+        button_text.innerText = 'Pause video';
       } else {
-        document.getElementById('showreel').play();
+        video.play();
+        video.setAttribute('state', 'playing');
         button_icon.classList.replace('fa-play', 'fa-pause');
         button_text.innerText = 'Pause video';
       }
     });
+    if (video) {
+      video.addEventListener('ended', () => {
+        video.setAttribute('state', 'replay');
+        button_icon.classList.remove('fa-pause', 'fa-play');
+        button_icon.classList.add('fa-redo');
+        button_text.innerText = 'Replay video';
+      });
+    }
   }
   if (document.querySelector('.count')) {
     const slug = window.location.href.split('/')[4];

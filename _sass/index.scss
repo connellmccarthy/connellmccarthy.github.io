@@ -91,9 +91,11 @@ video {
     align-items: center;
     padding: 0.6em 1em;
     border-radius: 50px;
+    transition: background 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 
     &__text {
       opacity: 0;
+      transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1);
       @media screen and (max-width: $break-mobile) {
         clip: rect(0 0 0 0);
         clip-path: inset(50%);

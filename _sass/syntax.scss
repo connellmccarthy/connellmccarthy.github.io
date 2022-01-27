@@ -7,7 +7,7 @@ code.highlighter-rouge {
 .highlight pre { 
   background-color: $color-grey; 
   width: 100%;
-  overflow-x: scroll;
+  overflow-x: auto;
   display: block;
   padding: 2em;
   border-radius: 12px;

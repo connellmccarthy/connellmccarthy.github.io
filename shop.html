@@ -27,6 +27,24 @@ slug: shop
   </div>
 </div>
 
+<div class="section">
+  <h2>Shop by collection</h2>
+  <div class="list">
+    {% for collection in site.collections %}
+      {% unless collection.slug == 'shop-all' %}
+        {% include card.html
+          url = collection.url
+          icon = collection.icon
+          size = 'small'
+          title = collection.title
+          description = collection.description
+          cta = 'Browse collection'
+          external = false %}
+      {% endunless %}
+    {% endfor %}
+  </div>
+</div>
+
 <div class="section shop-section image-left flex a-center">
   <div class="image">
     <a href="/shop/products/foggy-babel" class="btn btn__circle btn__basic btn__icon product-tag" data-pop="Foggy Babel">

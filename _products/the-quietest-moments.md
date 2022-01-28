@@ -21,8 +21,8 @@ published_scope: global
 tags: Batch 03, mountain, mountains, Print, snow, winter
 admin_graphql_api_id: gid://shopify/Product/2062558101566
 variants:
-  - id: 39577243320382
-    product_id: 2062558101566
+  - product_id: 2062558101566
+    id: 39577243320382
     title: 8x10” / Full Colour
     price: "35.00"
     sku: CM-PP-B3-08-XXS-FC
@@ -47,8 +47,8 @@ variants:
     old_inventory_quantity: 0
     requires_shipping: true
     admin_graphql_api_id: gid://shopify/ProductVariant/39577243320382
-  - id: 39577243353150
-    product_id: 2062558101566
+  - product_id: 2062558101566
+    id: 39577243353150
     title: 8x10” / Black & White
     price: "35.00"
     sku: CM-PP-B3-08-XXS-BW
@@ -73,8 +73,8 @@ variants:
     old_inventory_quantity: 0
     requires_shipping: true
     admin_graphql_api_id: gid://shopify/ProductVariant/39577243353150
-  - id: 39577243385918
-    product_id: 2062558101566
+  - product_id: 2062558101566
+    id: 39577243385918
     title: 8.5x11” / Full Colour
     price: "35.00"
     sku: CM-PP-B3-08-XS-FC
@@ -99,8 +99,8 @@ variants:
     old_inventory_quantity: 0
     requires_shipping: true
     admin_graphql_api_id: gid://shopify/ProductVariant/39577243385918
-  - id: 39577243418686
-    product_id: 2062558101566
+  - product_id: 2062558101566
+    id: 39577243418686
     title: 8.5x11” / Black & White
     price: "35.00"
     sku: CM-PP-B3-08-XS-BW
@@ -125,8 +125,8 @@ variants:
     old_inventory_quantity: 0
     requires_shipping: true
     admin_graphql_api_id: gid://shopify/ProductVariant/39577243418686
-  - id: 39577243451454
-    product_id: 2062558101566
+  - product_id: 2062558101566
+    id: 39577243451454
     title: 13x19” / Full Colour
     price: "40.00"
     sku: CM-PP-B3-08-S-FC
@@ -151,8 +151,8 @@ variants:
     old_inventory_quantity: 0
     requires_shipping: true
     admin_graphql_api_id: gid://shopify/ProductVariant/39577243451454
-  - id: 39577243516990
-    product_id: 2062558101566
+  - product_id: 2062558101566
+    id: 39577243516990
     title: 13x19” / Black & White
     price: "40.00"
     sku: CM-PP-B3-08-S-BW
@@ -177,8 +177,8 @@ variants:
     old_inventory_quantity: 0
     requires_shipping: true
     admin_graphql_api_id: gid://shopify/ProductVariant/39577243516990
-  - id: 39577243582526
-    product_id: 2062558101566
+  - product_id: 2062558101566
+    id: 39577243582526
     title: 16x20” / Full Colour
     price: "50.00"
     sku: CM-PP-B3-08-M-FC
@@ -203,8 +203,8 @@ variants:
     old_inventory_quantity: 0
     requires_shipping: true
     admin_graphql_api_id: gid://shopify/ProductVariant/39577243582526
-  - id: 39577243648062
-    product_id: 2062558101566
+  - product_id: 2062558101566
+    id: 39577243648062
     title: 16x20” / Black & White
     price: "50.00"
     sku: CM-PP-B3-08-M-BW
@@ -229,8 +229,8 @@ variants:
     old_inventory_quantity: 0
     requires_shipping: true
     admin_graphql_api_id: gid://shopify/ProductVariant/39577243648062
-  - id: 39577243713598
-    product_id: 2062558101566
+  - product_id: 2062558101566
+    id: 39577243713598
     title: 20x24” / Full Colour
     price: "60.00"
     sku: CM-PP-B3-08-L-FC
@@ -255,8 +255,8 @@ variants:
     old_inventory_quantity: 0
     requires_shipping: true
     admin_graphql_api_id: gid://shopify/ProductVariant/39577243713598
-  - id: 39577243779134
-    product_id: 2062558101566
+  - product_id: 2062558101566
+    id: 39577243779134
     title: 20x24” / Black & White
     price: "60.00"
     sku: CM-PP-B3-08-L-BW
@@ -281,8 +281,8 @@ variants:
     old_inventory_quantity: 0
     requires_shipping: true
     admin_graphql_api_id: gid://shopify/ProductVariant/39577243779134
-  - id: 39577243844670
-    product_id: 2062558101566
+  - product_id: 2062558101566
+    id: 39577243844670
     title: 20x30” / Full Colour
     price: "70.00"
     sku: CM-PP-B3-08-XL-FC
@@ -307,8 +307,8 @@ variants:
     old_inventory_quantity: 0
     requires_shipping: true
     admin_graphql_api_id: gid://shopify/ProductVariant/39577243844670
-  - id: 39577243877438
-    product_id: 2062558101566
+  - product_id: 2062558101566
+    id: 39577243877438
     title: 20x30” / Black & White
     price: "70.00"
     sku: CM-PP-B3-08-XL-BW
@@ -333,8 +333,8 @@ variants:
     old_inventory_quantity: 0
     requires_shipping: true
     admin_graphql_api_id: gid://shopify/ProductVariant/39577243877438
-  - id: 39577243942974
-    product_id: 2062558101566
+  - product_id: 2062558101566
+    id: 39577243942974
     title: 24x36” / Full Colour
     price: "90.00"
     sku: CM-PP-B3-08-XXL-FC
@@ -359,8 +359,8 @@ variants:
     old_inventory_quantity: 0
     requires_shipping: true
     admin_graphql_api_id: gid://shopify/ProductVariant/39577243942974
-  - id: 39577244008510
-    product_id: 2062558101566
+  - product_id: 2062558101566
+    id: 39577244008510
     title: 24x36” / Black & White
     price: "90.00"
     sku: CM-PP-B3-08-XXL-BW
@@ -385,8 +385,8 @@ variants:
     old_inventory_quantity: 0
     requires_shipping: true
     admin_graphql_api_id: gid://shopify/ProductVariant/39577244008510
-  - id: 39577244074046
-    product_id: 2062558101566
+  - product_id: 2062558101566
+    id: 39577244074046
     title: 30x40” / Full Colour
     price: "100.00"
     sku: CM-PP-B3-08-XXXL-FC
@@ -411,8 +411,8 @@ variants:
     old_inventory_quantity: 0
     requires_shipping: true
     admin_graphql_api_id: gid://shopify/ProductVariant/39577244074046
-  - id: 39577244139582
-    product_id: 2062558101566
+  - product_id: 2062558101566
+    id: 39577244139582
     title: 30x40” / Black & White
     price: "100.00"
     sku: CM-PP-B3-08-XXXL-BW
@@ -438,8 +438,8 @@ variants:
     requires_shipping: true
     admin_graphql_api_id: gid://shopify/ProductVariant/39577244139582
 options:
-  - id: 2805847294014
-    product_id: 2062558101566
+  - product_id: 2062558101566
+    id: 2805847294014
     name: Size
     position: 1
     values:
@@ -451,16 +451,16 @@ options:
       - 20x30”
       - 24x36”
       - 30x40”
-  - id: 8590066286654
-    product_id: 2062558101566
+  - product_id: 2062558101566
+    id: 8590066286654
     name: Color
     position: 2
     values:
       - Full Colour
       - Black & White
 images:
-  - id: 6301832347710
-    product_id: 2062558101566
+  - product_id: 2062558101566
+    id: 6301832347710
     position: 1
     created_at: 2019-03-17T13:30:50-04:00
     updated_at: 2019-10-20T18:44:17-04:00
@@ -478,8 +478,8 @@ images:
       - 39577243942974
       - 39577244074046
     admin_graphql_api_id: gid://shopify/ProductImage/6301832347710
-  - id: 6301832282174
-    product_id: 2062558101566
+  - product_id: 2062558101566
+    id: 6301832282174
     position: 2
     created_at: 2019-03-17T13:30:48-04:00
     updated_at: 2019-10-20T18:44:17-04:00
@@ -497,8 +497,8 @@ images:
       - 39577244008510
       - 39577244139582
     admin_graphql_api_id: gid://shopify/ProductImage/6301832282174
-  - id: 28230405521470
-    product_id: 2062558101566
+  - product_id: 2062558101566
+    id: 28230405521470
     position: 3
     created_at: 2021-05-04T21:16:44-04:00
     updated_at: 2021-05-04T21:16:44-04:00
@@ -509,8 +509,8 @@ images:
     variant_ids: []
     admin_graphql_api_id: gid://shopify/ProductImage/28230405521470
 image:
-  id: 6301832347710
   product_id: 2062558101566
+  id: 6301832347710
   position: 1
   created_at: 2019-03-17T13:30:50-04:00
   updated_at: 2019-10-20T18:44:17-04:00

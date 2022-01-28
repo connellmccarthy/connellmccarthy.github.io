@@ -20,8 +20,8 @@ published_scope: global
 tags: abstract
 admin_graphql_api_id: gid://shopify/Product/6628430348350
 variants:
-  - id: 39544989974590
-    product_id: 6628430348350
+  - product_id: 6628430348350
+    id: 39544989974590
     title: 8x10" / Black & White
     price: "45.00"
     sku: CM-DP-B5-02-XXS
@@ -46,8 +46,8 @@ variants:
     old_inventory_quantity: 0
     requires_shipping: true
     admin_graphql_api_id: gid://shopify/ProductVariant/39544989974590
-  - id: 39544990007358
-    product_id: 6628430348350
+  - product_id: 6628430348350
+    id: 39544990007358
     title: 16x20" / Black & White
     price: "85.00"
     sku: CM-DP-B5-03-XS
@@ -72,8 +72,8 @@ variants:
     old_inventory_quantity: 0
     requires_shipping: true
     admin_graphql_api_id: gid://shopify/ProductVariant/39544990007358
-  - id: 39544990040126
-    product_id: 6628430348350
+  - product_id: 6628430348350
+    id: 39544990040126
     title: 20x24" / Black & White
     price: "100.00"
     sku: CM-GP-B5-03-S
@@ -98,8 +98,8 @@ variants:
     old_inventory_quantity: 0
     requires_shipping: true
     admin_graphql_api_id: gid://shopify/ProductVariant/39544990040126
-  - id: 39544990072894
-    product_id: 6628430348350
+  - product_id: 6628430348350
+    id: 39544990072894
     title: 24x30" / Black & White
     price: "120.00"
     sku: CM-GP-B5-03-M
@@ -124,8 +124,8 @@ variants:
     old_inventory_quantity: 0
     requires_shipping: true
     admin_graphql_api_id: gid://shopify/ProductVariant/39544990072894
-  - id: 39544990105662
-    product_id: 6628430348350
+  - product_id: 6628430348350
+    id: 39544990105662
     title: 24x36" / Black & White
     price: "135.00"
     sku: CM-GP-B5-03-L
@@ -150,8 +150,8 @@ variants:
     old_inventory_quantity: 0
     requires_shipping: true
     admin_graphql_api_id: gid://shopify/ProductVariant/39544990105662
-  - id: 39544990138430
-    product_id: 6628430348350
+  - product_id: 6628430348350
+    id: 39544990138430
     title: 30x36" / Black & White
     price: "190.00"
     sku: CM-GP-B5-03-XL
@@ -176,8 +176,8 @@ variants:
     old_inventory_quantity: 0
     requires_shipping: true
     admin_graphql_api_id: gid://shopify/ProductVariant/39544990138430
-  - id: 39544990171198
-    product_id: 6628430348350
+  - product_id: 6628430348350
+    id: 39544990171198
     title: 30x40" / Black & White
     price: "195.00"
     sku: CM-GP-B5-03-XXL
@@ -203,8 +203,8 @@ variants:
     requires_shipping: true
     admin_graphql_api_id: gid://shopify/ProductVariant/39544990171198
 options:
-  - id: 8532505886782
-    product_id: 6628430348350
+  - product_id: 6628430348350
+    id: 8532505886782
     name: Size
     position: 1
     values:
@@ -215,15 +215,15 @@ options:
       - 24x36"
       - 30x36"
       - 30x40"
-  - id: 8532505919550
-    product_id: 6628430348350
+  - product_id: 6628430348350
+    id: 8532505919550
     name: Color
     position: 2
     values:
       - Black & White
 images:
-  - id: 28624634085438
-    product_id: 6628430348350
+  - product_id: 6628430348350
+    id: 28624634085438
     position: 1
     created_at: 2021-08-30T12:01:00-04:00
     updated_at: 2021-08-30T12:01:05-04:00
@@ -240,8 +240,8 @@ images:
       - 39544990138430
       - 39544990171198
     admin_graphql_api_id: gid://shopify/ProductImage/28624634085438
-  - id: 28545168474174
-    product_id: 6628430348350
+  - product_id: 6628430348350
+    id: 28545168474174
     position: 2
     created_at: 2021-07-27T17:06:15-04:00
     updated_at: 2021-08-30T12:01:05-04:00
@@ -251,8 +251,8 @@ images:
     src: https://cdn.shopify.com/s/files/1/1624/2355/products/DSC05434_05cabc3a-e8a0-4e7c-833c-a04aa88339e6.jpg?v=1630339265
     variant_ids: []
     admin_graphql_api_id: gid://shopify/ProductImage/28545168474174
-  - id: 28545170636862
-    product_id: 6628430348350
+  - product_id: 6628430348350
+    id: 28545170636862
     position: 3
     created_at: 2021-07-27T17:08:57-04:00
     updated_at: 2021-08-30T12:01:05-04:00
@@ -263,8 +263,8 @@ images:
     variant_ids: []
     admin_graphql_api_id: gid://shopify/ProductImage/28545170636862
 image:
-  id: 28624634085438
   product_id: 6628430348350
+  id: 28624634085438
   position: 1
   created_at: 2021-08-30T12:01:00-04:00
   updated_at: 2021-08-30T12:01:05-04:00

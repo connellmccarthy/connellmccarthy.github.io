@@ -106,6 +106,13 @@ h2.treecount {
     }
   }
 
+  ol {
+    padding: 1.3em;
+    li {
+      margin: 0.6em 0;
+    }
+  }
+
   @media screen and (max-width: $break-mobile) {
     margin: 6em 0;
   }

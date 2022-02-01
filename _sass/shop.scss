@@ -69,6 +69,31 @@ h2.treecount {
   @media screen and (max-width: $break-mobile) {
     font-size: 3em;
   }
+  span.loading {
+    color: transparent;
+    position: relative;
+    display: inline-block;
+    &:after {
+      content: '';
+      height: 25px;
+      width: 25px;
+      border-radius: 50%;
+      border-top: 2px solid $color-ink;
+      border-left: 2px solid lighten($color-ink-muted-light, 40);
+      border-right: 2px solid lighten($color-ink-muted-light, 40);
+      border-bottom: 2px solid lighten($color-ink-muted-light, 40);
+      position: absolute;
+      margin-top: 0.08em;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation-name: loading;
+      animation-duration: 1s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      transform-origin: center;
+    }
+  }
 }
 .avatar {
   height: 100px;

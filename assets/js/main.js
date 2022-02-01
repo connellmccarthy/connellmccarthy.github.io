@@ -69,6 +69,7 @@ function init() {
     xhttp.onload = function() {
       document.querySelectorAll('.count').forEach((count_element) => {
         count_element.innerText = JSON.parse(xhttp.response).count;
+        count_element.parentElement.classList.remove('processing');
       });
     }
   }

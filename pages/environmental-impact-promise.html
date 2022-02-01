@@ -53,7 +53,7 @@ slug: environmental-impact-promise
       <img src="/assets/img/shop/tree-avatar.jpg" alt="Forest glowing yellow at sunrise">
     </div>
     <h3>Together we've planted</h3>
-    <h2 class="treecount"><span id="treecount">•</span> trees</h2>
+    <h2 class="treecount"><span id="treecount" class="loading">•</span> trees</h2>
     <p class="muted m-0">That's pretty incredible. Loss of forests contributes between 12 to 17 percent of annual global greenhouse gas emissions, so every little bit helps.</p>
   </div>
   <script data-swup-reload-script>
@@ -66,6 +66,7 @@ slug: environmental-impact-promise
       let pos2 = pledgeTrees.response.indexOf(`</h1>`);
       let result = pledgeTrees.response.substring(pos1, pos2);
       document.getElementById('treecount').innerText = result;
+      document.getElementById('treecount').classList.remove('loading');
     }
   </script>
 </div>

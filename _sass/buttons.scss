@@ -53,6 +53,8 @@ button.btn {
   font-size: 0.95em;
   position: relative;
 
+  font-family: $font-family;
+
   &:hover {
     .toast {
       opacity: 1;
@@ -183,6 +185,32 @@ button.btn {
   }
 
   &.like_button {
+    &.processing {
+      color: transparent;
+      i {
+        display: none;
+      }
+      &:before {
+        content: '';
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        border-top: 2px solid $color-ink;
+        border-left: 2px solid lighten($color-ink-muted-light, 40);
+        border-right: 2px solid lighten($color-ink-muted-light, 40);
+        border-bottom: 2px solid lighten($color-ink-muted-light, 40);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation-name: loading;
+        animation-duration: 1s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        transform-origin: center;
+      }
+    }
+    
     &:after {
       content: '';
       z-index: 1;

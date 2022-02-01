@@ -1,11 +1,15 @@
 .timeline {
   position: relative;
-  padding: 2em 0 0;
+  padding: 1em 0 0;
   
   .section {
     background: $color-white;
     padding: 2em 0;
     position: relative;
+
+    &:first-of-type {
+      margin-top: 5em;
+    }
 
     &:before {
       content: '';
@@ -23,6 +27,9 @@
     h3 {
       text-align: center;
       margin: 0 0 1em;
+      &.no-bottom {
+        margin: 0;
+      }
     }
     p { 
       text-align: left;
@@ -42,5 +49,13 @@
     top: 0;
     transform: translateX(-50%);
     z-index: -1;
+  }
+}
+
+p {
+  &.updated {
+    text-align: center;
+    font-size: 0.8em;
+    margin: 0 auto 2em;
   }
 }

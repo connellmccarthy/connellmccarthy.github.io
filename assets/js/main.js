@@ -143,7 +143,13 @@ function init() {
       document.querySelector('button#mobile-announcements').classList.toggle('active');
     });
   }
+
+  //Newsletter form
   if (document.querySelector('form.newsletter_form')) {
+    if (window.localStorage.getItem('newsletter')) {
+      document.querySelector('#newsletter__body').innerText = `You're already receiving email notifications to ${window.localStorage.getItem('newsletter')}`;
+      document.querySelector('form.newsletter_form').remove();
+    }
     document.querySelector('form.newsletter_form').addEventListener('submit', (event) => {
       event.preventDefault();
       subscribe();
@@ -373,6 +379,7 @@ function subscribe() {
       document.querySelector('form.newsletter_form').remove();
       confetti.start();
     });
+    window.localStorage.setItem('newsletter', decodeURIComponent(email));
     document.body.append(iframe);
   } else {
       console.log('Error: No values passed to function.');

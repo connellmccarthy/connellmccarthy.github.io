@@ -11,8 +11,6 @@ thumbnail: mho-thumbnail.jpg
 
 {% assign image_path = site.image_path | append: page.slug %}
 
-# Designing a productive space that’s conducive to creativity for both work, and personal projects.
-
 When looking for our home I was very adamant about finding a place that served my needs for my work from home day-job, but also my after-hours creative projects like music, design, photography, etc. While I was working from home prior to moving, my drive to create personal work dropped since I was spending my 8-hour working day in the same place as where I would continue to work at night. Much like when your hobbies start to feel like work, you need that separation between projects that are for yourself, and projects that are directed for/by others. That meant, the new home needed to have the space to allow two different workstations either in the same, or different rooms.
 
 I’m extremely grateful that I found a home that allowed for this. The office was large enough to have a dedicated creative setup for my music and hobbies, and still have a dedicated setup for working during the day at Shopify. I know that this is an extreme luxury that most people don’t have, but I think it’s imperative to have different surroundings for your hobbies/day-job. Whether it’s separate workspaces, different rooms, or just bringing your laptop to a kitchen table to get your work done during the day and then returning to the place where you get your hobbies done after hours will go a long way to preventing burn out and being drained creatively.

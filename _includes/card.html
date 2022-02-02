@@ -1,22 +1,39 @@
-<a class="card" href="{{ include.url }}" {% if include.external %}target="_blank" rel="noopener noreferrer"{% endif %}>
+<a class="card{% if include.style %} {{ include.style }}{% endif %}" href="{{ include.url }}" {% if include.external %}target="_blank" rel="noopener noreferrer"{% endif %}>
   <div class="details">
-    <div class="thumbnail thumbnail__{{ include.size }}{% if include.icon %} icon{% endif %}{% if include.border %} border{% endif %}">
-      {% if include.icon %}
-        <i class="far fa-{{ include.icon }} muted"></i>
-      {% elsif include.image %}
-        <img src="{{ include.image }}">
-      {% endif %}
-    </div>
+    {% if include.icon or include.image %}
+      <div class="thumbnail thumbnail__{{ include.size }}{% if include.icon %} icon{% endif %}{% if include.border %} border{% endif %}">
+        {% if include.icon %}
+          <i class="far fa-{{ include.icon }} muted"></i>
+        {% elsif include.image %}
+          <img src="{{ include.image }}">
+        {% endif %}
+      </div>
+    {% endif %}
     <div class="info">
+      {% if include.preline %}
+        <p class="muted-light preline">
+          {% if include.preline_icon %}
+            <i class="far fa-{{ include.preline_icon }} mr-1" aria-hidden="true"></i>
+          {% endif %}
+          {{ include.preline }}
+        </p>
+      {% endif %}
       <p class="title m-0 mb-1">
         {{ include.title }}
         {% if include.badge %}
           <span class="badge">{{ include.badge }}</span>
         {% endif %}
+        {% if include.inline %}
+          {% if include.date %}
+            <span class="muted w-regular">• {{ include.date | date: "%B %d, %Y" }}{% if include.reading_time %} • {{ include.reading_time }} minute read{% endif %}</span>
+          {% endif %}    
+        {% endif %}
       </p>
-      {% if include.date %}
-        <p class="muted-light m-0">{{ include.date | date: "%B %d, %Y" }}{% if include.reading_time %} • {{ include.reading_time }} minute read{% endif %}</p>
-      {% endif %}
+      {% unless include.inline %}
+        {% if include.date %}
+          <p class="muted-light m-0">{{ include.date | date: "%B %d, %Y" }}{% if include.reading_time %} • {{ include.reading_time }} minute read{% endif %}</p>
+        {% endif %}
+      {% endunless %}
       <p class="muted m-0 mt-1">{{ include.description }}</p>
     </div>
   </div>

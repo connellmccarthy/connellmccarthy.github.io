@@ -17,7 +17,7 @@ collections:
     output: true
     sort_by: date
     permalink: "/:collection/:path/"
-    future: false
+    future: true
   collections:
     output: true
     sort_by: title

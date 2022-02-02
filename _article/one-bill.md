@@ -11,8 +11,6 @@ thumbnail: ob-thumbnail.jpg
 
 {% assign image_path = site.image_path | append: page.slug %}
 
-# Building an expense sharing app over the holidays, as a non-developer.
-
 If you know me at all, you’ll know that I always have to be doing something. I’m constantly looking for new challenges and skills that I can add to my toolbelt. When I first started at [Shopify](https://shopify.com){: target="blank"}, their onboarding session talked about T-shaped people and the growth mindset. I had never really come across the terminology before, but I immediately recognized a lot of it in myself. T-shaped people are those who have a fundamental skill that is their career, their craft, their bread and butter, and that makes up the root of the T. The outer portions are the other skills that they’ve learned along the way. For myself, my root is my design craft, however along the way I’ve tried to broaden my T by diving into photography, cinematography and video, motion design, music, and the world of 3D.
 
 ![Visual explaining the structure of the T-shape]({{ image_path }}/ob-image-tee.jpg)

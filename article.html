@@ -8,22 +8,58 @@ slug: articles
 <h1 class="visually-hidden">Articles</h1>
 <div class="articles mt-6">
   {% assign articles = site.article | sort: "date" | reverse %}
+
   {% for article in articles %}
     {% assign article_words = article.content | strip_html | strip_newlines | downcase | replace: 'and','' | replace: 'the','' | split:' ' %}
     {% assign word_count = article_words | size %}
 
     {% assign reading_time = word_count | times: 0.0076 | round %}
 
-    {% include card.html
-      url = article.url
-      icon = 'book'
-      size = 'large'
-      title = article.title
-      date = article.date
-      reading_time = reading_time
-      description = article.description
-      cta = 'Read article'
-      external = false %}
+    {% if article.followup %}
+      {% assign badge = 'Follow up' %}
+      {% if followup_list %}
+        {% assign followup_list = followup_list | append: ',' | append: article.followup %}
+      {% else %}
+        {% assign followup_list = followup_list | append: article.followup %}
+      {% endif %}
+    {% else %}
+      {% assign badge = false %}
+    {% endif %}
+
+    {% assign followup_list_array = followup_list | split: ',' %}
+    {% unless followup_list_array contains article.slug %}
+      {% include card.html
+        url = article.url
+        icon = 'book'
+        size = 'large'
+        title = article.title
+        badge = badge
+        date = article.date
+        reading_time = reading_time
+        description = article.description
+        cta = 'Read article'
+        external = false %}
+    {% endunless %}
+
+    {% if article.followup %}
+      <div class="followup">
+        {% assign followups = site.article | where: 'slug', article.followup %}
+        {% for followup in followups %}
+          {% include card.html
+            url = followup.url
+            style = 'grey'
+            inline = true
+            preline_icon = 'copy'
+            preline = 'Original article'
+            title = followup.title
+            description = followup.description
+            date = followup.date
+            cta = 'Read article'
+            external = false %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
   {% endfor %}
 </div>
 

@@ -11,8 +11,6 @@ thumbnail: mah-thumbnail.jpg
 
 {% assign image_path = site.image_path | append: page.slug %}
 
-# In the middle of a worldwide pandemic, we decided it was a good idea to buy a house.
-
 We had been looking at houses for a little while before the pandemic, but it was more like window shopping to give us something to do in our free time instead of scrolling endlessly through Instagram. It started as a little game of looking at beautiful multi-million dollar mansions and guessing at what the price would be. Eventually, we started getting curious as to what type of homes we could afford.
 
 Now, I used to live in Vancouver, and my expectations for the ratio of the house to cost were very very high. I’m used to seeing smaller, teardown houses listed for 1 million-plus. Here in Ottawa however, the house to cost ratio was much more reasonable. For instance, a detached suburban home usually goes for around $550-600k depending on the neighborhood and the age. Even though the prices were lower, Ottawa still has a bidding war problem, so it’s rare to see a house go for the listed price, let alone below asking. However seeing that I could afford something other than a 650ft² condo, the hunt was on.

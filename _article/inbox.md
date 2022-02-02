@@ -13,8 +13,6 @@ thumbnail: shop-thumbnail.jpg
 
 {% assign image_path = site.image_path | append: page.slug %}
 
-# How I used my passion projects to build powerful creative for Shopify Inbox.
-
 I can’t sit still. Whether it’s taking photos, making music, or building something - my happiness is directly linked to my productivity. So, you can imagine I have a lot of hobbies in which I spend most, if not, all of my free time doing. I constantly see these hobbies as skills I can add to my toolbelt, and they help me to be a better creative.
 
 I’ve been trying to find a role at [Shopify](https://shopify.com/){: target="blank"} where I could utilize these other skills I have to create a better user experience. Unfortunately, I haven’t had much luck. A small portion is because the company is so big that we have a person who does motion, a person to do the development, a person to do the photography, etc. all embedded or accessible to each team. Don’t get me wrong, I’ve been able to stretch my role as a “designer” as much as I could in the past, but the projects have never been as all-encompassing as the launch of Inbox.

@@ -43,7 +43,7 @@
     font-style: unset;
     margin: 0;
   }
-  p:not(.section p, .details p, .article-info-static p) {
+  p:not(.section p, .details p, .article-info-static p, .followup__container p) {
     font-size: 1.2em;
     color: $color-ink-muted;
     margin: 2em 0;
@@ -161,5 +161,38 @@ a#back-link {
 
   &:hover {
     color: $color-blue;
+  }
+}
+
+.followup {
+  padding-left: 76px;
+  position: relative;
+  margin-bottom: 1em;
+
+  @media screen and (max-width: $break-mobile) {
+    padding-left: 34px;
+  }
+
+  &__title {
+    margin: 0 0 0.6em;
+  }
+
+  &:after {
+    content: '';
+    background: transparent;
+    border: 1px solid transparent;
+    border-left-color: $color-border;
+    border-bottom-color: $color-border;
+    z-index: -2;
+    height: calc(50% + 10px);
+    width: 34px;
+    border-radius: 0 0 0 8px;
+    position: absolute;
+    top: -10px;
+    left: 42px;
+
+    @media screen and (max-width: $break-mobile) {
+      left: 20px;
+    }
   }
 }

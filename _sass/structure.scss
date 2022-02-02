@@ -132,6 +132,15 @@ h2 {
 .small {
   font-size: 0.8em;
 }
+.w-regular {
+  font-weight: 400;
+}
+.w-medium {
+  font-weight: 500;
+}
+.w-bold {
+  font-weight: 600;
+}
 .center {
   text-align: center;
   margin: auto;
@@ -266,6 +275,13 @@ i.fa-arrow-right.external {
   justify-content: space-between;
   align-items: center;
 
+  &.grey {
+    background: $color-grey;
+    &:hover {
+      background: darken($color-grey, 2);
+    }
+  }
+
   &:hover {
     background: $color-grey;
   }
@@ -331,6 +347,11 @@ i.fa-arrow-right.external {
 
   p.title {
     font-weight: 500;
+  }
+  p.preline {
+    font-size: 0.9em;
+    font-weight: 500;
+    margin: 0 0 0.4em;
   }
 }
 span.badge {

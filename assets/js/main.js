@@ -149,14 +149,15 @@ function init() {
     if (window.localStorage.getItem('newsletter')) {
       document.querySelector('#newsletter__body').innerText = `You're already receiving email notifications to ${window.localStorage.getItem('newsletter')}`;
       document.querySelector('form.newsletter_form').remove();
+    } else {
+      document.querySelector('form.newsletter_form').addEventListener('submit', (event) => {
+        event.preventDefault();
+        subscribe();
+        document.querySelector('.newsletter__submit').classList.add('loading');
+        document.querySelector('.newsletter__submit').setAttribute('disabled', true);
+        document.querySelector('.newsletter__email').setAttribute('disabled', true);
+      });
     }
-    document.querySelector('form.newsletter_form').addEventListener('submit', (event) => {
-      event.preventDefault();
-      subscribe();
-      document.querySelector('.newsletter__submit').classList.add('loading');
-      document.querySelector('.newsletter__submit').setAttribute('disabled', true);
-      document.querySelector('.newsletter__email').setAttribute('disabled', true);
-    });
   }
 
   if (document.querySelector('.audio_wavesurfer')) {

@@ -198,9 +198,10 @@ a#back-link {
 }
 
 blockquote {
-  border-left: 2px solid $color-ink;
+  border-left: 2px solid $color-border;
   padding: 0 2em;
   p {
     color: $color-ink-muted-light !important;
+    font-style: italic;
   }
 }

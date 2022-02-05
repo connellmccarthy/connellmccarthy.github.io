@@ -1,7 +1,7 @@
 ---
 title: "My Home Office 2022"
 layout: article
-date: 2022-02-01T17:53:30-04:00
+date: 2022-02-05T00:00:00-00:00
 draft: false
 description: "How my home office has changed one year later. The things I’ve kept, and the things I’ve swapped out."
 cta_heading: "Interested in seeing how my office evolves?"

@@ -34,7 +34,15 @@
           <p class="muted-light m-0">{{ include.date | date: "%B %d, %Y" }}{% if include.reading_time %} • {{ include.reading_time }} minute read{% endif %}</p>
         {% endif %}
       {% endunless %}
-      <p class="muted m-0 mt-1">{{ include.description }}</p>
+      {% if include.description %}
+        <p class="muted m-0 mt-1">
+          {% if include.truncate %}
+            {{ include.description | truncate: 90, '...' }}
+          {% else %}
+            {{ include.description }}
+          {% endif %}
+        </p>
+      {% endif %}
     </div>
   </div>
   <div class="arrow">

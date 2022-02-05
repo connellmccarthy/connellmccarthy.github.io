@@ -89,7 +89,7 @@
 }
 .article_thumbnail {
   width: 100%;
-  height: 300px;
+  height: 400px;
   background: $color-grey;
   border-radius: $border-radius-large;
   overflow: hidden;
@@ -167,7 +167,7 @@ a#back-link {
 .followup {
   padding-left: 76px;
   position: relative;
-  margin-bottom: 1em;
+  margin-bottom: 0.6em;
 
   @media screen and (max-width: $break-mobile) {
     padding-left: 34px;
@@ -194,5 +194,14 @@ a#back-link {
     @media screen and (max-width: $break-mobile) {
       left: 20px;
     }
+  }
+}
+
+blockquote {
+  border-left: 2px solid $color-border;
+  padding: 0 2em;
+  p {
+    color: $color-ink-muted-light !important;
+    font-style: italic;
   }
 }

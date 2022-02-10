@@ -35,7 +35,7 @@
   <div class="nav__container">
     <h3 class="mobile-only muted">Site</h3>
     {% for link in site.menu %}
-      <a id="nav-{{ link.slug }}" href="{{ link.path }}" class="nav__link{% if page.title == link.title or page.url contains link.path and link.path != '/' %} active{% endif %}">
+      <a id="nav-{{ link.slug }}" href="{{ link.paths[0].url }}" class="nav__link{% if page.title == link.title %} active{% else %}{% for path in link.paths %}{% if page.url contains path.url and path.url != '/'%} active{% endif %}{% endfor %}{% endif %}">
         <i class="far fa-{{ link.icon }} mobile-only mr-2" aria-hidden="true"></i>
         {{ link.title }}
       </a>

@@ -280,10 +280,6 @@ function init() {
   let app_pane = document.querySelector('.app_pane');
   if (document.getElementById('sketch-identifier')) {
     app_pane.classList.add('sketch');
-    document.querySelectorAll('.section.sketch').forEach((el) => {
-      el.style.top = Math.floor(Math.random() * 1000) + 'px';
-      el.style.left = Math.floor(Math.random() * 1000) + 'px';
-    });
   } else {
     if (app_pane.classList.contains('sketch')) {
       app_pane.classList.remove('sketch');
@@ -315,6 +311,9 @@ function init() {
   document.querySelectorAll('a').forEach((el) => {
     el.addEventListener('click', () => {
       switchPage(el);
+      if (audio_playing) {
+        audio_playing.pause();
+      }
     });
   });
 }
@@ -334,15 +333,12 @@ function switchPage(url) {
   if (url.getAttribute('href').includes('/article')) {
     removeActiveMenuItem();
     document.getElementById('nav-articles').classList.add('active');
-  } else if (url.getAttribute('href') == '/') {
+  } else if (url.getAttribute('href') == '/' || url.getAttribute('href').includes('/changelog') || url.getAttribute('href').includes('/sketch')) {
     removeActiveMenuItem();
     document.getElementById('nav-work').classList.add('active');
   } else if (url.getAttribute('href').includes('/shop')) {
     removeActiveMenuItem();
     document.getElementById('nav-shop').classList.add('active');
-  } else if (url.getAttribute('href').includes('/sketch')) {
-    removeActiveMenuItem();
-    document.getElementById('nav-sketch').classList.add('active');
   }
 }
 

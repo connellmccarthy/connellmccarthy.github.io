@@ -12,19 +12,20 @@ image_path: /assets/articles/
 menu:
 - title: Work
   slug: work
-  path: /
+  paths:
+  - url: /
+  - url: /changelog
+  - url: /sketches
   icon: briefcase
 - title: Articles
   slug: articles
-  path: /article/
+  paths: 
+  - url: /article/
   icon: book
-- title: Sketches
-  slug: sketch
-  path: /sketches/
-  icon: flask
 - title: Shop
   slug: shop
-  path: /shop/
+  paths:
+  - url: /shop/
   icon: shopping-bag
 
 

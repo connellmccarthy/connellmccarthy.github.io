@@ -5,12 +5,14 @@ description: Random explorative pieces that I've created in my spare time.
 slug: sketches
 ---
 <div class="section">
-  <h1>Sketches</h1>
+  <h1 class="center">Sketches</h1>
 </div>
 
-{% for sketch in site.sketches %}
-  <div class="section border-radius__normal sketch">
-    {{ sketch.content }}
-    <p class="muted">{{ sketch.slug }}</p>
-  </div>
-{% endfor %}
+<div class="sketch-list">
+  {% for sketch in site.sketches %}
+    <div class="section border-radius__normal sketch">
+      {{ sketch.content }}
+      <p class="muted">{{ sketch.slug }}</p>
+    </div>
+  {% endfor %}
+</div>

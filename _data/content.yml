@@ -24,6 +24,13 @@ sidebar:
 homepage:
   announcements:
     - display: true
+      icon: flask
+      title: I've added a new section called 'Sketches' for my experiments
+      link:
+        title: Check it out
+        url: /sketches/
+        external: false
+    - display: true
       icon: sparkles
       title: My new site is now live! Check out the changelog for the full history.
       link:

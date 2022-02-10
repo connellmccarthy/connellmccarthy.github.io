@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include head.html %}
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar__container">
+        {% include sidebar.html %}
+      </div>
+      <div class="app_pane sketch">
+        {% include navigation.html %}
+        <main id="swup" class="transition-fade" aria-live="polite">
+          <div id="sketch-identifier"></div>
+          <div class="wrapper">
+            {{ content }}
+          </div>
+        </main>
+      </div>
+    </div>
+    {% include cart.html %}
+    {% include scripts.html %}
+  </body>
+</html>

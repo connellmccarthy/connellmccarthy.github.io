@@ -276,6 +276,19 @@ function init() {
       desktop_nav.classList.remove('dark');
     }
   }
+  
+  let app_pane = document.querySelector('.app_pane');
+  if (document.getElementById('sketch-identifier')) {
+    app_pane.classList.add('sketch');
+    document.querySelectorAll('.section.sketch').forEach((el) => {
+      el.style.top = Math.floor(Math.random() * 1000) + 'px';
+      el.style.left = Math.floor(Math.random() * 1000) + 'px';
+    });
+  } else {
+    if (app_pane.classList.contains('sketch')) {
+      app_pane.classList.remove('sketch');
+    }
+  }
 
   if (document.querySelector('.video_trigger')){
     //Set video outside main
@@ -319,27 +332,26 @@ function switchPage(url) {
     document.querySelector('.fade.menu-trigger').classList.toggle('active');
   }
   if (url.getAttribute('href').includes('/article')) {
-    document.querySelectorAll('.nav__link').forEach((el) => {
-      if (el.classList.contains('active')) {
-        el.classList.toggle('active');
-      }
-    });
+    removeActiveMenuItem();
     document.getElementById('nav-articles').classList.add('active');
   } else if (url.getAttribute('href') == '/') {
-    document.querySelectorAll('.nav__link').forEach((el) => {
-      if (el.classList.contains('active')) {
-        el.classList.toggle('active');
-      }
-    });
+    removeActiveMenuItem();
     document.getElementById('nav-work').classList.add('active');
   } else if (url.getAttribute('href').includes('/shop')) {
-    document.querySelectorAll('.nav__link').forEach((el) => {
-      if (el.classList.contains('active')) {
-        el.classList.toggle('active');
-      }
-    });
+    removeActiveMenuItem();
     document.getElementById('nav-shop').classList.add('active');
+  } else if (url.getAttribute('href').includes('/sketch')) {
+    removeActiveMenuItem();
+    document.getElementById('nav-sketch').classList.add('active');
   }
+}
+
+function removeActiveMenuItem() {
+  document.querySelectorAll('.nav__link').forEach((el) => {
+    if (el.classList.contains('active')) {
+      el.classList.toggle('active');
+    }
+  });
 }
 
 document.querySelectorAll('.sidebar-trigger').forEach((el) => {

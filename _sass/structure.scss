@@ -195,6 +195,15 @@ h2 {
   @media screen and (max-width: $break-mobile) {
     max-width: 100%;
   }
+
+  &.sketch {
+    background-image: url('/assets/img/dotted-bg.jpg');
+    nav {
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
 }
 img {
   width: 100%;
@@ -227,6 +236,22 @@ img {
 
     @media screen and (max-width: $break-mobile) {
       padding: 2em;
+    }
+  }
+
+  &.sketch {
+    position: absolute;
+    padding: 1em;
+    background: $color-white;
+    border: 2px solid $color-black;
+    box-shadow: 4px 4px 0px 0px $color-black;
+    width: fit-content;
+    max-width: 100%;
+
+    img {
+      max-height: 400px;
+      max-width: 100%;
+      width: auto;
     }
   }
 

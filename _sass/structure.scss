@@ -394,5 +394,10 @@ span.badge {
    height: fit-content;
    margin: 1em;
    width: calc(50% - 2em);
+
+   @media screen and (max-width: $break-mobile) {
+      width: 100%;
+      margin: 1em 0;
+   }
  }
 }

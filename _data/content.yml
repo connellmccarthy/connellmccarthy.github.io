@@ -25,7 +25,7 @@ homepage:
   announcements:
     - display: true
       icon: flask
-      title: Sketches is the new home for my explorative works, or work in progresses.
+      title: Sketches is the new home for my explorative works, or works in progress.
       link:
         title: Check it out
         url: /sketches/
@@ -43,7 +43,7 @@ homepage:
     title: Personal Projects
     items:
     - title: Sketches
-      description: A place for explorative works, or work in progresses.
+      description: A place for explorative works, or works in progress.
       url: /sketches
       badge: new
       external: false

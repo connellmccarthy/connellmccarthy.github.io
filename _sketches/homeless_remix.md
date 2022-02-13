@@ -1,5 +1,5 @@
 ---
-title: "Yoe Masse - Homeless (COVEO Remix)"
+title: "Yoe Mase - Homeless (COVEO Remix)"
 layout: "sketch"
 date: 2019-07-02T00:00:00-00:00
 draft: false

@@ -24,6 +24,13 @@ sidebar:
 homepage:
   announcements:
     - display: true
+      icon: flask
+      title: Sketches is the new home for my explorative works, or work in progresses.
+      link:
+        title: Check it out
+        url: /sketches/
+        external: false
+    - display: true
       icon: sparkles
       title: My new site is now live! Check out the changelog for the full history.
       link:
@@ -35,9 +42,14 @@ homepage:
   projects:
     title: Personal Projects
     items:
+    - title: Sketches
+      description: A place for explorative works, or work in progresses.
+      url: /sketches
+      badge: new
+      external: false
+      icon: flask
     - title: Photography Prints
       description: Beautiful wilderness prints, at affordable prices
-      badge: New
       url: /shop
       external: false
       icon: camera-retro

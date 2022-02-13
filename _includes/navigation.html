@@ -34,18 +34,12 @@
   </button>
   <div class="nav__container">
     <h3 class="mobile-only muted">Site</h3>
-    <a id="nav-work" href="/" class="nav__link{% if page.url == '/' %} active{% endif %}">
-      <i class="far fa-briefcase mobile-only mr-2" aria-hidden="true"></i>
-      Work
-    </a>
-    <a id="nav-articles" class="nav__link{% if page.url contains '/article/' %} active{% endif %}" href="/article/">
-      <i class="far fa-book mobile-only mr-2" aria-hidden="true"></i>
-      Articles
-    </a>
-    <a id="nav-shop" class="nav__link{% if page.url contains '/shop/' %} active{% endif %}" href="/shop/">
-      <i class="far fa-shopping-bag mobile-only mr-2" aria-hidden="true"></i>
-      Shop
-    </a>
+    {% for link in site.menu %}
+      <a id="nav-{{ link.slug }}" href="{{ link.paths[0].url }}" class="nav__link{% if page.title == link.title %} active{% else %}{% for path in link.paths %}{% if page.url contains path.url and path.url != '/'%} active{% endif %}{% endfor %}{% endif %}">
+        <i class="far fa-{{ link.icon }} mobile-only mr-2" aria-hidden="true"></i>
+        {{ link.title }}
+      </a>
+    {% endfor %}
     <h3 class="mt-6 mobile-only">On the web</h3>
     {% for network in site.data.content.sidebar.links %}
       <a class="nav__link mobile-only" href="{{ network.url }}" target="_blank" rel="noopener nofollow">

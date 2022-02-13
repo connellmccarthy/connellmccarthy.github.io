@@ -195,6 +195,10 @@ h2 {
   @media screen and (max-width: $break-mobile) {
     max-width: 100%;
   }
+
+  &.sketch {
+    background-image: url('/assets/img/dotted-bg.jpg');
+  }
 }
 img {
   width: 100%;
@@ -213,7 +217,7 @@ img {
 .section {
   margin: 4em 0;
 
-  &:first-of-type:not(.shop-section, .changelog) {
+  &:first-of-type:not(.shop-section, .changelog, .sketch) {
     margin-top: 0;
   }
 
@@ -228,6 +232,13 @@ img {
     @media screen and (max-width: $break-mobile) {
       padding: 2em;
     }
+  }
+
+  &.sketch {
+    padding: 1em;
+    background: $color-white;
+    border: 2px solid $color-black;
+    box-shadow: 4px 4px 0px 0px $color-black;
   }
 
   &.grey {
@@ -373,5 +384,29 @@ span.badge {
   }
   &__round {
     border-radius: 50%;
+  }
+}
+.sketch-list {
+  padding-bottom: 4em;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+
+  .section {
+    height: fit-content;
+    width: 100%;
+    margin: 2em 0;
+  }
+  .column {
+    .section:first-of-type {
+      margin: 0;
+    }
+
+    margin: 0 1em;
+    width: calc(50% - 2em);
+    @media screen and (max-width: $break-mobile) {
+        width: 100%;
+        margin: 0;
+    }
   }
 }

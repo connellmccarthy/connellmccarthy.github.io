@@ -9,6 +9,26 @@ github_username:  connellmccarthy
 permalink: pretty
 image_path: /assets/articles/
 
+menu:
+- title: Work
+  slug: work
+  paths:
+  - url: /
+  - url: /changelog
+  - url: /sketches
+  icon: briefcase
+- title: Articles
+  slug: articles
+  paths: 
+  - url: /article/
+  icon: book
+- title: Shop
+  slug: shop
+  paths:
+  - url: /shop/
+  icon: shopping-bag
+
+
 sass:
   sass_dir: _sass
   style: compressed
@@ -21,8 +41,12 @@ collections:
   collections:
     output: true
     sort_by: title
-    permalink: "shop/:collection/:path"
+    permalink: "/shop/:collection/:path"
   products:
     output: true
     sort_by: title
-    permalink: "shop/:collection/:path"
+    permalink: "/shop/:collection/:path"
+  sketches:
+    output: true
+    sort_by: date
+    permalink: "/:collection/:path"

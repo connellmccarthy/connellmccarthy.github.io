@@ -1,0 +1,36 @@
+---
+layout: sketch
+title: Sketches
+description: Random explorative pieces that I've created in my spare time.
+slug: sketches
+---
+<div class="section">
+  <h1 class="center">Sketches</h1>
+  <p class="muted-light center">A place for explorative works, or work in progresses.</p>
+</div>
+
+<div class="sketch-list">
+  {% assign sketches = site.sketches | reverse %}
+  <div class="column">
+    {% for sketch in sketches %}
+      {% assign i = forloop.index | modulo: 2 %}
+      {% if i != 0 %}
+        <div class="section border-radius__normal sketch">
+          {{ sketch.content }}
+          <p class="muted">{{ sketch.slug }}</p>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <div class="column">
+    {% for sketch in sketches %}
+      {% assign i = forloop.index | modulo: 2 %}
+      {% if i == 0 %}
+        <div class="section border-radius__normal sketch">
+          {{ sketch.content }}
+          <p class="muted">{{ sketch.slug }}</p>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

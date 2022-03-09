@@ -91,7 +91,7 @@ button.btn {
     border: 1px solid $color-border;
     box-shadow: 0px 3px 2px -2px #0000001A;
     &:hover {
-      background: $color-grey;
+      background: darken($color-white, 2);
     }
   }
 
@@ -196,9 +196,9 @@ button.btn {
         width: 10px;
         border-radius: 50%;
         border-top: 2px solid $color-ink;
-        border-left: 2px solid lighten($color-ink-muted-light, 40);
-        border-right: 2px solid lighten($color-ink-muted-light, 40);
-        border-bottom: 2px solid lighten($color-ink-muted-light, 40);
+        border-left: 2px solid $color-border;
+        border-right: 2px solid $color-border;
+        border-bottom: 2px solid $color-border;
         position: absolute;
         top: 50%;
         left: 50%;

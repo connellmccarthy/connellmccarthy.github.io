@@ -1,5 +1,5 @@
 const swup = new Swup({
-  plugins: [new SwupSlideTheme(), new SwupGaPlugin(), new SwupScriptsPlugin({
+  plugins: [new SwupGaPlugin(), new SwupScriptsPlugin({
     optin: true,
     head: false,
     body: true

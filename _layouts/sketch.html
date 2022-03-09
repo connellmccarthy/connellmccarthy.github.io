@@ -4,21 +4,15 @@
     {% include head.html %}
   </head>
   <body>
+    {% include navigation.html %}
     <div class="container">
-      <div class="sidebar__container">
-        {% include sidebar.html %}
-      </div>
-      <div class="app_pane sketch">
-        {% include navigation.html %}
-        <main id="swup" class="transition-fade" aria-live="polite">
-          <div id="sketch-identifier"></div>
-          <div class="wrapper">
-            {{ content }}
-          </div>
-        </main>
-      </div>
+      <main id="swup" class="transition-fade" aria-live="polite">
+        <div id="sketch-identifier"></div>
+        <div class="wrapper">
+          {{ content }}
+        </div>
+      </main>
     </div>
-    {% include cart.html %}
     {% include scripts.html %}
   </body>
 </html>

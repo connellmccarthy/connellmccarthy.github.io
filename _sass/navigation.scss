@@ -49,6 +49,54 @@
   }
 }
 
+#swup-shop-nav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 97;
+}
+.shop-nav {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 0 2em;
+  background: $color-white;
+  border-bottom: 1px solid $color-border;
+
+  .divider {
+    width: 1px;
+    height: 30px;
+    border-right: 1px solid $color-border;
+    margin: 0 1em;
+    display: block;
+    position: relative;
+  }
+
+  a {
+    padding: 1.6em 1em;
+    margin: 0;
+    border-radius: 0;
+    white-space: nowrap;
+    transition: border-color 0.3s ease;
+    border-bottom: 2px solid transparent;
+
+    &:hover {
+      border-color: $color-border;
+    }
+
+    &.active {
+      color: $color-ink-dark;
+      border-color: $color-ink-dark;
+    }
+    &:first-of-type {
+      margin-left: 0;
+    }
+  }
+}
+
 button.cart {
   display: inline-flex;
   justify-content: center;

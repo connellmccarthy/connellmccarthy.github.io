@@ -1,0 +1,10 @@
+<div class="shop-nav">
+  <a href="/prints" class="btn{% if page.url == '/prints/' %} active{% endif %}">Overview</a>
+  <div class="divider"></div>
+  <a href="/prints/collections/all" class="btn{% if page.url == '/prints/collections/all' %} active{% endif %}">All</a>  
+  {% for collection in site.collections %}
+    {% unless collection.slug == 'shop-all' %}
+      <a class="btn{% if page.url == collection.url %} active{% endif %}" href="{{ collection.url }}">{{ collection.title }}</a>
+    {% endunless %}
+  {% endfor %}
+</div>

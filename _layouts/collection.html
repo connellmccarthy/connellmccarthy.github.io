@@ -6,9 +6,8 @@
   <body>
     {% include navigation.html %}
     <div class="container">
-      <main id="swup" class="transition-fade" aria-live="polite">
+      <main id="swup" class="transition-scale" aria-live="polite">
         <div class="wrapper">
-          {% include shop/collections.html %}
           <div class="shop-product-list">
             {% for product in site.products %}
               {% assign page_tags = page.identifier | split: ', ' %}

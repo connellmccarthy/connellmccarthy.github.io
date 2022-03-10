@@ -7,7 +7,7 @@
   <nav class="nav">
     <div class="nav__items">
       {% for link in site.menu %}
-        <a href="{{ link.url }}" class="btn btn__round nav__item{% if page.url == link.url %} active{% elsif link.url != '/' and page.url contains link.url %} active{% endif %}">
+        <a href="{{ link.url }}" id="nav-{{ link.slug }}" class="btn btn__round nav__item{% if page.url == link.url %} active{% elsif link.url != '/' and page.url contains link.url %} active{% endif %}">
           {{ link.title }}
         </a>
       {% endfor %}
@@ -32,6 +32,11 @@
     </div>
   </nav>
 </div>
+<main id="swup-shop-nav" class="transition-fade" aria-live="polite">
+  {% if page.url contains '/prints' %}
+    {% include shop/shop-nav.html %}
+  {% endif %}
+</main>
 
 <div class="fade cart-trigger"></div>
 <div class="cart__modal">

@@ -114,7 +114,7 @@ h2.treecount {
   margin: 10em 0;
 
   &.shop-hero {
-    background-image: url('/assets/img/shop/hero-bg.jpg');
+    background-image: url('/assets/img/prints/hero-bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center right;
@@ -236,19 +236,6 @@ h2.treecount {
     width: calc(50% - 4em);
     @media screen and (max-width: $break-mobile) {
       width: 100%;
-    }
-  }
-}
-.filters {
-  width: 100%;
-  display: flex;
-  &.collections {
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    margin: 2em 0 4em;
-
-    a {
-      margin: 0 0.2em 0.6em;
     }
   }
 }

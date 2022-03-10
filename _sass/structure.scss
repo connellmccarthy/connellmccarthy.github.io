@@ -4,6 +4,7 @@ $mobile: 768px;
 $gutter: 6em;
 $max-width: 1000px;
 $max-width-condensed: 750px;
+$site-max-width: 1600px;
 
 $break-tablet: 1200px;
 $break-mobile: 768px;
@@ -96,7 +97,7 @@ html, body {
   padding: 0;
 }
 body {
-  max-width: 1600px;
+  max-width: $site-max-width;
   margin: 0 auto;
   background: $color-white;
   color: $color-ink;
@@ -105,12 +106,6 @@ body {
 
   &.no-scroll {
     overflow-y: hidden;
-    .container {
-      position: relative;
-      overflow-y: hidden;
-      pointer-events: none;
-      touch-action: none;
-    }
   }
   &.no-select {
     -webkit-touch-callout: none;
@@ -123,6 +118,7 @@ body {
 }
 .crop {
   width: 100%;
+  max-width: $site-max-width;
   height: fit-content;
   position: relative;
   overflow-x: hidden;

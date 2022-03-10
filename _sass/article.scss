@@ -1,11 +1,4 @@
-
 .article {
-  margin-top: -80px;
-
-  @media screen and (max-width: $break-mobile) {
-    margin-top: -110px;
-  }
-
   h1 {
     font-weight: 500;
     font-size: 2.6em;
@@ -76,16 +69,19 @@
     height: 225px;
   }
 }
-.article-info {
-  position: sticky;
-  opacity: 0;
+#swup-article-info {
+  position: fixed;
   pointer-events: none;
-  top: 0;
-  left: 0;
-  margin-top: 2em;
-  padding: 1.4em 0;
   width: 100%;
-  z-index: 4;
+  max-width: $site-max-width;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 97;
+}
+.article-info {
+  padding: 1em 0;
+  width: 100%;
   background: $color-white;
   border-bottom: 1px solid $color-border;
   transition: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
@@ -109,9 +105,11 @@
     p {
       font-size: 1em;
       margin: 0;
+      line-height: 1em;
       &.title {
         font-weight: 500;
-        font-size: 1.2em;
+        color: $color-ink-dark;
+        margin-bottom: 0.4em;
       }
     }
   }

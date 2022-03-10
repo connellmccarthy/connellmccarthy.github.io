@@ -4,26 +4,10 @@
     {% include head.html %}
   </head>
   <body>
-    <div class="crop">
-      <div class="container">
-        {% include navigation.html %}
+    <div class="container">
+      {% include navigation.html %}
+      <div class="crop">
         <main id="swup" class="transition-scale article" aria-live="polite">
-          <div class="article-info">
-            <div class="wrapper">
-              <a href="/article" class="btn btn__basic">
-                <span class="visually-hidden">Back to articles</span>
-                <i class="far fa-arrow-left" aria-hidden="true"></i>
-              </a>
-              <div class="details">
-                <p class="title">{{ page.title }}</p>
-                <p class="muted">{{ page.date | date: "%B %d, %Y" }}</p>
-              </div>
-              <button id="like_button_sticky" class="btn btn__basic like_button processing">
-                <i class="far fa-heart like_button_icon"></i>
-                <span class="count">•</span>
-              </button>
-            </div>
-          </div>
           <div class="wrapper">
             <div class="article-info-static">
               <a href="/article" id="back-link">

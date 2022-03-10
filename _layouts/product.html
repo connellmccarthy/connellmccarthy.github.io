@@ -4,10 +4,10 @@
     {% include head.html %}
   </head>
   <body>
-    <div class="crop">
-      <div class="container">
-        {% assign product = page %}
-        {% include navigation.html %}
+    <div class="container">
+      {% assign product = page %}
+      {% include navigation.html %}
+      <div class="crop">
         <main id="swup" class="transition-scale" aria-live="polite">
           <div class="product-header {% if page.style == 'dark' %}dark{% endif %}">
             <img src="{{ page.images[2].src }}">

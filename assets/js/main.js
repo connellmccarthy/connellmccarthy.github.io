@@ -1,5 +1,5 @@
 const swup = new Swup({
-  containers: ["#swup","#swup-shop-nav"],
+  containers: ["#swup","#swup-shop-nav", "#swup-article-info"],
   plugins: [new SwupGaPlugin(), new SwupScriptsPlugin({
     optin: true,
     head: false,
@@ -131,9 +131,9 @@ function init() {
   }
   if (article_info) {
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 350 && !article_info.classList.contains('active')) {
+      if (window.scrollY > 250 && !article_info.classList.contains('active')) {
         article_info.classList.toggle('active');
-      } else if (window.scrollY < 350 && article_info.classList.contains('active')) {
+      } else if (window.scrollY < 250 && article_info.classList.contains('active')) {
         article_info.classList.toggle('active');
       }
     });

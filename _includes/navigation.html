@@ -13,7 +13,7 @@
   {% endif %}
   <nav class="nav">
     <div class="nav__items">
-      {% for link in site.menu %}
+      {% for link in site.data.content.menus.main %}
         <a href="{{ link.url }}" id="nav-{{ link.slug }}" class="btn btn__round nav__item{% if page.url == link.url %} active{% elsif link.url != '/' and page.url contains link.url %} active{% endif %}">
           {{ link.title }}
         </a>

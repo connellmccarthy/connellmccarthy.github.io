@@ -283,7 +283,9 @@ function init() {
 
   document.querySelectorAll('a').forEach((el) => {
     el.addEventListener('click', () => {
-      switchPage(el);
+      if (el.getAttribute('target') == null && el.getAttribute('data-no-swup') == null) {
+        switchPage(el);
+      }
       if (audio_playing) {
         audio_playing.pause();
       }
@@ -292,14 +294,12 @@ function init() {
 }
 
 function switchPage(url) {
+  removeActiveMenuItem();
   if (url.getAttribute('href').includes('/article')) {
-    removeActiveMenuItem();
     document.getElementById('nav-article').classList.add('active');
   } else if (url.getAttribute('href') == '/') {
-    removeActiveMenuItem();
     document.getElementById('nav-info').classList.add('active');
   } else if (url.getAttribute('href').includes('/prints')) {
-    removeActiveMenuItem();
     document.getElementById('nav-prints').classList.add('active');
   }
 }

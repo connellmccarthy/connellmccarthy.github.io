@@ -1,6 +1,26 @@
 announcement:
   display: true
   title: New print orders won't be fulfilled until March 20th
+menus:
+  main:
+  - title: Info
+    slug: info
+    url: /
+  - title: Writing
+    slug: article
+    url: /article/
+  - title: Prints
+    slug: prints
+    url: /prints/
+  footer:
+  - title: Changelog
+    url: /changelog/
+  - title: Report an issue
+    url: https://github.com/connellmccarthy/connellmccarthy.github.io/issues/new
+  - title: Terms of Service
+    url: /terms/
+  - title: Privacy Policy
+    url: /privacy/
 homepage:
   showreel:
     title: 2022 Showreel
@@ -36,6 +56,19 @@ homepage:
       external: true
   articles:
     title: Writing
+socials:
+- name: Dribbble
+  icon: dribbble
+  url: https://dribbble.com/connellmccarthy
+- name: Twitter
+  icon: twitter
+  url: https://twitter.com/connellmccarthy
+- name: Instagram
+  icon: instagram
+  url: https://instagram.com/connellmccarthy
+- name: Linkedin
+  icon: linkedin
+  url: https://www.linkedin.com/in/connellmccarthy/
 newsletter:
   body: Get notified whenever I publish something new, like a new article or a new product.
 shop:

@@ -11,7 +11,7 @@
     {% endif %}
     <div class="info">
       {% if include.preline %}
-        <p class="muted-light preline">
+        <p class="muted preline">
           {% if include.preline_icon %}
             <i class="far fa-{{ include.preline_icon }} mr-1" aria-hidden="true"></i>
           {% endif %}
@@ -31,7 +31,7 @@
       </p>
       {% unless include.inline %}
         {% if include.date %}
-          <p class="muted-light m-0">{{ include.date | date: "%B %d, %Y" }}{% if include.reading_time %} • {{ include.reading_time }} minute read{% endif %}</p>
+          <p class="muted m-0">{{ include.date | date: "%B %d, %Y" }}{% if include.reading_time %} • {{ include.reading_time }} minute read{% endif %}</p>
         {% endif %}
       {% endunless %}
       {% if include.description %}

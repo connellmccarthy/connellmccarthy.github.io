@@ -4,15 +4,17 @@
     {% include head.html %}
   </head>
   <body>
-    {% include navigation.html %}
-    <div class="container">
-      <main id="swup" class="transition-scale" aria-live="polite">
-        <div id="sketch-identifier"></div>
-        <div class="wrapper">
-          {{ content }}
-        </div>
-      </main>
+    <div class="crop">
+      <div class="container">
+        {% include navigation.html %}
+        <main id="swup" class="transition-scale" aria-live="polite">
+          <div id="sketch-identifier"></div>
+          <div class="wrapper">
+            {{ content }}
+          </div>
+        </main>
+        {% include footer.html %}
+      </div>
     </div>
-    {% include scripts.html %}
   </body>
 </html>

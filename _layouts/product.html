@@ -4,143 +4,145 @@
     {% include head.html %}
   </head>
   <body>
-    {% assign product = page %}
-    {% include navigation.html %}
-    <div class="container">
-      <main id="swup" class="transition-scale" aria-live="polite">
-        <div class="product-header {% if page.style == 'dark' %}dark{% endif %}">
-          <img src="{{ page.images[2].src }}">
+    <div class="crop">
+      <div class="container">
+        {% assign product = page %}
+        {% include navigation.html %}
+        <main id="swup" class="transition-scale" aria-live="polite">
+          <div class="product-header {% if page.style == 'dark' %}dark{% endif %}">
+            <img src="{{ page.images[2].src }}">
+            <div class="wrapper">
+              <a class="btn btn__link" href="/prints/collections/all">
+                <i class="fal fa-arrow-left mr-2" aria-hidden="true"></i>
+                Shop all products
+              </a>
+              <div class="product-info">
+                <h1 class="title">{{ page.title }}</h1>
+                <p class="muted price">Starting from ${{ page.variants[0].price | money }} CAD</p>
+                <button id="buying_options" class="btn btn__dark btn__round btn__padding-large">
+                  Buying options
+                </button>
+              </div>
+            </div>
+          </div>
+          {% include shop/product-features.html %}
           <div class="wrapper">
-            <a class="btn btn__link" href="/prints/collections/all">
-              <i class="fal fa-arrow-left mr-2" aria-hidden="true"></i>
-              Shop all products
-            </a>
-            <div class="product-info">
-              <h1 class="title">{{ page.title }}</h1>
-              <p class="muted price">Starting from ${{ page.variants[0].price | money }} CAD</p>
-              <button id="buying_options" class="btn btn__dark btn__round btn__padding-large">
-                Buying options
-              </button>
+            <div class="product-description">
+              {{ page.body_html }}
             </div>
-          </div>
-        </div>
-        {% include shop/product-features.html %}
-        <div class="wrapper">
-          <div class="product-description">
-            {{ page.body_html }}
-          </div>
-          <div class="product_page">
-            <div class="product_image">
-              <img id="product_image" src="{{ page.images[0].src }}">
-            </div>
-            <div class="product_form">
-              <p class="title">{{ page.title }}</p>
-              <p class="price" id="product_price">${{ page.variants[0].price | money }} CAD</p>
-              <hr />
-              <form id="AddToCartForm">
-                <div class="options">
-                  {% assign options = page.options | reverse %}
-                  {% for option in options %}
-                    {% assign option_index = forloop.index0 %}
-                    {% assign is_color = false %}
-                    {% assign downcased_option = option.name | downcase %}
-                    {% if downcased_option contains 'color' or downcased_option contains 'colour' %}
-                      {% assign is_color = true %}
-                    {% endif %}
-                    <p class="header muted">{{ option.name }}</p>
-                    {% for value in option.values %}
-                      <div data-value="{{ value | slugify }}" class="swatch-element {% if is_color %}color {% endif %}{{ value | slugify }}">
-                        <input class="{% if is_color %}color {% endif %} {{ value | slugify }}" id="swatch-{{ option_index }}-{{ value | slugify }}" type="radio" name="option-{{ option_index }}" value="{{ value | slugify }}"{% if forloop.first %} checked{% endif %} data-value="{{ value }}"/>
-                        <label class="{% if is_color %}color {% endif %} {{ value | slugify }}" for="swatch-{{ option_index }}-{{ value | slugify }}">
-                          {{ value }}
-                        </label>
-                      </div>
+            <div class="product_page">
+              <div class="product_image">
+                <img id="product_image" src="{{ page.images[0].src }}">
+              </div>
+              <div class="product_form">
+                <p class="title">{{ page.title }}</p>
+                <p class="price" id="product_price">${{ page.variants[0].price | money }} CAD</p>
+                <hr />
+                <form id="AddToCartForm">
+                  <div class="options">
+                    {% assign options = page.options | reverse %}
+                    {% for option in options %}
+                      {% assign option_index = forloop.index0 %}
+                      {% assign is_color = false %}
+                      {% assign downcased_option = option.name | downcase %}
+                      {% if downcased_option contains 'color' or downcased_option contains 'colour' %}
+                        {% assign is_color = true %}
+                      {% endif %}
+                      <p class="header muted">{{ option.name }}</p>
+                      {% for value in option.values %}
+                        <div data-value="{{ value | slugify }}" class="swatch-element {% if is_color %}color {% endif %}{{ value | slugify }}">
+                          <input class="{% if is_color %}color {% endif %} {{ value | slugify }}" id="swatch-{{ option_index }}-{{ value | slugify }}" type="radio" name="option-{{ option_index }}" value="{{ value | slugify }}"{% if forloop.first %} checked{% endif %} data-value="{{ value }}"/>
+                          <label class="{% if is_color %}color {% endif %} {{ value | slugify }}" for="swatch-{{ option_index }}-{{ value | slugify }}">
+                            {{ value }}
+                          </label>
+                        </div>
+                      {% endfor %}
                     {% endfor %}
-                  {% endfor %}
-                  <input type="hidden" name="title" id="product-title" value="{{ product.title }}" />
-                  <input type="hidden" name="url" id="product-url" value="{{ page.url }}" />
-                  <input type="hidden" name="id" id="product-select" value="{{ product.variants.first.id }}" />
-                  <input type="hidden" name="image" id="product-image" value="{{ product.images[0].src }}" />
-                  <input type="hidden" name="price" id="product-price" value="{{ product.variants.first.price }}" />
-                  <hr class="mt-10" />
-                  <button type="submit" class="btn btn__dark btn__round btn__padding-large">
-                    Add to cart
-                  </button>
-                  {% if page.product_type == 'Photo Print' %}
-                    <p class="muted print-info">This gorgeous photograph is printed on a premium 240gsm paper with a satin lustre finish, and subtle pearl-like texture. It's printed using water based inks, uses a 10-mil RC base which gives prints a photographic feel, and keeps the paper cockle-free.</p>
-                  {% endif %}
-                </div>
-              </form>
+                    <input type="hidden" name="title" id="product-title" value="{{ product.title }}" />
+                    <input type="hidden" name="url" id="product-url" value="{{ page.url }}" />
+                    <input type="hidden" name="id" id="product-select" value="{{ product.variants.first.id }}" />
+                    <input type="hidden" name="image" id="product-image" value="{{ product.images[0].src }}" />
+                    <input type="hidden" name="price" id="product-price" value="{{ product.variants.first.price }}" />
+                    <hr class="mt-10" />
+                    <button type="submit" class="btn btn__dark btn__round btn__padding-large">
+                      Add to cart
+                    </button>
+                    {% if page.product_type == 'Photo Print' %}
+                      <p class="muted print-info">This gorgeous photograph is printed on a premium 240gsm paper with a satin lustre finish, and subtle pearl-like texture. It's printed using water based inks, uses a 10-mil RC base which gives prints a photographic feel, and keeps the paper cockle-free.</p>
+                    {% endif %}
+                  </div>
+                </form>
+              </div>
             </div>
+            {% include shop/product-value.html %}
           </div>
-          {% include shop/product-value.html %}
-        </div>
-        <script data-swup-reload-script>
-          document.querySelectorAll('input[type="radio"]').forEach(el => {
-            el.addEventListener('change', () => {
-              selectVariant();
+          <script data-swup-reload-script>
+            document.querySelectorAll('input[type="radio"]').forEach(el => {
+              el.addEventListener('change', () => {
+                selectVariant();
+              });
             });
-          });
-          function selectVariant() {
-            {% if product.options[0] %}var opt2 = document.querySelector('input[type="radio"][name="option-0"]:checked').value;{% endif %}
-            {% if product.options[1] %}var opt1 = document.querySelector('input[type="radio"][name="option-1"]:checked').value;{% endif %}
+            function selectVariant() {
+              {% if product.options[0] %}var opt2 = document.querySelector('input[type="radio"][name="option-0"]:checked').value;{% endif %}
+              {% if product.options[1] %}var opt1 = document.querySelector('input[type="radio"][name="option-1"]:checked').value;{% endif %}
 
-            var id = '';
-            {% for v in product.variants %}
-            if(opt1=="{{ v.option1 | slugify }}"{% if product.options[1] %} && opt2=="{{ v.option2 | slugify }}"{% endif %}) {
-                var id = {{ v.id }};
-                var price = {{ v.price }};
-                {% assign image = product.images | where: 'id', v.image_id %}
-                var image = '{{ image[0].src }}';
+              var id = '';
+              {% for v in product.variants %}
+              if(opt1=="{{ v.option1 | slugify }}"{% if product.options[1] %} && opt2=="{{ v.option2 | slugify }}"{% endif %}) {
+                  var id = {{ v.id }};
+                  var price = {{ v.price }};
+                  {% assign image = product.images | where: 'id', v.image_id %}
+                  var image = '{{ image[0].src }}';
+                }
+              {% endfor %}
+              if(id!='') {
+                document.getElementById('product-select').value = id;
+                document.getElementById('product-image').value = image;
+                document.getElementById('product_image').src = image;
+                document.getElementById('product-price').value = price;
+                document.getElementById('product_price').innerText = `$${price} CAD`;
+
+              } else {
+                document.getElementById('product-select').value = '';
+                document.getElementById('product-image').value = '';
+                document.getElementById('product_price').innerText = 'Unavailable';
               }
-            {% endfor %}
-            if(id!='') {
-              document.getElementById('product-select').value = id;
-              document.getElementById('product-image').value = image;
-              document.getElementById('product_image').src = image;
-              document.getElementById('product-price').value = price;
-              document.getElementById('product_price').innerText = `$${price} CAD`;
-
-            } else {
-              document.getElementById('product-select').value = '';
-              document.getElementById('product-image').value = '';
-              document.getElementById('product_price').innerText = 'Unavailable';
             }
-          }
-          document.getElementById('AddToCartForm').addEventListener('submit', (event) => {
-            event.preventDefault();
-            let id = document.getElementById('product-select').value;
-            let image = document.getElementById('product-image').value;
-            let title = document.getElementById('product-title').value;
-            let option1 = document.querySelector('[name="option-0"]:checked').getAttribute('data-value');
-            let option2 = document.querySelector('[name="option-1"]:checked').getAttribute('data-value');
-            let price = document.getElementById('product-price').value;
-            let url = document.getElementById('product-url').value;
-            var product = {
-              id: id,
-              title: title,
-              image: image,
-              option1: option1,
-              option2: option2,
-              price: price,
-              url: url
-            };
-            var cart;
-            if (window.localStorage.getItem('cart')) {
-              cart = JSON.parse(window.localStorage.getItem('cart'));
-            } else {
-              cart = new Array;
-              document.querySelector('.notif').classList.toggle('active');
-            }
-            cart.push(product)
-            window.localStorage.setItem('cart', JSON.stringify(cart));
-            toggleModal();
-            getCartItems();
-          });
-        </script>
-        {% include pagination.html type='product' %}
-      </main>
+            document.getElementById('AddToCartForm').addEventListener('submit', (event) => {
+              event.preventDefault();
+              let id = document.getElementById('product-select').value;
+              let image = document.getElementById('product-image').value;
+              let title = document.getElementById('product-title').value;
+              let option1 = document.querySelector('[name="option-0"]:checked').getAttribute('data-value');
+              let option2 = document.querySelector('[name="option-1"]:checked').getAttribute('data-value');
+              let price = document.getElementById('product-price').value;
+              let url = document.getElementById('product-url').value;
+              var product = {
+                id: id,
+                title: title,
+                image: image,
+                option1: option1,
+                option2: option2,
+                price: price,
+                url: url
+              };
+              var cart;
+              if (window.localStorage.getItem('cart')) {
+                cart = JSON.parse(window.localStorage.getItem('cart'));
+              } else {
+                cart = new Array;
+                document.querySelector('.notif').classList.toggle('active');
+              }
+              cart.push(product)
+              window.localStorage.setItem('cart', JSON.stringify(cart));
+              toggleModal();
+              getCartItems();
+            });
+          </script>
+          {% include pagination.html type='product' %}
+        </main>
+        {% include footer.html %}
+      </div>
     </div>
-    {% include scripts.html %}
   </body>
 </html>

@@ -1,10 +1,9 @@
 .product-header {
   background: $color-grey;
   width: 100%;
-  height: 80vh;
+  height: 70vh;
   overflow: hidden;
   position: relative;
-  margin-top: -125px;
 
   @media screen and (max-width: $break-mobile) {
     height: 76vh;
@@ -26,13 +25,14 @@
   }
 
   .wrapper {
-    margin-top: 150px;
-    height: calc(100% - 210px);
+    margin-top: 60px;
+    height: calc(100% - 120px);
     position: relative;
     z-index: 3;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    max-width: 1450px;
 
     @media screen and (max-width: $break-mobile) {
       margin-top: 140px;

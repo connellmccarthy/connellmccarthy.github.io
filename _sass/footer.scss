@@ -1,0 +1,31 @@
+.footer {
+  width: 100%;
+  background: $color-black;
+  text-align: center;
+  &__contents {
+    background: $color-white;
+    width: 100%;
+    padding: 4em 0;
+    border-top: 1px solid $color-border;
+    border-radius: 0 0 $border-radius-large $border-radius-large;
+  }
+  .socials {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 2em auto;
+    justify-content: center;
+    align-items: center;
+
+    li {
+      font-size: 1.2em;
+      margin: 0 0.4em;
+    }
+  }
+  .copyright {
+    font-size: 0.8em;
+    color: $color-border;
+    margin: 0;
+    padding: 1em;
+  }
+}

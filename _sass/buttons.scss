@@ -37,7 +37,7 @@ $sparkle-radius: $sparkle-diameter * 0.5;
   }
 }
 
-a:not(.btn, .card, #back-link, .product a) {
+a:not(.btn, .card, #back-link, .product a, sup a) {
   font-weight: 500;
   color: $color-ink-dark;
   text-decoration: none;
@@ -78,6 +78,8 @@ button.btn {
   font-size: 0.95em;
   position: relative;
 
+  transition: background 0.3s ease, color 0.3s ease;
+
   font-family: $font-family;
 
   &:hover {
@@ -116,7 +118,7 @@ button.btn {
     border: 1px solid $color-border;
     box-shadow: 0px 3px 2px -2px #0000001A;
     &:hover {
-      background: darken($color-white, 2);
+      background: $color-grey-light;
     }
   }
 
@@ -130,7 +132,6 @@ button.btn {
   &__dark {
     background: $color-black;
     color: $color-white;
-    box-shadow: 0px 5px 15px -2px #00000040;
     &:hover {
       background: lighten($color-black, 15);
     }

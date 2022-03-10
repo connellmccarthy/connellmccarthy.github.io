@@ -9,17 +9,6 @@ github_username:  connellmccarthy
 permalink: pretty
 image_path: /assets/articles/
 
-menu:
-- title: Info
-  slug: info
-  url: /
-- title: Writing
-  slug: article
-  url: /article/
-- title: Prints
-  slug: prints
-  url: /prints/
-
 
 sass:
   sass_dir: _sass

@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital@1&display=swap');
+
 $mobile: 768px;
 $gutter: 6em;
 $max-width: 1000px;
+$max-width-condensed: 750px;
 
 $break-tablet: 1200px;
 $break-mobile: 768px;
@@ -14,6 +17,8 @@ $border-radius-normal: 6px;
 $border-radius-large: 12px;
 
 $font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-serif: 'Newsreader', serif;
+
 
 .transition-fade,
 .transition-scale {
@@ -28,6 +33,7 @@ $font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, 
 }
 
 html {
+  background: $color-black;
 	&.is-animating {
     .transition-fade,
 		.transition-scale {
@@ -86,10 +92,12 @@ html {
   width: 1px;
 }
 html, body {
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 body {
+  // max-width: 1600px;
+  // margin: 0 auto;
   background: $color-white;
   color: $color-ink;
   font-family: $font-family;
@@ -125,9 +133,11 @@ main {
     padding-bottom: 8em;
   }
 }
-
+h1,h2,h3 {
+  color: $color-ink-dark;
+}
 h1,h2,h3,p {
-  line-height: 1.6em;
+  line-height: 1.8em;
 }
 h1 {
   font-weight: 500;
@@ -140,6 +150,13 @@ h3 {
 h2 {
   font-size: 1em;
   font-weight: 500;
+  font-style: italic;
+}
+.serif {
+  font-family: $font-serif;
+  color: $color-ink-dark;
+  font-size: 1.1em;
+  font-weight: 400;
   font-style: italic;
 }
 .small {
@@ -191,21 +208,7 @@ h2 {
     }
   }
 }
-.app_pane {
-  position: relative;
-  
-  max-width: calc(100vw - #{$sidebar-max});
-  @media screen and (max-width: $break-tablet) {
-    max-width: calc(100vw - #{$sidebar-tablet});
-  }
-  @media screen and (max-width: $break-mobile) {
-    max-width: 100%;
-  }
 
-  &.sketch {
-    background-image: url('/assets/img/dotted-bg.jpg');
-  }
-}
 img {
   width: 100%;
 }
@@ -215,6 +218,10 @@ img {
   max-width: $max-width;
   margin: auto;
 
+  &.condensed {
+    max-width: $max-width-condensed;
+  }
+
   @media screen and (max-width: $break-mobile) {
     padding: 0 ($gutter / 3);
   }
@@ -223,8 +230,8 @@ img {
 .section {
   margin: 4em 0;
 
-  &:first-of-type:not(.shop-section, .changelog, .sketch) {
-    margin-top: 0;
+  &.padded {
+    padding: 4em;
   }
 
   &.green {
@@ -272,6 +279,12 @@ img {
     padding: 2em 0;
   }
 
+  &.hero {
+    p {
+      margin: 2em 0;
+    }
+  }
+
   @media screen and (max-width: $break-mobile) {
     margin: 2em 0;
   }
@@ -279,6 +292,25 @@ img {
 
 i.fa-arrow-right.external {
   transform: rotate(-45deg);
+}
+
+.projects {
+  border: 1px solid $color-border;
+  border-radius: $border-radius-normal;
+  margin: 2em;
+  &__title {
+    background: $color-grey;
+    border-radius: $border-radius-normal $border-radius-normal 0 0;
+    padding: 0.4em 1em;
+    color: $color-ink-dark;
+    p {
+      margin: 0;
+      font-weight: 500;
+    }
+  }
+  &__items {
+    padding: 1em;
+  }
 }
 
 .card {
@@ -291,16 +323,62 @@ i.fa-arrow-right.external {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: 0.3s ease;
+
+  &.project {
+    background: transparent;
+    display: block;
+    border: none;
+    position: relative;
+    z-index: 1;
+    &:hover {
+      background: transparent;
+      &::after {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    p {
+      margin: 0.2em 0.4em;
+    }
+    p.title {
+      display: inline-block;
+      color: $color-ink-dark;
+      border-bottom: 1px solid;
+      border-color: $color-border;
+      padding: 0 0 0.4em;
+
+      i {
+        font-size: 0.8em;
+      }
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      border-radius: $border-radius-normal;
+      background: $color-grey-light;
+      z-index: -1;
+      pointer-events: none;
+      transition: 0.3s ease;
+      transform-origin: center;
+      transform: scale(1.05);
+      opacity: 0;
+    }
+  }
 
   &.grey {
-    background: $color-grey;
+    background: $color-grey-light;
     &:hover {
-      background: darken($color-grey, 2);
+      background: $color-grey;
     }
   }
 
   &:hover {
-    background: $color-grey;
+    background: $color-grey-light;
   }
 
   .details {
@@ -310,7 +388,7 @@ i.fa-arrow-right.external {
   }
 
   p {
-    line-height: 1.2em;
+    line-height: 1.4em;
   }
 
   .arrow {
@@ -379,6 +457,12 @@ span.badge {
   border-radius: 20px;
   padding: 0.2em 0.6em;
   font-size: 0.8em;
+
+  &.grey {
+    background: $color-white;
+    border: 1px solid $color-border;
+    color: $color-ink-muted;
+  }
 }
 
 .border-radius {
@@ -392,6 +476,8 @@ span.badge {
     border-radius: 50%;
   }
 }
+
+
 .sketch-list {
   padding-bottom: 4em;
   display: flex;

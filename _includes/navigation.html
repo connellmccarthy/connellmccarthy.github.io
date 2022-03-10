@@ -1,7 +1,14 @@
 <div class="nav-header">
-  {% if site.data.content.announcement %}
+  {% if site.data.content.announcement and site.data.content.announcement.display %}
     <div class="announcement">
-      {{ site.data.content.announcement.title }}
+      {% if site.data.content.announcement.url %}
+        <a href="{{ site.data.content.announcement.url }}" {% if site.data.content.announcement.external %}target="_blank"{% endif %}>
+          {{ site.data.content.announcement.title }}
+          <i class="far fa-arrow-right {% if site.data.content.announcement.external %}external{% endif %}"></i>
+        </a>
+      {% else %}
+        {{ site.data.content.announcement.title }}
+      {% endif %}
     </div>
   {% endif %}
   <nav class="nav">
@@ -13,7 +20,7 @@
       {% endfor %}
     </div>
     <div class="logo">
-      <a href="/">
+      <a class="btn" href="/">
         <svg width="83" height="16" viewBox="0 0 83 16" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M13.4724 5.74326H13.2436C12.8798 4.54687 11.7037 1.97704 9.36341 1.29073L9.32218 1.26972C8.93739 1.19696 8.59383 1.16544 8.33354 1.16544C5.66994 1.16544 4.39109 4.01577 4.39109 8.37452C4.39109 12.7858 5.8785 15.3864 8.37557 15.3864C8.61485 15.3864 8.92688 15.3653 9.29065 15.2926L9.36341 15.2506C11.694 14.5642 12.8798 11.9839 13.2436 10.8085H13.4724L13.1603 15.2401C11.5687 15.6774 10.0392 15.9474 8.48955 15.9894C8.42731 15.9999 8.35455 15.9999 8.2915 15.9999H8.18722C3.44368 16.0007 0 12.9216 0 8.44809C0 3.90179 3.16236 0.55188 8.10396 0.55188H8.23896C9.87268 0.562389 11.4741 0.842895 13.1595 1.30124L13.4724 5.74326Z" fill="#0F0F0F"/>
           <path d="M26.5195 10.4447C26.5195 13.6386 23.9917 15.9998 20.5998 15.9998C17.2288 15.9998 14.701 13.6386 14.701 10.4447C14.701 7.27181 17.2499 4.88953 20.5998 4.88953C23.9917 4.88953 26.5195 7.27181 26.5195 10.4447ZM20.6103 15.5835C21.9215 15.5835 22.535 13.8253 22.535 10.4447C22.535 7.08426 21.9109 5.30584 20.5998 5.30584C19.2894 5.30584 18.696 7.08507 18.696 10.4447C18.696 13.8253 19.2999 15.5835 20.6103 15.5835Z" fill="#0F0F0F"/>

@@ -6,9 +6,10 @@ slug: shop-all
 icon: list
 ---
 
-<h1 class="visually-hidden">Shop</h1>
-
-{% assign products = site.products %}
-{% include shop/product-list.html %}
-
-{% include newsletter.html %}
+<div class="wrapper">
+  <h1 class="visually-hidden">Shop</h1>
+  {% assign products = site.products %}
+  {% include shop/product-list.html %}
+  
+  {% include newsletter.html %}
+</div>

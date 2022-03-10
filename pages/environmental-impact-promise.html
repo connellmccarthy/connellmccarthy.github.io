@@ -6,75 +6,77 @@ cta_heading: Stay up to date
 slug: environmental-impact-promise
 ---
 
-<div class="section shop-section full">
-  <div class="content">
-    <h1 class="m-0">Environmental Impact Promise</h1>
-    <p class="m-0 mt-4 mb-4 muted">Much of my photography is based on my love of nature and the great outdoors. As such, it's a mission of mine to do what I can to protect our beautiful wilderness.</p>
-  </div>
-</div>
-
-<div class="section shop-section image-right flex a-center">
-  <div class="content">
-    <h3>One Tree Planted partnership</h3>
-    <p>In a small effort to help support the environment, I've partnered with One Tree Planted to assist in global reforestation projects. $10 from every print sold will go towards planting trees across the globe. According to One Tree Planted, each tree is $1, so for every print that you purchase 10 trees are planted.</p>
-    <a class="btn btn__link blue" href="https://onetreeplanted.org/?ref=connellmccarthy.com" target="_blank" rel="noopener">Learn more about One Tree Planted <i class="far fa-arrow-right external ml-1" aria-hidden="true"></i></a>
-  </div>
-  <div class="image">
-    <img class="border-radius__large" src="/assets/img/prints/environment-plant-hands.jpeg" alt="Hands holding a sprout of a new plant.">
-  </div>
-</div>
-
-<div class="section shop-section image-left flex a-center">
-  <div class="image">
-    <img class="border-radius__large" src="/assets/img/prints/certificate.jpg" alt="Certificate of authentication on the back of a photography print.">
-  </div>
-  <div class="content">
-    <h3>Paper Sourcing</h3>
-    <p>My printers use Epson Photography Paper due to the unmatched quality, and their dedication to the environment. When it comes to procuring the paper, Epson has established a policy that:
-      <ol>
-        <li>Makes effective use of used paper and other recyled pulp.</li>
-        <li>When virgin is used as a raw material in paper goods they procure, they confirm its
-          <ul>
-            <li>legality</li>
-            <li>sustainability</li>
-            <li>chemical safety</li>
-            <li>environmental management</li>
-          </ul>
-        </li>
-      </ol>
-    </p>
-    <a class="btn btn__link blue" href="https://global.epson.com/SR/supply_chain_csr/paper_procurement/?ref=connellmccarthy.com" target="_blank" rel="noopener">Learn more about Epson paper sourcing <i class="far fa-arrow-right external ml-1" aria-hidden="true"></i></a>
-  </div>
-</div>
-
-<div class="section shop-section full green border-radius__large">
-  <div class="content trees">
-    <div class="avatar">
-      <img src="/assets/img/prints/tree-avatar.jpg" alt="Forest glowing yellow at sunrise">
+<div class="wrapper">
+  <div class="section shop-section full">
+    <div class="content">
+      <h1 class="m-0">Environmental Impact Promise</h1>
+      <p class="m-0 mt-4 mb-4 muted">Much of my photography is based on my love of nature and the great outdoors. As such, it's a mission of mine to do what I can to protect our beautiful wilderness.</p>
     </div>
-    <h3>Together we've planted</h3>
-    <h2 class="treecount"><span id="treecount" class="loading">•</span> trees</h2>
-    <p class="muted m-0">That's pretty incredible. Loss of forests contributes between 12 to 17 percent of annual global greenhouse gas emissions, so every little bit helps.</p>
   </div>
-  <script data-swup-reload-script>
-    let pledgeTrees = new XMLHttpRequest();
-    let key = '<h1 class="h3 widget-title">$';
-    pledgeTrees.open( "GET", 'https://www.pledge.to/widgets/impact/em34jezzqn0exO3LPY92Ng', true);
-    pledgeTrees.send();
-    pledgeTrees.onload = () => {
-      let pos1 = pledgeTrees.response.indexOf(key) + key.length;
-      let pos2 = pledgeTrees.response.indexOf(`</h1>`);
-      let result = pledgeTrees.response.substring(pos1, pos2);
-      document.getElementById('treecount').innerText = result;
-      document.getElementById('treecount').classList.remove('loading');
-    }
-  </script>
-</div>
-
-<div class="section shop-section full">
-  <div class="content">
-    <h3>Want to contribute?</h3>
-    <p>Take a look at some prints you might like</p>
-    <a class="btn btn__link blue" href="/prints/collections/all">Shop all products <i class="far fa-arrow-right ml-1" aria-hidden="true"></i></a>
+  
+  <div class="section shop-section image-right flex a-center">
+    <div class="content">
+      <h3>One Tree Planted partnership</h3>
+      <p>In a small effort to help support the environment, I've partnered with One Tree Planted to assist in global reforestation projects. $10 from every print sold will go towards planting trees across the globe. According to One Tree Planted, each tree is $1, so for every print that you purchase 10 trees are planted.</p>
+      <a class="btn btn__link blue" href="https://onetreeplanted.org/?ref=connellmccarthy.com" target="_blank" rel="noopener">Learn more about One Tree Planted <i class="far fa-arrow-right external ml-1" aria-hidden="true"></i></a>
+    </div>
+    <div class="image">
+      <img class="border-radius__large" src="/assets/img/prints/environment-plant-hands.jpeg" alt="Hands holding a sprout of a new plant.">
+    </div>
+  </div>
+  
+  <div class="section shop-section image-left flex a-center">
+    <div class="image">
+      <img class="border-radius__large" src="/assets/img/prints/certificate.jpg" alt="Certificate of authentication on the back of a photography print.">
+    </div>
+    <div class="content">
+      <h3>Paper Sourcing</h3>
+      <p>My printers use Epson Photography Paper due to the unmatched quality, and their dedication to the environment. When it comes to procuring the paper, Epson has established a policy that:
+        <ol>
+          <li>Makes effective use of used paper and other recyled pulp.</li>
+          <li>When virgin is used as a raw material in paper goods they procure, they confirm its
+            <ul>
+              <li>legality</li>
+              <li>sustainability</li>
+              <li>chemical safety</li>
+              <li>environmental management</li>
+            </ul>
+          </li>
+        </ol>
+      </p>
+      <a class="btn btn__link blue" href="https://global.epson.com/SR/supply_chain_csr/paper_procurement/?ref=connellmccarthy.com" target="_blank" rel="noopener">Learn more about Epson paper sourcing <i class="far fa-arrow-right external ml-1" aria-hidden="true"></i></a>
+    </div>
+  </div>
+  
+  <div class="section shop-section full green border-radius__large">
+    <div class="content trees">
+      <div class="avatar">
+        <img src="/assets/img/prints/tree-avatar.jpg" alt="Forest glowing yellow at sunrise">
+      </div>
+      <h3>Together we've planted</h3>
+      <h2 class="treecount"><span id="treecount" class="loading">•</span> trees</h2>
+      <p class="muted m-0">That's pretty incredible. Loss of forests contributes between 12 to 17 percent of annual global greenhouse gas emissions, so every little bit helps.</p>
+    </div>
+    <script data-swup-reload-script>
+      let pledgeTrees = new XMLHttpRequest();
+      let key = '<h1 class="h3 widget-title">$';
+      pledgeTrees.open( "GET", 'https://www.pledge.to/widgets/impact/em34jezzqn0exO3LPY92Ng', true);
+      pledgeTrees.send();
+      pledgeTrees.onload = () => {
+        let pos1 = pledgeTrees.response.indexOf(key) + key.length;
+        let pos2 = pledgeTrees.response.indexOf(`</h1>`);
+        let result = pledgeTrees.response.substring(pos1, pos2);
+        document.getElementById('treecount').innerText = result;
+        document.getElementById('treecount').classList.remove('loading');
+      }
+    </script>
+  </div>
+  
+  <div class="section shop-section full">
+    <div class="content">
+      <h3>Want to contribute?</h3>
+      <p>Take a look at some prints you might like</p>
+      <a class="btn btn__link blue" href="/prints/collections/all">Shop all products <i class="far fa-arrow-right ml-1" aria-hidden="true"></i></a>
+    </div>
   </div>
 </div>

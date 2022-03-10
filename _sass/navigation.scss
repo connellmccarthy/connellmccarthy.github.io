@@ -3,11 +3,17 @@
   width: 100%;
   position: relative;
   z-index: 97;
+  padding-top: 0.2em;
 }
 .announcement {
   text-align: center;
-  padding: 1em;
+  padding: 0.8em 0 1em;
   color: $color-white;
+  font-size: 0.9em;
+  a {
+    text-decoration: none;
+    color: $color-white;
+  }
 }
 .nav {
   background: $color-white;
@@ -377,6 +383,7 @@ button.cart {
     max-width: 600px;
     margin: auto;
     border-top: 1px solid lighten($color-border, 5);
+    color: $color-ink-dark;
 
     p {
       &.price {

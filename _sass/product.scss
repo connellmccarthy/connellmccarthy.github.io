@@ -140,12 +140,12 @@
   line-height: 2em;
 
   p {
-    color: $color-ink-muted;
+    color: $color-ink;
 
     &:first-of-type {
       font-size: 1.2em;
       font-weight: 500;
-      color: $color-ink;
+      color: $color-ink-dark;
     }
   }
 
@@ -160,6 +160,7 @@
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
+  align-items: center;
 
   @media screen and (max-width: $break-tablet) {
     width: 100%;
@@ -186,13 +187,15 @@
     padding-left: 40px;
 
     p {
+      line-height: 1em;
       &.title {
         font-size: 1.6em;
         font-weight: 500;
         margin: 0;
+        color: $color-ink-dark;
       }
       &.price {
-        margin: 0.2em 0 2em;
+        margin: 0.4em 0 2em;
         font-size: 1.2em;
       }
     }
@@ -205,63 +208,6 @@
     .options {
       .selector-wrapper {
         display: none;
-      }
-    }
-
-    .quantity {
-      margin: 40px 0;
-    }
-
-    .quant_select {
-      display: flex;
-      margin-top: 1em;
-
-      input {
-        appearance: none;
-        -webkit-appearance: none;
-        padding: 0;
-        border: 0;
-        border-radius: 0;
-        border-radius: 0;
-        border-top: 1px solid $color-border;
-        border-bottom: 1px solid $color-border;
-        width: 5em;
-        height: 43px;
-        text-align: center;
-      }
-
-      input::-webkit-outer-spin-button,
-      input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-      }
-      input[type=number] {
-        -moz-appearance: textfield;
-      }
-
-      button {
-        border-color: $color-border;
-        border-radius: 0;
-        padding: 12px 18px;
-        margin: 0;
-
-        &:first-of-type {
-          border-radius: 25px 0 0 25px;
-        }
-        &:last-of-type {
-          border-radius: 0 25px 25px 0;
-        }
-
-        i {
-          left: 0;
-        }
-        &:hover {
-          background: lighten($color-border, 18%);
-          color: $color-ink;
-          i {
-            left: 0;
-          }
-        }
       }
     }
 
@@ -306,15 +252,15 @@
 
     &:hover + label {
       background: darken($color-white, 5%);
-      color: $color-ink;
+      color: $color-ink-dark;
     }
     &:checked + label {
-      background: $color-ink;
-      border-color: $color-ink;
+      background: $color-black;
+      border-color: $color-black;
       color: $color-white;
 
       &:hover + label {
-        background: $color-ink;
+        background: $color-ink-dark;
         color: $color-white;
       }
     }

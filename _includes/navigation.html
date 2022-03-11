@@ -41,7 +41,9 @@
 </div>
 <main id="swup-shop-nav" class="transition-fade" aria-live="polite">
   {% if page.url contains '/prints' %}
-    {% include shop/shop-nav.html %}
+    {% unless page.url contains '/products/' %}
+      {% include shop/shop-nav.html %}
+    {% endunless %}
   {% endif %}
 </main>
 <main id="swup-article-info" class="transition-fade" aria-live="polite">

@@ -124,6 +124,7 @@ button.btn {
 
   &__white {
     background: $color-white;
+    color: $color-ink-dark;
     &:hover {
       background: $color-grey-light;
     }
@@ -176,6 +177,9 @@ button.btn {
   }
 
   &__marketing {
+    &:not(.btn__circle) {
+      padding: 1.2em 2em;
+    }
     box-shadow: 0px 10px 60px -4px #00000033;
   }
 

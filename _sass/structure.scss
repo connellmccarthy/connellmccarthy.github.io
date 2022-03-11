@@ -188,9 +188,8 @@ h3 {
   margin: 0;
 }
 h2 {
-  font-size: 1em;
+  font-size: 1.2em;
   font-weight: 500;
-  font-style: italic;
 }
 .serif {
   font-family: $font-serif;
@@ -261,6 +260,9 @@ img {
   &.condensed {
     max-width: $max-width-condensed;
   }
+  &.margin-top {
+    margin-top: 3em;
+  }
 
   @media screen and (max-width: $break-mobile) {
     padding: 0 ($gutter / 3);
@@ -305,6 +307,17 @@ img {
     }
   }
 
+  &.light-grey {
+    padding: 3em;
+    background: $color-grey-light;
+    border: 1px solid $color-border;
+    position: relative;
+
+    @media screen and (max-width: $break-mobile) {
+      padding: 2em;
+    }
+  }
+
   &.border {
     width: 100%;
     border-top: 1px solid $color-border;
@@ -316,7 +329,7 @@ img {
   }
 
   &.hero {
-    padding: 4em 0 0;
+    padding: 2em 0 0;
 
     p {
       margin: 2em 0;
@@ -369,11 +382,21 @@ i.fa-arrow-right.external {
     border: none;
     position: relative;
     z-index: 1;
-    &:hover {
-      background: transparent;
-      &::after {
-        opacity: 1;
-        transform: scale(1);
+
+    &.grey {
+      background: darken($color-grey-light, 1);
+    }
+    &:hover,
+    &:focus {
+      &.grey {
+        background: darken($color-grey-light, 4);
+      }
+      &:not(.grey) {
+        background: transparent;
+        &::after {
+          opacity: 1;
+          transform: scale(1);
+        }
       }
     }
     p {
@@ -390,21 +413,23 @@ i.fa-arrow-right.external {
         font-size: 0.8em;
       }
     }
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      border-radius: $border-radius-normal;
-      background: $color-grey-light;
-      z-index: -1;
-      pointer-events: none;
-      transition: 0.3s ease;
-      transform-origin: center;
-      transform: scale(1.05);
-      opacity: 0;
+    &:not(.grey) {
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        border-radius: $border-radius-normal;
+        background: darken($color-grey-light, 1);
+        z-index: -1;
+        pointer-events: none;
+        transition: 0.3s ease;
+        transform-origin: center;
+        transform: scale(1.05);
+        opacity: 0;
+      }
     }
   }
 

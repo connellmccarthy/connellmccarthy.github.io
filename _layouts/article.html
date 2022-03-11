@@ -8,9 +8,9 @@
       {% include navigation.html %}
       <div class="crop">
         <main id="swup" class="transition-scale article" aria-live="polite">
-          <div class="wrapper">
+          <div class="wrapper margin-top">
             <div class="article-info-static">
-              <a href="/article" id="back-link">
+              <a class="btn btn__link" href="/article" id="back-link">
                 <i class="far fa-arrow-left mr-2" aria-hidden="true"></i>
                 <span>Back to articles</span>
               </a>
@@ -19,62 +19,58 @@
                 <span class="count">•</span> likes
               </button>
             </div>
-            <div class="article_thumbnail">
-              <img src="/assets/articles/{{ page.slug }}/{{ page.thumbnail }}" alt="{{ page.title }} thumbnail image.">
-            </div>
             <div class="article-info-static">
+              <p class="center title mb-6">{{ page.title }}</p>
+            </div>
+            <h1>{{ page.description }}</h1>
+            <div class="article-info-details">
               {% assign article_words = content | strip_html | strip_newlines | downcase | replace: 'and','' | replace: 'the','' | split:' ' %}
               {% assign word_count = article_words | size %}
+              <div class="article-details">
+                <p class="muted">Publish date</p>
+                <p> {{ page.date | date: "%B %d, %Y" }}</p>
+              </div>
+              <div class="article-details">
+                <p class="muted">Reading time</p>
+                <p>{{ word_count | times: 0.0076 | round }} minutes</p>
+              </div>
 
-              <p class="muted">{{ page.title }} • {{ page.date | date: "%B %d, %Y" }}</p>
-              <p class="muted">
-                <i class="far fa-book mr-1" aria-hidden="true"></i>
-                {{ word_count | times: 0.0076 | round }} minute read
-                </p>
-            </div>
-
-            <h1>{{ page.description }}</h1>
+              </div>
 
             {% assign hasfollowup = site.article | where: 'followup', page.slug %}
             {% if page.followup %}
               <div class="section border-radius__normal followup__container">
-                <p class="muted followup__title">Read the original article</p>
+                <p class="followup__title">Read the original article</p>
                 {% assign followups = site.article | where: 'slug', page.followup %}
                 {% for followup in followups %}
                   {% assign article_words = followup.content | strip_html | strip_newlines | downcase | replace: 'and','' | replace: 'the','' | split:' ' %}
                   {% assign reading_time = article_words | size | times: 0.0076 | round  %}
-                  {% include card.html
-                    url = followup.url
-                    style = 'grey'
-                    inline = true
-                    preline_icon = 'copy'
-                    preline = 'Original article'
-                    title = followup.title
-                    description = followup.description
-                    date = followup.date
-                    cta = 'Read article'
-                    external = false %}
+                  <a class="card project grey projects__item" href="{{ followup.url }}">
+                    <div class="flex">
+                      <p class="title">{{ followup.title }}</p>
+                      <p class="mt-1"><span class="badge grey">{{ followup.date | date: "%Y" }}</span></p>
+                    </div>
+                    <p class="muted">{{ followup.description }}</p>
+                  </a>
                 {% endfor %}
               </div>
             {% elsif hasfollowup.size >= 1 %}
               <div class="section border-radius__normal followup__container">
-                <p class="muted followup__title">Read the latest update</p>
+                <p class="followup__title">Read the latest update</p>
                 {% for followup in hasfollowup %}
                   {% assign article_words = followup.content | strip_html | strip_newlines | downcase | replace: 'and','' | replace: 'the','' | split:' ' %}
                   {% assign reading_time = article_words | size | times: 0.0076 | round  %}
-                  {% include card.html
-                    url = followup.url
-                    style = 'grey'
-                    inline = true
-                    preline_icon = 'copy'
-                    preline = 'Follow up article'
-                    title = followup.title
-                    description = followup.description
-                    date = followup.date
-                    cta = 'Read article'
-                    external = false %}
+                  <a class="card project grey projects__item" href="{{ followup.url }}">
+                    <div class="flex">
+                      <p class="title">{{ followup.title }}</p>
+                      <p class="mt-1"><span class="badge grey">{{ followup.date | date: "%Y" }}</span></p>
+                    </div>
+                    <p class="muted">{{ followup.description }}</p>
+                  </a>
                 {% endfor %}
               </div>
+            {% else %}
+              <div class="article-spacer"></div>
             {% endif %}
 
             {{ content }}

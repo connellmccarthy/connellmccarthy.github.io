@@ -61,6 +61,17 @@
   top: 0;
   left: 0;
   z-index: 97;
+
+  .shop-nav-fade {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: calc(100% - 1px);
+    width: 60px;
+    background: linear-gradient(270deg, #FFF 0%, rgba(255, 255, 255, 0) 100%);
+    z-index: 2;
+    pointer-events: none;
+  }
 }
 .shop-nav {
   width: 100%;
@@ -72,6 +83,7 @@
   padding: 0 2em;
   background: $color-white;
   border-bottom: 1px solid $color-border;
+  position: relative;
 
   .divider {
     width: 1px;

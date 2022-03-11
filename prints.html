@@ -16,36 +16,19 @@ slug: shop
   </div>
 </div>
 
-<div class="wrapper">
-  <div class="section shop-section shop-hero grey no-border border-radius__large">
+<div class="section shop-section shop-hero grey">
+  <div class="wrapper center">
     <div class="intro-text">
       <h1 class="m-0">{{ site.data.content.shop.headline }}</h1>
-      <p class="m-0 mt-4 mb-4 muted">{{ site.data.content.shop.description }}</p>
-      <div class="flex a-center mt-10">
-        <button class="btn btn__dark mr-6 video_trigger"><i class="fas fa-play-circle mr-1" aria-hidden="true"></i> Play video</button>
+      <p class="m-0 mt-6 muted">{{ site.data.content.shop.description }}</p>
+      <div class="flex a-center center mt-8">
+        <button class="btn btn__white btn__marketing btn__round mr-6 video_trigger"><i class="fas fa-play-circle mr-1" aria-hidden="true"></i> Play video</button>
         <a class="btn btn__link" href="{{ site.data.content.shop.cta.url }}">{{ site.data.content.shop.cta.text }} <i class="far fa-arrow-right ml-1" aria-hidden="true"></i></a>
       </div>
     </div>
   </div>
-
-  <div class="section">
-    <h2>Shop by collection</h2>
-    <div class="list">
-      {% for collection in site.collections %}
-        {% unless collection.slug == 'shop-all' %}
-          {% include card.html
-            url = collection.url
-            icon = collection.icon
-            size = 'small'
-            title = collection.title
-            description = collection.description
-            cta = 'Browse collection'
-            external = false %}
-        {% endunless %}
-      {% endfor %}
-    </div>
-  </div>
-
+</div>
+<div class="wrapper">
   <div class="section shop-section image-left flex a-center">
     <div class="image">
       <a href="/prints/products/foggy-babel" class="btn btn__circle btn__basic btn__icon product-tag" data-pop="Foggy Babel">
@@ -104,6 +87,24 @@ slug: shop
       product_ids = products 
       compressed = false
     %}
+  </div>
+
+  <div class="section">
+    <h2>Shop by collection</h2>
+    <div class="list">
+      {% for collection in site.collections %}
+        {% unless collection.slug == 'shop-all' %}
+          {% include card.html
+            url = collection.url
+            icon = collection.icon
+            size = 'small'
+            title = collection.title
+            description = collection.description
+            cta = 'Browse collection'
+            external = false %}
+        {% endunless %}
+      {% endfor %}
+    </div>
   </div>
 
   {% include newsletter.html %}

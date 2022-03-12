@@ -18,24 +18,29 @@
           {{ include.preline }}
         </p>
       {% endif %}
-      <p class="title m-0 mb-1">
-        {{ include.title }}
+      <div class="flex">
+        <p class="title m-0 mb-1">
+          {{ include.title }}
+          {% if include.inline %}
+            {% if include.date %}
+              <span class="muted w-regular">• {{ include.date | date: "%B %d, %Y" }}{% if include.reading_time %} • {{ include.reading_time }} minute read{% endif %}</span>
+            {% endif %}    
+          {% endif %}
+          {% if include.style contains 'project' and include.badge == null %}
+            <i class="far fa-arrow-right{% if include.external %} external{% endif %}"></i>
+          {% endif %}
+        </p>
         {% if include.badge %}
-          <span class="badge">{{ include.badge }}</span>
+          <p class="m-0 ml-3"><span class="badge {% if include.badge_color %}{{ include.badge_color }}{% endif %}">{{ include.badge }}</span></p>
         {% endif %}
-        {% if include.inline %}
-          {% if include.date %}
-            <span class="muted w-regular">• {{ include.date | date: "%B %d, %Y" }}{% if include.reading_time %} • {{ include.reading_time }} minute read{% endif %}</span>
-          {% endif %}    
-        {% endif %}
-      </p>
+      </div>
       {% unless include.inline %}
         {% if include.date %}
           <p class="muted m-0">{{ include.date | date: "%B %d, %Y" }}{% if include.reading_time %} • {{ include.reading_time }} minute read{% endif %}</p>
         {% endif %}
       {% endunless %}
       {% if include.description %}
-        <p class="muted m-0 mt-1">
+        <p class="muted m-0">
           {% if include.truncate %}
             {{ include.description | truncate: 90, '...' }}
           {% else %}
@@ -45,8 +50,10 @@
       {% endif %}
     </div>
   </div>
-  <div class="arrow">
-    <span class="visually-hidden">{{ include.cta }}</span>
-    <i class="far fa-arrow-right {% if include.external %}external{% endif %}" aria-hidden="true"></i>
-  </div>
+  {% unless include.style contains 'project' %}
+    <div class="arrow">
+      <span class="visually-hidden">{{ include.cta }}</span>
+      <i class="far fa-arrow-right {% if include.external %}external{% endif %}" aria-hidden="true"></i>
+    </div>
+  {% endunless %}
 </a>

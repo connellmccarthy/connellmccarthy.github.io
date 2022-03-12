@@ -43,30 +43,29 @@
                 <p class="followup__title">Read the original article</p>
                 {% assign followups = site.article | where: 'slug', page.followup %}
                 {% for followup in followups %}
-                  {% assign article_words = followup.content | strip_html | strip_newlines | downcase | replace: 'and','' | replace: 'the','' | split:' ' %}
-                  {% assign reading_time = article_words | size | times: 0.0076 | round  %}
-                  <a class="card project grey projects__item" href="{{ followup.url }}">
-                    <div class="flex">
-                      <p class="title">{{ followup.title }}</p>
-                      <p class="mt-1"><span class="badge grey">{{ followup.date | date: "%Y" }}</span></p>
-                    </div>
-                    <p class="muted">{{ followup.description }}</p>
-                  </a>
+                  {% assign year = followup.date | date: '%Y' %}
+                  {% include card.html
+                    style = 'project grey'
+                    title = followup.title
+                    badge = year
+                    badge_color = 'grey'
+                    description = followup.description
+                    url = followup.url
+                  %}
                 {% endfor %}
               </div>
             {% elsif hasfollowup.size >= 1 %}
               <div class="section border-radius__normal followup__container">
                 <p class="followup__title">Read the latest update</p>
                 {% for followup in hasfollowup %}
-                  {% assign article_words = followup.content | strip_html | strip_newlines | downcase | replace: 'and','' | replace: 'the','' | split:' ' %}
-                  {% assign reading_time = article_words | size | times: 0.0076 | round  %}
-                  <a class="card project grey projects__item" href="{{ followup.url }}">
-                    <div class="flex">
-                      <p class="title">{{ followup.title }}</p>
-                      <p class="mt-1"><span class="badge grey">{{ followup.date | date: "%Y" }}</span></p>
-                    </div>
-                    <p class="muted">{{ followup.description }}</p>
-                  </a>
+                  {% assign year = followup.date | date: '%Y' %}
+                  {% include card.html
+                    style = 'project grey'
+                    title = followup.title
+                    badge = year
+                    description = followup.description
+                    url = followup.url
+                  %}
                 {% endfor %}
               </div>
             {% else %}

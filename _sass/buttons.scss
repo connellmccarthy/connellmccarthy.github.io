@@ -43,6 +43,7 @@ a:not(.btn, .card, #back-link, .product a, sup a) {
   text-decoration: none;
   position: relative;
   white-space: nowrap;
+  transition: color 0.3s ease;
   
   &:after {
     content: '';
@@ -51,7 +52,8 @@ a:not(.btn, .card, #back-link, .product a, sup a) {
     width: 100%;
     bottom: -4px;
     left: 0;
-    background: $color-ink-dark;
+    background: $color-border;
+    transition: background 0.3s ease;
   }
 
   &:hover {

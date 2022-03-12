@@ -42,13 +42,13 @@ title: Canadian Creative
       </div>
       <div class="projects__items">
         {% for project in site.data.content.homepage.building.items %}
-          <a class="card project projects__item" href="{{ project.url }}" {% if project.external %}target="_blank"{% endif %}>
-            <p class="title">
-              {{ project.title }}
-              <i class="far fa-arrow-right{% if project.external %} external{% endif %}"></i>
-            </p>
-            <p class="muted">{{ project.description }}</p>
-          </a>
+          {% include card.html
+            style = 'project'
+            title = project.title
+            description = project.description
+            url = project.url
+            external = project.external
+          %}
         {% endfor %}
       </div>
     </div>
@@ -58,13 +58,13 @@ title: Canadian Creative
       </div>
       <div class="projects__items">
         {% for project in site.data.content.homepage.projects.items %}
-          <a class="card project projects__item" href="{{ project.url }}" {% if project.external %}target="_blank"{% endif %}>
-            <p class="title">
-              {{ project.title }}
-              <i class="far fa-arrow-right{% if project.external %} external{% endif %}"></i>
-            </p>
-            <p class="muted">{{ project.description }}</p>
-          </a>
+          {% include card.html
+            style = 'project'
+            title = project.title
+            description = project.description
+            url = project.url
+            external = project.external
+          %}
         {% endfor %}
       </div>
     </div>
@@ -75,13 +75,15 @@ title: Canadian Creative
       <div class="projects__items">
         {% assign articles = site.article | reverse %}
         {% for project in articles %}
-          <a class="card project projects__item" href="{{ project.url }}">
-            <div class="flex">
-              <p class="title">{{ project.title }}</p>
-              <p class="mt-1"><span class="badge grey">{{ project.date | date: "%Y" }}</span></p>
-            </div>
-            <p class="muted">{{ project.description }}</p>
-          </a>
+          {% assign year  = project.date | date: '%Y' %}
+          {% include card.html
+            style = 'project'
+            title = project.title
+            badge = year
+            badge_color = 'grey'
+            description = project.description
+            url = project.url
+          %}
         {% endfor %}
       </div>
     </div>

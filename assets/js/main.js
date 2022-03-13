@@ -138,12 +138,6 @@ function init() {
       }
     });
   }
-  if (document.getElementById('mobile-announcements')) {
-    document.getElementById('mobile-announcements').addEventListener('click', () => {
-      document.querySelector('.announcement__container').classList.toggle('active');
-      document.querySelector('button#mobile-announcements').classList.toggle('active');
-    });
-  }
 
   //Newsletter form
   if (document.querySelector('form.newsletter_form')) {
@@ -215,50 +209,6 @@ function init() {
     }
   }
 
-  if (document.querySelector('.sidebar-resize')) {
-    document.querySelectorAll('.sidebar-resize').forEach((el) => {
-      let mousedown = false;
-      el.addEventListener('mousedown', (event) => {
-        startX = event.pageX;
-        mousedown = true;
-        document.querySelector('body').classList.add('no-select');
-      });
-      el.addEventListener('mouseup', () => {
-        mousedown = false;
-        document.querySelector('body').classList.remove('no-select');
-      });
-      el.addEventListener('mouseout', () => {
-        if (mousedown) {
-          mousedown = false;
-          document.querySelector('body').classList.remove('no-select');
-        }
-      });
-      el.addEventListener('mousemove', (event) => {
-        if (mousedown) {
-          if (event.pageX > 220 && event.pageX < 400 && el.getAttribute('id') == 'sidebar') {
-            document.querySelector('.sidebar').style.width = `${event.pageX + 10}px`;
-            document.querySelector('.sidebar__container').style.width = `${Math.min((event.pageX + 10), 400)}px`;
-            document.querySelector('.app_pane').style.maxWidth = `calc(100vw - ${Math.min((event.pageX + 10), 400)}px)`;
-          } else if (event.pageX < 220 && el.getAttribute('id') == 'sidebar') {
-            document.querySelector('.container').classList.add('collapse');
-            document.querySelector('.sidebar').style.width = `400px`;
-            document.querySelector('.sidebar__container').style.width = `120px`;
-            document.querySelector('.sidebar-trigger-container').style.width = `120px`;
-            document.querySelector('.app_pane').style.maxWidth = `calc(100vw - 120px)`;
-          } else if (event.pageX > 115 && event.pageX < 149 && el.getAttribute('id') == 'trigger-container') {
-            document.querySelector('.sidebar-trigger-container').style.width = `${event.pageX + 10}px`;
-            document.querySelector('.sidebar__container').style.width = `${event.pageX + 10}px`;
-            document.querySelector('.app_pane').style.maxWidth = `calc(100vw - ${event.pageX + 10}px)`;
-          } else if (event.pageX > 150 && el.getAttribute('id') == 'trigger-container') {
-            document.querySelector('.container').classList.remove('collapse');
-            document.querySelector('.sidebar__container').style.width = `400px`;
-            document.querySelector('.app_pane').style.maxWidth = `calc(100vw - 400px)`;
-          }
-        }
-      });
-    });
-  }
-
   if (document.querySelector('.video_trigger')){
     //Set video outside main
     const video_modal = document.querySelector('.video_modal');
@@ -291,6 +241,17 @@ function init() {
       }
     });
   });
+
+  //Remove article image wrapper
+  if (document.querySelector('.article-content')) {
+    document.querySelectorAll('.article-content p img').forEach(function(el) {
+      const parent = el.parentElement;
+      document.querySelector('.article-content').insertBefore(el, parent);
+      if (parent.childElementCount == 0) {
+        parent.remove();
+      }
+    });
+  }
 }
 
 function switchPage(url) {
@@ -311,24 +272,6 @@ function removeActiveMenuItem() {
     }
   });
 }
-
-document.querySelectorAll('.sidebar-trigger').forEach((el) => {
-  el.addEventListener('click', () => {
-    if (window.innerWidth >= 1200 && collapsing && el.getAttribute('href')) {
-      collapsing = false;
-    } else {
-      document.querySelector('.sidebar').classList.toggle('active');
-      document.querySelector('.fade.sidebar-trigger').classList.toggle('active');
-    }
-  });
-});
-
-document.querySelectorAll('.menu-trigger').forEach((el) => {
-  el.addEventListener('click', () => {
-    document.querySelector('nav').classList.toggle('active');
-    document.querySelector('.fade.menu-trigger').classList.toggle('active');
-  });
-});
 
 function subscribe() {
   var email = encodeURIComponent(document.forms['newsletter_form']['email'].value);

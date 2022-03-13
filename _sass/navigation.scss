@@ -316,9 +316,10 @@ button.cart {
             margin: 0;
             font-size: 1.2em;
             font-weight: 500;
+            color: $color-ink-dark;
           }
           &.variant {
-            margin: 0.2em 0 0;
+            margin: 0;
             font-size: 1em;
           }
         }
@@ -332,6 +333,7 @@ button.cart {
         p.price {
           font-weight: 500;
           font-size: 1em;
+          margin: 0;
         }
       }
 

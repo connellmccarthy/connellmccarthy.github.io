@@ -2,9 +2,10 @@
 
 $mobile: 768px;
 $gutter: 6em;
+$guttersize: $gutter * 2;
 $max-width: 1000px;
 $max-width-condensed: 750px;
-$site-max-width: 1600px;
+$site-max-width: unset;
 
 $break-tablet: 1200px;
 $break-mobile: 768px;
@@ -261,7 +262,7 @@ img {
     max-width: $max-width-condensed;
   }
   &.margin-top {
-    margin-top: 3em;
+    padding-top: 3em;
   }
 
   @media screen and (max-width: $break-mobile) {

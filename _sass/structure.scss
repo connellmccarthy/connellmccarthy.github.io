@@ -298,10 +298,6 @@ img {
     border: 1px solid $color-border;
     position: relative;
 
-    &.no-border {
-      border: none;
-    }
-
     @media screen and (max-width: $break-mobile) {
       padding: 2em;
     }
@@ -321,6 +317,10 @@ img {
   &.border {
     width: 100%;
     border-top: 1px solid $color-border;
+  }
+
+  &.no-border {
+    border: none;
   }
 
   &.pagination {

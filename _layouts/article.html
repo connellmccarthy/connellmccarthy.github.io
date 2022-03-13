@@ -34,8 +34,7 @@
                 <p class="muted">Reading time</p>
                 <p>{{ word_count | times: 0.0076 | round }} minutes</p>
               </div>
-
-              </div>
+            </div>
 
             {% assign hasfollowup = site.article | where: 'followup', page.slug %}
             {% if page.followup %}

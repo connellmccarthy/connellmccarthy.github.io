@@ -47,7 +47,7 @@
   {% endif %}
 </main>
 <main id="swup-article-info" class="transition-fade" aria-live="polite">
-  {% if page.url contains '/article' %}
+  {% if page.url contains '/article' and page.url != '/article/' %}
     <div class="article-info">
       <div class="wrapper">
         <a href="/article" class="btn btn__basic">

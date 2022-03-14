@@ -8,8 +8,6 @@ twitter_username: connellmccarthy
 github_username:  connellmccarthy
 permalink: pretty
 image_path: /assets/articles/
-
-
 sass:
   sass_dir: _sass
   style: compressed

@@ -252,6 +252,28 @@ function init() {
       }
     });
   }
+
+  //Product quickview
+  if (document.querySelector('.product-modal') && document.querySelector('.product-modal-trigger')) {
+    document.querySelectorAll('.product-modal-trigger').forEach(el => {
+      el.addEventListener('click', () => {
+        let id = el.getAttribute('data-product-id');
+        if (document.getElementById(`product-modal-${id}`).classList.contains('active')) {
+          document.getElementById(`product-modal-${id}`).classList.toggle('active');
+          document.getElementById(`product-fade-${id}`).classList.toggle('active');
+          setTimeout(() => {
+            document.getElementById(`product-modal-${id}`).style.display = 'none';
+          }, 400);
+        } else {
+          document.getElementById(`product-modal-${id}`).style.display = 'block';
+          setTimeout(() => {
+            document.getElementById(`product-modal-${id}`).classList.toggle('active');
+            document.getElementById(`product-fade-${id}`).classList.toggle('active');
+          }, 1);
+        }
+      });
+    });
+  }
 }
 
 function switchPage(url) {

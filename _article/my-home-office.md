@@ -59,6 +59,7 @@ At the end of the day, designing a creative space is a very personal thing. Itâ€
 
 ![My home office setup for music production]({{ image_path }}/cm-home-office-2.jpg)
 
+{::nomarkdown}
 <div class="section product-list border-radius__normal">
   <h3 class="mb-4">Interested in the prints on the wall?</h3>
   <div class="shop-product-list two">
@@ -69,6 +70,7 @@ At the end of the day, designing a creative space is a very personal thing. Itâ€
     %}
   </div>
 </div>
+{:/nomarkdown}
 
 Here's a list of my peripherals and hardware that I use for everyday working.
 

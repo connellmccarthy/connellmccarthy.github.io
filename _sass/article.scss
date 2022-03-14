@@ -11,7 +11,7 @@
     margin: 0 auto;
   }
   h2:not(#newsletter__heading),
-  h3 {
+  h3:not(.section h3) {
     font-size: 1.6em;
     font-style: unset;
     text-align: center;
@@ -126,7 +126,7 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 97;
+  z-index: 95;
 }
 .article-info {
   padding: 1em 0;

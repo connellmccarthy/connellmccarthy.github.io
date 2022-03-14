@@ -104,6 +104,7 @@ body {
   color: $color-ink;
   font-family: $font-family;
   font-size: 13px;
+  scrollbar-face-color: $color-blue;
 
   &.no-scroll {
     overflow-y: hidden;
@@ -564,5 +565,27 @@ span.badge {
         width: 100%;
         margin: 0;
     }
+  }
+}
+
+.fade {
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0,0,0,0.4);
+  position: fixed;
+  z-index: 97;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+
+  &.cart-trigger {
+    z-index: 99;
+  }
+  
+  &.active {
+    opacity: 1;
+    pointer-events: all;
   }
 }

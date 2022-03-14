@@ -332,6 +332,8 @@ h2.treecount {
   transform-origin: 0 0;
   transition: 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   box-shadow: 0px 10px 60px -4px #00000033;
+  width: 90%;
+  max-width: calc(#{$max-width} - #{$guttersize});
   max-height: 90%;
   overflow-y: scroll;
 

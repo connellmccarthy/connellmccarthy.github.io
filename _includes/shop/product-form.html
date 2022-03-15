@@ -1,6 +1,6 @@
 <div class="product_page">
-  <div class="product_image">
-    <img id="product_image-{{ product.product_id }}" src="{{ product.images[0].src }}">
+  <div class="product_image" id="product_image_container-{{ product.product_id }}">
+    <img id="product_image-{{ product.product_id }}" data-product-id="{{ product.product_id }}" src="{{ product.images[0].src }}">
   </div>
   <div class="product_form">
     <p class="title">{{ product.title }}</p>
@@ -64,6 +64,7 @@
     if(id_{{ product.product_id }}!='') {
       document.getElementById('product-select-{{ product.product_id }}').value = id_{{ product.product_id }};
       document.getElementById('product-image-{{ product.product_id }}').value = image_{{ product.product_id }};
+      loadingImage_{{ product.product_id }}();
       document.getElementById('product_image-{{ product.product_id }}').src = image_{{ product.product_id }};
       document.getElementById('product-price-{{ product.product_id }}').value = price_{{ product.product_id }};
       document.getElementById('product_price-{{ product.product_id }}').innerText = `$${price_{{ product.product_id }}} CAD`;
@@ -72,6 +73,9 @@
       document.getElementById('product-image-{{ product.product_id }}').value = '';
       document.getElementById('product_price-{{ product.product_id }}').innerText = 'Unavailable';
     }
+  }
+  function loadingImage_{{ product.product_id }}() {
+    document.querySelector('.product_image#product_image_container-{{ product.product_id }}').classList.add('loading');
   }
   document.getElementById('AddToCartForm-{{ product.product_id }}').addEventListener('submit', (event) => {
     event.preventDefault();

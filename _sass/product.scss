@@ -168,6 +168,37 @@
 
   .product_image {
     width: 55%;
+    position: relative;
+    
+    &.loading {
+      &:after {
+        content: '';
+        height: 15px;
+        width: 15px;
+        border-top: 2px solid $color-white;
+        border-right: 2px solid $color-ink;
+        border-bottom: 2px solid $color-ink;
+        border-left: 2px solid $color-ink;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation-name: loading;
+        animation-duration: 1s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        transform-origin: center;
+      }
+      @keyframes loading {
+        from {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        to {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+      }
+    }
 
     @media screen and (max-width: $break-tablet) {
       width: 50%;

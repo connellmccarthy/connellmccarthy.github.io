@@ -235,9 +235,9 @@ function init() {
     el.addEventListener('click', () => {
       if (el.getAttribute('target') == null && el.getAttribute('data-no-swup') == null) {
         switchPage(el);
-      }
-      if (audio_playing) {
-        audio_playing.pause();
+        if (audio_playing) {
+          audio_playing.pause();
+        }
       }
     });
   });
@@ -250,6 +250,16 @@ function init() {
       if (parent.childElementCount == 0) {
         parent.remove();
       }
+    });
+  }
+
+  //Product image loading handler
+  if (document.querySelector('.product_image')) {
+    document.querySelectorAll('.product_image img').forEach((el) => {
+      el.addEventListener('load', () => {
+        let id = el.getAttribute('data-product-id');
+        document.querySelector(`.product_image#product_image_container-${id}`).classList.remove('loading');
+      });
     });
   }
 

@@ -22,6 +22,11 @@
       margin: 0 0.4em;
     }
   }
+  .sitemap {
+    // max-width: calc(#{$max-width-condensed} - #{$guttersize});
+    margin: auto;
+    padding: 0 4em;
+  }
   .copyright {
     font-size: 0.8em;
     color: $color-border;

@@ -17,6 +17,8 @@ menus:
     url: /changelog/
   - title: Report an issue
     url: https://github.com/connellmccarthy/connellmccarthy.github.io/issues/new
+  - title: Environmental Impact Promise
+    url: /prints/pages/environmental-impact-promise
   - title: Terms and Conditions
     url: /legal/terms/
   - title: Privacy Policy

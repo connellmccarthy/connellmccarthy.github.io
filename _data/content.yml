@@ -42,14 +42,15 @@ homepage:
   projects:
     title: Creative works
     items:
+    - title: Photography Prints
+      description: I sell my landscape photography prints for you to put up in your own home.
+      url: /prints/
+      badge: New
+      external: false
     - title: COVEO Music
       description: I make chill, euphoric, dreampop music under the artist name COVEO.
       url: http://coveomusic.com
       external: true
-    - title: Photography Prints
-      description: I sell my landscape photography prints for you to put up in your own home.
-      url: /prints/
-      external: false
     - title: Experiments
       description: I love to experiment with new concepts and creative challenges, and every so often I post them in my playground.
       url: /sketches/

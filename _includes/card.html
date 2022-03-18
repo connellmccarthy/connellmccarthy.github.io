@@ -26,7 +26,7 @@
               <span class="muted w-regular">• {{ include.date | date: "%B %d, %Y" }}{% if include.reading_time %} • {{ include.reading_time }} minute read{% endif %}</span>
             {% endif %}    
           {% endif %}
-          {% if include.style contains 'project' and include.badge == null %}
+          {% if include.style contains 'project' and include.arrow == true %}
             <i class="far fa-arrow-right{% if include.external %} external{% endif %}"></i>
           {% endif %}
         </p>

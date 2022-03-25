@@ -25,11 +25,11 @@ menus:
   - title: Environmental Impact Promise
     url: /prints/pages/environmental-impact-promise
   - title: Terms and Conditions
-    url: /legal/terms/
+    url: /legal/terms
   - title: Privacy Policy
-    url: /legal/privacy/
+    url: /legal/privacy
   - title: Returns
-    url: /legal/returns/
+    url: /legal/returns
 homepage:
   showreel:
     title: 2022 Showreel

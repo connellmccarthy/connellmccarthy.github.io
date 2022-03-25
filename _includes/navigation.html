@@ -109,6 +109,11 @@
 </div>
 
 <script>
+  const checkCart = new URLSearchParams(window.location.search);
+  if (checkCart.has('cart')) {
+    toggleModal();
+    getCartItems();
+  }
   document.querySelectorAll('.menu-trigger').forEach((x) => {
     x.addEventListener('click', () => {
       if (x.classList.contains('menu-logo')) {

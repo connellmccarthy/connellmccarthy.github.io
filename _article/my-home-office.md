@@ -52,13 +52,14 @@ Moving on to my Shopify daytime workstation, it’s entirely different. The desk
 
 There is still more to do, and there always will be. You should be constantly iterating your space and evaluating if the things you have around you are still helpful in getting your work done. We’ll be moving the living room loveseat into my office once our couch is delivered, and I have plans to set up a pegboard wall for all my gear and tools, to replace my shelving unit.
 
-At the end of the day, designing a creative space is a very personal thing. It’s imperative to add little touchpoints that put you in the right headspace for each element of your work that you do. The mental state is where you should start your planning. Look back on times you’ve been most creative, and ask yourself _“What made that moment special”_? Was it the lighting? The atmosphere, or the tools you had available? When you find the answer to questions like those, you’ll have a better idea of where to begin.
+At the end of the day, designing a creative space is a very personal thing. It’s imperative to add little touchpoints that put you in the right headspace for each element of your work that you do. The mental state is where you should start your planning. Look back on times you’ve been most creative, and ask yourself “What made that moment special”? Was it the lighting? The atmosphere, or the tools you had available? When you find the answer to questions like those, you’ll have a better idea of where to begin.
 
 ![A closer look at my desk setup]({{ image_path }}/cm-home-office.jpg){: .inline}
 ![A closer look at my ergonomic mouse]({{ image_path }}/cm-home-office-3.jpg){: .inline}
 
 ![My home office setup for music production]({{ image_path }}/cm-home-office-2.jpg)
 
+{::nomarkdown}
 <div class="section product-list border-radius__normal">
   <h3 class="mb-4">Interested in the prints on the wall?</h3>
   <div class="shop-product-list two">
@@ -69,6 +70,7 @@ At the end of the day, designing a creative space is a very personal thing. It�
     %}
   </div>
 </div>
+{:/nomarkdown}
 
 Here's a list of my peripherals and hardware that I use for everyday working.
 

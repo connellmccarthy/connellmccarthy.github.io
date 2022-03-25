@@ -1,10 +1,11 @@
 $color-white: #FFF;
 $color-black: #000;
 $color-border: #DADADA;
-$color-grey: #F8F8F8;
-$color-ink: #1B1B1B;
-$color-ink-muted: #3D3D3D;
-$color-ink-muted-light: #6a6a6a;
+$color-grey: #F1F1F1;
+$color-grey-light: #FAFAFA;
+$color-ink: #3F3F3F;
+$color-ink-dark: #0F0F0F;
+$color-ink-muted: #717171;
 $color-blue: #5200FF;
 $color-heart: #DB4A6D;
 
@@ -12,5 +13,5 @@ $color-heart: #DB4A6D;
   color: $color-ink-muted;
 }
 .muted-light {
-  color: $color-ink-muted-light;
+  color: $color-border;
 }

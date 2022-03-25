@@ -1,13 +1,12 @@
 .product-header {
   background: $color-grey;
   width: 100%;
-  height: 80vh;
+  height: 70vh;
   overflow: hidden;
   position: relative;
-  margin-top: -125px;
 
   @media screen and (max-width: $break-mobile) {
-    height: 76vh;
+    height: 65vh;
   }
 
   img {
@@ -26,20 +25,14 @@
   }
 
   .wrapper {
-    margin-top: 150px;
-    height: calc(100% - 210px);
+    margin-top: 60px;
+    height: calc(100% - 120px);
     position: relative;
     z-index: 3;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
-    @media screen and (max-width: $break-mobile) {
-      margin-top: 140px;
-      z-index: 0;
-
-      height: calc(100% - 181px);
-    }
+    max-width: 1450px;
 
     a {
       width: -moz-fit-content;
@@ -94,6 +87,12 @@
   border-bottom: 1px solid $color-border;
   margin-bottom: 40px;
 
+  i {
+    font-size: 2.2em;
+    color: $color-ink-muted;
+    margin-bottom: 0.05em;
+  }
+
   ul {
     display: flex;
     flex-direction: row;
@@ -140,12 +139,12 @@
   line-height: 2em;
 
   p {
-    color: $color-ink-muted;
+    color: $color-ink;
 
     &:first-of-type {
       font-size: 1.2em;
       font-weight: 500;
-      color: $color-ink;
+      color: $color-ink-dark;
     }
   }
 
@@ -160,6 +159,7 @@
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
+  align-items: center;
 
   @media screen and (max-width: $break-tablet) {
     width: 100%;
@@ -167,6 +167,37 @@
 
   .product_image {
     width: 55%;
+    position: relative;
+    
+    &.loading {
+      &:after {
+        content: '';
+        height: 15px;
+        width: 15px;
+        border-top: 2px solid $color-white;
+        border-right: 2px solid $color-ink;
+        border-bottom: 2px solid $color-ink;
+        border-left: 2px solid $color-ink;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation-name: loading;
+        animation-duration: 1s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        transform-origin: center;
+      }
+      @keyframes loading {
+        from {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        to {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+      }
+    }
 
     @media screen and (max-width: $break-tablet) {
       width: 50%;
@@ -184,15 +215,18 @@
   .product_form {
     width: 45%;
     padding-left: 40px;
+    flex-grow: 1;
 
     p {
+      line-height: 1em;
       &.title {
         font-size: 1.6em;
         font-weight: 500;
         margin: 0;
+        color: $color-ink-dark;
       }
       &.price {
-        margin: 0.2em 0 2em;
+        margin: 0.4em 0 2em;
         font-size: 1.2em;
       }
     }
@@ -205,63 +239,6 @@
     .options {
       .selector-wrapper {
         display: none;
-      }
-    }
-
-    .quantity {
-      margin: 40px 0;
-    }
-
-    .quant_select {
-      display: flex;
-      margin-top: 1em;
-
-      input {
-        appearance: none;
-        -webkit-appearance: none;
-        padding: 0;
-        border: 0;
-        border-radius: 0;
-        border-radius: 0;
-        border-top: 1px solid $color-border;
-        border-bottom: 1px solid $color-border;
-        width: 5em;
-        height: 43px;
-        text-align: center;
-      }
-
-      input::-webkit-outer-spin-button,
-      input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-      }
-      input[type=number] {
-        -moz-appearance: textfield;
-      }
-
-      button {
-        border-color: $color-border;
-        border-radius: 0;
-        padding: 12px 18px;
-        margin: 0;
-
-        &:first-of-type {
-          border-radius: 25px 0 0 25px;
-        }
-        &:last-of-type {
-          border-radius: 0 25px 25px 0;
-        }
-
-        i {
-          left: 0;
-        }
-        &:hover {
-          background: lighten($color-border, 18%);
-          color: $color-ink;
-          i {
-            left: 0;
-          }
-        }
       }
     }
 
@@ -306,15 +283,15 @@
 
     &:hover + label {
       background: darken($color-white, 5%);
-      color: $color-ink;
+      color: $color-ink-dark;
     }
     &:checked + label {
-      background: $color-ink;
-      border-color: $color-ink;
+      background: $color-black;
+      border-color: $color-black;
       color: $color-white;
 
       &:hover + label {
-        background: $color-ink;
+        background: $color-ink-dark;
         color: $color-white;
       }
     }

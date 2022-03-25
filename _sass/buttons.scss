@@ -37,6 +37,33 @@ $sparkle-radius: $sparkle-diameter * 0.5;
   }
 }
 
+a:not(.btn, .card, #back-link, .product a, sup a) {
+  font-weight: 500;
+  color: $color-ink-dark;
+  text-decoration: none;
+  position: relative;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+  
+  &:after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    bottom: -4px;
+    left: 0;
+    background: $color-border;
+    transition: background 0.3s ease;
+  }
+
+  &:hover {
+    color: $color-blue;
+    &:after {
+      background: $color-blue;
+    }
+  }
+}
+
 a.btn,
 button.btn {
   -webkit-appearance: none;
@@ -53,6 +80,8 @@ button.btn {
   font-size: 0.95em;
   position: relative;
 
+  transition: background 0.3s ease, color 0.3s ease;
+
   font-family: $font-family;
 
   &:hover {
@@ -65,7 +94,7 @@ button.btn {
   &__link {
     background: transparent;
     padding: 0;
-    color: $color-ink-muted;
+    color: $color-ink;
     &:hover {
       color: $color-blue;
     }
@@ -91,14 +120,21 @@ button.btn {
     border: 1px solid $color-border;
     box-shadow: 0px 3px 2px -2px #0000001A;
     &:hover {
-      background: $color-grey;
+      background: $color-grey-light;
+    }
+  }
+
+  &__white {
+    background: $color-white;
+    color: $color-ink-dark;
+    &:hover {
+      background: $color-grey-light;
     }
   }
 
   &__dark {
     background: $color-black;
     color: $color-white;
-    box-shadow: 0px 5px 15px -2px #00000040;
     &:hover {
       background: lighten($color-black, 15);
     }
@@ -123,7 +159,7 @@ button.btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.2em;
+    font-size: 1em;
     padding: 0;
     i {
       position: relative;
@@ -140,6 +176,17 @@ button.btn {
     &:hover {
       transform: scale(1.12);
     }
+  }
+
+  &__marketing {
+    &:not(.btn__circle) {
+      padding: 1.2em 2em;
+    }
+    box-shadow: 0px 10px 60px -4px #00000033;
+  }
+
+  &.color__blue {
+    color: $color-blue;
   }
 
   &.disabled {
@@ -196,9 +243,9 @@ button.btn {
         width: 10px;
         border-radius: 50%;
         border-top: 2px solid $color-ink;
-        border-left: 2px solid lighten($color-ink-muted-light, 40);
-        border-right: 2px solid lighten($color-ink-muted-light, 40);
-        border-bottom: 2px solid lighten($color-ink-muted-light, 40);
+        border-left: 2px solid $color-border;
+        border-right: 2px solid $color-border;
+        border-bottom: 2px solid $color-border;
         position: absolute;
         top: 50%;
         left: 50%;

@@ -64,7 +64,7 @@ _Side by side comparison of photoshoot shelving next to the 3D modelled products
 Similar to the 3D render skills I had, I also used to do a lot of animation work for music releases. I’m pretty fluent in Adobe After Effects so I knew I could create some motion graphics to better communicate the product and its features. I feel like adding some motion gives better focus on what information you want your user to digest at a particular time or order, and gives you full control of the complete narrative.
 
 
-<div class="section grey grid grid__50 border-radius__normal">
+<div class="section light-grey grid grid__50 border-radius__normal">
   {% include vimeo.html video_id='592913505' %}
   <div class="content">
     <h3>Turn browsers into buyers using the power of chat</h3>
@@ -72,7 +72,7 @@ Similar to the 3D render skills I had, I also used to do a lot of animation work
   </div>
 </div>
 
-<div class="section grey grid grid__50 border-radius__normal">
+<div class="section light-grey grid grid__50 border-radius__normal">
   {% include vimeo.html video_id='592913720' %}
   <div class="content">
     <h3>Set it up in admin</h3>
@@ -80,7 +80,7 @@ Similar to the 3D render skills I had, I also used to do a lot of animation work
   </div>
 </div>
 
-<div class="section grey grid grid__50 border-radius__normal">
+<div class="section light-grey grid grid__50 border-radius__normal">
   {% include vimeo.html video_id='592913762' %}
   <div class="content">
     <h3>Chat anytime from anywhere</h3>

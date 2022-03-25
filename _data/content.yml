@@ -1,84 +1,89 @@
-sidebar:
-  tagline: Multi-faceted, Canadian creative.
-  links:
-  - name: Dribbble
-    icon: dribbble
-    url: https://dribbble.com/connellmccarthy
-  - name: Twitter
-    icon: twitter
-    url: https://twitter.com/connellmccarthy
-  - name: Instagram
-    icon: instagram
-    url: https://instagram.com/connellmccarthy
-  - name: Linkedin
-    icon: linkedin
-    url: https://www.linkedin.com/in/connellmccarthy/
-  employer:
-    role: Senior Designer
-    name: Shopify
-    url: https://shopify.com
-  description: I'm an all-encompassing creative with a passion for finding the blend between aesthetic and functionality.
-  inquires:
-    title: General inquires
-    content: me@connellmccarthy.com
+announcement:
+  display: true
+  title: New Video &#8212; A Letter To My Future Wife
+  url: https://youtu.be/MLGeia4YIoM
+  external: true
+menus:
+  main:
+  - title: Info
+    slug: info
+    icon: home
+    url: /
+  - title: Writing
+    slug: article
+    icon: book
+    url: /article/
+  - title: Prints
+    slug: prints
+    icon: camera-retro
+    url: /prints/
+  footer:
+  - title: Changelog
+    url: /changelog/
+  - title: Report an issue
+    url: https://github.com/connellmccarthy/connellmccarthy.github.io/issues/new
+  - title: Environmental Impact Promise
+    url: /prints/pages/environmental-impact-promise
+  - title: Terms and Conditions
+    url: /legal/terms/
+  - title: Privacy Policy
+    url: /legal/privacy/
+  - title: Returns
+    url: /legal/returns/
 homepage:
-  announcements:
-    - display: true
-      icon: flask
-      title: Sketches is the new home for my explorative works, or works in progress.
-      link:
-        title: Check it out
-        url: /sketches/
-        external: false
-    - display: true
-      icon: sparkles
-      title: My new site is now live! Check out the changelog for the full history.
-      link:
-        title: Visit the changelog
-        url: /changelog/
-        external: false
   showreel:
-    title: 2022 Demo Reel
-  projects:
-    title: Personal Projects
+    title: 2022 Showreel
+  building:
+    title: Building
     items:
-    - title: Sketches
-      description: A place for explorative works, or works in progress.
-      url: /sketches
-      badge: new
-      external: false
-      icon: flask
-    - title: Photography Prints
-      description: Beautiful wilderness prints, at affordable prices
-      url: /shop
-      external: false
-      icon: camera-retro
-    - title: One Bill
-      description: An app designed to keep track of sharing monthly expenses with ease.
-      url: https://onebill.sh
+    - title: Bo & Co
+      description: I started a small design & development studio to keep me working on new projects.
       external: true
-      image: /assets/img/projects/onebill.jpg
-      icon: wallet
-      border: true
+      url: https://boandco.studio
+    - title: One Bill
+      description: I built an app to easily keep track of sharing monthly expenses with my partner.
+      external: true
+      url: https://onebill.sh
+  projects:
+    title: Creative works
+    items:
+    - title: Photography Prints
+      description: I sell my landscape photography prints for you to put up in your own home.
+      url: /prints/
+      badge: New
+      external: false
     - title: COVEO Music
-      description: Chill, euphoric, dreampop music.
+      description: I make chill, euphoric, dreampop music under the artist name COVEO.
       url: http://coveomusic.com
       external: true
-      image: /assets/img/projects/coveomusic.jpg
-      icon: music
+    - title: Experiments
+      description: I love to experiment with new concepts and creative challenges, and every so often I post them in my playground.
+      url: /sketches/
+      external: false
     - title: Salété Music
-      description: Dark, and upbeat electronic music.
-      url: https://saletemusic.com
+      description: I make dark electronic house music under the artist name Salété.
+      url: http://saletemusic.com
       external: true
-      image: /assets/img/projects/saletemusic.jpg
-      icon: music
   articles:
-    title: Featured Articles
+    title: Writing
+socials:
+- name: Dribbble
+  icon: dribbble
+  url: https://dribbble.com/connellmccarthy
+- name: Twitter
+  icon: twitter
+  url: https://twitter.com/connellmccarthy
+- name: Instagram
+  icon: instagram
+  url: https://instagram.com/connellmccarthy
+- name: Linkedin
+  icon: linkedin
+  url: https://www.linkedin.com/in/connellmccarthy/
 newsletter:
   body: Get notified whenever I publish something new, like a new article or a new product.
 shop:
   headline: Bring the outdoors &#8212; indoors
   description: Beautiful wilderness prints, at affordable prices.
   cta:
-    url: /shop/collections/all
+    url: /prints/collections/all
     text: Shop all products

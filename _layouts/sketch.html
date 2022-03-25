@@ -5,20 +5,16 @@
   </head>
   <body>
     <div class="container">
-      <div class="sidebar__container">
-        {% include sidebar.html %}
-      </div>
-      <div class="app_pane sketch">
-        {% include navigation.html %}
-        <main id="swup" class="transition-fade" aria-live="polite">
+      {% include navigation.html %}
+      <div class="crop">
+        <main id="swup" class="transition-scale" aria-live="polite">
           <div id="sketch-identifier"></div>
           <div class="wrapper">
             {{ content }}
           </div>
         </main>
+        {% include footer.html %}
       </div>
     </div>
-    {% include cart.html %}
-    {% include scripts.html %}
   </body>
 </html>

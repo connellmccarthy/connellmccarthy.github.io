@@ -1,87 +1,95 @@
 ---
 layout: default
-title: Work
+title: Canadian Creative
 ---
 
-{% assign announcements = site.data.content.homepage.announcements | where: 'display', 'true' %}
-{% if announcements.size > 0 %}
-  <div class="section announcements">
-    <h2>Latest Announcements</h2>
-    <div class="announcement__container size-{{ announcements | size }}">
-      {% for announcement in announcements limit: 4 %}
-        <a class="announcement__banner" href="{{ announcement.link.url }}" {% if announcement.link.external %}target="_blank" rel="noopener nofollow"{% endif %}>
-          <div class="contents">
-            <i class="far fa-{{ announcement.icon }}"></i>
-            {{ announcement.title }}
-          </div>
-          <div class="link">
-            <span class="link__text">{{ announcement.link.title }}</span>
-            <i class="far fa-arrow-right{% if announcement.link.external %} external{%endif %}"></i>
-          </div>
-        </a>
-      {% endfor %}
-    </div>
-    {% if announcements.size > 1 %}
-      <button id="mobile-announcements" class="btn btn__basic btn__circle">
-        <i class="far fa-chevron-down" aria-hidden="true"></i>
-        <span class="mobile-announcements-text visually-hidden">Expand announcements</span>
+<h1 class="visually-hidden">{{ site.title }}</h1>
+
+<div class="section hero">
+  <div class="wrapper condensed">
+    <p>I'm an all-encompassing<sup><a href="#all-encompassing" data-no-swup="true">[1]</a></sup> <span class="serif">creative</span> with a passion for finding the blend between <span class="serif">aesthetic</span> and <span class="serif">functionality</span>. I work remotely from Ottawa, Ontario.</p>
+
+    <p>I currently work on full scale go-to-market campaigns for the Retail and Messaging teams at <a href="https://shopify.com/?ref=connellmccarthy.com" target="_blank" rel="noopener">Shopify</a><sup><a href="#shopify" data-no-swup="true">[2]</a></sup>. Prior to that, I led the design department at the new-age record label <a href="https://monstercat.com/?ref=connellmccarthy.com" target="_blank" rel="noopener">Monstercat</a><sup><a href="#shopify" data-no-swup="true">[3]</a></sup>.</p>
+
+    <ol class="footnotes">
+      <li><a id="all-encompassing"></a>Represents a wide array of skills including design, 3D rendering, development, photography, video editing, motion design, composing, and music production.</li>
+      <li><a id="shopify"></a>March 2018-Present</li>
+      <li><a id="monstercat"></a>January 2013 - March 2018</li>
+    </ol>
+  </div>
+</div>
+
+<div class="section grey border-top-bottom">
+  <div class="wrapper video_wrapper">
+    <div class="video__container">
+      <button id="video-controller" class="btn btn__circle btn__marketing btn__white btn__scale color__blue">
+        <span id="button-text" class="visually-hidden">Play video</span>
+        <i id="button-icon" class="fas fa-play" aria-hidden="true"></i>
       </button>
-    {% endif %}
-  </div>
-{% endif %}
-
-<div class="section">
-  <h2>{{ site.data.content.homepage.showreel.title }}</h2>
-  <div class="video__container">
-    <button id="video-controller" class="btn btn__dark btn__circle btn__scale">
-      <span id="button-text" class="visually-hidden">Play video</span>
-      <i id="button-icon" class="fas fa-play" aria-hidden="true"></i>
-    </button>
-    <video id="showreel" class="border-radius__large" poster="/assets/img/showreel.jpg" muted playsinline>
-      <source src="/assets/img/showreel.mp4" type="video/mp4">
-    </video>
+      <video id="showreel" class="border-radius__large" poster="/assets/img/showreel.jpg" muted playsinline>
+        <source src="/assets/img/showreel.mp4" type="video/mp4">
+      </video>
+    </div>
+    <p class="muted center mt-5">{{ site.data.content.homepage.showreel.title }}</p>
   </div>
 </div>
 
 <div class="section">
-  <h2>{{ site.data.content.homepage.projects.title }}</h2>
-  <div class="list">
-    {% for project in site.data.content.homepage.projects.items %}
-      {% include card.html
-        url = project.url
-        icon = project.icon
-        size = 'small'
-        badge = project.badge
-        title = project.title
-        description = project.description
-        cta = 'Visit project website'
-        external = project.external %}
-    {% endfor %}
-  </div>
-</div>
-
-<div class="section">
-  <h2>{{ site.data.content.homepage.articles.title }}</h2>
-  <div class="list">
-    {% assign articles = site.article | sort: "date" | reverse %}
-    {% for article in articles limit: 4 %}
-      {% include card.html
-        url = article.url
-        icon = 'book'
-        size = 'small'
-        title = article.title
-        description = article.description
-        truncate = true
-        cta = 'Read article'
-        external = false %}
-    {% endfor %}
-  </div>
-</div>
-
-<div class="section">
-  <h2 class="m-0">Location</h2>
-  <p class="muted mt-2 mb-10">I work remotely from a town just outside of Canada’s capital city, Ottawa.</p>
-  <div class="location-image">
-    <img class="border-radius__large" src="/assets/img/ottawa-map.jpg" alt="Map of Ottawa, Ontario.">
+  <div class="wrapper condensed">
+    <div class="projects">
+      <div class="projects__title">
+        <p>{{ site.data.content.homepage.building.title }}</p>
+      </div>
+      <div class="projects__items">
+        {% for project in site.data.content.homepage.building.items %}
+          {% include card.html
+            style = 'project'
+            title = project.title
+            description = project.description
+            url = project.url
+            arrow = true
+            external = project.external
+          %}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="projects">
+      <div class="projects__title">
+        <p>{{ site.data.content.homepage.projects.title }}</p>
+      </div>
+      <div class="projects__items">
+        {% for project in site.data.content.homepage.projects.items %}
+          {% include card.html
+            style = 'project'
+            title = project.title
+            description = project.description
+            badge = project.badge
+            arrow = true
+            url = project.url
+            external = project.external
+          %}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="projects">
+      <div class="projects__title">
+        <p>{{ site.data.content.homepage.articles.title }}</p>
+      </div>
+      <div class="projects__items">
+        {% assign articles = site.article | reverse %}
+        {% for project in articles %}
+          {% assign year  = project.date | date: '%Y' %}
+          {% include card.html
+            style = 'project'
+            title = project.title
+            badge = year
+            badge_color = 'grey'
+            description = project.description
+            arrow = false
+            url = project.url
+          %}
+        {% endfor %}
+      </div>
+    </div>
   </div>
 </div>

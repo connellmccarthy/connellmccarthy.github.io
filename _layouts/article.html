@@ -5,31 +5,12 @@
   </head>
   <body>
     <div class="container">
-      <div class="sidebar__container">
-        {% include sidebar.html %}
-      </div>
-      <div class="app_pane">
-        {% include navigation.html %}
-        <main id="swup" class="transition-fade article" aria-live="polite">
-          <div class="article-info">
-            <div class="wrapper">
-              <a href="/article" class="btn btn__basic">
-                <span class="visually-hidden">Back to articles</span>
-                <i class="far fa-arrow-left" aria-hidden="true"></i>
-              </a>
-              <div class="details">
-                <p class="title">{{ page.title }}</p>
-                <p class="muted">{{ page.date | date: "%B %d, %Y" }}</p>
-              </div>
-              <button id="like_button_sticky" class="btn btn__basic like_button processing">
-                <i class="far fa-heart like_button_icon"></i>
-                <span class="count">•</span>
-              </button>
-            </div>
-          </div>
-          <div class="wrapper">
+      {% include navigation.html %}
+      <div class="crop">
+        <main id="swup" class="transition-scale article" aria-live="polite">
+          <div class="wrapper margin-top">
             <div class="article-info-static">
-              <a href="/article" id="back-link">
+              <a class="btn btn__link" href="/article" id="back-link">
                 <i class="far fa-arrow-left mr-2" aria-hidden="true"></i>
                 <span>Back to articles</span>
               </a>
@@ -38,74 +19,69 @@
                 <span class="count">•</span> likes
               </button>
             </div>
-            <div class="article_thumbnail">
-              <img src="/assets/articles/{{ page.slug }}/{{ page.thumbnail }}" alt="{{ page.title }} thumbnail image.">
-            </div>
             <div class="article-info-static">
+              <p class="center title mb-6">{{ page.title }}</p>
+            </div>
+            <h1>{{ page.description }}</h1>
+            <div class="article-info-details">
               {% assign article_words = content | strip_html | strip_newlines | downcase | replace: 'and','' | replace: 'the','' | split:' ' %}
               {% assign word_count = article_words | size %}
-
-              <p class="muted">{{ page.title }} • {{ page.date | date: "%B %d, %Y" }}</p>
-              <p class="muted">
-                <i class="far fa-book mr-1" aria-hidden="true"></i>
-                {{ word_count | times: 0.0076 | round }} minute read
-                </p>
+              <div class="article-details">
+                <p class="muted">Publish date</p>
+                <p> {{ page.date | date: "%B %d, %Y" }}</p>
+              </div>
+              <div class="article-details">
+                <p class="muted">Reading time</p>
+                <p>{{ word_count | times: 0.0076 | round }} minutes</p>
+              </div>
             </div>
-
-            <h1>{{ page.description }}</h1>
 
             {% assign hasfollowup = site.article | where: 'followup', page.slug %}
             {% if page.followup %}
-              <div class="section border-radius__normal followup__container">
-                <p class="muted followup__title">Read the original article</p>
+              <div class="followup__container">
+                <p class="followup__title">Read the original article</p>
                 {% assign followups = site.article | where: 'slug', page.followup %}
                 {% for followup in followups %}
-                  {% assign article_words = followup.content | strip_html | strip_newlines | downcase | replace: 'and','' | replace: 'the','' | split:' ' %}
-                  {% assign reading_time = article_words | size | times: 0.0076 | round  %}
+                  {% assign year = followup.date | date: '%Y' %}
                   {% include card.html
-                    url = followup.url
-                    style = 'grey'
-                    inline = true
-                    preline_icon = 'copy'
-                    preline = 'Original article'
+                    style = 'project grey'
                     title = followup.title
+                    badge = year
+                    badge_color = 'grey'
                     description = followup.description
-                    date = followup.date
-                    cta = 'Read article'
-                    external = false %}
+                    url = followup.url
+                  %}
                 {% endfor %}
               </div>
             {% elsif hasfollowup.size >= 1 %}
-              <div class="section border-radius__normal followup__container">
-                <p class="muted followup__title">Read the latest update</p>
+              <div class="followup__container">
+                <p class="followup__title">Read the latest update</p>
                 {% for followup in hasfollowup %}
-                  {% assign article_words = followup.content | strip_html | strip_newlines | downcase | replace: 'and','' | replace: 'the','' | split:' ' %}
-                  {% assign reading_time = article_words | size | times: 0.0076 | round  %}
+                  {% assign year = followup.date | date: '%Y' %}
                   {% include card.html
-                    url = followup.url
-                    style = 'grey'
-                    inline = true
-                    preline_icon = 'copy'
-                    preline = 'Follow up article'
+                    style = 'project grey'
                     title = followup.title
+                    badge = year
                     description = followup.description
-                    date = followup.date
-                    cta = 'Read article'
-                    external = false %}
+                    url = followup.url
+                  %}
                 {% endfor %}
               </div>
+            {% else %}
+              <div class="article-spacer"></div>
             {% endif %}
 
-            {{ content }}
+            <div class="article-content">
+              {{ content }}
+            </div>
             
             {% include newsletter.html %}
 
           </div>
           {% include pagination.html type='article' %}
         </main>
+        {% include footer.html %}
       </div>
     </div>
-    {% include cart.html %}
-    {% include scripts.html %}
   </body>
 </html>

@@ -1,7 +1,26 @@
+<div class="product-modal" id="product-modal-{{ product.product_id }}">
+  <div class="product_link">
+    <a class="btn btn__link product-modal-trigger" href="{{ product.url }}">Visit product page</a>
+  </div>
+  <button class="btn btn__circle btn__basic close-modal product-modal-trigger" data-product-id="{{ product.product_id }}"><i class="far fa-times" aria-hidden="true"></i> <span class="visually-hidden">Close modal</span></button>
+  {% include shop/product-form.html %}
+</div>
+<div class="fade product-modal-trigger" data-product-id="{{ product.product_id }}" id="product-fade-{{ product.product_id }}"></div>
 <div class="product{% if include.compressed %} compressed{%endif%}">
+  <div class="quickview">
+    <button class="btn btn__marketing btn__white btn__round product-modal-trigger" data-product-id="{{ product.product_id }}">
+      <span class="desktop">
+        <i class="far fa-up-right-and-down-left-from-center mr-2" aria-hidden="true"></i> Quickview
+      </span>
+      <span class="mobile-only">
+        <i class="far fa-up-right-and-down-left-from-center" aria-hidden="true"></i> 
+        <span class="visually-hidden">Quickview</span>
+      </span>
+    </button>
+  </div>
   <a href="{{ product.url }}">
     <img height="720px" width="500px" class="border-radius__large" loading="lazy" src="{{ product.image.src }}" alt="{{ product.title }} standing upright on a grey platform.">
     <p class="title">{{ product.title }}</p>
-    <p class="muted-light">Starting at ${{ product.variants.first.price }} CAD</p>
+    <p class="muted">Starting at ${{ product.variants.first.price }} CAD</p>
   </a>
 </div>

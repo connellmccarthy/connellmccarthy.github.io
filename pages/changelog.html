@@ -6,61 +6,68 @@ permalink: /changelog/
 cta_heading: Stay up to date with new iterations
 slug: changelog
 ---
-
-<div class="section changelog">
-  <div class="content center">
-    <h1 class="m-0">Changelog</h1>
-    <p class="m-0 mt-4 mb-4 muted">How my personal website has changed over the years.</p>
-    <p class="updated center muted-light">
-      Last updated: {{ "now" | date: "%Y-%m-%d %H:%M" }} (<a class="btn btn__link" href="{{ site.github.repository_url }}/commit/{{ site.github.build_revision }}" target="_blank" rel="noopener nofollow">{{ site.github.build_revision | slice: 0, 7 }}</a>)
-    </p>
+<div class="wrapper">  
+  <div class="section changelog">
+    <div class="content center">
+      <h1 class="m-0">Changelog</h1>
+      <p class="m-0 mt-4 mb-4 muted">How my personal website has changed over the years.</p>
+      <p class="updated center muted">
+        Last updated: {{ "now" | date: "%Y-%m-%d %H:%M" }} (<a class="btn btn__link" href="{{ site.github.repository_url }}/commit/{{ site.github.build_revision }}" target="_blank" rel="noopener nofollow">{{ site.github.build_revision | slice: 0, 7 }}</a>)
+      </p>
+    </div>
   </div>
+  
+  <div class="timeline changelog">
+    <div class="section shop-section">
+      <p class="center"><span class="badge">Current</span></p>
+      <h3>April 2022</h3>
+      <img class="border-radius__large" src="/assets/img/changelog/2022-04.jpg" alt="Screenshot of the homepage from April 2022">
+      <p>After taking some time to review the last update to my website, I realized that some things missed the mark for what I was going for. First off, I was trying to create this product/marketing website hybrid with a static sidebar that wasn't necessary. I removed the sidebar, opted for a traditional navigation bar with room for an announcement banner for new releases or shop notifications, and reworked the information architecture of the whole site.</p>
+      <p>The shop got some new features like product quick view which now allows you to add a product to the cart straight from an article page. Better navigation between collections, and a more clear information architecture to navigate the shop effortlessly. The projects on my homepage are now grouped into buckets to better clarify the difference between them. The overall palette of the site got updated for a look that hopefully can stand the test of time.</p>
+    </div>
+    <div class="section shop-section">
+      <h3>February 2022</h3>
+      <img class="border-radius__large" src="/assets/img/changelog/2022-02.jpg" alt="Screenshot of the homepage from February 2022">
+      <p>It's been a little over a year since I last updated my site, and I wanted to dive into a redesign that was more inline with my design tastes. I wanted there to be an easier way to showcase the projects I'm working on, announcements for my latest projects, and a better integration with my print shop.</p>
+      <p>I built the site using <a href="https://jekyllrb.com/" target="_blank" rel="noopener">Jekyll</a> and deployed using <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub pages</a>. I even made a little Shopify integration so that the shop was also built in Jekyll.</p>
+    </div>
+    <div class="section shop-section">
+      <h3>November 2020</h3>
+      <img class="border-radius__large" src="/assets/img/changelog/2020-11.jpg" alt="Screenshot of the homepage from 2020">
+      <p>I rebuilt my site using <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> so I could start writing blog posts. We spent the summer of 2020 planning the minor renovations to the house we were moving into in the fall, and I wanted to talk about the process.</p>
+      <p>The site featured a focus on a showreel, clients I've worked with, and a large focus on articles. Using <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> was an absolute pain, seeing as Go wasn't a language I was familiar with.</p>
+    </div>
+    <div class="section shop-section">
+      <h3>August 2019</h3>
+      <img class="border-radius__large" src="/assets/img/changelog/2019-08.jpg" alt="Screenshot of the homepage from 2019">
+      <p>In 2019 I launched my photography print shop alongside a new look and feel for my homepage. I wanted to showcase a few projects and shift the focus from my <a href="https://www.behance.net/connellmccarthy" target="_blank" rel="noopener">Behance</a> to my <a href="https://www.dribbble.com/connellmccarthy" target="_blank" rel="noopener">Dribbble</a>.</p>
+    </div>
+    <div class="section shop-section">
+      <h3>March 2018</h3>
+      <img class="border-radius__large" src="/assets/img/changelog/2018-03.jpg" alt="Screenshot of the homepage from 2018">
+      <p>I moved on from <a href="https://www.monstercat.com/" target="_blank" rel="noopener">Monstercat</a> and joined the team over at <a href="https://www.shopify.com/" target="_blank" rel="noopener">Shopify</a>. Updated the homepage to reflect the transition.</p>
+    </div>
+    <div class="section shop-section">
+      <h3>November 2017</h3>
+      <img class="border-radius__large" src="/assets/img/changelog/2017-11.jpg" alt="Screenshot of the homepage from November 2017">
+      <p>I went from three large blocks of text to a couple sentences with inline links to the projects I wanted to showcase. Minimal content with two subpages for more information about me, and some client work.</p>
+    </div>
+    <div class="section shop-section">
+      <h3>May 2017</h3>
+      <img class="border-radius__large" src="/assets/img/changelog/2017-05.jpg" alt="Screenshot of the homepage from May 2017">
+      <p>I had built out this full scale site with case studies, but it ended up just being a simple lander with information about myself because I never got around to finishing all the case studies.</p>
+    </div>
+    <div class="section shop-section">
+      <h3>2015</h3>
+      <img class="border-radius__large" src="/assets/img/changelog/2015.jpg" alt="Screenshot of the homepage from 2015">
+      <p>Keeping it simple with social icons, and a faded background photo from one of my favourite places in Vancouver, Lighthouse Park.</p>
+    </div>
+    <div class="section shop-section">
+      <h3>2013</h3>
+      <img class="border-radius__large" src="/assets/img/changelog/2013.jpg" alt="Screenshot of the homepage from 2013">
+      <p>Built in <a href="https://www.php.net/" target="_blank" rel="noopener">PHP</a>, complete with full page sections, parallax scrolling, and background images - this was one of the first personal websites I had on the internet.</p>
+    </div>
+  </div>
+  
+  {% include newsletter.html %}
 </div>
-
-<div class="timeline changelog">
-  <div class="section shop-section">
-    <p class="center"><span class="badge">Current</span></p>
-    <h3>February 2022</h3>
-    <img class="border-radius__large" src="/assets/img/changelog/2022-02.jpg" alt="Screenshot of the homepage from 2022">
-    <p>It's been a little over a year since I last updated my site, and I wanted to dive into a redesign that was more inline with my design tastes. I wanted there to be an easier way to showcase the projects I'm working on, announcements for my latest projects, and a better integration with my print shop.</p>
-    <p>I built the site using <a href="https://jekyllrb.com/" target="_blank" rel="noopener">Jekyll</a> and deployed using <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub pages</a>. I even made a little Shopify integration so that the shop was also built in Jekyll.</p>
-  </div>
-  <div class="section shop-section">
-    <h3>November 2020</h3>
-    <img class="border-radius__large" src="/assets/img/changelog/2020-11.jpg" alt="Screenshot of the homepage from 2020">
-    <p>I rebuilt my site using <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> so I could start writing blog posts. We spent the summer of 2020 planning the minor renovations to the house we were moving into in the fall, and I wanted to talk about the process.</p>
-    <p>The site featured a focus on a showreel, clients I've worked with, and a large focus on articles. Using <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> was an absolute pain, seeing as Go wasn't a language I was familiar with.</p>
-  </div>
-  <div class="section shop-section">
-    <h3>August 2019</h3>
-    <img class="border-radius__large" src="/assets/img/changelog/2019-08.jpg" alt="Screenshot of the homepage from 2019">
-    <p>In 2019 I launched my photography print shop alongside a new look and feel for my homepage. I wanted to showcase a few projects and shift the focus from my <a href="https://www.behance.net/connellmccarthy" target="_blank" rel="noopener">Behance</a> to my <a href="https://www.dribbble.com/connellmccarthy" target="_blank" rel="noopener">Dribbble</a>.</p>
-  </div>
-  <div class="section shop-section">
-    <h3>March 2018</h3>
-    <img class="border-radius__large" src="/assets/img/changelog/2018-03.jpg" alt="Screenshot of the homepage from 2018">
-    <p>I moved on from <a href="https://www.monstercat.com/" target="_blank" rel="noopener">Monstercat</a> and joined the team over at <a href="https://www.shopify.com/" target="_blank" rel="noopener">Shopify</a>. Updated the homepage to reflect the transition.</p>
-  </div>
-  <div class="section shop-section">
-    <h3>November 2017</h3>
-    <img class="border-radius__large" src="/assets/img/changelog/2017-11.jpg" alt="Screenshot of the homepage from November 2017">
-    <p>I went from three large blocks of text to a couple sentences with inline links to the projects I wanted to showcase. Minimal content with two subpages for more information about me, and some client work.</p>
-  </div>
-  <div class="section shop-section">
-    <h3>May 2017</h3>
-    <img class="border-radius__large" src="/assets/img/changelog/2017-05.jpg" alt="Screenshot of the homepage from May 2017">
-    <p>I had built out this full scale site with case studies, but it ended up just being a simple lander with information about myself because I never got around to finishing all the case studies.</p>
-  </div>
-  <div class="section shop-section">
-    <h3>2015</h3>
-    <img class="border-radius__large" src="/assets/img/changelog/2015.jpg" alt="Screenshot of the homepage from 2015">
-    <p>Keeping it simple with social icons, and a faded background photo from one of my favourite places in Vancouver, Lighthouse Park.</p>
-  </div>
-  <div class="section shop-section">
-    <h3>2013</h3>
-    <img class="border-radius__large" src="/assets/img/changelog/2013.jpg" alt="Screenshot of the homepage from 2013">
-    <p>Built in <a href="https://www.php.net/" target="_blank" rel="noopener">PHP</a>, complete with full page sections, parallax scrolling, and background images - this was one of the first personal websites I had on the internet.</p>
-  </div>
-</div>
-
-{% include newsletter.html %}

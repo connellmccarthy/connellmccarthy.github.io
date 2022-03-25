@@ -5,14 +5,10 @@
   </head>
   <body>
     <div class="container">
-      <div class="sidebar__container">
-        {% include sidebar.html %}
-      </div>
-      <div class="app_pane">
-        {% include navigation.html %}
-        <main id="swup" class="transition-fade" aria-live="polite">
-          <div class="wrapper">
-            {% include shop/collections.html %}
+      {% include navigation.html %}
+      <div class="crop">
+        <main id="swup" class="transition-scale" aria-live="polite">
+          <div class="wrapper margin-top">
             <div class="shop-product-list">
               {% for product in site.products %}
                 {% assign page_tags = page.identifier | split: ', ' %}
@@ -31,9 +27,8 @@
             {% include newsletter.html %}
           </div>
         </main>
+        {% include footer.html %}
       </div>
     </div>
-    {% include cart.html %}
-    {% include scripts.html %}
   </body>
 </html>

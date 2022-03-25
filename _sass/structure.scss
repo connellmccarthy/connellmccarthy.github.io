@@ -118,6 +118,9 @@ body {
     user-select: none;
   }
 }
+main#swup {
+  min-height: 60vh;
+}
 .crop {
   width: 100%;
   max-width: $site-max-width;
@@ -608,4 +611,8 @@ span.badge {
     opacity: 1;
     pointer-events: all;
   }
+}
+
+.four_oh_four {
+  padding: 10em 0;
 }

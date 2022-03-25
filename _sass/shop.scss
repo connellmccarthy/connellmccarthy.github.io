@@ -139,8 +139,13 @@ h2.treecount {
     }
 
     @media screen and (max-width: $break-mobile) {
-      background-position: 100% 16em;
-      background-size: 160%;
+      height: 60vh;
+      .wrapper {
+        padding: 0;
+        .intro-text {
+          margin: 0;
+        }
+      }
     }
   }
 
@@ -277,6 +282,27 @@ h2.treecount {
       top: 73%;
       left: 50%;
       transform: translateY(-10px) translateX(-50%);
+
+      @media screen and (max-width: $break-mobile) {
+        .desktop {
+          display: none;
+        }
+        opacity: 1;
+        position: absolute;
+        top: 1em;
+        right: 1em;
+        left: unset;
+        transform: none !important;
+
+        button {
+          padding: 0;
+          height: 35px;
+          width: 35px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
     }
 
     &:hover {
@@ -324,7 +350,7 @@ h2.treecount {
   background: $color-white;
   transform: scale(0.8) translate(-50%,-50%);
   z-index: 98;
-  padding: 3em;
+  padding: 2em;
   border-radius: $border-radius-large;
   opacity: 0;
   pointer-events: none;
@@ -334,17 +360,36 @@ h2.treecount {
   box-shadow: 0px 10px 60px -4px #00000033;
   width: 90%;
   max-width: calc(#{$max-width} - #{$guttersize});
-  max-height: 90%;
+  max-height: 80%;
   overflow-y: scroll;
 
+  @media screen and (max-width: $break-mobile) {
+    max-height: 100%;
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .product_link {
+    padding: 0 0 2em;
+  }
+
   .product_image {
-    max-width: 300px;
+    max-width: 450px;
+
+    @media screen and (max-width: $break-tablet) {
+      max-width: unset;
+      img {
+        object-fit: cover;
+        max-height: 50vh;
+      }
+    }
   }
 
   .close-modal {
     position: absolute;
     top: 1em;
     right: 1em;
+    z-index: 5;
   }
 
   &.active {

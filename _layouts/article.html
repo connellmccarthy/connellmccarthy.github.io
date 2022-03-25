@@ -36,42 +36,40 @@
               </div>
             </div>
 
-            <div class="wrapper condensed">
-              {% assign hasfollowup = site.article | where: 'followup', page.slug %}
-              {% if page.followup %}
-                <div class="section border-radius__normal followup__container">
-                  <p class="followup__title">Read the original article</p>
-                  {% assign followups = site.article | where: 'slug', page.followup %}
-                  {% for followup in followups %}
-                    {% assign year = followup.date | date: '%Y' %}
-                    {% include card.html
-                      style = 'project grey'
-                      title = followup.title
-                      badge = year
-                      badge_color = 'grey'
-                      description = followup.description
-                      url = followup.url
-                    %}
-                  {% endfor %}
-                </div>
-              {% elsif hasfollowup.size >= 1 %}
-                <div class="section border-radius__normal followup__container">
-                  <p class="followup__title">Read the latest update</p>
-                  {% for followup in hasfollowup %}
-                    {% assign year = followup.date | date: '%Y' %}
-                    {% include card.html
-                      style = 'project grey'
-                      title = followup.title
-                      badge = year
-                      description = followup.description
-                      url = followup.url
-                    %}
-                  {% endfor %}
-                </div>
-              {% else %}
-                <div class="article-spacer"></div>
-              {% endif %}
-            </div>
+            {% assign hasfollowup = site.article | where: 'followup', page.slug %}
+            {% if page.followup %}
+              <div class="followup__container">
+                <p class="followup__title">Read the original article</p>
+                {% assign followups = site.article | where: 'slug', page.followup %}
+                {% for followup in followups %}
+                  {% assign year = followup.date | date: '%Y' %}
+                  {% include card.html
+                    style = 'project grey'
+                    title = followup.title
+                    badge = year
+                    badge_color = 'grey'
+                    description = followup.description
+                    url = followup.url
+                  %}
+                {% endfor %}
+              </div>
+            {% elsif hasfollowup.size >= 1 %}
+              <div class="followup__container">
+                <p class="followup__title">Read the latest update</p>
+                {% for followup in hasfollowup %}
+                  {% assign year = followup.date | date: '%Y' %}
+                  {% include card.html
+                    style = 'project grey'
+                    title = followup.title
+                    badge = year
+                    description = followup.description
+                    url = followup.url
+                  %}
+                {% endfor %}
+              </div>
+            {% else %}
+              <div class="article-spacer"></div>
+            {% endif %}
 
             <div class="article-content">
               {{ content }}

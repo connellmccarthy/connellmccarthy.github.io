@@ -3,7 +3,7 @@
   width: 100%;
   position: relative;
   z-index: 95;
-  padding-top: 0.2em;
+  margin: 0;
 }
 .announcement {
   text-align: center;
@@ -25,6 +25,16 @@
   padding: 1em 2em;
   align-items: center;
 
+  .nav-menu-trigger {
+    width: fit-content;
+  }
+
+  @media screen and (max-width: $break-mobile) {
+    .cv {
+      display: none;
+    }
+  }
+
   
   div:nth-of-type(1){
     justify-self: flex-start;
@@ -42,6 +52,27 @@
   &__items {
     display: flex;
     align-items: center;
+    @media screen and (max-width: $break-mobile) {
+      position: absolute;
+      top: 95px;
+      left: 0;
+      height: calc(100vh - 95px);
+      width: 80vw;
+      background: $color-white;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0 2em 4em;
+      z-index: -2;
+      overflow-y: auto;
+      border-right: 1px solid $color-border;
+      transition: transform 0.6s cubic-bezier(0.87, 0, 0.13, 1);
+      transform: translateX(-100%);
+
+      &.active {
+        transform: translateX(0);
+      }
+    }
   }
   &__item {
     transition: background 0.3s ease;
@@ -52,6 +83,20 @@
       background: $color-grey;
       color: $color-ink-dark;
     }
+
+    @media screen and (max-width: $break-mobile) {
+      width: 100%;
+      padding: 1em 1em !important;
+      border-radius: 6px !important;
+      background: darken($color-grey-light, 2);
+      border: none;
+      display: block;
+      margin: 0.2em 0;
+      &.active {
+        background: $color-black;
+        color: $color-white;
+      }
+    }
   }
 }
 
@@ -60,7 +105,7 @@
   position: sticky;
   top: 0;
   left: 0;
-  z-index: 95;
+  z-index: 94;
 
   .shop-nav-fade {
     position: absolute;

@@ -146,6 +146,11 @@ sup {
   margin-top: 10em;
   list-style: none;
   counter-reset: footnotes;
+
+  @media screen and (max-width: $break-mobile) {
+    padding: 0 1em;
+  }
+
   sup {
     font-size: 0.8em;
   }
@@ -168,11 +173,6 @@ a,button,
 input {
   &:focus {
     outline: 2px solid lighten($color-blue, 30);
-  }
-}
-main {
-  @media screen and (max-width: $break-mobile) {
-    padding-bottom: 8em;
   }
 }
 h1,h2,h3 {
@@ -265,9 +265,16 @@ img {
   &.margin-top {
     padding-top: 3em;
   }
+  &.margin-bottom {
+    padding-bottom: 3em;
+  }
 
   @media screen and (max-width: $break-mobile) {
     padding: 0 ($gutter / 3);
+
+    &.video_wrapper {
+      padding: 0;
+    }
   }
 }
 
@@ -299,6 +306,11 @@ img {
     background: $color-grey;
     border: 1px solid $color-border;
     position: relative;
+
+    &.border-top-bottom {
+      border-left: none;
+      border-right: none;
+    }
 
     @media screen and (max-width: $break-mobile) {
       padding: 2em;
@@ -351,6 +363,11 @@ i.fa-arrow-right.external {
   border: 1px solid $color-border;
   border-radius: $border-radius-normal;
   margin: 2em;
+
+  @media screen and (max-width: $break-mobile) {
+    margin: 2em 0;
+  }
+
   &__title {
     background: $color-grey;
     border-radius: $border-radius-normal $border-radius-normal 0 0;
@@ -571,7 +588,7 @@ span.badge {
 .fade {
   height: 100vh;
   width: 100vw;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0,0,0,0.6);
   position: fixed;
   z-index: 97;
   top: 0;
@@ -582,6 +599,9 @@ span.badge {
 
   &.cart-trigger {
     z-index: 99;
+  }
+  &.menu-trigger {
+    z-index: 95;
   }
   
   &.active {

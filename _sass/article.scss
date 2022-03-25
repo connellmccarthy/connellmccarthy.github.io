@@ -9,6 +9,9 @@
     text-align: center;
     max-width: 544px;
     margin: 0 auto;
+    @media screen and (max-width: $break-mobile) {
+      font-size: 2em;
+    }
   }
   h2:not(#newsletter__heading),
   h3:not(.section h3) {
@@ -23,7 +26,7 @@
     margin: 2em auto;
     max-width: calc(#{$max-width-condensed} - #{$guttersize});
   }
-  img:not(.article_thumbnail img) {
+  img:not(.article_thumbnail img, .product img, .product_image img) {
     border-radius: $border-radius-large;
     width: 100%;
     margin: 2em 0 0;
@@ -49,6 +52,14 @@
     margin-right: auto;
   }
 }
+
+.followup__container {
+  padding: 4em 0 2em;
+  max-width: calc(750px - 12em);
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .article-spacer {
   width: 100%;
   height: 4em;

@@ -1,16 +1,21 @@
 announcement:
   display: true
-  title: New print orders won't be fulfilled until March 20th
+  title: New Video &#8212; A Letter To My Future Wife
+  url: https://twitter.com/connellmccarthy/status/1505990125070606336
+  external: true
 menus:
   main:
   - title: Info
     slug: info
+    icon: home
     url: /
   - title: Writing
     slug: article
+    icon: book
     url: /article/
   - title: Prints
     slug: prints
+    icon: camera-retro
     url: /prints/
   footer:
   - title: Changelog

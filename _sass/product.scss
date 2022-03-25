@@ -6,7 +6,7 @@
   position: relative;
 
   @media screen and (max-width: $break-mobile) {
-    height: 76vh;
+    height: 65vh;
   }
 
   img {
@@ -33,13 +33,6 @@
     flex-direction: column;
     justify-content: space-between;
     max-width: 1450px;
-
-    @media screen and (max-width: $break-mobile) {
-      margin-top: 140px;
-      z-index: 0;
-
-      height: calc(100% - 181px);
-    }
 
     a {
       width: -moz-fit-content;

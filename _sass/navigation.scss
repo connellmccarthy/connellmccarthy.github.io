@@ -13,6 +13,10 @@
   a {
     text-decoration: none;
     color: $color-white;
+
+    &:hover {
+      color: lighten($color-blue, 30);
+    }
   }
 }
 .nav {

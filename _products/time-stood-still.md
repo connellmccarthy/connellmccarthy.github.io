@@ -10,10 +10,10 @@ body_html: >-
 
   <p> </p>
 vendor: Connell McCarthy
-product_type: Photo Print
+product_type: Posters, Prints, & Visual Artwork
 created_at: 2019-03-17T13:34:28-04:00
 handle: time-stood-still
-updated_at: 2022-01-27T21:04:38-05:00
+updated_at: 2022-03-31T15:43:38-04:00
 published_at: 2018-08-22T19:38:24-04:00
 template_suffix: ""
 status: active
@@ -21,21 +21,21 @@ published_scope: global
 tags: aerial, Batch 03, bridge, fall, fog, foggy, Print
 admin_graphql_api_id: gid://shopify/Product/2062566621246
 variants:
-  - product_id: 2062566621246
-    id: 39577252233278
+  - id: 39577252233278
+    product_id: 2062566621246
     title: 8x10” / Full Colour
     price: "35.00"
     sku: CM-PP-B3-10-XXS-FC
     position: 1
-    inventory_policy: deny
+    inventory_policy: continue
     compare_at_price: null
     fulfillment_service: manual
-    inventory_management: null
+    inventory_management: shopify
     option1: 8x10”
     option2: Full Colour
     option3: null
     created_at: 2021-09-01T15:43:37-04:00
-    updated_at: 2021-09-01T15:44:02-04:00
+    updated_at: 2022-02-07T16:25:04-05:00
     taxable: true
     barcode: ""
     grams: 208
@@ -43,25 +43,25 @@ variants:
     weight: 0.208
     weight_unit: kg
     inventory_item_id: 41671692877886
-    inventory_quantity: 0
-    old_inventory_quantity: 0
+    inventory_quantity: 100
+    old_inventory_quantity: 100
     requires_shipping: true
     admin_graphql_api_id: gid://shopify/ProductVariant/39577252233278
-  - product_id: 2062566621246
-    id: 39577252266046
+  - id: 39577252266046
+    product_id: 2062566621246
     title: 8x10” / Black & White
     price: "35.00"
     sku: CM-PP-B3-10-XXS-BW
     position: 2
-    inventory_policy: deny
+    inventory_policy: continue
     compare_at_price: null
     fulfillment_service: manual
-    inventory_management: null
+    inventory_management: shopify
     option1: 8x10”
     option2: Black & White
     option3: null
     created_at: 2021-09-01T15:43:37-04:00
-    updated_at: 2021-09-01T15:44:02-04:00
+    updated_at: 2022-02-07T16:25:03-05:00
     taxable: true
     barcode: ""
     grams: 208
@@ -69,25 +69,25 @@ variants:
     weight: 0.208
     weight_unit: kg
     inventory_item_id: 41671692910654
-    inventory_quantity: 0
-    old_inventory_quantity: 0
+    inventory_quantity: 100
+    old_inventory_quantity: 100
     requires_shipping: true
     admin_graphql_api_id: gid://shopify/ProductVariant/39577252266046
-  - product_id: 2062566621246
-    id: 39577252298814
+  - id: 39577252298814
+    product_id: 2062566621246
     title: 8.5x11” / Full Colour
     price: "35.00"
     sku: CM-PP-B3-10-XS-FC
     position: 3
-    inventory_policy: deny
+    inventory_policy: continue
     compare_at_price: null
     fulfillment_service: manual
-    inventory_management: null
+    inventory_management: shopify
     option1: 8.5x11”
     option2: Full Colour
     option3: null
     created_at: 2021-09-01T15:43:37-04:00
-    updated_at: 2021-09-01T15:44:02-04:00
+    updated_at: 2022-02-07T16:25:04-05:00
     taxable: true
     barcode: ""
     grams: 208
@@ -95,25 +95,25 @@ variants:
     weight: 0.208
     weight_unit: kg
     inventory_item_id: 41671692943422
-    inventory_quantity: 0
-    old_inventory_quantity: 0
+    inventory_quantity: 100
+    old_inventory_quantity: 100
     requires_shipping: true
     admin_graphql_api_id: gid://shopify/ProductVariant/39577252298814
-  - product_id: 2062566621246
-    id: 39577252331582
+  - id: 39577252331582
+    product_id: 2062566621246
     title: 8.5x11” / Black & White
     price: "35.00"
     sku: CM-PP-B3-10-XS-BW
     position: 4
-    inventory_policy: deny
+    inventory_policy: continue
     compare_at_price: null
     fulfillment_service: manual
-    inventory_management: null
+    inventory_management: shopify
     option1: 8.5x11”
     option2: Black & White
     option3: null
     created_at: 2021-09-01T15:43:37-04:00
-    updated_at: 2021-09-01T15:44:02-04:00
+    updated_at: 2022-02-07T16:25:05-05:00
     taxable: true
     barcode: ""
     grams: 208
@@ -121,25 +121,25 @@ variants:
     weight: 0.208
     weight_unit: kg
     inventory_item_id: 41671692976190
-    inventory_quantity: 0
-    old_inventory_quantity: 0
+    inventory_quantity: 100
+    old_inventory_quantity: 100
     requires_shipping: true
     admin_graphql_api_id: gid://shopify/ProductVariant/39577252331582
-  - product_id: 2062566621246
-    id: 39577252364350
+  - id: 39577252364350
+    product_id: 2062566621246
     title: 13x19” / Full Colour
     price: "40.00"
     sku: CM-PP-B3-10-S-FC
     position: 5
-    inventory_policy: deny
+    inventory_policy: continue
     compare_at_price: null
     fulfillment_service: manual
-    inventory_management: null
+    inventory_management: shopify
     option1: 13x19”
     option2: Full Colour
     option3: null
     created_at: 2021-09-01T15:43:37-04:00
-    updated_at: 2021-09-01T15:44:02-04:00
+    updated_at: 2022-02-07T16:25:11-05:00
     taxable: true
     barcode: ""
     grams: 208
@@ -147,25 +147,25 @@ variants:
     weight: 0.208
     weight_unit: kg
     inventory_item_id: 41671693008958
-    inventory_quantity: 0
-    old_inventory_quantity: 0
+    inventory_quantity: 100
+    old_inventory_quantity: 100
     requires_shipping: true
     admin_graphql_api_id: gid://shopify/ProductVariant/39577252364350
-  - product_id: 2062566621246
-    id: 39577252397118
+  - id: 39577252397118
+    product_id: 2062566621246
     title: 13x19” / Black & White
     price: "40.00"
     sku: CM-PP-B3-10-S-BW
     position: 6
-    inventory_policy: deny
+    inventory_policy: continue
     compare_at_price: null
     fulfillment_service: manual
-    inventory_management: null
+    inventory_management: shopify
     option1: 13x19”
     option2: Black & White
     option3: null
     created_at: 2021-09-01T15:43:37-04:00
-    updated_at: 2021-09-01T15:44:02-04:00
+    updated_at: 2022-02-07T16:25:11-05:00
     taxable: true
     barcode: ""
     grams: 208
@@ -173,25 +173,25 @@ variants:
     weight: 0.208
     weight_unit: kg
     inventory_item_id: 41671693041726
-    inventory_quantity: 0
-    old_inventory_quantity: 0
+    inventory_quantity: 100
+    old_inventory_quantity: 100
     requires_shipping: true
     admin_graphql_api_id: gid://shopify/ProductVariant/39577252397118
-  - product_id: 2062566621246
-    id: 39577252429886
+  - id: 39577252429886
+    product_id: 2062566621246
     title: 16x20” / Full Colour
     price: "50.00"
     sku: CM-PP-B3-10-M-FC
     position: 7
-    inventory_policy: deny
+    inventory_policy: continue
     compare_at_price: null
     fulfillment_service: manual
-    inventory_management: null
+    inventory_management: shopify
     option1: 16x20”
     option2: Full Colour
     option3: null
     created_at: 2021-09-01T15:43:37-04:00
-    updated_at: 2021-09-01T15:44:02-04:00
+    updated_at: 2022-02-07T16:25:13-05:00
     taxable: true
     barcode: ""
     grams: 208
@@ -199,25 +199,25 @@ variants:
     weight: 0.208
     weight_unit: kg
     inventory_item_id: 41671693074494
-    inventory_quantity: 0
-    old_inventory_quantity: 0
+    inventory_quantity: 100
+    old_inventory_quantity: 100
     requires_shipping: true
     admin_graphql_api_id: gid://shopify/ProductVariant/39577252429886
-  - product_id: 2062566621246
-    id: 39577252462654
+  - id: 39577252462654
+    product_id: 2062566621246
     title: 16x20” / Black & White
     price: "50.00"
     sku: CM-PP-B3-10-M-BW
     position: 8
-    inventory_policy: deny
+    inventory_policy: continue
     compare_at_price: null
     fulfillment_service: manual
-    inventory_management: null
+    inventory_management: shopify
     option1: 16x20”
     option2: Black & White
     option3: null
     created_at: 2021-09-01T15:43:37-04:00
-    updated_at: 2021-09-01T15:44:02-04:00
+    updated_at: 2022-02-07T16:25:13-05:00
     taxable: true
     barcode: ""
     grams: 208
@@ -225,25 +225,25 @@ variants:
     weight: 0.208
     weight_unit: kg
     inventory_item_id: 41671693107262
-    inventory_quantity: 0
-    old_inventory_quantity: 0
+    inventory_quantity: 100
+    old_inventory_quantity: 100
     requires_shipping: true
     admin_graphql_api_id: gid://shopify/ProductVariant/39577252462654
-  - product_id: 2062566621246
-    id: 39577252495422
+  - id: 39577252495422
+    product_id: 2062566621246
     title: 20x24” / Full Colour
     price: "60.00"
     sku: CM-PP-B3-10-L-FC
     position: 9
-    inventory_policy: deny
+    inventory_policy: continue
     compare_at_price: null
     fulfillment_service: manual
-    inventory_management: null
+    inventory_management: shopify
     option1: 20x24”
     option2: Full Colour
     option3: null
     created_at: 2021-09-01T15:43:37-04:00
-    updated_at: 2021-09-01T15:44:02-04:00
+    updated_at: 2022-02-07T16:25:11-05:00
     taxable: true
     barcode: ""
     grams: 208
@@ -251,25 +251,25 @@ variants:
     weight: 0.208
     weight_unit: kg
     inventory_item_id: 41671693140030
-    inventory_quantity: 0
-    old_inventory_quantity: 0
+    inventory_quantity: 100
+    old_inventory_quantity: 100
     requires_shipping: true
     admin_graphql_api_id: gid://shopify/ProductVariant/39577252495422
-  - product_id: 2062566621246
-    id: 39577252528190
+  - id: 39577252528190
+    product_id: 2062566621246
     title: 20x24” / Black & White
     price: "60.00"
     sku: CM-PP-B3-10-L-BW
     position: 10
-    inventory_policy: deny
+    inventory_policy: continue
     compare_at_price: null
     fulfillment_service: manual
-    inventory_management: null
+    inventory_management: shopify
     option1: 20x24”
     option2: Black & White
     option3: null
     created_at: 2021-09-01T15:43:37-04:00
-    updated_at: 2021-09-01T15:44:02-04:00
+    updated_at: 2022-02-07T16:25:16-05:00
     taxable: true
     barcode: ""
     grams: 208
@@ -277,25 +277,25 @@ variants:
     weight: 0.208
     weight_unit: kg
     inventory_item_id: 41671693172798
-    inventory_quantity: 0
-    old_inventory_quantity: 0
+    inventory_quantity: 100
+    old_inventory_quantity: 100
     requires_shipping: true
     admin_graphql_api_id: gid://shopify/ProductVariant/39577252528190
-  - product_id: 2062566621246
-    id: 39577252560958
+  - id: 39577252560958
+    product_id: 2062566621246
     title: 20x30” / Full Colour
     price: "70.00"
     sku: CM-PP-B3-10-XL-FC
     position: 11
-    inventory_policy: deny
+    inventory_policy: continue
     compare_at_price: null
     fulfillment_service: manual
-    inventory_management: null
+    inventory_management: shopify
     option1: 20x30”
     option2: Full Colour
     option3: null
     created_at: 2021-09-01T15:43:37-04:00
-    updated_at: 2021-09-01T15:44:02-04:00
+    updated_at: 2022-02-07T16:25:15-05:00
     taxable: true
     barcode: ""
     grams: 208
@@ -303,25 +303,25 @@ variants:
     weight: 0.208
     weight_unit: kg
     inventory_item_id: 41671693205566
-    inventory_quantity: 0
-    old_inventory_quantity: 0
+    inventory_quantity: 100
+    old_inventory_quantity: 100
     requires_shipping: true
     admin_graphql_api_id: gid://shopify/ProductVariant/39577252560958
-  - product_id: 2062566621246
-    id: 39577252593726
+  - id: 39577252593726
+    product_id: 2062566621246
     title: 20x30” / Black & White
     price: "70.00"
     sku: CM-PP-B3-10-XL-BW
     position: 12
-    inventory_policy: deny
+    inventory_policy: continue
     compare_at_price: null
     fulfillment_service: manual
-    inventory_management: null
+    inventory_management: shopify
     option1: 20x30”
     option2: Black & White
     option3: null
     created_at: 2021-09-01T15:43:37-04:00
-    updated_at: 2021-09-01T15:44:02-04:00
+    updated_at: 2022-02-07T16:25:15-05:00
     taxable: true
     barcode: ""
     grams: 208
@@ -329,25 +329,25 @@ variants:
     weight: 0.208
     weight_unit: kg
     inventory_item_id: 41671693238334
-    inventory_quantity: 0
-    old_inventory_quantity: 0
+    inventory_quantity: 100
+    old_inventory_quantity: 100
     requires_shipping: true
     admin_graphql_api_id: gid://shopify/ProductVariant/39577252593726
-  - product_id: 2062566621246
-    id: 39577252626494
+  - id: 39577252626494
+    product_id: 2062566621246
     title: 24x36” / Full Colour
     price: "90.00"
     sku: CM-PP-B3-10-XXL-FC
     position: 13
-    inventory_policy: deny
+    inventory_policy: continue
     compare_at_price: null
     fulfillment_service: manual
-    inventory_management: null
+    inventory_management: shopify
     option1: 24x36”
     option2: Full Colour
     option3: null
     created_at: 2021-09-01T15:43:37-04:00
-    updated_at: 2021-09-01T15:44:02-04:00
+    updated_at: 2022-02-07T16:25:16-05:00
     taxable: true
     barcode: ""
     grams: 208
@@ -355,25 +355,25 @@ variants:
     weight: 0.208
     weight_unit: kg
     inventory_item_id: 41671693271102
-    inventory_quantity: 0
-    old_inventory_quantity: 0
+    inventory_quantity: 100
+    old_inventory_quantity: 100
     requires_shipping: true
     admin_graphql_api_id: gid://shopify/ProductVariant/39577252626494
-  - product_id: 2062566621246
-    id: 39577252659262
+  - id: 39577252659262
+    product_id: 2062566621246
     title: 24x36” / Black & White
     price: "90.00"
     sku: CM-PP-B3-10-XXL-BW
     position: 14
-    inventory_policy: deny
+    inventory_policy: continue
     compare_at_price: null
     fulfillment_service: manual
-    inventory_management: null
+    inventory_management: shopify
     option1: 24x36”
     option2: Black & White
     option3: null
     created_at: 2021-09-01T15:43:37-04:00
-    updated_at: 2021-09-01T15:44:02-04:00
+    updated_at: 2022-02-07T16:25:17-05:00
     taxable: true
     barcode: ""
     grams: 208
@@ -381,25 +381,25 @@ variants:
     weight: 0.208
     weight_unit: kg
     inventory_item_id: 41671693303870
-    inventory_quantity: 0
-    old_inventory_quantity: 0
+    inventory_quantity: 100
+    old_inventory_quantity: 100
     requires_shipping: true
     admin_graphql_api_id: gid://shopify/ProductVariant/39577252659262
-  - product_id: 2062566621246
-    id: 39577252692030
+  - id: 39577252692030
+    product_id: 2062566621246
     title: 30x40” / Full Colour
     price: "100.00"
     sku: CM-PP-B3-10-XXXL-FC
     position: 15
-    inventory_policy: deny
+    inventory_policy: continue
     compare_at_price: null
     fulfillment_service: manual
-    inventory_management: null
+    inventory_management: shopify
     option1: 30x40”
     option2: Full Colour
     option3: null
     created_at: 2021-09-01T15:43:37-04:00
-    updated_at: 2021-09-01T15:44:02-04:00
+    updated_at: 2022-02-07T16:25:21-05:00
     taxable: true
     barcode: ""
     grams: 208
@@ -407,25 +407,25 @@ variants:
     weight: 0.208
     weight_unit: kg
     inventory_item_id: 41671693336638
-    inventory_quantity: 0
-    old_inventory_quantity: 0
+    inventory_quantity: 100
+    old_inventory_quantity: 100
     requires_shipping: true
     admin_graphql_api_id: gid://shopify/ProductVariant/39577252692030
-  - product_id: 2062566621246
-    id: 39577252724798
+  - id: 39577252724798
+    product_id: 2062566621246
     title: 30x40” / Black & White
     price: "100.00"
     sku: CM-PP-B3-10-XXXL-BW
     position: 16
-    inventory_policy: deny
+    inventory_policy: continue
     compare_at_price: null
     fulfillment_service: manual
-    inventory_management: null
+    inventory_management: shopify
     option1: 30x40”
     option2: Black & White
     option3: null
     created_at: 2021-09-01T15:43:37-04:00
-    updated_at: 2021-09-01T15:44:02-04:00
+    updated_at: 2022-02-07T16:25:22-05:00
     taxable: true
     barcode: ""
     grams: 208
@@ -433,13 +433,13 @@ variants:
     weight: 0.208
     weight_unit: kg
     inventory_item_id: 41671693369406
-    inventory_quantity: 0
-    old_inventory_quantity: 0
+    inventory_quantity: 100
+    old_inventory_quantity: 100
     requires_shipping: true
     admin_graphql_api_id: gid://shopify/ProductVariant/39577252724798
 options:
-  - product_id: 2062566621246
-    id: 2805858500670
+  - id: 2805858500670
+    product_id: 2062566621246
     name: Size
     position: 1
     values:
@@ -451,16 +451,16 @@ options:
       - 20x30”
       - 24x36”
       - 30x40”
-  - product_id: 2062566621246
-    id: 8590085193790
+  - id: 8590085193790
+    product_id: 2062566621246
     name: Color
     position: 2
     values:
       - Full Colour
       - Black & White
 images:
-  - product_id: 2062566621246
-    id: 6301857447998
+  - id: 6301857447998
+    product_id: 2062566621246
     position: 1
     created_at: 2019-03-17T13:34:41-04:00
     updated_at: 2019-10-20T18:44:17-04:00
@@ -478,8 +478,8 @@ images:
       - 39577252626494
       - 39577252692030
     admin_graphql_api_id: gid://shopify/ProductImage/6301857447998
-  - product_id: 2062566621246
-    id: 6301857382462
+  - id: 6301857382462
+    product_id: 2062566621246
     position: 2
     created_at: 2019-03-17T13:34:40-04:00
     updated_at: 2019-10-20T18:44:17-04:00
@@ -497,8 +497,8 @@ images:
       - 39577252659262
       - 39577252724798
     admin_graphql_api_id: gid://shopify/ProductImage/6301857382462
-  - product_id: 2062566621246
-    id: 28230441205822
+  - id: 28230441205822
+    product_id: 2062566621246
     position: 3
     created_at: 2021-05-04T21:29:17-04:00
     updated_at: 2021-05-04T21:29:17-04:00
@@ -509,8 +509,8 @@ images:
     variant_ids: []
     admin_graphql_api_id: gid://shopify/ProductImage/28230441205822
 image:
-  product_id: 2062566621246
   id: 6301857447998
+  product_id: 2062566621246
   position: 1
   created_at: 2019-03-17T13:34:41-04:00
   updated_at: 2019-10-20T18:44:17-04:00

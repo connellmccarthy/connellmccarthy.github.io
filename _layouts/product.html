@@ -9,7 +9,7 @@
       {% include navigation.html %}
       <div class="crop">
         <main id="swup" class="transition-scale" aria-live="polite">
-          <div class="product-header {% if page.style == 'dark' %}dark{% endif %}">
+          <div class="product-header {% if page.template_suffix == 'dark' %}dark{% endif %}">
             <img src="{{ page.images[2].src }}">
             <div class="wrapper">
               <a class="btn btn__link" href="/prints/collections/all">

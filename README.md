@@ -24,7 +24,7 @@ Run `npm install` to install all the node dependencies, and then `bundle install
 
 #### Updating products
 
-The command `node products.js` or `npm run fetch_products` will import your products from Shopify and format them for Jekyll.
+The command `node products.js` or `npm run products` will import your products from Shopify and format them for Jekyll.
 
 #### Updating content
 

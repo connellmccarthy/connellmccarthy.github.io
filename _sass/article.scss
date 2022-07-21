@@ -178,6 +178,9 @@
   margin-top: 2em;
   a {
     margin-bottom: 0.6em;
+    &:after {
+      display: none;
+    }
   }
   &__item {
     margin: 10em 0;

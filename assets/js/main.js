@@ -1,6 +1,8 @@
 const swup = new Swup({
   containers: ["#swup","#swup-shop-nav", "#swup-article-info"],
-  plugins: [new SwupGaPlugin(), new SwupScriptsPlugin({
+  plugins: [new SwupGtagPlugin({
+    gaMeasurementId: "G-GVY559Y564"
+  }), new SwupScriptsPlugin({
     optin: true,
     head: false,
     body: true
@@ -13,9 +15,10 @@ swup.on('contentReplaced', init);
 var collapsing = false;
 
 function init() {
-  window.ga('set', 'title', document.title);
-  window.ga('set', 'page', window.location.pathname + window.location.search);
-  window.ga('send', 'pageview');
+  window.gtag("config", "G-GVY559Y564", {
+    page_title: document.title,
+    page_path: window.location.pathname + window.location.search
+  });
 
   window.scrollTo(0,0);
 

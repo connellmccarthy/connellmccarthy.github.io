@@ -13,7 +13,7 @@ vendor: Connell McCarthy
 product_type: Posters, Prints, & Visual Artwork
 created_at: 2018-08-22T19:47:29-04:00
 handle: hotel-california
-updated_at: 2022-03-31T15:42:44-04:00
+updated_at: 2022-06-27T13:51:56-04:00
 published_at: 2018-08-22T19:38:24-04:00
 template_suffix: ""
 status: active

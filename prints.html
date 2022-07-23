@@ -22,10 +22,13 @@ slug: shop
       <h1 class="m-0">{{ site.data.content.shop.headline }}</h1>
       <p class="m-0 mt-6 muted">{{ site.data.content.shop.description }}</p>
       <div class="flex a-center center mt-8">
-        <button class="btn btn__white btn__marketing btn__round mr-6 video_trigger"><i class="fas fa-play-circle mr-1" aria-hidden="true"></i> Play video</button>
         <a class="btn btn__link" href="{{ site.data.content.shop.cta.url }}">{{ site.data.content.shop.cta.text }} <i class="far fa-arrow-right ml-1" aria-hidden="true"></i></a>
       </div>
     </div>
+  </div>
+  <div class="video-player">
+    <img class="border-radius__large" src="/assets/img/prints/prints-at-home.jpg">
+    <button class="btn btn__white btn__marketing btn__round mr-6 video_trigger"><i class="fas fa-play-circle mr-1" aria-hidden="true"></i> Play video</button>
   </div>
 </div>
 <div class="wrapper">
@@ -93,7 +96,7 @@ slug: shop
     <h2>Shop by collection</h2>
     <div class="list">
       {% for collection in site.collections %}
-        {% unless collection.slug == 'shop-all' %}
+        {% unless collection.slug == 'shop-all' or collection.collection_list == false %}
           {% include card.html
             url = collection.url
             icon = collection.icon

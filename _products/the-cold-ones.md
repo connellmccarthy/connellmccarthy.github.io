@@ -13,7 +13,7 @@ vendor: Connell McCarthy
 product_type: Posters, Prints, & Visual Artwork
 created_at: 2018-08-22T19:56:58-04:00
 handle: the-cold-ones
-updated_at: 2022-03-31T15:43:25-04:00
+updated_at: 2022-06-27T13:51:59-04:00
 published_at: 2018-08-22T19:38:24-04:00
 template_suffix: ""
 status: active

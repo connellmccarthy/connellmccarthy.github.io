@@ -13,7 +13,7 @@ vendor: Connell McCarthy
 product_type: Posters, Prints, & Visual Artwork
 created_at: 2018-08-22T19:58:53-04:00
 handle: the-wild-west
-updated_at: 2022-03-31T15:43:34-04:00
+updated_at: 2022-06-27T13:52:00-04:00
 published_at: 2018-08-22T19:38:24-04:00
 template_suffix: ""
 status: active

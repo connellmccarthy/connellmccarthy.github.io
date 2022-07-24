@@ -30,6 +30,28 @@
           }
         }
       }
+      &:after {
+        content: '';
+        height: 100%;
+        width: 10%;
+        background: lighten($color-blue, 48);
+        opacity: 1;
+        position: absolute;
+        top: 0;
+        left: -5%;
+        transform: rotate(25deg);
+        filter: blur(5px);
+        animation: 2s ease background-shine infinite;
+        
+        @keyframes background-shine {
+          from {
+            left: -5%;
+          }
+          to {
+            left: 105%;
+          }
+        }
+      }
     }
     &:after {
       background: lighten($color-blue, 48);
@@ -74,6 +96,7 @@
   span {
     &.headline {
       font-weight: 600;
+      position: relative;
     }
   }
   .divider {

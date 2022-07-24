@@ -16,28 +16,28 @@ slug: shop
   </div>
 </div>
 
-<div class="section shop-section shop-hero grey">
+<div class="section shop-section shop-hero">
   <div class="wrapper center">
     <div class="intro-text">
       <h1 class="m-0">{{ site.data.content.shop.headline }}</h1>
       <p class="m-0 mt-6 muted">{{ site.data.content.shop.description }}</p>
       <div class="flex a-center center mt-8">
+        <button class="btn btn__white btn__marketing btn__round mr-6 video_trigger"><i class="fas fa-play-circle mr-1" aria-hidden="true"></i> Play video</button>
         <a class="btn btn__link" href="{{ site.data.content.shop.cta.url }}">{{ site.data.content.shop.cta.text }} <i class="far fa-arrow-right ml-1" aria-hidden="true"></i></a>
       </div>
     </div>
-  </div>
-  <div class="video-player">
-    <img class="border-radius__large" src="/assets/img/prints/prints-at-home.jpg">
-    <button class="btn btn__white btn__marketing btn__round mr-6 video_trigger"><i class="fas fa-play-circle mr-1" aria-hidden="true"></i> Play video</button>
+    <div class="prints-at-home">
+      {% include shop/product-tag.html title='Blackcomb Boardwalk' %}
+      {% include shop/product-tag.html title='New York' %}
+      {% include shop/product-tag.html title='Lighthouse Shore' %}
+      <img class="border-radius__large" src="/assets/img/prints/prints-at-home.jpg">
+    </div>
   </div>
 </div>
 <div class="wrapper">
   <div class="section shop-section image-left flex a-center">
     <div class="image">
-      <a href="/prints/products/foggy-babel" class="btn btn__circle btn__basic btn__icon product-tag" data-pop="Foggy Babel">
-        <i class="far fa-tag" aria-hidden="true"></i>
-        <span class="visually-hidden">Go to tagged product - Foggy Babel</span>
-      </a>
+      {% include shop/product-tag.html title='Foggy Babel' %}
       <img class="border-radius__large" src="/assets/img/prints/environment-babel.jpg" alt="Foggy Babel in a frame on a green wall.">
     </div>
     <div class="content">
@@ -54,10 +54,7 @@ slug: shop
       <a class="btn btn__link blue" href="/prints/collections/all">Shop all products <i class="far fa-arrow-right ml-1" aria-hidden="true"></i></a>
     </div>
     <div class="image">
-      <a href="/prints/products/love-after-dusk" class="btn btn__circle btn__basic btn__icon product-tag" data-pop="Love After Dusk">
-        <i class="far fa-tag" aria-hidden="true"></i>
-        <span class="visually-hidden">Go to tagged product - Love After Dusk</span>
-      </a>
+      {% include shop/product-tag.html title='Love After Dusk' %}      
       <img class="border-radius__large" src="/assets/img/prints/quality-dusk.jpg" alt="Love After Dusk in a frame on a white wall.">
     </div>
   </div>
@@ -72,10 +69,7 @@ slug: shop
 
   <div class="section shop-section image-left flex a-center">
     <div class="image">
-      <a href="/prints/products/time" class="btn btn__circle btn__basic btn__icon product-tag" data-pop="Time">
-        <i class="far fa-tag" aria-hidden="true"></i>
-        <span class="visually-hidden">Go to tagged product - Time</span>
-      </a>
+      {% include shop/product-tag.html title='Time' %}
       <img class="border-radius__large" src="/assets/img/prints/abstract-desk.jpg" alt="Office desk with the two prints Time, and Days to Come, in frames on the wall.">
     </div>
     <div class="content">

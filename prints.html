@@ -37,8 +37,8 @@ slug: shop
 <div class="wrapper">
   <div class="section shop-section image-left flex a-center">
     <div class="image">
-      {% include shop/product-tag.html title='Foggy Babel' %}
-      <img class="border-radius__large" src="/assets/img/prints/environment-babel.jpg" alt="Foggy Babel in a frame on a green wall.">
+      {% include shop/product-tag.html title='Rise' %}
+      <img class="border-radius__large" src="/assets/img/prints/index-environment.jpg" alt="Foggy Babel in a frame on a green wall.">
     </div>
     <div class="content">
       <h3>Photos of nature, helping nature</h3>
@@ -55,8 +55,20 @@ slug: shop
     </div>
     <div class="image">
       {% include shop/product-tag.html title='Seymour Sunset' %}      
-      <img class="border-radius__large" src="/assets/img/prints/quality-dusk.jpg" alt="Seymour Sunset in a frame on a wall in a gallery.">
+      <img class="border-radius__large" src="/assets/img/prints/index-quality.jpg" alt="Seymour Sunset in a frame on a wall in a gallery.">
     </div>
+  </div>
+
+  <div class="section shop-section full">
+    <div class="content">
+      <p class="center"><span class="badge"><i class="far fa-sparkles" aria-hidden="true"></i> New</span></p>
+      <h3>Hot off the press</h3>
+      <p>The latest additions featuring photographs from British Columbia, New York, Québec, and rural Ottawa.</p>
+    </div>
+    {% include shop/collection-list.html limit=6 tag='batch-06' %}
+    <p class="center">
+      <a class="btn btn__marketing btn__dark btn__round center" href="/prints/collections/new">Shop the collection <i class="far fa-arrow-right ml-1" aria-hidden="true"></i></a>
+    </p>
   </div>
 
   <div class="section shop-section full">
@@ -78,14 +90,8 @@ slug: shop
       <a class="btn btn__link blue" href="/prints/collections/abstract">Browse the collection <i class="far fa-arrow-right ml-1" aria-hidden="true"></i></a>
     </div>
   </div>
-  <div class="shop-product-list">
-    {% assign products = "6628430348350,6626197864510,6628428906558" %}
-    {% include shop/select_products.html 
-      product_ids = products 
-      compressed = false
-    %}
-  </div>
-
+  {% include shop/collection-list.html limit=3 tag='abstract' %}
+  
   <div class="section">
     <h2>Shop by collection</h2>
     <div class="list">

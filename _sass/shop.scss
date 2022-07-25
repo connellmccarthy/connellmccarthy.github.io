@@ -171,16 +171,16 @@ h2.treecount {
       line-height: 1em;
     }
 
-    &.no-margin {
-      margin-top: 0;
-      margin-bottom: 1em;
-    }
-
     @media screen and (max-width: $break-mobile) {
       .wrapper {
         padding: 0;
       }
     }
+  }
+
+  &.no-margin {
+    margin-top: 0;
+    margin-bottom: 4em;
   }
 
   ol {

@@ -1,3 +1,112 @@
+.new-prints {
+  max-width: 410px;
+  position: relative !important;
+  border-radius: 50px !important;
+  margin: 0 auto 5em;
+  display: block !important;
+  width: fit-content;
+
+  &:hover {
+    span.headline {
+      color: $color-blue;
+      transition: color 0.3s ease;
+      i {
+        animation: 0.3s ease icon-shake 2;
+        @keyframes icon-shake {
+          0% {
+            transform: rotate(0deg);
+          }
+          25% {
+            transform: rotate(15deg);
+          }
+          50% {
+            transform: rotate(0deg);
+          }
+          75% {
+            transform: rotate(-15deg);
+          }
+          100% {
+            transform: rotate(0deg);
+          }
+        }
+      }
+      &:after {
+        content: '';
+        height: 100%;
+        width: 10%;
+        background: lighten($color-blue, 48);
+        opacity: 1;
+        position: absolute;
+        top: 0;
+        left: -5%;
+        transform: rotate(25deg);
+        filter: blur(5px);
+        animation: 2s ease background-shine infinite;
+        
+        @keyframes background-shine {
+          from {
+            left: -5%;
+          }
+          to {
+            left: 105%;
+          }
+        }
+      }
+    }
+    &:after {
+      background: lighten($color-blue, 48);
+    }
+  }
+
+  .contents {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &:before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, #5237F9 -2.38%, #9DCAFF 103.57%);
+    z-index: 0;
+    border-radius: 50px !important;
+  }
+
+  &:after {
+    content: '';
+    height: calc(100% - 3px);
+    width: calc(100% - 3px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: $color-white;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+    border-radius: 50px !important;
+    transition: background 0.3s ease;
+  }
+
+  span {
+    &.headline {
+      font-weight: 600;
+      position: relative;
+    }
+  }
+  .divider {
+    width: 1px;
+    height: 20px;
+    background: $color-border;
+    margin: 0 1.4em;
+  }
+}
+
 video {
   width: 100%;
 }

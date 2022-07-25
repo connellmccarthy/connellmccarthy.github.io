@@ -56,10 +56,6 @@ homepage:
       description: I make chill, euphoric, dreampop music under the artist name COVEO.
       url: http://coveomusic.com
       external: true
-    - title: Experiments
-      description: I love to experiment with new concepts and creative challenges, and every so often I post them in my playground.
-      url: /sketches/
-      external: false
     - title: Salété Music
       description: I make dark electronic house music under the artist name Salété.
       url: http://saletemusic.com

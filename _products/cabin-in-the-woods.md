@@ -11,7 +11,7 @@ vendor: Connell McCarthy
 product_type: Posters, Prints, & Visual Artwork
 created_at: 2018-08-22T19:43:04-04:00
 handle: cabin-in-the-woods
-updated_at: 2022-03-31T15:41:18-04:00
+updated_at: 2022-06-27T13:51:54-04:00
 published_at: 2018-08-22T19:38:24-04:00
 template_suffix: ""
 status: active

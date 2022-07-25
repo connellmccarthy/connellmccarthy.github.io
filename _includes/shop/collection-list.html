@@ -1,0 +1,19 @@
+<div class="shop-product-list mt-10">
+  {% assign count_max = include.limit %}
+  {% assign count = 0 %}
+  {% for product in site.products %}
+    {% assign tags = include.tag %}
+    {% assign page_tags = tags | split: ', ' %}
+    {% assign product_tags = product.tags | replace: ',', ', ' %}
+    {% assign display = false %}
+    {% for tag in page_tags %}
+      {% if product_tags contains tag %}
+        {% assign display = true %}
+      {% endif %}
+    {% endfor %}
+    {% if display and count < 6 %}
+      {% assign count = count | plus: 1 %}
+      {% include shop/product-card.html %}
+    {% endif %}
+  {% endfor %}
+</div>

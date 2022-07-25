@@ -9,6 +9,14 @@
       <div class="crop">
         <main id="swup" class="transition-scale" aria-live="polite">
           <div class="wrapper margin-top">
+            {% if page.header %}
+              <div class="section shop-section no-margin full">
+                <div class="content">
+                  <h3>{{ page.title }}</h3>
+                  <p class="muted">{{ page.description }}</p>
+                </div>
+              </div>
+            {% endif %}
             <div class="shop-product-list">
               {% for product in site.products %}
                 {% assign page_tags = page.identifier | split: ', ' %}

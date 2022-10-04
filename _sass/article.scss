@@ -46,7 +46,7 @@
     width: 100%;
     height: auto;
     aspect-ratio: 16/9;
-    border-radius: 12px;
+    border-radius: $border-radius-large;
     margin: 2em 0;
   }
   em {

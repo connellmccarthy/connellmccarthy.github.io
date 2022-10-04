@@ -1,0 +1,5 @@
+<div id="{{ include.slug }}" class="slideshow">
+  {% for i in (1..include.count) %}
+    <img src="{{ include.path }}/{{ include.slug }}-{{ i }}.{{ include.format }}">
+  {% endfor %}
+</div>

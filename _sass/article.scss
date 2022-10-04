@@ -26,7 +26,7 @@
     margin: 2em auto;
     max-width: calc(#{$max-width-condensed} - #{$guttersize});
   }
-  img:not(.article_thumbnail img, .product img, .product_image img) {
+  img:not(.article_thumbnail img, .product img, .product_image img, .slideshow img) {
     border-radius: $border-radius-large;
     width: 100%;
     margin: 2em 0 0;
@@ -36,6 +36,11 @@
       display: inline-block;
       margin: 0 2px;
     }
+  }
+  video {
+    border-radius: $border-radius-large;
+    width: 100%;
+    margin: 2em 0 0;
   }
   em {
     font-size: 0.9em;
@@ -50,6 +55,18 @@
     max-width: calc(#{$max-width-condensed} - #{$guttersize});
     margin-left: auto;
     margin-right: auto;
+  }
+  .slideshow {
+    border-radius: $border-radius-large;
+    overflow-x: scroll;
+    display: flex;
+    flex: none;
+    flex-flow: row nowrap;
+    scroll-snap-type: x mandatory;
+    img {
+      margin: 0;
+      scroll-snap-align: center;
+    }
   }
 }
 

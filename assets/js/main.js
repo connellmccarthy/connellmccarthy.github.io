@@ -259,6 +259,21 @@ function init() {
     });
   }
 
+  //Slideshows
+  if (document.querySelector('.slideshow')) {
+    document.querySelectorAll('.slideshow').forEach((x) => {
+      const id = x.getAttribute('data-id');
+      const container = document.querySelector(`.slideshow__container#slideshow_${id}`);
+      const increment = x.offsetWidth / parseInt(x.getAttribute('data-count'));
+
+      document.querySelectorAll(`.slideshow#${id} button.thumbnail`).forEach((btn) => {
+        btn.addEventListener('click', () => {
+          container.scrollLeft + increment;
+        });
+      });
+    });
+  }
+
   //Product image loading handler
   if (document.querySelector('.product_image')) {
     document.querySelectorAll('.product_image img').forEach((el) => {

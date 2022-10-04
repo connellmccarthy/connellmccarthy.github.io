@@ -1,5 +1,16 @@
-<div id="{{ include.slug }}" class="slideshow">
-  {% for i in (1..include.count) %}
-    <img src="{{ include.path }}/{{ include.slug }}-{{ i }}.{{ include.format }}">
-  {% endfor %}
+<div class="slideshow" data-id="{{ include.slug }}" data-count="{{ include.count }}">
+  <div id="slideshow_{{ include.slug }}" class="slideshow__container">
+    {% for i in (1..include.count) %}
+      {% assign image_id = i | append: "" %}
+      <img id="image_{{ include.slug }}_{{ image_id | slugify }}" src="{{ include.path }}/{{ include.slug }}-{{ i }}.{{ include.format }}">
+    {% endfor %}
+  </div>
+  <div class="slideshow__thumbnails">
+    {% for x in (1..include.count) %}
+      {% assign image_id = x | append: "" %}
+      <button class="thumbnail{% if forloop.first %} active{% endif %}" id="thumb_{{ include.slug }}_{{ image_id | slugify }}" data-id="image_{{ include.slug }}_{{ image_id | slugify }}">
+        <img src="{{ include.path }}/{{ include.slug }}-{{ x }}.{{ include.format }}">
+      </button>
+    {% endfor %}
+  </div>
 </div>

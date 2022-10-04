@@ -1,7 +1,7 @@
 ---
 title: "Meet POS Go"
 layout: "article"
-date: 2022-10-04T17:42:00-05:00
+date: 2022-10-04T010:00:00-05:00
 draft: false
 description: "How we built the campaign for Shopify's most powerful, secure, and revolutionary mobile POS."
 cta_heading: "Interested in seeing what I build next?"

@@ -1,14 +1,24 @@
-<div class="slideshow" data-id="{{ include.slug }}" data-count="{{ include.count }}">
+<div class="slideshow" id="{{ include.slug }}" data-count="{{ include.count }}">
+  <div class="slideshow__hitmarkers" id="ss_hitmarkers_{{ include.slug }}">
+    <button id="ss_nav_{{ include.slug }}" class="left ss_nav" data-direction="prev">
+      <i class="fas fa-circle-chevron-left" aria-hidden="true"></i>
+      <span class="visually-hidden">Previous image</span>
+    </button>
+    <button id="ss_nav_{{ include.slug }}" class="right ss_nav" data-direction="next">
+      <i class="fas fa-circle-chevron-right" aria-hidden="true"></i>
+      <span class="visually-hidden">Next image</span>
+    </button>
+  </div>
   <div id="slideshow_{{ include.slug }}" class="slideshow__container">
     {% for i in (1..include.count) %}
       {% assign image_id = i | append: "" %}
-      <img id="image_{{ include.slug }}_{{ image_id | slugify }}" src="{{ include.path }}/{{ include.slug }}-{{ i }}.{{ include.format }}">
+      <img id="image_{{ include.slug }}_{{ image_id | slugify }}" data-id="{{ include.slug }}_{{ image_id | slugify }}" src="{{ include.path }}/{{ include.slug }}-{{ i }}.{{ include.format }}">
     {% endfor %}
   </div>
   <div class="slideshow__thumbnails">
     {% for x in (1..include.count) %}
       {% assign image_id = x | append: "" %}
-      <button class="thumbnail{% if forloop.first %} active{% endif %}" id="thumb_{{ include.slug }}_{{ image_id | slugify }}" data-id="image_{{ include.slug }}_{{ image_id | slugify }}">
+      <button class="thumbnail{% if forloop.first %} active{% endif %}" id="thumb_{{ include.slug }}_{{ image_id | slugify }}" data-id="{{ include.slug }}_{{ image_id | slugify }}">
         <img src="{{ include.path }}/{{ include.slug }}-{{ x }}.{{ include.format }}">
       </button>
     {% endfor %}

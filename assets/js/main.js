@@ -64,8 +64,7 @@ function init() {
           });
         }
       });
-    })
-    
+    });
   }
   if (document.querySelector('.count')) {
     const slug = window.location.href.split('/')[4];
@@ -141,6 +140,78 @@ function init() {
         article_info.classList.toggle('active');
       } else if (window.scrollY < 250 && article_info.classList.contains('active')) {
         article_info.classList.toggle('active');
+      }
+    });
+  }
+  //Slideshow module
+  if (document.querySelector('.slideshow')) {
+    document.querySelectorAll('.slideshow').forEach((x) => {
+      const id = x.getAttribute('id');
+      const count = x.getAttribute('data-count');
+      const container = document.querySelector(`.slideshow__container#slideshow_${id}`);
+
+      if (container.clientHeight == 0) {
+        container.querySelector(`img`).onload = () => {
+          initSlides(); 
+        }
+      } else {
+        initSlides();
+      }
+
+      function initSlides() {
+        const increment = container.clientWidth;
+        document.querySelector(`#ss_hitmarkers_${id}`).style.height = `${container.clientHeight}px`;
+        container.scrollLeft = 0;
+        var active_image_index = get_active_image;
+        var active_image = document.querySelector(`.slideshow#${id} button.thumbnail.active`).getAttribute('data-id');
+  
+        function get_active_image() {
+          return (container.scrollLeft / increment) + 1;
+        }
+        container.addEventListener('scroll', (e) => {
+          var atSnappingPoint = e.target.scrollLeft % e.target.offsetWidth === 0;
+          var timeOut = atSnappingPoint ? 0 : 150;
+          clearTimeout(e.target.scrollTimeout);
+          e.target.scrollTimeout = setTimeout(() => {
+            if (!timeOut) {
+              document.querySelector(`.slideshow#${id} button.thumbnail#thumb_${active_image}`).classList.toggle('active');
+              document.querySelector(`.slideshow#${id} button.thumbnail#thumb_${id}_${get_active_image()}`).classList.toggle('active');
+              active_image = `${id}_${get_active_image()}`;
+            }
+          }, timeOut);
+        });
+        document.querySelectorAll(`.slideshow#${id} button.ss_nav`).forEach((nav) => {
+          nav.addEventListener('click', () => {
+            let image_index = get_active_image();
+            if (nav.getAttribute('data-direction') == 'prev') {
+              //Previous image
+              if ((get_active_image() - 1) <= 0) {
+                image_index = count;
+              } else {
+                image_index --;
+              }
+            } else {
+              // Next image
+              if ((get_active_image() + 1) > count) {
+                image_index = 1;
+              } else {
+                image_index ++;
+              }
+            }
+            const image = container.querySelector(`img#image_${id}_${image_index}`);
+            image.scrollIntoView({behavior: "smooth", block: "nearest", inline: "start"});
+          });
+        });
+  
+        document.querySelectorAll(`.slideshow#${id} button.thumbnail`).forEach((btn) => {
+          btn.addEventListener('click', () => {
+            document.querySelector(`.slideshow#${id} button.thumbnail#thumb_${active_image}`).classList.toggle('active');
+            btn.classList.toggle('active');
+            const image = container.querySelector(`img#image_${btn.getAttribute('data-id')}`);
+            image.scrollIntoView({behavior: "smooth", block: "nearest", inline: "start"});
+            active_image = btn.getAttribute('data-id');
+          });
+        });
       }
     });
   }
@@ -256,21 +327,6 @@ function init() {
       if (parent.childElementCount == 0) {
         parent.remove();
       }
-    });
-  }
-
-  //Slideshows
-  if (document.querySelector('.slideshow')) {
-    document.querySelectorAll('.slideshow').forEach((x) => {
-      const id = x.getAttribute('data-id');
-      const container = document.querySelector(`.slideshow__container#slideshow_${id}`);
-      const increment = x.offsetWidth / parseInt(x.getAttribute('data-count'));
-
-      document.querySelectorAll(`.slideshow#${id} button.thumbnail`).forEach((btn) => {
-        btn.addEventListener('click', () => {
-          container.scrollLeft + increment;
-        });
-      });
     });
   }
 

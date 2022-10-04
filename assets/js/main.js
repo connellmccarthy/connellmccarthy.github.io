@@ -32,37 +32,40 @@ function init() {
     confetti.stop()
   }
 
-  if (document.querySelector('button#video-controller')) {
-    const button = document.querySelector('button#video-controller');
-    const button_text = document.querySelector('span#button-text');
-    const button_icon = document.querySelector('i#button-icon');
-    const video = document.getElementById('showreel');
-    button.addEventListener('click', () => {
-      if (video.getAttribute('state') == 'playing') {
-        video.pause();
-        video.setAttribute('state', 'paused');
-        button_icon.classList.replace('fa-pause', 'fa-play');
-        button_text.innerText = 'Play video';
-      } else if (video.getAttribute('state') == 'replay') {
-        video.play();
-        video.setAttribute('state', 'playing');
-        button_icon.classList.replace('fa-redo', 'fa-pause');
-        button_text.innerText = 'Pause video';
-      } else {
-        video.play();
-        video.setAttribute('state', 'playing');
-        button_icon.classList.replace('fa-play', 'fa-pause');
-        button_text.innerText = 'Pause video';
-      }
-    });
-    if (video) {
-      video.addEventListener('ended', () => {
-        video.setAttribute('state', 'replay');
-        button_icon.classList.remove('fa-pause', 'fa-play');
-        button_icon.classList.add('fa-redo');
-        button_text.innerText = 'Replay video';
+  if (document.querySelector('button.video-controller')) {
+    document.querySelectorAll('button.video-controller').forEach(x => {
+      const button = x;
+      const button_text = document.querySelector(`#${x.getAttribute('id')} span#button-text`);
+      const button_icon = document.querySelector(`#${x.getAttribute('id')} i#button-icon`);
+      const video = document.querySelector(`video#${x.getAttribute('id')}`);
+      button.addEventListener('click', () => {
+        if (video.getAttribute('state') == 'playing') {
+          video.pause();
+          video.setAttribute('state', 'paused');
+          button_icon.classList.replace('fa-pause', 'fa-play');
+          button_text.innerText = 'Play video';
+        } else if (video.getAttribute('state') == 'replay') {
+          video.play();
+          video.setAttribute('state', 'playing');
+          button_icon.classList.replace('fa-redo', 'fa-pause');
+          button_text.innerText = 'Pause video';
+        } else {
+          video.play();
+          video.setAttribute('state', 'playing');
+          button_icon.classList.replace('fa-play', 'fa-pause');
+          button_text.innerText = 'Pause video';
+        }
+        if (video && video.getAttribute('id') == 'showreel') {
+          video.addEventListener('ended', () => {
+            video.setAttribute('state', 'replay');
+            button_icon.classList.remove('fa-pause', 'fa-play');
+            button_icon.classList.add('fa-redo');
+            button_text.innerText = 'Replay video';
+          });
+        }
       });
-    }
+    })
+    
   }
   if (document.querySelector('.count')) {
     const slug = window.location.href.split('/')[4];
@@ -253,6 +256,21 @@ function init() {
       if (parent.childElementCount == 0) {
         parent.remove();
       }
+    });
+  }
+
+  //Slideshows
+  if (document.querySelector('.slideshow')) {
+    document.querySelectorAll('.slideshow').forEach((x) => {
+      const id = x.getAttribute('data-id');
+      const container = document.querySelector(`.slideshow__container#slideshow_${id}`);
+      const increment = x.offsetWidth / parseInt(x.getAttribute('data-count'));
+
+      document.querySelectorAll(`.slideshow#${id} button.thumbnail`).forEach((btn) => {
+        btn.addEventListener('click', () => {
+          container.scrollLeft + increment;
+        });
+      });
     });
   }
 

@@ -29,7 +29,7 @@ This campaign has been a long time coming with a couple speed bumps along the wa
 
 The colour palette was the piece of the campaign that brought it all together. We used grounded and warm neutral colours as the main pillars to keep it approachable, while pairing them alongside chartreuse to add the boldness it needed.
 
-![Campaign colour palette consisting of Chartreuse, Ligo, White, and Black.]({{ image_path }}/creative-palette.jpg)
+![Campaign colour palette consisting of Chartreuse, Ligado, White, and Black.]({{ image_path }}/creative-palette.jpg)
 
 We prioritized applying the campaign creative to the landing pages first, so that we could see it all together in one place, and then take pieces of it and repurpose it for other touchpoints like ads, direct mail, paid social, and emails.
 

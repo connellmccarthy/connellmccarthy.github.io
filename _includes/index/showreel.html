@@ -1,0 +1,14 @@
+<div class="section" data-aos="fade">
+  <div class="wrapper video_wrapper">
+    <div class="video__container">
+      <button id="showreel" class="btn btn__circle btn__marketing btn__white btn__scale color__blue video-controller">
+        <span id="button-text" class="visually-hidden">Pause video</span>
+        <i id="button-icon" class="fas fa-pause" aria-hidden="true"></i>
+      </button>
+      <video data-aos="index-showreel" data-aos-duration="1000" data-aos-easing="cubic-bezier(0.22, 1, 0.36, 1)" id="showreel" class="border-radius__xlarge" poster="/assets/img/showreel_2022_2.jpg" muted autoplay loop playsinline  state="playing">
+        <source src="/assets/img/showreel_2022_2.mp4" type="video/mp4">
+      </video>
+    </div>
+    <p class="muted center mt-5">{{ site.data.content.homepage.showreel.title }}</p>
+  </div>
+</div>

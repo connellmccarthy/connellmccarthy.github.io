@@ -1,0 +1,22 @@
+<div class="section" data-aos="fade">
+  <div class="wrapper condensed">
+    <div class="chapter">
+      <div class="chapter__title">
+        <h3>{{ site.data.content.homepage.contact.title }}</h3>
+      </div>
+      <div class="chapter__content">
+          <ul class="experience__items">
+            <li>General inquires <div class="spacer_line"></div> <a class="inline" href="mailto:{{site.email}}" target="_blank">{{ site.email }}</a></li>
+            {% for network in site.data.content.socials %}
+              <a class="inline" href="{{ network.url }}" target="_blank">
+                <li>
+                  {{ network.name }}
+                  <div class="spacer_line"></div>
+                </li>
+              </a>
+            {% endfor %}
+          </ul>
+      </div>
+    </div>
+  </div>
+</div>

@@ -22,6 +22,8 @@ function init() {
 
   window.scrollTo(0,0);
 
+  AOS.init();
+
   const like_button = document.querySelector('.like_button');
   const article_info = document.querySelector('.article-info');
   const back_button = document.querySelector('button#back');
@@ -30,6 +32,42 @@ function init() {
   
   if (confetti.isRunning()) {
     confetti.stop()
+  }
+
+  //Hero details handler
+  if (document.getElementById('details-trigger')) {
+    let trigger = document.getElementById('details-trigger');
+    let details = document.getElementById('details');
+  
+    trigger.addEventListener('mouseenter', () => {
+      toggleDetails();
+    });
+    trigger.addEventListener('mouseleave', () => {
+      toggleDetails();
+    });
+  
+    function toggleDetails() {
+      details.classList.toggle('active');
+    }
+  }
+
+  //Index featured images
+  if (document.getElementById('index-features')) {
+    let features = document.getElementById('index-features');
+    let image1 = document.getElementById('image-1');
+    let image2 = document.getElementById('image-2');
+    let image3 = document.getElementById('image-3');
+    let image4 = document.getElementById('image-4');
+    let image5 = document.getElementById('image-5');
+    let scrolloffset = 100;
+
+    window.addEventListener('scroll', (e) => {
+      image1.style.transform = `translateY(${((features.offsetTop / window.scrollY) * 130) - scrolloffset}%)`;
+      image2.style.transform = `translateY(${((features.offsetTop / window.scrollY) * 110) - scrolloffset}%)`;
+      image3.style.transform = `translateY(${((features.offsetTop / window.scrollY) * 160) - scrolloffset}%)`;
+      image4.style.transform = `translateY(${((features.offsetTop / window.scrollY) * 120) - scrolloffset}%)`;
+      image5.style.transform = `translateY(${((features.offsetTop / window.scrollY) * 120) - scrolloffset}%)`;
+    });
   }
 
   if (document.querySelector('button.video-controller')) {
@@ -44,24 +82,11 @@ function init() {
           video.setAttribute('state', 'paused');
           button_icon.classList.replace('fa-pause', 'fa-play');
           button_text.innerText = 'Play video';
-        } else if (video.getAttribute('state') == 'replay') {
-          video.play();
-          video.setAttribute('state', 'playing');
-          button_icon.classList.replace('fa-redo', 'fa-pause');
-          button_text.innerText = 'Pause video';
         } else {
           video.play();
           video.setAttribute('state', 'playing');
           button_icon.classList.replace('fa-play', 'fa-pause');
           button_text.innerText = 'Pause video';
-        }
-        if (video && video.getAttribute('id') == 'showreel') {
-          video.addEventListener('ended', () => {
-            video.setAttribute('state', 'replay');
-            button_icon.classList.remove('fa-pause', 'fa-play');
-            button_icon.classList.add('fa-redo');
-            button_text.innerText = 'Replay video';
-          });
         }
       });
     });

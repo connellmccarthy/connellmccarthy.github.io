@@ -1,5 +1,6 @@
 .newsletter {
   text-align: center;
+  position: relative;
 
   @media screen and (max-width: $break-mobile) {
     text-align: left;

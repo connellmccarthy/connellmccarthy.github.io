@@ -1,0 +1,29 @@
+<div class="section" data-aos="fade">
+  <div class="wrapper condensed">
+    <div class="chapter">
+      <div class="chapter__title">
+        <h3>{{ site.data.content.homepage.experience.title }}</h3>
+      </div>
+      <div class="chapter__content">
+        {% for work in site.data.content.homepage.experience.work %}
+          <p class="experience__title mt-8">{{ work.company }}</p>
+          <ul class="experience__items">
+            {% for role in work.roles %}
+              <li>
+                {{ role.title }}
+                <div class="spacer_line"></div>
+                <div class="experience__items__date">
+                  {% if role.date == 'Current' %}
+                    <div class="current_indicator"></div>
+                  {% endif %}
+                  {{ role.date }}
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endfor %}
+      </div>
+    </div>
+    <a href="https://read.cv/connellmccarthy" class="btn btn__basic center mt-8" target="_blank">Read my CV <i class="far fa-arrow-right external"></i></a>
+  </div>
+</div>

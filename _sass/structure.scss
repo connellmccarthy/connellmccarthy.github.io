@@ -3,8 +3,8 @@
 $mobile: 768px;
 $gutter: 6em;
 $guttersize: $gutter * 2;
-$max-width: 1000px;
-$max-width-condensed: 750px;
+$max-width: 954px;
+$max-width-condensed: 700px;
 $site-max-width: unset;
 
 $break-tablet: 1200px;
@@ -17,6 +17,8 @@ $sidebar-tablet: 120px;
 
 $border-radius-normal: 6px;
 $border-radius-large: 12px;
+$border-radius-xlarge: 24px;
+$border-radius-xxlarge: 48px;
 
 $font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 $font-serif: 'Newsreader', serif;
@@ -35,8 +37,6 @@ $font-serif: 'Newsreader', serif;
 }
 
 html {
-  background: $color-black;
-
 	&.is-animating {
     .transition-fade,
 		.transition-scale {
@@ -105,6 +105,7 @@ body {
   font-family: $font-family;
   font-size: 13px;
   scrollbar-face-color: $color-blue;
+  background: linear-gradient(180deg, #f1f1f1 0%, #FFFFFF 100%);
 
   &.no-scroll {
     overflow-y: hidden;
@@ -258,7 +259,6 @@ img {
 }
 
 .wrapper {
-  padding: 0 $gutter;
   max-width: $max-width;
   margin: auto;
 
@@ -282,7 +282,7 @@ img {
 }
 
 .section {
-  margin: 4em 0;
+  margin: 6em 0;
 
   &.green {
     background: #E5EEE5;
@@ -295,13 +295,6 @@ img {
     @media screen and (max-width: $break-mobile) {
       padding: 2em;
     }
-  }
-
-  &.sketch {
-    padding: 1em;
-    background: $color-white;
-    border: 2px solid $color-black;
-    box-shadow: 4px 4px 0px 0px $color-black;
   }
 
   &.grey {
@@ -345,12 +338,8 @@ img {
     padding: 2em 0;
   }
 
-  &.hero {
-    padding: 2em 0 0;
-
-    p {
-      margin: 2em 0;
-    }
+  &.newsletter {
+    margin-bottom: 0;
   }
 
   @media screen and (max-width: $break-mobile) {
@@ -360,30 +349,6 @@ img {
 
 i.fa-arrow-right.external {
   transform: rotate(-45deg);
-}
-
-.projects {
-  border: 1px solid $color-border;
-  border-radius: $border-radius-normal;
-  margin: 2em;
-
-  @media screen and (max-width: $break-mobile) {
-    margin: 2em 0;
-  }
-
-  &__title {
-    background: $color-grey;
-    border-radius: $border-radius-normal $border-radius-normal 0 0;
-    padding: 0.4em 1em;
-    color: $color-ink-dark;
-    p {
-      margin: 0;
-      font-weight: 500;
-    }
-  }
-  &__items {
-    padding: 1em;
-  }
 }
 
 .card {
@@ -444,7 +409,7 @@ i.fa-arrow-right.external {
         height: 100%;
         width: 100%;
         border-radius: $border-radius-normal;
-        background: darken($color-grey-light, 1);
+        background: rgba(0,0,0,0.03);
         z-index: -1;
         pointer-events: none;
         transition: 0.3s ease;
@@ -557,34 +522,14 @@ span.badge {
   &__large {
     border-radius: $border-radius-large;
   }
+  &__xlarge {
+    border-radius: $border-radius-xlarge;
+  }
+  &__xxlarge {
+    border-radius: $border-radius-xxlarge;
+  }
   &__round {
     border-radius: 50%;
-  }
-}
-
-
-.sketch-list {
-  padding-bottom: 4em;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-
-  .section {
-    height: fit-content;
-    width: 100%;
-    margin: 2em 0;
-  }
-  .column {
-    .section:first-of-type {
-      margin: 0;
-    }
-
-    margin: 0 1em;
-    width: calc(50% - 2em);
-    @media screen and (max-width: $break-mobile) {
-        width: 100%;
-        margin: 0;
-    }
   }
 }
 

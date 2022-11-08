@@ -25,7 +25,3 @@ collections:
     output: true
     sort_by: title
     permalink: "/prints/:collection/:path"
-  sketches:
-    output: true
-    sort_by: date
-    permalink: "/:collection/:path"

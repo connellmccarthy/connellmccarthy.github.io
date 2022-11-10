@@ -1,24 +1,53 @@
+$nav-animate: 0.6s cubic-bezier(0.33, 1, 0.68, 1);
+
 .new-nav {
   position: fixed;
   top: 1em;
   left: 50%;
-  transform: translateX(-50%);
   z-index: 90;
   padding: 0.6em;
   gap: 12px;
-
+  width: calc(100% - 2em);
+  max-width: 300px;
+  height: fit-content;
+  max-height: 49px;
+  overflow: hidden;
+  transition: all $nav-animate;
+  transform: translateX(-50%);
+  transform-origin: top center;
+  
   background: rgba(250, 250, 250, 0.8);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: $border-radius-large;
+  
+  &.menu-active {
+    max-height: 300px;
+    max-width: 440px;
+    .new-nav__interactive {
+      clip-path: inset(0 0 0 0);
+    }
+    .new-nav__items {
+      li {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  }
 
   &__static {
     display: grid;
-    grid-template-columns: 1fr 200px 1fr;
+    grid-template-columns: 1fr 65% 1fr;
     align-items: center;
 
     .logo {
       margin: auto;
+    }
+    :first-child {
+      justify-self: flex-start;
+    }
+    :last-child {
+      justify-self: flex-end;
     }
   }
   .btn {
@@ -36,6 +65,49 @@
       &.active {
         background: $color-blue;
         border-color: $color-blue;
+      }
+    }
+  }
+  &__interactive {
+    clip-path: inset(0 0 100% 0);
+    transition: clip-path $nav-animate;
+  }
+  &__items {
+    margin: 1em 0 0;
+    padding: 0.4em;
+    border-radius: $border-radius-normal;
+    background: rgba(0,0,0,0.05);
+    list-style-type: none;
+
+    li {
+      margin: 0.4em 0;
+      transition: all $nav-animate;
+      transition-delay: var(--transition-delay);
+      opacity: 0;
+      transform: translateY(150%);
+      &:first-of-type {
+        margin-top: 0;
+      }
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+
+    button {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .btn{
+      width: 100%;
+      i {
+        opacity: 0.5;
+        margin-right: 0.4em;
+      }
+      &.active {
+        background: $color-ink-dark;
+        color: $color-white;
       }
     }
   }

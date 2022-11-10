@@ -274,10 +274,6 @@ img {
 
   @media screen and (max-width: $break-mobile) {
     padding: 0 ($gutter / 3);
-
-    &.video_wrapper {
-      padding: 0;
-    }
   }
 }
 
@@ -343,7 +339,7 @@ img {
   }
 
   @media screen and (max-width: $break-mobile) {
-    margin: 2em 0;
+    margin: 4em 0;
   }
 }
 

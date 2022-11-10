@@ -117,7 +117,7 @@
   document.querySelectorAll('.menu-trigger').forEach((x) => {
     x.addEventListener('click', () => {
       if (x.classList.contains('menu-logo')) {
-        if (document.querySelector('.nav__items').classList.contains('active')) {
+        if (document.querySelector('.new-nav').classList.contains('active')) {
           toggleMenu();
         }
       } else {
@@ -127,16 +127,17 @@
   });
 
   function toggleMenu() {
-    if (document.querySelector('body').offsetWidth < 768) {
-      document.querySelector('.nav__items').classList.toggle('active');
-      document.querySelector('.fade.menu-trigger').classList.toggle('active');
-      document.querySelector('body').classList.toggle('no-scroll');
-      if (document.querySelector('.nav-menu-trigger.menu-trigger i').classList.contains('fa-bars')) {
-        document.querySelector('.nav-menu-trigger.menu-trigger i').classList.replace('fa-bars', 'fa-times');
-      } else {
-        document.querySelector('.nav-menu-trigger.menu-trigger i').classList.replace('fa-times', 'fa-bars');
-      }
-    }
+    document.querySelector('new-nav').classList.toggle('active');
+    // if (document.querySelector('body').offsetWidth < 768) {
+    //   document.querySelector('.nav__items').classList.toggle('active');
+    //   document.querySelector('.fade.menu-trigger').classList.toggle('active');
+    //   document.querySelector('body').classList.toggle('no-scroll');
+    //   if (document.querySelector('.nav-menu-trigger.menu-trigger i').classList.contains('fa-bars')) {
+    //     document.querySelector('.nav-menu-trigger.menu-trigger i').classList.replace('fa-bars', 'fa-times');
+    //   } else {
+    //     document.querySelector('.nav-menu-trigger.menu-trigger i').classList.replace('fa-times', 'fa-bars');
+    //   }
+    // }
   }
 
 

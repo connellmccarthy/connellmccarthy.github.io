@@ -9,14 +9,29 @@ menus:
     slug: info
     icon: home
     url: /
+  - title: What's new
+    slug: whats-new
+    icon: sparkles
+    url: /new
   - title: Writing
     slug: article
     icon: book
-    url: /article/
+    url: /article
   - title: Prints
     slug: prints
     icon: camera-retro
-    url: /prints/
+    sub_items:
+    - title: Overview
+      url: /prints/
+    - title: Latest additions
+      badge: New
+      url: /prints/collections/new
+    - title: Shop by collection
+      sub_items: collections
+    - title: Environmental Impact Promise
+      url: /prints/pages/environmental-impact-promise
+    - title: Return Policy
+      url: /legal/returns
   footer:
   - title: Changelog
     url: /changelog/

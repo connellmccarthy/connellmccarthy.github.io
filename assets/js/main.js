@@ -15,6 +15,11 @@ swup.on('contentReplaced', init);
 var collapsing = false;
 
 function init() {
+
+  if (nav.classList.contains('menu-active')) {
+    toggleMenu();
+  }
+
   window.gtag("config", "G-GVY559Y564", {
     page_title: document.title,
     page_path: window.location.pathname + window.location.search

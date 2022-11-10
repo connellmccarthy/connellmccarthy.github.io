@@ -1,9 +1,42 @@
-<div class="new-nav">
+<nav class="new-nav">
   <div class="new-nav__static">
-    <button class="btn btn__plain">Menu</button>
-    <a class="logo btn" href="/">
+    <button class="btn btn__plain menu-trigger">Menu</button>
+    <a class="logo btn menu-logo menu-trigger" href="/">
       {% include assets/logo.html %}
     </a>
     <button class="btn btn__plain cart-trigger">Cart <div class="notif"></div></button>
   </div>
-</div>
+  <div class="new-nav__interactive">
+    <ul class="new-nav__items main">
+      {% for link in site.data.content.menus.main %}
+        <li style="--transition-delay: {{ forloop.index | times: 0.05 }}s">
+          {% unless link.sub_items %}
+            <a href="{{ link.url }}" class="btn nav__item btn__plain menu-trigger {% if page.url == link.url %} active{% elsif link.url != '/' and page.url contains link.url %} active{% endif %}" id="nav-{{ link.slug }}"><i class="far fa-{{link.icon}}"></i> {{ link.title }}</a>
+          {% else %}
+            <button href="{{ link.url }}" class="btn nav__item btn__plain {% if page.url == link.url %} active{% elsif link.url != '/' and page.url contains link.url %} active{% endif %}" id="nav-{{ link.slug }}"><span class="info"><i class="far fa-{{link.icon}}"></i> {{ link.title }}</span> <i class="far fa-chevron-right"></i></button>
+          {% endunless %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</nav>
+
+<script>
+  const nav = document.querySelector('.new-nav');
+  document.querySelectorAll('.menu-trigger').forEach((x) => {
+    x.addEventListener('click', () => {
+      if (x.classList.contains('menu-logo')) {
+        if (nav.classList.contains('menu-active') || nav.classList.contains('cart-active')) {
+          toggleMenu();
+        }
+      } else {
+        toggleMenu();
+      }
+    });
+  });
+
+  function toggleMenu() {
+    nav.classList.toggle('menu-active');
+  }
+
+</script>

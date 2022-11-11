@@ -1,5 +1,5 @@
 const swup = new Swup({
-  containers: ["#swup","#swup-shop-nav", "#swup-article-info"],
+  containers: ["#swup"],
   plugins: [new SwupGtagPlugin({
     gaMeasurementId: "G-GVY559Y564"
   }), new SwupScriptsPlugin({

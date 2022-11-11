@@ -5,16 +5,16 @@
   </head>
   <body>
     <div class="container">
-      {% include navigation.html %}
+      {% include new-nav.html %}
       <div class="crop">
         <main id="swup" class="transition-scale article" aria-live="polite">
-          <div class="wrapper margin-top">
+          <div class="wrapper condensed">
             <div class="article-info-static">
-              <a class="btn btn__link" href="/article" id="back-link">
+              <a class="btn btn__plain" href="/article" id="back-link">
                 <i class="far fa-arrow-left mr-2" aria-hidden="true"></i>
                 <span>Back to articles</span>
               </a>
-              <button id="like_button_static" class="btn btn__link like_button processing">
+              <button id="like_button_static" class="btn btn__plain like_button processing">
                 <i class="far fa-heart like_button_icon mr-1"></i>
                 <span class="count">•</span> likes
               </button>
@@ -70,15 +70,16 @@
             {% else %}
               <div class="article-spacer"></div>
             {% endif %}
-
+            
+          </div>
+          <div class="wrapper">
             <div class="article-content">
               {{ content }}
             </div>
-            
-            {% include newsletter.html %}
-
           </div>
-          {% include pagination.html type='article' %}
+          <div class="wrapper condensed">
+            {% include newsletter.html %}
+          </div>
         </main>
         {% include footer.html %}
       </div>

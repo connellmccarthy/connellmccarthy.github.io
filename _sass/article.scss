@@ -1,4 +1,5 @@
 .article {
+  padding-top: 6em;
   h1 {
     font-family: $font-serif;
     font-weight: 400;
@@ -172,6 +173,12 @@
   .title {
     color: $color-ink-dark;
   }
+}
+.article-info-static:first-of-type {
+  padding: 0.4em;
+  background: rgba(0,0,0,0.03);
+  border-radius: 6px;
+  max-width: 300px;
 }
 .article-info-details {
   justify-content: center;

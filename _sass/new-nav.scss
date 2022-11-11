@@ -12,7 +12,7 @@ $nav-animate: 0.6s cubic-bezier(0.33, 1, 0.68, 1);
   height: fit-content;
   max-height: 49px;
   overflow: hidden;
-  transition: all $nav-animate;
+  transition: max-height $nav-animate, max-width $nav-animate;
   transform: translateX(-50%);
   transform-origin: top center;
   
@@ -20,9 +20,15 @@ $nav-animate: 0.6s cubic-bezier(0.33, 1, 0.68, 1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: $border-radius-large;
+
+  &.is-open {
+    .new-nav__interactive {
+      display: flex;
+    }
+  }
   
   &.menu-active {
-    max-height: 300px;
+    max-height: 800px;
     max-width: 440px;
     .new-nav__interactive {
       clip-path: inset(0 0 0 0);
@@ -71,6 +77,12 @@ $nav-animate: 0.6s cubic-bezier(0.33, 1, 0.68, 1);
   &__interactive {
     clip-path: inset(0 0 100% 0);
     transition: clip-path $nav-animate;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    width: 100%;
+    display: none;
   }
   &__items {
     margin: 1em 0 0;
@@ -78,6 +90,35 @@ $nav-animate: 0.6s cubic-bezier(0.33, 1, 0.68, 1);
     border-radius: $border-radius-normal;
     background: rgba(0,0,0,0.05);
     list-style-type: none;
+    overflow: hidden;
+    width: 100%;
+    height: fit-content;
+    flex-shrink: 0;
+    transition: transform $nav-animate, clip-path $nav-animate;
+    display: none;
+    clip-path: inset(0 0 100% 0);
+
+    &:first-of-type {
+      display: block;
+      clip-path: inset(0 0 0 0);
+    }
+
+    &.is-open {
+      display: block;
+    }
+    &.closed {
+      display: none;
+    }
+    &.active {
+      transform: translateX(0);
+      clip-path: inset(0 0 0 0);
+    }
+    &.animate-left {
+      transform: translateX(-100%);
+    }
+    &.animate-right {
+      transform: translateX(100%);
+    }
 
     li {
       margin: 0.4em 0;
@@ -91,6 +132,19 @@ $nav-animate: 0.6s cubic-bezier(0.33, 1, 0.68, 1);
       &:last-of-type {
         margin-bottom: 0;
       }
+
+      &.title {
+        display: flex;
+        align-items: center;
+
+        .btn {
+          width: fit-content;
+          margin-right: 0.4em;
+        }
+        p {
+          margin: 0;
+        }
+      }
     }
 
     button {
@@ -100,7 +154,13 @@ $nav-animate: 0.6s cubic-bezier(0.33, 1, 0.68, 1);
     }
 
     .btn{
+      display: flex;
+      align-items: center;
       width: 100%;
+      .badge {
+        margin: 0 0.4em;
+        top: 0;
+      }
       i {
         opacity: 0.5;
         margin-right: 0.4em;

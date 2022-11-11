@@ -11,13 +11,28 @@
       {% for link in site.data.content.menus.main %}
         <li style="--transition-delay: {{ forloop.index | times: 0.05 }}s">
           {% unless link.sub_items %}
-            <a href="{{ link.url }}" class="btn nav__item btn__plain menu-trigger {% if page.url == link.url %} active{% elsif link.url != '/' and page.url contains link.url %} active{% endif %}" id="nav-{{ link.slug }}"><i class="far fa-{{link.icon}}"></i> {{ link.title }}</a>
+            {% include assets/nav-item.html link=link %}
           {% else %}
-            <button href="{{ link.url }}" class="btn nav__item btn__plain {% if page.url == link.url %} active{% elsif link.url != '/' and page.url contains link.url %} active{% endif %}" id="nav-{{ link.slug }}"><span class="info"><i class="far fa-{{link.icon}}"></i> {{ link.title }}</span> <i class="far fa-chevron-right"></i></button>
+            <button href="{{ link.url }}" data-target="subnav_id_{{ forloop.index }}" class="btn nav__item btn__plain subnav-trigger {% if page.url == link.url %} active{% elsif link.url != '/' and page.url contains link.url %} active{% endif %}" id="nav-{{ link.slug }}"><span class="info"><i class="far fa-{{link.icon}}"></i> {{ link.title }}</span> <i class="far fa-chevron-right"></i></button>
           {% endunless %}
         </li>
       {% endfor %}
     </ul>
+    {% for link in site.data.content.menus.main %}
+      {% if link.sub_items %}
+        <ul class="new-nav__items subnav_id_{{ link.slug }}" id="subnav_id_{{ link.slug }}">
+          <li class="title">
+            <button class="subnav-trigger btn btn__plain"><i class="far fa-chevron-left"></i><span class="visually-hidden"></span></button>
+            <p class="muted">{{ link.title }}</p>
+          </li>
+          {% for sub_link in link.sub_items %}
+            <li style="--transition-delay: {{ forloop.index | times: 0.05 }}s">
+              {% include assets/nav-item.html link=sub_link %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endfor %}
   </div>
 </nav>
 
@@ -35,8 +50,37 @@
     });
   });
 
+  document.addEventListener('click', (e) => {
+    if (nav.classList.contains('menu-active')) {
+      if (e.target !== nav && !nav.contains(e.target)) {
+        toggleMenu();
+      }
+    }
+  });
+
   function toggleMenu() {
-    nav.classList.toggle('menu-active');
+    if (nav.classList.contains('menu-active')) {
+      nav.classList.toggle('menu-active');
+      setTimeout(() => {
+        nav.classList.toggle('is-open');
+      },600);
+    } else {
+      nav.classList.toggle('is-open');
+      setTimeout(() => {
+        nav.classList.toggle('menu-active');
+      },1);
+    }
   }
+
+
+  //Set up the trigger to active the is-open tag and then animate the active nav based on the target
+
+  document.querySelectorAll('.subnav-trigger').forEach((x) => {
+    x.addEventListener('click', () => {
+      document.querySelectorAll('.new-nav__items').forEach((nav) => {
+        nav.classList.toggle('move');
+      });
+    });
+  });
 
 </script>

@@ -25,6 +25,7 @@ menus:
       url: /prints/
     - title: Latest additions
       badge: New
+      badge_color: blue
       url: /prints/collections/new
     - title: Shop by collection
       sub_items: collections

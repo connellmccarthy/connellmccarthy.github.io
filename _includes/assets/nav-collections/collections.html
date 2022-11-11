@@ -1,0 +1,3 @@
+{% for collection in site.collections %}
+  {% include assets/nav-collections/nav-collection-item.html index=forloop.index link=collection %}
+{% endfor %}

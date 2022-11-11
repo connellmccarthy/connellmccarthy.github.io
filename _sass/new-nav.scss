@@ -1,4 +1,4 @@
-$nav-animate: 0.6s cubic-bezier(0.33, 1, 0.68, 1);
+$nav-animate: 0.4s cubic-bezier(0.33, 1, 0.68, 1);
 
 .new-nav {
   position: fixed;
@@ -94,30 +94,39 @@ $nav-animate: 0.6s cubic-bezier(0.33, 1, 0.68, 1);
     width: 100%;
     height: fit-content;
     flex-shrink: 0;
-    transition: transform $nav-animate, clip-path $nav-animate;
+    transition: transform $nav-animate, max-height $nav-animate;
     display: none;
-    clip-path: inset(0 0 100% 0);
+    max-height: 0px;
+
+    &.grandchild {
+      transform: translate(-100%);
+    }
 
     &:first-of-type {
       display: block;
-      clip-path: inset(0 0 0 0);
+      max-height: 50vh;
     }
 
     &.is-open {
       display: block;
+      max-height: 0px;
     }
-    &.closed {
-      display: none;
+    &#nav_main.is-closed {
+      transform: translateX(-100%);
+      max-height: 0px;
     }
     &.active {
-      transform: translateX(0);
-      clip-path: inset(0 0 0 0);
-    }
-    &.animate-left {
-      transform: translateX(-100%);
-    }
-    &.animate-right {
-      transform: translateX(100%);
+      &.child {
+        transform: translateX(-100%);
+        &.open-child {
+          transform: translateX(-200%);
+        }
+      }
+      &.grandchild {
+        transform: translateX(-200%);
+      }
+      max-height: 50vh;
+      overflow-y: scroll;
     }
 
     li {
@@ -140,9 +149,15 @@ $nav-animate: 0.6s cubic-bezier(0.33, 1, 0.68, 1);
         .btn {
           width: fit-content;
           margin-right: 0.4em;
+          i {
+            margin-right: 0;
+          }
         }
         p {
           margin: 0;
+          &.divider {
+            margin: 0 0.4em;
+          }
         }
       }
     }

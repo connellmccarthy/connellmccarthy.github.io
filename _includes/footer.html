@@ -12,11 +12,11 @@
         {% endfor %}
       </ul>
       <div class="sitemap">
-        {% for link in site.data.content.menus.footer %}
+        {% for link in site.data.linklists.footer %}
           <a class="btn btn__link mt-4" href="{{ link.url }}" {% if link.url contains 'http://' or link.url contains 'https://' %}target="_blank"{% endif %}>
             {{ link.title }}
           </a>
-          {% unless forloop.index == site.data.content.menus.footer.size %}
+          {% unless forloop.index == site.data.linklists.footer.size %}
             <span class="muted-light">•</span>
           {% endunless %}
         {% endfor %}

@@ -3,49 +3,6 @@ announcement:
   title: NEW MUSIC &#8212; wanna get to know you &#8212; OUT NOW
   url: http://coveomusic.com/wanna-get-to-know-you?ref=connellmccarthy.com
   external: true
-menus:
-  main:
-  - title: Info
-    slug: info
-    icon: home
-    url: /
-  - title: What's new
-    slug: whats-new
-    icon: sparkles
-    url: /new
-  - title: Writing
-    slug: article
-    icon: book
-    url: /article
-  - title: Prints
-    slug: prints
-    icon: camera-retro
-    sub_items:
-    - title: Overview
-      url: /prints/
-    - title: Latest additions
-      badge: New
-      badge_color: blue
-      url: /prints/collections/new
-    - title: Shop by collection
-      sub_items: collections
-    - title: Environmental Impact Promise
-      url: /prints/pages/environmental-impact-promise
-    - title: Return Policy
-      url: /legal/returns
-  footer:
-  - title: Changelog
-    url: /changelog/
-  - title: Report an issue
-    url: https://github.com/connellmccarthy/connellmccarthy.github.io/issues/new
-  - title: Environmental Impact Promise
-    url: /prints/pages/environmental-impact-promise
-  - title: Terms and Conditions
-    url: /legal/terms
-  - title: Privacy Policy
-    url: /legal/privacy
-  - title: Returns
-    url: /legal/returns
 homepage:
   hero:
     skills:

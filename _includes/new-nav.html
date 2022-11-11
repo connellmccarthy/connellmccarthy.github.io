@@ -7,30 +7,56 @@
     <button class="btn btn__plain cart-trigger">Cart <div class="notif"></div></button>
   </div>
   <div class="new-nav__interactive">
-    <ul class="new-nav__items main">
-      {% for link in site.data.content.menus.main %}
+    <ul class="new-nav__items nav_main" id="nav_main">
+      {% for link in site.data.linklists.main.links %}
         <li style="--transition-delay: {{ forloop.index | times: 0.05 }}s">
-          {% unless link.sub_items %}
-            {% include assets/nav-item.html link=link %}
-          {% else %}
-            <button href="{{ link.url }}" data-target="subnav_id_{{ forloop.index }}" class="btn nav__item btn__plain subnav-trigger {% if page.url == link.url %} active{% elsif link.url != '/' and page.url contains link.url %} active{% endif %}" id="nav-{{ link.slug }}"><span class="info"><i class="far fa-{{link.icon}}"></i> {{ link.title }}</span> <i class="far fa-chevron-right"></i></button>
-          {% endunless %}
+          {% include assets/nav-item.html link=link parent='nav_main' %}
         </li>
       {% endfor %}
     </ul>
-    {% for link in site.data.content.menus.main %}
-      {% if link.sub_items %}
-        <ul class="new-nav__items subnav_id_{{ link.slug }}" id="subnav_id_{{ link.slug }}">
+    <!-- Child list -->
+    {% for link in site.data.linklists.main.links %}
+      {% if link.links %}
+        <ul class="new-nav__items subnav_{{ link.title | slugify }} child" id="subnav_{{ link.title | slugify }}">
           <li class="title">
-            <button class="subnav-trigger btn btn__plain"><i class="far fa-chevron-left"></i><span class="visually-hidden"></span></button>
+            <button class="subnav-trigger btn btn__plain" data-parent="subnav_{{ link.title | slugify }}" data-target="nav_main"><i class="far fa-chevron-left"></i><span class="visually-hidden">Back to {{ link.title }}</span></button>
             <p class="muted">{{ link.title }}</p>
           </li>
-          {% for sub_link in link.sub_items %}
-            <li style="--transition-delay: {{ forloop.index | times: 0.05 }}s">
-              {% include assets/nav-item.html link=sub_link %}
-            </li>
-          {% endfor %}
+          {% if link.links contains ':' %}
+            {% include assets/nav-collections/{{ link.links | remove: ':' }}.html %}
+          {% else %}
+            {% for child in link.links %}
+              <li style="--transition-delay: {{ forloop.index | times: 0.05 }}s">
+                {% assign child_parent = link.title | slugify %}
+                {% assign child_parent = child_parent | prepend: 'subnav_' %}
+                {% include assets/nav-item.html link=child parent=child_parent %}
+              </li>
+            {% endfor %}
+          {% endif %}
         </ul>
+        {% for child in link.links %}
+          {% if child.links %}
+            <ul class="new-nav__items subnav_{{ child.title | slugify }} grandchild" data-related="subnav_{{ link.title | slugify }}" id="subnav_{{ child.title | slugify }}">
+              <li class="title">
+                <button class="subnav-trigger btn btn__plain" data-parent="subnav_{{ child.title | slugify }}" data-target="subnav_{{ link.title | slugify }}"><i class="far fa-chevron-left"></i><span class="visually-hidden">Back to {{ child.title }}</span></button>
+                <p class="muted">{{ link.title }}</p>
+                <p class="muted divider">/</p>
+                <p class="muted">{{ child.title }}</p>
+              </li>
+              {% if child.links contains ':' %}
+                {% include assets/nav-collections/{{ child.links | remove: ':' }}.html %}
+              {% else %}
+                {% for grandchild in child.links %}
+                  <li style="--transition-delay: {{ forloop.index | times: 0.05 }}s">
+                    {% assign grandchild_parent = child.title | slugify %}
+                    {% assign grandchild_parent = grandchild_parent | prepend: 'subnav_' %}
+                    {% include assets/nav-item.html link=grandchild parent=grandchild_parent %}
+                  </li>
+                {% endfor %}
+              {% endif %}
+            </ul>
+          {% endif %}
+        {% endfor %}
       {% endif %}
     {% endfor %}
   </div>
@@ -63,7 +89,7 @@
       nav.classList.toggle('menu-active');
       setTimeout(() => {
         nav.classList.toggle('is-open');
-      },600);
+      },400);
     } else {
       nav.classList.toggle('is-open');
       setTimeout(() => {
@@ -74,13 +100,43 @@
 
 
   //Set up the trigger to active the is-open tag and then animate the active nav based on the target
-
   document.querySelectorAll('.subnav-trigger').forEach((x) => {
     x.addEventListener('click', () => {
-      document.querySelectorAll('.new-nav__items').forEach((nav) => {
-        nav.classList.toggle('move');
-      });
+      let parent = document.getElementById(x.getAttribute('data-parent'));
+      let target = document.getElementById(x.getAttribute('data-target'));
+
+      if (target.getAttribute('data-related') == parent.getAttribute('id')) {
+        parent.classList.add('open-child');
+        slideInTarget(target);
+      } else if (target.classList.contains('open-child')) {
+        target.classList.remove('open-child');
+        slideOutParent(parent);
+      } else {
+        slideOutParent(parent);
+        slideInTarget(target);
+      }
     });
   });
+
+  function slideOutParent(parent) {
+    if (parent.getAttribute('id') == 'nav_main') {
+      parent.classList.toggle('is-closed');
+    } else {
+      parent.classList.toggle('active');
+      setTimeout(() => {
+        parent.classList.toggle('is-open');
+      }, 400);
+    }
+  }
+  function slideInTarget(target) {
+    if (target.getAttribute('id') == 'nav_main') {
+      target.classList.toggle('is-closed');
+    } else {
+      target.classList.toggle('is-open');
+      setTimeout(() => {
+        target.classList.toggle('active');
+      }, 1);
+    }
+  }
 
 </script>

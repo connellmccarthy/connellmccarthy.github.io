@@ -391,13 +391,7 @@ function init() {
 
 function switchPage(url) {
   removeActiveMenuItem();
-  if (url.getAttribute('href').includes('/article')) {
-    document.getElementById('nav-article').classList.add('active');
-  } else if (url.getAttribute('href') == '/') {
-    document.getElementById('nav-info').classList.add('active');
-  } else if (url.getAttribute('href').includes('/prints')) {
-    document.getElementById('nav-prints').classList.add('active');
-  }
+  document.querySelector(`.nav__item[href="${ url.getAttribute('href') }"]`).classList.add('active');
 }
 
 function removeActiveMenuItem() {

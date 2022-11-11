@@ -1,0 +1,43 @@
+main:
+  links:
+  - title: Info
+    slug: info
+    icon: home
+    url: /
+  - title: What's new
+    slug: whats-new
+    icon: sparkles
+    url: /new
+  - title: Writing
+    slug: article
+    icon: book
+    url: /article/
+  - title: Prints
+    slug: prints
+    icon: camera-retro
+    links:
+    - title: Overview
+      url: /prints/
+    - title: Latest additions
+      badge: New
+      badge_color: blue
+      url: /prints/collections/new
+    - title: Shop by collection
+      links: :collections
+    - title: Environmental Impact Promise
+      url: /prints/pages/environmental-impact-promise
+    - title: Return Policy
+      url: /legal/returns
+footer:
+  - title: Changelog
+    url: /changelog/
+  - title: Report an issue
+    url: https://github.com/connellmccarthy/connellmccarthy.github.io/issues/new
+  - title: Environmental Impact Promise
+    url: /prints/pages/environmental-impact-promise
+  - title: Terms and Conditions
+    url: /legal/terms
+  - title: Privacy Policy
+    url: /legal/privacy
+  - title: Return Policy
+    url: /legal/returns

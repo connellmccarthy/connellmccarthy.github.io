@@ -266,12 +266,15 @@ img {
     max-width: $max-width-condensed;
   }
   &.margin-top {
-    padding-top: 3em;
+    padding-top: 8em;
   }
   &.margin-bottom {
     padding-bottom: 3em;
   }
 
+  @media screen and (max-width: $break-tablet) {
+    padding: 0 ($gutter / 2);
+  }
   @media screen and (max-width: $break-mobile) {
     padding: 0 ($gutter / 3);
   }

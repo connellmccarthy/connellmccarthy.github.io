@@ -1,8 +1,8 @@
 <div class="product_page">
-  <div class="product_image" id="product_image_container-{{ product.product_id }}">
+  <div class="product_image" id="product_image_container-{{ product.product_id }}" data-aos="fade-up">
     <img id="product_image-{{ product.product_id }}" data-product-id="{{ product.product_id }}" src="{{ product.images[0].src }}">
   </div>
-  <div class="product_form">
+  <div class="product_form" data-aos="fade">
     <p class="title">{{ product.title }}</p>
     <p class="price" id="product_price-{{ product.product_id }}">${{ product.variants[0].price | money }} CAD</p>
     <hr />

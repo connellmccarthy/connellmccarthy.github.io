@@ -2,6 +2,7 @@ $article-width-old: calc(#{$max-width-condensed} - #{$gutter});
 $article-width: 600px;
 .article {
   &__hero {
+    width: 100%;
     display: flex;
     align-items: center;
     .thumbnail {
@@ -28,6 +29,8 @@ $article-width: 600px;
     .article__info {
       width: 50%;
       padding: 0 $gutter;
+      flex-grow: 1;
+      flex-shrink: 1;
     }
 
     @media screen and (max-width: 1500px) {
@@ -352,7 +355,7 @@ $article-width: 600px;
 
     &__thumb {
       width: calc(50% - 2em);
-      
+
       .article_thumbnail {
         aspect-ratio: 1/1;
         width: auto;
@@ -412,10 +415,11 @@ blockquote {
   right: 2em;
   z-index: 98;
   display: flex;
+  align-items: flex-end;
   .appreciation_info {
     position: relative;
     left: 5em;
-    top: -5em;
+    top: -3em;
     font-size: 0.9em;
     opacity: 0;
     pointer-events: none;

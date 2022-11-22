@@ -1,4 +1,17 @@
 <nav class="new-nav">
+  {% if site.data.content.announcement.display %}
+    <a href="{{ site.data.content.announcement.url }}" class="new-nav__announcement" {% if site.data.content.announcement.external %}target="_blank"{% endif %}>
+      <div class="details">
+        <div class="title">
+          <i class="far fa-{{ site.data.content.announcement.icon }}" aria-hidden="true"></i>
+          <p>{{ site.data.content.announcement.title }}</p>
+        </div>
+        <div class="divider" aria-hidden="true"></div>
+        <p class="description">{{ site.data.content.announcement.description }}</p>
+      </div>
+      <i class="far fa-arrow-right {% if site.data.content.announcement.external %}external{% endif %}" aria-hidden="true"></i>
+    </a>
+  {% endif %}
   <div class="new-nav__static">
     <button class="btn btn__plain menu-trigger">Menu</button>
     <a class="logo btn menu-logo menu-trigger" href="/">

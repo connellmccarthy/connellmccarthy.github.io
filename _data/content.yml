@@ -1,6 +1,8 @@
 announcement:
-  display: true
-  title: NEW MUSIC &#8212; wanna get to know you &#8212; OUT NOW
+  display: false
+  icon: sparkles
+  title: New music
+  description: My latest COVEO single is now available
   url: http://coveomusic.com/wanna-get-to-know-you?ref=connellmccarthy.com
   external: true
 homepage:
@@ -51,7 +53,7 @@ homepage:
     work:
     - company: Shopify
       roles:
-      - title: UX Manager
+      - title: Staff Designer
         date: Current
       - title: Senior Designer
         date: Jan 2019 - Sep 2022

@@ -8,7 +8,7 @@ slug: articles
 <h1 class="visually-hidden">Articles</h1>
 
 <div class="wrapper condensed">
-  <div class="section hero">
+  <div class="section center article_heading">
     <p>I was the worst when it came to sharing my work and the rationale behind it. In an attempt to be more transparent and to live up to the <span class="serif">'do things, tell people'</span> motto, I started writing about my processes.</p>
   </div>
 </div>
@@ -22,12 +22,12 @@ slug: articles
       {% assign word_count = article_words | size %}
 
       <div class="articles__item">
-        <a class="articles__item" href="{{ article.url }}">
+        <a class="articles__item__thumb" href="{{ article.url }}">
           <div class="article_thumbnail">
             <img src="{{ site.image_path }}{{ article.slug }}/{{ article.thumbnail }}">
           </div>
         </a>
-        <div class="wrapper condensed mt-10">
+        <div class="articles__item__info">
           <p class="muted m-0">{{ article.title }}</p>
           <p class="description m-0">{{ article.description }}</p>
           <div class="article-info-details left">

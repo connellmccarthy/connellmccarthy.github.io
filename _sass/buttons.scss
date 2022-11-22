@@ -37,7 +37,7 @@ $sparkle-radius: $sparkle-diameter * 0.5;
   }
 }
 
-a:not(.btn, .card, #back-link, .product a, sup a) {
+a:not(.btn, .card, #back-link, .product a, sup a,.new-nav__announcement) {
   font-weight: 500;
   color: $color-ink-dark;
   text-decoration: none;
@@ -245,6 +245,32 @@ button.btn {
   }
 
   &.like_button {
+    &#like_button_sticky {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      i {
+        transition: 0.4s ease;
+        transform: translateY(40%);
+      }
+      .count {
+        opacity: 0;
+        transform: translateY(-100%);
+        transition: 0.4s ease;
+        font-size: 0.65em;
+        margin-top: 0.1em;
+      }
+      &.liked {
+        i {
+          transform: translateY(0);
+        }
+        .count {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
     &.processing {
       color: transparent;
       i {

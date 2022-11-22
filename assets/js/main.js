@@ -26,6 +26,7 @@ function init() {
   AOS.init();
 
   const like_button = document.querySelector('.like_button');
+  const like_info = document.querySelector('.like_info');
   const article_info = document.querySelector('.article-info');
   const back_button = document.querySelector('button#back');
 
@@ -92,6 +93,8 @@ function init() {
       });
     });
   }
+
+  //Appreciation handler
   if (document.querySelector('.count')) {
     const slug = window.location.href.split('/')[4];
     let xhttp = new XMLHttpRequest();
@@ -105,7 +108,14 @@ function init() {
       });
     }
   }
-  if (like_button) {
+  if (like_button || like_info) {
+    document.addEventListener('scroll', () => {
+      if (window.scrollY > (document.body.clientHeight / 4) && !like_button.classList.contains('liked')) {
+        document.querySelector('.appreciation_info').classList.add('active');
+      } else {
+        document.querySelector('.appreciation_info').classList.remove('active');
+      }
+    });
     const slug = window.location.href.split('/')[4];
     if (window.localStorage.getItem(slug)) {
       document.querySelectorAll('.like_button_icon').forEach((el) => {

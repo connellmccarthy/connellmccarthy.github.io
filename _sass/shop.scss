@@ -434,3 +434,54 @@ h2.treecount {
     transform: scale(1) translate(-50%,-50%);
   }
 }
+.collections-list {
+  display: flex;
+  gap: 6em;
+  margin: 10em auto 0;
+  justify-content: flex-start;
+  width: fit-content;
+  padding: 0 ($gutter / 3);
+
+  @media screen and (max-width: $break-tablet) {
+    gap: 2em;
+    margin: 8em auto 0;
+    .wrapper {
+      padding: 0;
+    }
+  }
+  @media screen and (max-width: $break-mobile) {
+    display: block;
+  }
+
+  .filter-collections {
+    position: sticky;
+    top: 4em;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    height: fit-content;
+
+    @media screen and (max-width: $break-mobile) {
+      display: none;
+    }
+
+    a {
+      i {
+        margin-right: 0.2em;
+      }
+      &.active {
+        background: $color-black;
+        color: $color-white;
+      }
+      &:hover:not(.active) {
+        background: darken($color-grey, 3);
+      }
+     }
+  }
+  .products__section__header {
+    margin-bottom: 2em;
+    @media screen and (max-width: $break-mobile) {
+      text-align: center;
+    }
+  }
+}

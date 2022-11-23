@@ -47,12 +47,14 @@
 <script src="/assets/js/SwupScriptsPlugin.min.js"></script>
 <script src="/assets/js/SwupGtagPlugin.min.js"></script>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GVY559Y564"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+{% if jekyll.environment == "production" %}
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GVY559Y564"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-GVY559Y564');
-</script>
+    gtag('config', 'G-GVY559Y564');
+  </script>
+{% endif %}

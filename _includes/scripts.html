@@ -1,3 +1,8 @@
+{% if jekyll.environment == "production" %}
+<script>var environment = 'production';</script>
+{% else %}
+<script>var environment = 'development';</script>
+{% endif %}
 <script src="/assets/js/aos.js"></script>
 <script src="/assets/js/confetti.js"></script>
 <script src="https://unpkg.com/wavesurfer.js"></script>

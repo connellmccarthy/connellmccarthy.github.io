@@ -10,7 +10,7 @@ $nav-animate: 0.4s cubic-bezier(0.33, 1, 0.68, 1);
   width: calc(100% - 2em);
   max-width: 300px;
   height: fit-content;
-  max-height: 46px;
+  max-height: 48px;
   overflow: hidden;
   transition: max-height $nav-animate, max-width $nav-animate;
   transform: translateX(-50%);

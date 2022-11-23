@@ -9,27 +9,27 @@
       {% include new-nav.html %}
       <div class="crop">
         <main id="swup" class="transition-scale" aria-live="polite">
-          <div class="product-header {% if page.template_suffix == 'dark' %}dark{% endif %}">
-            <img data-aos="fade" src="{{ page.images[2].src }}">
-            <div class="wrapper">
-              <a class="btn btn__link" href="/prints/collections/all">
-                <i class="fal fa-arrow-left mr-2" aria-hidden="true"></i>
-                Shop all products
-              </a>
-              <div class="product-info" data-aos="fade">
+          <div class="product__hero">
+            <div class="product-info" data-aos="fade">
+              <div class="product-intro">
                 <h1 class="title">{{ page.title }}</h1>
-                <p class="muted price">Starting from ${{ page.variants[0].price | money }} CAD</p>
-                <button id="buying_options" class="btn btn__dark btn__round btn__padding-large">
-                  Buying options
-                </button>
+                <p class="muted price">Starting from ${{ page.variants[0].price | remove: '.00' }} CAD</p>
+              </div>
+              <div class="product-description" data-aos="fade">
+                {{ page.body_html }}
               </div>
             </div>
-          </div>
-          {% include shop/product-features.html %}
-          <div class="wrapper">
-            <div class="product-description" data-aos="fade">
-              {{ page.body_html }}
+            <div class="product-feature-info">
+              {% include shop/product-features.html %}
+              <button id="buying_options" class="btn btn__dark btn__round btn__padding-large">
+                Buying options
+              </button>
             </div>
+          </div>
+          <div class="image-feature">
+            <img data-aos="fade" src="{{ page.images[3].src }}">
+          </div>
+          <div class="wrapper">
             {% include shop/product-form.html %}
             {% include shop/product-value.html %}
           </div>

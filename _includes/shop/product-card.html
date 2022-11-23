@@ -6,7 +6,7 @@
   {% include shop/product-form.html %}
 </div>
 <div class="fade product-modal-trigger" data-product-id="{{ product.product_id }}" id="product-fade-{{ product.product_id }}"></div>
-<div class="product{% if include.compressed %} compressed{%endif%}">
+<div class="product{% if include.compressed %} compressed{%endif%}" data-aos="fade">
   <div class="quickview">
     <button class="btn btn__marketing btn__white btn__round product-modal-trigger" data-product-id="{{ product.product_id }}">
       <span class="desktop">

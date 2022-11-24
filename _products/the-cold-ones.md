@@ -13,7 +13,7 @@ vendor: Connell McCarthy
 product_type: Posters, Prints, & Visual Artwork
 created_at: 2018-08-22T19:56:58-04:00
 handle: the-cold-ones
-updated_at: 2022-06-27T13:51:59-04:00
+updated_at: 2022-11-23T20:04:21-05:00
 published_at: 2018-08-22T19:38:24-04:00
 template_suffix: ""
 status: active
@@ -508,6 +508,17 @@ images:
     src: https://cdn.shopify.com/s/files/1/1624/2355/products/PAR_02_0001_e8ba5e20-44af-425e-9061-57980ea12b31.png?v=1620176785
     variant_ids: []
     admin_graphql_api_id: gid://shopify/ProductImage/28230376194110
+  - id: 29846620667966
+    product_id: 1419071258686
+    position: 4
+    created_at: 2022-11-23T20:04:20-05:00
+    updated_at: 2022-11-23T20:04:20-05:00
+    alt: null
+    width: 1306
+    height: 1971
+    src: https://cdn.shopify.com/s/files/1/1624/2355/products/TheColdOnes.jpg?v=1669251860
+    variant_ids: []
+    admin_graphql_api_id: gid://shopify/ProductImage/29846620667966
 image:
   id: 6301698883646
   product_id: 1419071258686

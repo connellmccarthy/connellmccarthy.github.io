@@ -21,23 +21,32 @@
             </div>
             <div class="product-feature-info">
               {% include shop/product-features.html %}
-              <button id="buying_options" class="btn btn__dark btn__round btn__padding-large">
+              <button id="buying_options" data-aos="fade" class="btn btn__dark btn__round btn__padding-large">
                 Buying options
               </button>
             </div>
           </div>
-          <div class="image-feature">
+          <div class="image-feature {% if page.template_suffix == 'dark' %}dark{% endif %}">
             <img data-aos="fade" src="{{ page.images[3].src }}">
           </div>
           <div class="wrapper">
             {% include shop/product-form.html %}
             {% include shop/product-value.html %}
-          </div>
-          <div class="section shop-section full">
-            <div class="content" data-aos="fade">
-              <h3>Let's start a gallery wall</h3>
-              <p>Take a look at some prints you might like</p>
-              <a class="btn btn__link blue" href="/prints/collections/all">Shop all products <i class="far fa-arrow-right ml-1" aria-hidden="true"></i></a>
+            <div class="section shop-section image-right flex a-center">
+              <div class="content" data-aos="fade">
+                <h3>Museum grade quality</h3>
+                <p>All photos are printed through Giclée, meaning your print will never fade, or turn yellow. Printed on premium photographic paper with a satin lustre finish, brings out the intense colours and rich details.</p>
+              </div>
+              <div class="image {% if page.template_suffix == 'dark' %}dark{% endif %} product__quality border-radius__xlarge" data-aos="fade-up">
+                <img src="{{ page.images[2].src }}">
+              </div>
+            </div>
+            <div class="section white shop-section full">
+              <div class="content" data-aos="fade">
+                <h3>Let's start a gallery wall</h3>
+                <p>Take a look at some prints you might like</p>
+                <a class="btn btn__link blue" href="/prints/collections/all">Shop all products <i class="far fa-arrow-right ml-1" aria-hidden="true"></i></a>
+              </div>
             </div>
           </div>
         </main>

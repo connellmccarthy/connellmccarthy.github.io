@@ -13,7 +13,7 @@ vendor: Connell McCarthy
 product_type: Posters, Prints, & Visual Artwork
 created_at: 2018-08-22T19:58:53-04:00
 handle: the-wild-west
-updated_at: 2022-06-27T13:52:00-04:00
+updated_at: 2022-11-23T20:04:56-05:00
 published_at: 2018-08-22T19:38:24-04:00
 template_suffix: ""
 status: active
@@ -508,6 +508,17 @@ images:
     src: https://cdn.shopify.com/s/files/1/1624/2355/products/PAR_02_0001_19ccd860-2563-4a8a-806f-96111ab350e5.png?v=1620177841
     variant_ids: []
     admin_graphql_api_id: gid://shopify/ProductImage/28230423969854
+  - id: 29846622863422
+    product_id: 1419072864318
+    position: 4
+    created_at: 2022-11-23T20:04:56-05:00
+    updated_at: 2022-11-23T20:04:56-05:00
+    alt: null
+    width: 1958
+    height: 1306
+    src: https://cdn.shopify.com/s/files/1/1624/2355/products/TheWildWest.jpg?v=1669251896
+    variant_ids: []
+    admin_graphql_api_id: gid://shopify/ProductImage/29846622863422
 image:
   id: 6198886989886
   product_id: 1419072864318

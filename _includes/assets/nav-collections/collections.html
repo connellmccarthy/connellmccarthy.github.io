@@ -1,3 +1,5 @@
-{% for collection in site.collections | where_exp: "item", "item.collection_list = true" %}
-  {% include assets/nav-collections/nav-collection-item.html index=forloop.index link=collection %}
+{% for collection in site.collections %}
+  {% if collection.collection_list %}
+    {% include assets/nav-collections/nav-collection-item.html index=forloop.index link=collection %}
+  {% endif %}
 {% endfor %}

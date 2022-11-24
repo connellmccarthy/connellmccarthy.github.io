@@ -13,7 +13,7 @@ vendor: Connell McCarthy
 product_type: Posters, Prints, & Visual Artwork
 created_at: 2018-08-22T19:56:08-04:00
 handle: tantalus-valley
-updated_at: 2022-06-27T13:51:59-04:00
+updated_at: 2022-11-23T20:04:15-05:00
 published_at: 2018-08-22T19:38:24-04:00
 template_suffix: ""
 status: active
@@ -508,6 +508,17 @@ images:
     src: https://cdn.shopify.com/s/files/1/1624/2355/products/PAR_02_0001_75045f1c-e62b-455e-87d4-46938dfc72d1.png?v=1620176626
     variant_ids: []
     admin_graphql_api_id: gid://shopify/ProductImage/28230363971646
+  - id: 29846620176446
+    product_id: 1419071094846
+    position: 4
+    created_at: 2022-11-23T20:04:15-05:00
+    updated_at: 2022-11-23T20:04:15-05:00
+    alt: null
+    width: 1958
+    height: 1306
+    src: https://cdn.shopify.com/s/files/1/1624/2355/products/TantalusValley.jpg?v=1669251855
+    variant_ids: []
+    admin_graphql_api_id: gid://shopify/ProductImage/29846620176446
 image:
   id: 6198879486014
   product_id: 1419071094846

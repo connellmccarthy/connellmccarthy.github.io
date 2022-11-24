@@ -18,6 +18,8 @@ main:
     links:
     - title: Overview
       url: /prints/
+    - title: Browse all products
+      url: /prints/collections/all
     - title: Latest additions
       badge: New
       badge_color: blue

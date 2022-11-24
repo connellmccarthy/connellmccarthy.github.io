@@ -14,9 +14,9 @@
               <a href="/prints/collections/new" class="btn{% if page.url == '/prints/collections/new' %} active{% endif %} shop-nav-new">Latest additions <span class="badge blue">New</span></a>
               <p class="muted">Shop by collection</p>
               {% for collection in site.collections %}
-                {% unless collection.slug == 'shop-all' or collection.collection_list == false %}
+                {% if collection.collection_list %}
                   <a class="btn{% if page.url == collection.url %} active{% endif %}" href="{{ collection.url }}"><i class="far fa-{{ collection.icon }} muted" aria-hidden="true"></i> {{ collection.title }}</a>
-                {% endunless %}
+                {% endif %}
               {% endfor %}
             </div>
             <div class="products__section">

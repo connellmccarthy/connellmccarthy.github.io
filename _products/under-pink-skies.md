@@ -13,7 +13,7 @@ vendor: Connell McCarthy
 product_type: Posters, Prints, & Visual Artwork
 created_at: 2018-08-22T19:59:42-04:00
 handle: under-pink-skies
-updated_at: 2022-06-27T13:52:00-04:00
+updated_at: 2022-11-23T20:05:53-05:00
 published_at: 2018-08-22T19:38:24-04:00
 template_suffix: ""
 status: active
@@ -508,6 +508,17 @@ images:
     src: https://cdn.shopify.com/s/files/1/1624/2355/products/PAR_02_0001_c52b9e82-b38a-49b6-9e51-0a5ff3e7c28d.png?v=1620178300
     variant_ids: []
     admin_graphql_api_id: gid://shopify/ProductImage/28230448676926
+  - id: 29846626009150
+    product_id: 1419073519678
+    position: 4
+    created_at: 2022-11-23T20:05:53-05:00
+    updated_at: 2022-11-23T20:05:53-05:00
+    alt: null
+    width: 1955
+    height: 1295
+    src: https://cdn.shopify.com/s/files/1/1624/2355/products/UnderPinkSkies.jpg?v=1669251953
+    variant_ids: []
+    admin_graphql_api_id: gid://shopify/ProductImage/29846626009150
 image:
   id: 6198887120958
   product_id: 1419073519678

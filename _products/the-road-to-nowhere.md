@@ -13,7 +13,7 @@ vendor: Connell McCarthy
 product_type: Posters, Prints, & Visual Artwork
 created_at: 2018-08-22T19:58:02-04:00
 handle: the-road-to-nowhere
-updated_at: 2022-06-27T13:51:59-04:00
+updated_at: 2022-11-23T20:04:48-05:00
 published_at: 2018-08-22T19:38:24-04:00
 template_suffix: ""
 status: active
@@ -508,6 +508,17 @@ images:
     src: https://cdn.shopify.com/s/files/1/1624/2355/products/PAR_02_0001_c7dc7e62-3c1d-461c-a9cf-592295f8b36a.png?v=1620177587
     variant_ids: []
     admin_graphql_api_id: gid://shopify/ProductImage/28230413221950
+  - id: 29846622273598
+    product_id: 1419072340030
+    position: 4
+    created_at: 2022-11-23T20:04:48-05:00
+    updated_at: 2022-11-23T20:04:48-05:00
+    alt: null
+    width: 1306
+    height: 1958
+    src: https://cdn.shopify.com/s/files/1/1624/2355/products/TheRoadToNowhere.jpg?v=1669251888
+    variant_ids: []
+    admin_graphql_api_id: gid://shopify/ProductImage/29846622273598
 image:
   id: 6301702225982
   product_id: 1419072340030

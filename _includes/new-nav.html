@@ -14,7 +14,7 @@
   {% endif %}
   <div class="new-nav__static">
     <button class="btn btn__plain menu-trigger">Menu</button>
-    <a class="logo btn menu-logo menu-trigger" href="/">
+    <a class="logo btn menu-logo" href="/">
       {% include assets/logo.html %}
     </a>
     <button class="btn btn__plain cart-trigger">Cart <div class="notif"></div></button>
@@ -73,44 +73,97 @@
       {% endif %}
     {% endfor %}
   </div>
+  <div class="new-nav__cart">
+    <div class="new-nav__cart__contents">
+      <h2>Your cart</h2>
+      <div class="cart_buttons mb-10">
+        <button id="checkout" form="cart_form" class="btn btn__dark btn__round btn__padding-large disabled" type="submit" name="checkout" disabled>Checkout</button>
+        <span class="muted">or</span>
+        <a class="btn btn__link cart-trigger" href="/prints/collections/all">
+          Continue shopping
+          <i class="fal fa-arrow-right ml-1" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="subtotal">
+        <p class="title">Subtotal</p>
+        <p class="price">$<span id="subtotal">0</span> CAD</p>
+      </div>
+      <div class="loading_spinner"></div>
+      <form id="cart_form"></form>
+    </div>
+  </div>
 </nav>
 
 <script>
-  const nav = document.querySelector('.new-nav');
+  var nav = document.querySelector('.new-nav');
+  const checkCart = new URLSearchParams(window.location.search);
+  if (checkCart.has('cart')) {
+    console.log('Cart should open!');
+    getCartItems();
+    toggleCart();
+  }
+
+  document.querySelector('.menu-logo').addEventListener('click', () => {
+    if (nav.classList.contains('menu-active')) {
+      expandNav('menu');
+    } else if (nav.classList.contains('cart-active')) {
+      expandNav('cart');
+    }
+  });
+
   document.querySelectorAll('.menu-trigger').forEach((x) => {
     x.addEventListener('click', () => {
-      if (x.classList.contains('menu-logo')) {
-        if (nav.classList.contains('menu-active') || nav.classList.contains('cart-active')) {
-          toggleMenu();
-        }
+      if (nav.classList.contains('cart-active')) {
+        expandNav('cart');
+        setTimeout(() => {expandNav('menu')}, 400)
       } else {
-        toggleMenu();
+        expandNav('menu');
       }
     });
   });
 
+  document.querySelectorAll('.cart-trigger').forEach((x) => {
+    x.addEventListener('click', toggleCart);
+  });
+
   document.addEventListener('click', (e) => {
-    if (nav.classList.contains('menu-active')) {
-      if (e.target !== nav && !nav.contains(e.target)) {
-        toggleMenu();
+    if (nav.classList.contains('menu-active') || nav.classList.contains('cart-active')) {
+      if (!nav.contains(e.target)) {
+        if (nav.classList.contains('menu-active')) {
+          expandNav('menu');
+        } else if (nav.classList.contains('cart-active')) {
+          expandNav('cart');
+        }
       }
     }
   });
 
-  function toggleMenu() {
+  function toggleCart() {
     if (nav.classList.contains('menu-active')) {
-      nav.classList.toggle('menu-active');
-      setTimeout(() => {
-        nav.classList.toggle('is-open');
-      },400);
+      expandNav('menu');
+      getCartItems();
+      setTimeout(() => { expandNav('cart') }, 400)
     } else {
-      nav.classList.toggle('is-open');
-      setTimeout(() => {
-        nav.classList.toggle('menu-active');
-      },1);
+      if (!nav.classList.contains('cart-active')) {
+        getCartItems();
+      }
+      expandNav('cart');
     }
   }
 
+  function expandNav(type) {
+    if (nav.classList.contains(`${type}-active`)) {
+      nav.classList.toggle(`${type}-active`);
+      setTimeout(() => {
+        nav.classList.toggle(`${type}-is-open`);
+      },400);
+    } else {
+      nav.classList.toggle(`${type}-is-open`);
+      setTimeout(() => {
+        nav.classList.toggle(`${type}-active`);
+      },1);
+    }
+  }
 
   //Set up the trigger to active the is-open tag and then animate the active nav based on the target
   document.querySelectorAll('.subnav-trigger').forEach((x) => {
@@ -152,4 +205,172 @@
     }
   }
 
+
+  //Cart function
+
+  document.getElementById('cart_form').addEventListener('submit', (event) => {
+    event.preventDefault();
+    document.getElementById('checkout').classList.add('loading');
+    window.location.href = document.getElementById('checkout-url').value;
+  });
+
+  function createEmptyText() {
+    if (!document.getElementById('cart__result')) {
+      let result = document.createElement('p');
+      result.classList.add('muted');
+      result.setAttribute('id', 'cart__result');
+      result.innerText = 'No products in your cart.';
+      document.querySelector('.new-nav__cart__contents').appendChild(result);
+    }
+  }
+  function getCartItems() {
+    document.querySelector('.new-nav__cart .loading_spinner').classList.toggle('active');
+    if (window.localStorage.getItem('cart')) {
+      if (document.getElementById('cart__result')) {
+        document.getElementById('cart__result').remove();
+      }
+      document.getElementById('checkout').classList.remove('disabled');
+      document.getElementById('checkout').removeAttribute('disabled');
+      document.getElementById('cart_form').innerHTML = '';
+      const cart = JSON.parse(window.localStorage.getItem('cart')).reverse();
+      var subtotal = 0;
+      var cart_url = 'https://shop.connellmccarthy.com/cart/';
+      var cart_url_contents;
+      var cart_url_input = document.createElement('input');
+      cart_url_input.setAttribute('type', 'hidden');
+      cart_url_input.setAttribute('id', 'checkout-url');
+      cart.forEach((product, index) => {
+        let transition_delay = index * 0.2;
+        subtotal += Number(product.price);
+        if (cart_url_contents == null || cart_url_contents == '') {
+          cart_url_contents = `${product.id}:1`;
+        } else {
+          cart_url_contents += `,${product.id}:1`;
+        }
+
+        //Create wrapper
+        let result = document.createElement('div');
+        result.classList.add('product');
+        result.setAttribute('style', `--transition-delay: ${transition_delay}s`);
+        result.setAttribute('id', `product-${product.id}`);
+
+        //Create contents
+
+        //Create image + link
+        let image = document.createElement('div');
+        image.classList.add('image', 'border-radius__normal');
+        let link = document.createElement('a');
+        link.setAttribute('href', product.url);
+        link.addEventListener('click', () => {expandNav('cart')});
+        let img = document.createElement('img');
+        img.setAttribute('src', product.image);
+        img.setAttribute('alt', `${product.title} - ${product.option1} / ${product.option2}`)
+
+        link.appendChild(img);
+        image.appendChild(link);
+
+        //Create controls
+        let controls = document.createElement('div');
+        controls.classList.add('controls');
+        
+        //Top
+        let top = document.createElement('div');
+        top.classList.add('top');
+        let details = document.createElement('div');
+        details.classList.add('details');
+
+        let text_link = document.createElement('a');
+        text_link.setAttribute('href', product.url);
+        text_link.addEventListener('click', () => {expandNav('cart')});
+        text_link.innerHTML = `<p class="title">${product.title}</p>`;
+        details.appendChild(text_link);
+
+        let variant = document.createElement('p');
+        variant.classList.add('variant', 'muted');
+        variant.innerText = `${product.option1} / ${product.option2}`;
+        details.appendChild(variant);
+        top.appendChild(details);
+
+        let remove_item = document.createElement('button');
+        remove_item.classList.add('btn', 'btn__circle', 'btn__plain', 'btn__icon');
+        remove_item.setAttribute('id', `remove-${product.id}`);
+        remove_item.setAttribute('data-id', `product-${product.id}`);
+        remove_item.setAttribute('type', 'button');
+        let remove_item_icon = document.createElement('i');
+        remove_item_icon.classList.add('far', 'fa-times');
+        remove_item_icon.setAttribute('aria-hidden', true);
+        let remove_item_text = document.createElement('span');
+        remove_item_text.innerText = 'Remove product';
+        remove_item_text.classList.add('visually-hidden');
+        remove_item.appendChild(remove_item_icon).appendChild(remove_item_text);
+        top.appendChild(remove_item);
+
+        controls.appendChild(top);
+
+        let bottom = document.createElement('div');
+        bottom.classList.add('bottom');
+
+        let price = document.createElement('p');
+        price.classList.add('price');
+        price.innerText = `$${product.price} CAD`;
+        bottom.appendChild(price);
+
+        controls.appendChild(bottom);
+
+
+        //Put it together
+        result.appendChild(image);
+        result.appendChild(controls);
+
+        //Add it to the cart
+        document.getElementById('cart_form').appendChild(result);
+        remove_item.addEventListener('click', () => {
+          if (cart.length == 1) {
+            window.localStorage.removeItem('cart');
+            document.querySelector('.notif').classList.toggle('active');
+            document.getElementById('checkout').classList.add('disabled');
+            document.getElementById('checkout').setAttribute('disabled', true);
+            cart_url_contents = cart_url_contents.replace(`${product.id}:1`, '');
+            cart_url_input.value = '';
+            createEmptyText();
+          } else {
+            let index = cart.indexOf(product);
+            if (index == 0) {
+              cart_url_contents = cart_url_contents.replace(`${product.id}:1,`, '');
+            } else if (index == cart.length - 1) {
+              cart_url_contents = cart_url_contents.replace(`,${product.id}:1`, '');
+            } else {
+              cart_url_contents = cart_url_contents.replace(`${product.id}:1,`, '');
+            }
+            cart_url_input.value = cart_url + cart_url_contents;
+            if (index != -1) {
+              cart.splice(index, 1);
+            }
+            window.localStorage.setItem('cart', JSON.stringify(cart));
+          }
+          subtotal -= Number(product.price);
+          document.getElementById('subtotal').innerText = subtotal;
+          //Tiny delay to account for the nav handler
+          setTimeout(() => {
+            document.getElementById(remove_item.getAttribute('data-id')).remove();
+          }, 10);
+        });
+      });
+      cart_url_input.value = cart_url + cart_url_contents;
+      document.getElementById('cart_form').appendChild(cart_url_input);
+      document.getElementById('subtotal').innerText = subtotal;
+      document.querySelector('.new-nav__cart .loading_spinner').classList.toggle('active');
+    } else {
+      document.querySelector('.new-nav__cart .loading_spinner').classList.toggle('active');
+      createEmptyText();
+    }
+  }
+
 </script>
+<div class="cookie-notice">
+  <p>This site uses cookies to provide a better experience.</p>
+  <button class="btn btn__plain" id="cookie-notice-close">
+    <span class="visually-hidden">Close</span>
+    <i class="far fa-times" aria-hidden="true"></i>
+  </button>
+</div>

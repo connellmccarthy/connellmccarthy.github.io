@@ -172,6 +172,7 @@ video {
     }
     h3 {
       position: sticky;
+      position: -webkit-sticky;
       top: 1em;
       left: 0;
       color: $color-ink-muted;

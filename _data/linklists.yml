@@ -28,8 +28,6 @@ main:
       links: :collections
     - title: Environmental Impact Promise
       url: /prints/pages/environmental-impact-promise
-    - title: Return Policy
-      url: /legal/returns
 footer:
   - title: Changelog
     url: /changelog/

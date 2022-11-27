@@ -42,7 +42,6 @@ a:not(.btn, .card, #back-link, .product a, sup a,.new-nav__announcement) {
   color: $color-ink-dark;
   text-decoration: none;
   position: relative;
-  white-space: nowrap;
   transition: color 0.3s ease;
   
   &:after {

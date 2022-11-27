@@ -4,7 +4,7 @@
   </div>
   <div class="product_form" data-aos="fade">
     <p class="title">{{ product.title }}</p>
-    <p class="price" id="product_price-{{ product.product_id }}">${{ product.variants[0].price | money }} CAD</p>
+    <p class="price" id="product_price-{{ product.product_id }}">${{ product.variants[0].price | remove: '.00' }} CAD</p>
     <hr />
     <form id="AddToCartForm-{{ product.product_id }}">
       <div class="options">
@@ -104,7 +104,7 @@
     }
     cart.push(product)
     window.localStorage.setItem('cart', JSON.stringify(cart));
-    toggleModal();
     getCartItems();
+    expandNav('cart');
   });
 </script>

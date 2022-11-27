@@ -9,24 +9,19 @@ const swup = new Swup({
   })]
 });
 init();
-
 swup.on('contentReplaced', init);
 
-var collapsing = false;
+var audio_playing;
 
 function init() {
-
   document.removeEventListener('scroll', appreciationHandler);
-
   if (environment == 'production') {
     window.gtag("config", "G-GVY559Y564", {
       page_title: document.title,
       page_path: window.location.pathname + window.location.search
     });
   }
-
   window.scrollTo(0,0);
-
   AOS.init();
 
   const like_button = document.querySelector('.like_button');
@@ -34,7 +29,6 @@ function init() {
   const article_info = document.querySelector('.article-info');
   const back_button = document.querySelector('button#back');
 
-  var audio_playing;
   
   if (confetti.isRunning()) {
     confetti.stop()
@@ -344,12 +338,7 @@ function init() {
 
   document.querySelectorAll('a').forEach((el) => {
     el.addEventListener('click', () => {
-      if (el.getAttribute('target') == null && el.getAttribute('data-no-swup') == null) {
-        switchPage(el);
-        if (audio_playing) {
-          audio_playing.pause();
-        }
-      }
+      linkHandler(el);
     });
   });
 
@@ -395,6 +384,21 @@ function init() {
       });
     });
   }
+
+  //Tree count
+  if (document.getElementById('treecount')) {
+    let pledgeTrees = new XMLHttpRequest();
+    let key = '<h1 class="h3 widget-title">$';
+    pledgeTrees.open( "GET", 'https://www.pledge.to/widgets/impact/em34jezzqn0exO3LPY92Ng', true);
+    pledgeTrees.send();
+    pledgeTrees.onload = () => {
+      let pos1 = pledgeTrees.response.indexOf(key) + key.length;
+      let pos2 = pledgeTrees.response.indexOf(`</h1>`);
+      let result = pledgeTrees.response.substring(pos1, pos2);
+      document.getElementById('treecount').innerText = result;
+      document.getElementById('treecount').classList.remove('loading');
+    }
+  }
 }
 
 function appreciationHandler() {
@@ -402,6 +406,15 @@ function appreciationHandler() {
     document.querySelector('.appreciation_info').classList.add('active');
   } else {
     document.querySelector('.appreciation_info').classList.remove('active');
+  }
+}
+
+function linkHandler(el) {
+  if (el.getAttribute('target') == null && el.getAttribute('data-no-swup') == null) {
+    switchPage(el);
+    if (audio_playing) {
+      audio_playing.pause();
+    }
   }
 }
 

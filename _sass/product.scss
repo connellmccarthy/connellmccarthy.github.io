@@ -285,8 +285,7 @@
         color: $color-white;
       }
     }
-    &:focus + label,
-    &:active + label {
+    &:focus-visible + label {
       outline: 2px solid lighten($color-blue, 30);
     }
   }

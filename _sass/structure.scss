@@ -497,6 +497,16 @@ i.fa-arrow-right.external {
     font-weight: 500;
     margin: 0 0 0.4em;
   }
+
+  &.rounded {
+    border-radius: 50px;
+    .thumbnail {
+      border-radius: 100%;
+    }
+    .arrow {
+      padding-right: 0.4em;
+    }
+  }
 }
 span.badge {
   background: lighten($color-blue, 45);

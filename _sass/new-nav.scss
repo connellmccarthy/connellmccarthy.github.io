@@ -118,7 +118,7 @@ $nav-animate: 0.4s cubic-bezier(0.33, 1, 0.68, 1);
 
   &__static {
     display: grid;
-    grid-template-columns: 1fr 65% 1fr;
+    grid-template-columns: 1fr 50% 1fr;
     align-items: center;
 
     .logo {

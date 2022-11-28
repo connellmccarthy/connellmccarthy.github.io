@@ -1,0 +1,17 @@
+links:
+- title: Meet POS Go
+  article: "pos-go"
+- title: COVEO - wanna get to know you
+  description: My latest COVEO single is now available worldwide.
+  thumbnail: https://cdn.shopify.com/b/shopify-linkpop-prod/30itxqt4qas3gq9ld75scy473t44.jpg?width=192&height=192
+  url: https://distrokid.com/hyperfollow/coveo/wanna-get-to-know-you
+  external: true
+- title: New photography prints
+  description: I've added 14 new prints to my shop featuring photos from New York, BC, Québec, and rural Ottawa.
+  icon: sparkles
+  url: /prints/collections/new
+- title: A letter to my future wife
+  description: I made a short film for my fiancée during my proposal.
+  icon: clapperboard-play
+  url: https://www.youtube.com/watch?v=MLGeia4YIoM&ab_channel=ConnellMcCarthy
+  external: true

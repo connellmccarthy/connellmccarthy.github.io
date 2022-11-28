@@ -5,9 +5,9 @@ main:
     icon: home
     url: /
   - title: What's new
-    slug: whats-new
+    slug: new
     icon: sparkles
-    url: /new
+    url: /new/
   - title: Writing
     slug: article
     icon: book
@@ -19,15 +19,15 @@ main:
     - title: Overview
       url: /prints/
     - title: Browse all products
-      url: /prints/collections/all
+      url: /prints/collections/all/
     - title: Latest additions
       badge: New
       badge_color: blue
-      url: /prints/collections/new
+      url: /prints/collections/new/
     - title: Shop by collection
       links: :collections
     - title: Environmental Impact Promise
-      url: /prints/pages/environmental-impact-promise
+      url: /prints/pages/environmental-impact-promise/
 footer:
   - title: Changelog
     url: /changelog/

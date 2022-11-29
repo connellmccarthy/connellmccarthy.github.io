@@ -1,10 +1,10 @@
 announcement:
   display: false
-  icon: sparkles
-  title: New music
-  description: My latest COVEO single is now available
-  url: http://coveomusic.com/wanna-get-to-know-you?ref=connellmccarthy.com
-  external: true
+  icon: book
+  title: New article
+  description: Meet POS Go
+  url: /article/pos-go
+  external: false
 homepage:
   hero:
     skills:

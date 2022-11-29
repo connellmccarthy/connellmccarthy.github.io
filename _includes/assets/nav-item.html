@@ -1,5 +1,5 @@
 {% unless include.link.links %}
-  <a href="{{ include.link.url }}" class="btn nav__item btn__plain menu-trigger {% if page.url == include.link.url %} active{% endif %}" id="nav-{{ include.link.title | slugify }}">
+  <a href="{{ include.link.url }}" data-level="{{ include.level }}" class="btn nav__item btn__plain menu-trigger {% if page.url == include.link.url %} active{% endif %}" id="nav-{{ include.link.title | slugify }}">
     {% if include.link.icon %}
       <i class="far fa-{{include.link.icon}}"></i> 
     {% endif %}

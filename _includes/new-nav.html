@@ -1,4 +1,7 @@
-<nav class="new-nav">
+{% if site.data.content.announcement.display %}
+  <div class="announcement-margin-top"></div>
+{% endif %}
+<nav class="new-nav {% if site.data.content.announcement.display %}announcement{% endif %}">
   {% if site.data.content.announcement.display %}
     <a href="{{ site.data.content.announcement.url }}" class="new-nav__announcement" {% if site.data.content.announcement.external %}target="_blank"{% endif %}>
       <div class="details">
@@ -14,7 +17,7 @@
   {% endif %}
   <div class="new-nav__static">
     <button class="btn btn__plain menu-trigger">Menu</button>
-    <a class="logo btn menu-logo" href="/">
+    <a class="logo btn menu-logo" data-level="1" href="/">
       {% include assets/logo.html %}
     </a>
     <button class="btn btn__plain cart-trigger">Cart <div class="notif"></div></button>
@@ -23,7 +26,7 @@
     <ul class="new-nav__items nav_main" id="nav_main">
       {% for link in site.data.linklists.main.links %}
         <li style="--transition-delay: {{ forloop.index | times: 0.05 }}s">
-          {% include assets/nav-item.html link=link parent='nav_main' %}
+          {% include assets/nav-item.html link=link parent='nav_main' level=1 %}
         </li>
       {% endfor %}
     </ul>
@@ -36,13 +39,13 @@
             <p class="muted">{{ link.title }}</p>
           </li>
           {% if link.links contains ':' %}
-            {% include assets/nav-collections/{{ link.links | remove: ':' }}.html %}
+            {% include assets/nav-collections/{{ link.links | remove: ':' }}.html level=2 %}
           {% else %}
             {% for child in link.links %}
               <li style="--transition-delay: {{ forloop.index | times: 0.05 }}s">
                 {% assign child_parent = link.title | slugify %}
                 {% assign child_parent = child_parent | prepend: 'subnav_' %}
-                {% include assets/nav-item.html link=child parent=child_parent %}
+                {% include assets/nav-item.html link=child parent=child_parent level=2 %}
               </li>
             {% endfor %}
           {% endif %}
@@ -57,13 +60,13 @@
                 <p class="muted">{{ child.title }}</p>
               </li>
               {% if child.links contains ':' %}
-                {% include assets/nav-collections/{{ child.links | remove: ':' }}.html %}
+                {% include assets/nav-collections/{{ child.links | remove: ':' }}.html level=3 %}
               {% else %}
                 {% for grandchild in child.links %}
                   <li style="--transition-delay: {{ forloop.index | times: 0.05 }}s">
                     {% assign grandchild_parent = child.title | slugify %}
                     {% assign grandchild_parent = grandchild_parent | prepend: 'subnav_' %}
-                    {% include assets/nav-item.html link=grandchild parent=grandchild_parent %}
+                    {% include assets/nav-item.html link=grandchild parent=grandchild_parent level=3 %}
                   </li>
                 {% endfor %}
               {% endif %}

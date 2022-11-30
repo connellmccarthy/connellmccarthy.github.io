@@ -26,6 +26,10 @@ $nav-animate: 0.4s cubic-bezier(0.33, 1, 0.68, 1);
   -webkit-backdrop-filter: blur(10px);
   border-radius: $border-radius-large;
 
+  @media screen and (max-width: $break-mobile) {
+    max-width: unset;
+  }
+
   &.announcement {
     max-width: 480px;
     max-height: 95px;

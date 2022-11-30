@@ -9,25 +9,27 @@
       {% include new-nav.html %}
       <div class="crop">
         <main id="swup" class="transition-scale" aria-live="polite">
-          <div class="product__hero">
-            <div class="product-info" data-aos="fade">
-              <div class="product-intro">
-                <h1 class="title">{{ page.title }}</h1>
-                <p class="muted price">Starting from ${{ page.variants[0].price | remove: '.00' }} CAD</p>
+          <div class="product__intro">
+            <div class="product__hero">
+              <div class="product-info" data-aos="fade">
+                <div class="product-intro">
+                  <h1 class="title">{{ page.title }}</h1>
+                  <p class="muted price">Starting from ${{ page.variants[0].price | remove: '.00' }} CAD</p>
+                </div>
+                <div class="product-description" data-aos="fade">
+                  {{ page.body_html }}
+                </div>
               </div>
-              <div class="product-description" data-aos="fade">
-                {{ page.body_html }}
+              <div class="product-feature-info">
+                {% include shop/product-features.html %}
+                <button id="buying_options" data-aos="fade" class="btn btn__dark btn__round btn__padding-large">
+                  Buying options
+                </button>
               </div>
             </div>
-            <div class="product-feature-info">
-              {% include shop/product-features.html %}
-              <button id="buying_options" data-aos="fade" class="btn btn__dark btn__round btn__padding-large">
-                Buying options
-              </button>
+            <div class="image-feature {% if page.template_suffix == 'dark' %}dark{% endif %}">
+              <img data-aos="fade" src="{{ page.images[3].src }}">
             </div>
-          </div>
-          <div class="image-feature {% if page.template_suffix == 'dark' %}dark{% endif %}">
-            <img data-aos="fade" src="{{ page.images[3].src }}">
           </div>
           <div class="wrapper">
             {% include shop/product-form.html %}

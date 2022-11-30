@@ -1,3 +1,10 @@
+.product__intro {
+  display: flex;
+  flex-direction: column;
+  @media screen and (max-width: $break-mobile) {
+    flex-direction: column-reverse;
+  }
+}
 .product__hero {
   display: flex;
   align-items: flex-end;
@@ -14,7 +21,7 @@
   @media screen and (max-width: $break-mobile) {
     flex-direction: column;
     padding: 0 ($gutter / 3);
-    margin: 8em auto 0;
+    margin: 1em auto 8em;
     gap: 2em;
   }
 
@@ -74,10 +81,15 @@
       width: auto;
 
       @media screen and (max-width: $break-mobile) {
-        max-width: 85%;
+        max-width: 65%;
         object-fit: contain;
       }
     }
+  }
+
+  @media screen and (max-width: $break-mobile) {
+    margin: 0;
+    height: 60vh;
   }
 }
 .product-features {

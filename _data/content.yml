@@ -1,36 +1,22 @@
 announcement:
-  display: true
-  title: NEW MUSIC &#8212; wanna get to know you &#8212; OUT NOW
-  url: http://coveomusic.com/wanna-get-to-know-you?ref=connellmccarthy.com
-  external: true
-menus:
-  main:
-  - title: Info
-    slug: info
-    icon: home
-    url: /
-  - title: Writing
-    slug: article
-    icon: book
-    url: /article/
-  - title: Prints
-    slug: prints
-    icon: camera-retro
-    url: /prints/
-  footer:
-  - title: Changelog
-    url: /changelog/
-  - title: Report an issue
-    url: https://github.com/connellmccarthy/connellmccarthy.github.io/issues/new
-  - title: Environmental Impact Promise
-    url: /prints/pages/environmental-impact-promise
-  - title: Terms and Conditions
-    url: /legal/terms
-  - title: Privacy Policy
-    url: /legal/privacy
-  - title: Returns
-    url: /legal/returns
+  display: false
+  icon: book
+  title: New article
+  description: Meet POS Go
+  url: /article/pos-go
+  external: false
 homepage:
+  hero:
+    skills:
+    - title: design
+    - title: 3D rendering
+    - title: creative direction
+    - title: development
+    - title: photography
+    - title: videography
+    - title: motion design
+    - title: composing
+    - title: music production
   showreel:
     title: 2022 Showreel
   building:
@@ -62,6 +48,32 @@ homepage:
       external: true
   articles:
     title: Writing
+  experience:
+    title: Experience
+    work:
+    - company: Shopify
+      roles:
+      - title: Staff Designer
+        date: Current
+      - title: Senior Designer
+        date: Jan 2019 - Sep 2022
+      - title: Employer Brand Designer
+        date: Mar 2018 - Jan 2019
+    - company: Monstercat
+      roles:
+      - title: Head of Design
+        date: Sep 2015 - Mar 2018
+      - title: Designer
+        date: Jan 2013 - Sep 2015
+    - company: Track Submit
+      roles:
+      - title: Co-founder
+        date: Nov 2013 - Sep 2017
+  location:
+    title: Location
+    content: I work remotely from my home and the occasional coffee shop in Ottawa, Ontario.
+  contact:
+    title: Contact
 socials:
 - name: Dribbble
   icon: dribbble

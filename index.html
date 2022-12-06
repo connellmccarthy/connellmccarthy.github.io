@@ -1,107 +1,70 @@
 ---
 layout: default
 title: Canadian Creative
+cta_heading: Stay connected
+slug: index
 ---
 
 <h1 class="visually-hidden">{{ site.title }}</h1>
 
-<div class="section hero">
-  <div class="wrapper condensed">
-    <a href="/prints/collections/new" class="btn new-prints">
-      <div class="contents">
-        <span class="headline">
-          <i class="far fa-sparkles" aria-hidden="true"></i> New prints
-        </span>
-        <div class="divider"></div>
-        <span class="muted">
-          Browse the new additions
-        </span>
-      </div>
-    </a>
+{% include index/hero.html %}
 
-    <p>I'm an all-encompassing<sup><a href="#all-encompassing" data-no-swup="true">[1]</a></sup> <span class="serif">creative</span> with a passion for finding the blend between <span class="serif">aesthetic</span> and <span class="serif">functionality</span>. I work remotely from Ottawa, Ontario.</p>
+{% include index/showreel.html %}
 
-    <p>I currently work on full scale go-to-market campaigns for the Retail team at <a href="https://shopify.com/?ref=connellmccarthy.com" target="_blank" rel="noopener">Shopify</a><sup><a href="#shopify" data-no-swup="true">[2]</a></sup>. Prior to that, I led the design department at the new-age record label <a href="https://monstercat.com/?ref=connellmccarthy.com" target="_blank" rel="noopener">Monstercat</a><sup><a href="#monstercat" data-no-swup="true">[3]</a></sup>.</p>
+{% include index/about.html %}
 
-    <ol class="footnotes">
-      <li><a id="all-encompassing"></a>Represents a wide array of skills including design, 3D rendering, development, photography, video editing, motion design, composing, and music production.</li>
-      <li><a id="shopify"></a>March 2018 - Present</li>
-      <li><a id="monstercat"></a>January 2013 - March 2018</li>
-    </ol>
+<div class="section" data-aos="fade">
+  <div class="wrapper condensed chapter">
+    <div class="chapter__title">
+      <h3>{{ site.data.content.homepage.building.title }}</h3>
+    </div>
+    <div class="chapter__content">
+      {% for project in site.data.content.homepage.building.items %}
+        {% include card.html
+          style = 'project'
+          title = project.title
+          description = project.description
+          url = project.url
+          arrow = true
+          external = project.external
+        %}
+      {% endfor %}
+    </div>
   </div>
 </div>
 
-<div class="section grey border-top-bottom">
-  <div class="wrapper video_wrapper">
-    <div class="video__container">
-      <button id="showreel" class="btn btn__circle btn__marketing btn__white btn__scale color__blue video-controller">
-        <span id="button-text" class="visually-hidden">Play video</span>
-        <i id="button-icon" class="fas fa-play" aria-hidden="true"></i>
-      </button>
-      <video id="showreel" class="border-radius__large" poster="/assets/img/showreel_2022_2.jpg" muted playsinline>
-        <source src="/assets/img/showreel_2022_2.mp4" type="video/mp4">
-      </video>
-    </div>
-    <p class="muted center mt-5">{{ site.data.content.homepage.showreel.title }}</p>
-  </div>
-</div>
-
-<div class="section">
+<div class="section" data-aos="fade">
   <div class="wrapper condensed">
-    <div class="projects">
-      <div class="projects__title">
-        <p>{{ site.data.content.homepage.building.title }}</p>
+    <div class="chapter">
+      <div class="chapter__title">
+        <h3>{{ site.data.content.homepage.articles.title }}</h3>
       </div>
-      <div class="projects__items">
-        {% for project in site.data.content.homepage.building.items %}
-          {% include card.html
-            style = 'project'
-            title = project.title
-            description = project.description
-            url = project.url
-            arrow = true
-            external = project.external
-          %}
-        {% endfor %}
-      </div>
-    </div>
-    <div class="projects">
-      <div class="projects__title">
-        <p>{{ site.data.content.homepage.projects.title }}</p>
-      </div>
-      <div class="projects__items">
-        {% for project in site.data.content.homepage.projects.items %}
-          {% include card.html
-            style = 'project'
-            title = project.title
-            description = project.description
-            badge = project.badge
-            arrow = true
-            url = project.url
-            external = project.external
-          %}
-        {% endfor %}
-      </div>
-    </div>
-    <div class="projects">
-      <div class="projects__title">
-        <p>{{ site.data.content.homepage.articles.title }}</p>
-      </div>
-      <div class="projects__items">
+      <div class="chapter__content">
         {% assign articles = site.article | reverse %}
-        {% for project in articles %}
-          {% assign year  = project.date | date: '%Y' %}
-          {% include card.html
-            style = 'project'
-            title = project.title
-            badge = year
-            badge_color = 'grey'
-            description = project.description
-            arrow = false
-            url = project.url
-          %}
-        {% endfor %}
-      </div>
+          {% for project in articles limit:3 %}
+            {% assign year  = project.date | date: '%Y' %}
+            {% include card.html
+              style = 'project'
+              title = project.title
+              badge = year
+              badge_color = 'grey'
+              description = project.description
+              arrow = false
+              url = project.url
+            %}
+          {% endfor %}
+        </div>
     </div>
+    <a href="/article" class="btn btn__basic center mt-8">Browse all articles</a>
   </div>
 </div>
+
+{% include index/features.html %}
+
+{% include index/experience.html %}
+
+{% include index/location.html %}
+
+{% include index/contact.html %}
+
+{% include newsletter.html %}

@@ -1,0 +1,5 @@
+{% for collection in site.collections %}
+  {% if collection.collection_list %}
+    {% include assets/nav-collections/nav-collection-item.html index=forloop.index link=collection level=include.level %}
+  {% endif %}
+{% endfor %}

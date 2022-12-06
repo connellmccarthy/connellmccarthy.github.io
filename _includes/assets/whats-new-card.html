@@ -1,0 +1,19 @@
+<a class="card rounded" data-aos="fade" href="{{ include.link.url }}" {% if include.link.external %}target="_blank" rel="noopener nofollow"{% endif %}>
+  <div class="details">
+    <div class="thumbnail thumbnail__small {% if include.link.icon %}icon{% endif %}">
+      {% if include.link.icon %}
+        <i class="far fa-{{ include.link.icon }}" aria-hidden="true"></i>
+      {% else if include.link.thumbnail %}
+        <img src="{% if include.article %}{{ site.image_path | append: include.link.slug }}/{% endif %}{{ include.link.thumbnail }}">
+      {% endif %}
+    </div>
+    <div class="info">
+      <p class="title m-0 mb-1">{{ include.link.title }}</p>
+      <p class="muted m-0">{{ include.link.description }}</p>
+    </div>
+  </div>
+  <div class="arrow">
+    <span class="visually-hidden">Checkout {{ network.name }}</span>
+    <i class="far fa-arrow-right {% if include.link.external %}external{% endif %}" aria-hidden="true"></i>
+  </div>
+</a>

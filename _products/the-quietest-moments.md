@@ -13,7 +13,7 @@ vendor: Connell McCarthy
 product_type: Posters, Prints, & Visual Artwork
 created_at: 2019-03-17T13:30:37-04:00
 handle: the-quietest-moments
-updated_at: 2022-06-27T13:52:07-04:00
+updated_at: 2022-11-23T20:04:37-05:00
 published_at: 2018-08-22T19:38:24-04:00
 template_suffix: ""
 status: active
@@ -508,6 +508,17 @@ images:
     src: https://cdn.shopify.com/s/files/1/1624/2355/products/PAR_02_0001_3ec30f4e-f824-4b09-9f97-fbbfe6231c5f.png?v=1620177404
     variant_ids: []
     admin_graphql_api_id: gid://shopify/ProductImage/28230405521470
+  - id: 29846622044222
+    product_id: 2062558101566
+    position: 4
+    created_at: 2022-11-23T20:04:37-05:00
+    updated_at: 2022-11-23T20:04:37-05:00
+    alt: null
+    width: 1306
+    height: 1958
+    src: https://cdn.shopify.com/s/files/1/1624/2355/products/TheQuietestMoments_Colour.jpg?v=1669251877
+    variant_ids: []
+    admin_graphql_api_id: gid://shopify/ProductImage/29846622044222
 image:
   id: 6301832347710
   product_id: 2062558101566

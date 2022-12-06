@@ -13,7 +13,7 @@ vendor: Connell McCarthy
 product_type: Posters, Prints, & Visual Artwork
 created_at: 2019-03-17T13:26:23-04:00
 handle: the-lions
-updated_at: 2022-06-27T13:52:07-04:00
+updated_at: 2022-11-23T20:04:29-05:00
 published_at: 2018-08-22T19:38:24-04:00
 template_suffix: ""
 status: active
@@ -508,6 +508,17 @@ images:
     src: https://cdn.shopify.com/s/files/1/1624/2355/products/PAR_02_0001_5d707523-79e3-457d-9d66-ecc4cee226bf.png?v=1620177258
     variant_ids: []
     admin_graphql_api_id: gid://shopify/ProductImage/28230397198398
+  - id: 29846621356094
+    product_id: 2062549549118
+    position: 4
+    created_at: 2022-11-23T20:04:29-05:00
+    updated_at: 2022-11-23T20:04:29-05:00
+    alt: null
+    width: 1958
+    height: 1306
+    src: https://cdn.shopify.com/s/files/1/1624/2355/products/TheLions_Colour.jpg?v=1669251869
+    variant_ids: []
+    admin_graphql_api_id: gid://shopify/ProductImage/29846621356094
 image:
   id: 6301808754750
   product_id: 2062549549118

@@ -1,0 +1,19 @@
+{% unless include.link.links %}
+  <a href="{{ include.link.url }}" data-level="{{ include.level }}" class="btn nav__item btn__plain menu-trigger {% if page.url == include.link.url %} active{% endif %}" id="nav-{{ include.link.title | slugify }}">
+    {% if include.link.icon %}
+      <i class="far fa-{{include.link.icon}}"></i> 
+    {% endif %}
+    {{ include.link.title }} 
+    {% if include.link.badge %}
+      <span class="badge {{ include.link.badge_color }}">{{ include.link.badge }}</span>
+    {% endif %}
+  </a>
+{% else %}
+  <button data-parent="{{ include.parent }}" data-target="subnav_{{ include.link.title | slugify }}" class="btn nav__item btn__plain subnav-trigger {% if page.url == include.link.url %} active{% elsif include.link.url != '/' and page.url contains include.link.url %} active{% endif %}" id="nav-{{ include.link.title | slugify }}"><span class="info">
+    {% if include.link.icon %}
+      <i class="far fa-{{include.link.icon}}"></i> 
+    {% endif %}
+    {{ include.link.title }}</span> 
+    <i class="far fa-chevron-right"></i>
+  </button>
+{% endunless %}

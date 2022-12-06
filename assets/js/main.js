@@ -1,5 +1,5 @@
 const swup = new Swup({
-  containers: ["#swup","#swup-shop-nav", "#swup-article-info"],
+  containers: ["#swup"],
   plugins: [new SwupGtagPlugin({
     gaMeasurementId: "G-GVY559Y564"
   }), new SwupScriptsPlugin({
@@ -9,27 +9,65 @@ const swup = new Swup({
   })]
 });
 init();
-
 swup.on('contentReplaced', init);
 
-var collapsing = false;
+var audio_playing;
 
 function init() {
-  window.gtag("config", "G-GVY559Y564", {
-    page_title: document.title,
-    page_path: window.location.pathname + window.location.search
-  });
-
+  document.removeEventListener('scroll', appreciationHandler);
+  if (environment == 'production') {
+    window.gtag("config", "G-GVY559Y564", {
+      page_title: document.title,
+      page_path: window.location.pathname + window.location.search
+    });
+  }
   window.scrollTo(0,0);
+  AOS.init();
 
   const like_button = document.querySelector('.like_button');
+  const like_info = document.querySelector('.like_info');
   const article_info = document.querySelector('.article-info');
   const back_button = document.querySelector('button#back');
 
-  var audio_playing;
   
   if (confetti.isRunning()) {
     confetti.stop()
+  }
+
+  //Hero details handler
+  if (document.getElementById('details-trigger')) {
+    let trigger = document.getElementById('details-trigger');
+    let details = document.getElementById('details');
+  
+    trigger.addEventListener('mouseenter', () => {
+      toggleDetails();
+    });
+    trigger.addEventListener('mouseleave', () => {
+      toggleDetails();
+    });
+  
+    function toggleDetails() {
+      details.classList.toggle('active');
+    }
+  }
+
+  //Index featured images
+  if (document.getElementById('index-features')) {
+    let features = document.getElementById('index-features');
+    let image1 = document.getElementById('image-1');
+    let image2 = document.getElementById('image-2');
+    let image3 = document.getElementById('image-3');
+    let image4 = document.getElementById('image-4');
+    let image5 = document.getElementById('image-5');
+    let scrolloffset = 100;
+
+    window.addEventListener('scroll', (e) => {
+      image1.style.transform = `translateY(${((features.offsetTop / window.scrollY) * 130) - scrolloffset}%)`;
+      image2.style.transform = `translateY(${((features.offsetTop / window.scrollY) * 110) - scrolloffset}%)`;
+      image3.style.transform = `translateY(${((features.offsetTop / window.scrollY) * 160) - scrolloffset}%)`;
+      image4.style.transform = `translateY(${((features.offsetTop / window.scrollY) * 120) - scrolloffset}%)`;
+      image5.style.transform = `translateY(${((features.offsetTop / window.scrollY) * 120) - scrolloffset}%)`;
+    });
   }
 
   if (document.querySelector('button.video-controller')) {
@@ -44,28 +82,17 @@ function init() {
           video.setAttribute('state', 'paused');
           button_icon.classList.replace('fa-pause', 'fa-play');
           button_text.innerText = 'Play video';
-        } else if (video.getAttribute('state') == 'replay') {
-          video.play();
-          video.setAttribute('state', 'playing');
-          button_icon.classList.replace('fa-redo', 'fa-pause');
-          button_text.innerText = 'Pause video';
         } else {
           video.play();
           video.setAttribute('state', 'playing');
           button_icon.classList.replace('fa-play', 'fa-pause');
           button_text.innerText = 'Pause video';
         }
-        if (video && video.getAttribute('id') == 'showreel') {
-          video.addEventListener('ended', () => {
-            video.setAttribute('state', 'replay');
-            button_icon.classList.remove('fa-pause', 'fa-play');
-            button_icon.classList.add('fa-redo');
-            button_text.innerText = 'Replay video';
-          });
-        }
       });
     });
   }
+
+  //Appreciation handler
   if (document.querySelector('.count')) {
     const slug = window.location.href.split('/')[4];
     let xhttp = new XMLHttpRequest();
@@ -79,7 +106,8 @@ function init() {
       });
     }
   }
-  if (like_button) {
+  if (like_button || like_info) {
+    document.addEventListener('scroll', appreciationHandler);
     const slug = window.location.href.split('/')[4];
     if (window.localStorage.getItem(slug)) {
       document.querySelectorAll('.like_button_icon').forEach((el) => {
@@ -310,12 +338,7 @@ function init() {
 
   document.querySelectorAll('a').forEach((el) => {
     el.addEventListener('click', () => {
-      if (el.getAttribute('target') == null && el.getAttribute('data-no-swup') == null) {
-        switchPage(el);
-        if (audio_playing) {
-          audio_playing.pause();
-        }
-      }
+      linkHandler(el);
     });
   });
 
@@ -361,16 +384,46 @@ function init() {
       });
     });
   }
+
+  //Tree count
+  if (document.getElementById('treecount')) {
+    let pledgeTrees = new XMLHttpRequest();
+    let key = '<h1 class="h3 widget-title">$';
+    pledgeTrees.open( "GET", 'https://www.pledge.to/widgets/impact/em34jezzqn0exO3LPY92Ng', true);
+    pledgeTrees.send();
+    pledgeTrees.onload = () => {
+      let pos1 = pledgeTrees.response.indexOf(key) + key.length;
+      let pos2 = pledgeTrees.response.indexOf(`</h1>`);
+      let result = pledgeTrees.response.substring(pos1, pos2);
+      document.getElementById('treecount').innerText = result;
+      document.getElementById('treecount').classList.remove('loading');
+    }
+  }
+}
+
+function appreciationHandler() {
+  if (window.scrollY > (document.body.clientHeight / 4) && !document.querySelector('.like_button').classList.contains('liked')) {
+    document.querySelector('.appreciation_info').classList.add('active');
+  } else {
+    document.querySelector('.appreciation_info').classList.remove('active');
+  }
+}
+
+function linkHandler(el) {
+  if (el.getAttribute('target') == null && el.getAttribute('data-no-swup') == null) {
+    switchPage(el);
+    if (audio_playing) {
+      audio_playing.pause();
+    }
+  }
 }
 
 function switchPage(url) {
   removeActiveMenuItem();
-  if (url.getAttribute('href').includes('/article')) {
-    document.getElementById('nav-article').classList.add('active');
-  } else if (url.getAttribute('href') == '/') {
-    document.getElementById('nav-info').classList.add('active');
-  } else if (url.getAttribute('href').includes('/prints')) {
-    document.getElementById('nav-prints').classList.add('active');
+  if (document.querySelectorAll(`.nav__item[href="${ url.getAttribute('href') }"]`)) {
+    document.querySelectorAll(`.nav__item[href="${ url.getAttribute('href') }"]`).forEach((x) => {
+      x.classList.add('active');
+    });
   }
 }
 

@@ -13,7 +13,7 @@ vendor: Connell McCarthy
 product_type: Posters, Prints, & Visual Artwork
 created_at: 2019-03-17T13:32:30-04:00
 handle: thompson-river
-updated_at: 2022-06-27T13:52:08-04:00
+updated_at: 2022-11-23T20:05:08-05:00
 published_at: 2018-08-22T19:38:24-04:00
 template_suffix: ""
 status: active
@@ -508,6 +508,17 @@ images:
     src: https://cdn.shopify.com/s/files/1/1624/2355/products/PAR_02_0001_ac168676-f543-4032-9f33-94b06d8e3000.png?v=1620178034
     variant_ids: []
     admin_graphql_api_id: gid://shopify/ProductImage/28230433177662
+  - id: 29846623289406
+    product_id: 2062562492478
+    position: 4
+    created_at: 2022-11-23T20:05:07-05:00
+    updated_at: 2022-11-23T20:05:07-05:00
+    alt: null
+    width: 1306
+    height: 1958
+    src: https://cdn.shopify.com/s/files/1/1624/2355/products/ThompsonRiver_Colour.jpg?v=1669251907
+    variant_ids: []
+    admin_graphql_api_id: gid://shopify/ProductImage/29846623289406
 image:
   id: 6301843849278
   product_id: 2062562492478

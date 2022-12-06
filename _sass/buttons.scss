@@ -37,12 +37,11 @@ $sparkle-radius: $sparkle-diameter * 0.5;
   }
 }
 
-a:not(.btn, .card, #back-link, .product a, sup a) {
+a:not(.btn, .card, #back-link, .product a, sup a,.new-nav__announcement) {
   font-weight: 500;
   color: $color-ink-dark;
   text-decoration: none;
   position: relative;
-  white-space: nowrap;
   transition: color 0.3s ease;
   
   &:after {
@@ -91,6 +90,13 @@ button.btn {
     }
   }
 
+  &.center {
+    width: fit-content;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   &__link {
     background: transparent;
     padding: 0;
@@ -108,10 +114,10 @@ button.btn {
   }
 
   &__plain {
-    background: $color-grey;
-    padding: 0.8em;
+    padding: 0.6em;
+    background: transparent;
     &:hover {
-      background: darken($color-grey, 4);
+      background: rgba(0,0,0,0.05);
     }
   }
   
@@ -161,6 +167,12 @@ button.btn {
     align-items: center;
     font-size: 1em;
     padding: 0;
+
+    &.large {
+      height: 65px;
+      width: 65px;
+      font-size: 1.6em;
+    }
     i {
       position: relative;
       top: 1px;
@@ -175,6 +187,9 @@ button.btn {
     transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     &:hover {
       transform: scale(1.12);
+    }
+    &:active {
+      transform: scale(1);
     }
   }
 
@@ -232,6 +247,42 @@ button.btn {
   }
 
   &.like_button {
+    &#like_button_sticky {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      i {
+        transition: 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        transform: translateY(40%) scale(1);
+      }
+      .count {
+        opacity: 0;
+        transform: translateY(-100%);
+        transition: 0.4s ease;
+        font-size: 0.65em;
+        margin-top: 0.1em;
+      }
+      &.liked {
+        i {
+          transform: translateY(0) scale(1);
+        }
+        .count {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      &:hover:not(.liked) {
+        i {
+          transform: translateY(40%) scale(1.2);
+        }
+      }
+      &:active:not(.liked) {
+        i {
+          transform: translateY(40%) scale(0.8);
+        }
+      }
+    }
     &.processing {
       color: transparent;
       i {

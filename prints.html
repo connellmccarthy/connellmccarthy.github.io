@@ -18,7 +18,7 @@ slug: shop
 
 <div class="section shop-section shop-hero">
   <div class="wrapper center">
-    <div class="intro-text">
+    <div class="intro-text" data-aos="fade">
       <h1 class="m-0">{{ site.data.content.shop.headline }}</h1>
       <p class="m-0 mt-6 muted">{{ site.data.content.shop.description }}</p>
       <div class="flex a-center center mt-8">
@@ -26,21 +26,21 @@ slug: shop
         <a class="btn btn__link" href="{{ site.data.content.shop.cta.url }}">{{ site.data.content.shop.cta.text }} <i class="far fa-arrow-right ml-1" aria-hidden="true"></i></a>
       </div>
     </div>
-    <div class="prints-at-home">
+    <div class="prints-at-home" data-aos="fade-up">
       {% include shop/product-tag.html title='Blackcomb Boardwalk' %}
       {% include shop/product-tag.html title='New York' %}
       {% include shop/product-tag.html title='Lighthouse Shore' %}
-      <img class="border-radius__large" src="/assets/img/prints/prints-at-home.jpg">
+      <img class="border-radius__xlarge" src="/assets/img/prints/prints-at-home.jpg">
     </div>
   </div>
 </div>
 <div class="wrapper">
   <div class="section shop-section image-left flex a-center">
-    <div class="image">
+    <div class="image" data-aos="fade-up">
       {% include shop/product-tag.html title='Rise' %}
       <img class="border-radius__large" src="/assets/img/prints/index-environment.jpg" alt="Foggy Babel in a frame on a green wall.">
     </div>
-    <div class="content">
+    <div class="content" data-aos="fade">
       <h3>Photos of nature, helping nature</h3>
       <p>I've partnered with One Tree Planted to assist in global reforestation projects, so for every single print purchased, $10 will go directly to planting trees across the globe.</p>
       <a class="btn btn__link blue" href="/prints/pages/environmental-impact-promise">Read my environmental impact promise <i class="far fa-arrow-right ml-1" aria-hidden="true"></i></a>
@@ -48,19 +48,19 @@ slug: shop
   </div>
 
   <div class="section shop-section image-right flex a-center">
-    <div class="content">
+    <div class="content" data-aos="fade">
       <h3>Museum grade quality</h3>
       <p>All photos are printed through Giclée, meaning your print will never fade, or turn yellow. Printed on premium photographic paper with a satin lustre finish, brings out the intense colours and rich details.</p>
       <a class="btn btn__link blue" href="/prints/collections/all">Shop all products <i class="far fa-arrow-right ml-1" aria-hidden="true"></i></a>
     </div>
-    <div class="image">
+    <div class="image" data-aos="fade-up">
       {% include shop/product-tag.html title='Seymour Sunset' %}      
       <img class="border-radius__large" src="/assets/img/prints/index-quality.jpg" alt="Seymour Sunset in a frame on a wall in a gallery.">
     </div>
   </div>
 
   <div class="section shop-section full">
-    <div class="content">
+    <div class="content" data-aos="fade">
       <p class="m-0"><span class="badge"><i class="far fa-sparkles" aria-hidden="true"></i> New</span></p>
       <h3>Hot off the press</h3>
       <p>The latest additions featuring photographs from British Columbia, New York, Québec, and rural Ottawa.</p>
@@ -72,19 +72,19 @@ slug: shop
   </div>
 
   <div class="section shop-section full">
-    <div class="content">
+    <div class="content" data-aos="fade">
       <h3>Exclusively original</h3>
       <p>All photos were taken by me during my adventures from all across Canada, and the Pacific Northwest.</p>
     </div>
-    <img class="border-radius__large mt-10" src="/assets/img/prints/connell-brandywine.jpg" alt="Connell looking at a camera in front of a mountain valley view.">
+    <img data-aos="fade-up" class="border-radius__large mt-10" src="/assets/img/prints/connell-brandywine.jpg" alt="Connell looking at a camera in front of a mountain valley view.">
   </div>
 
   <div class="section shop-section image-left flex a-center">
-    <div class="image">
+    <div class="image" data-aos="fade-up">
       {% include shop/product-tag.html title='Time' %}
       <img class="border-radius__large" src="/assets/img/prints/abstract-desk.jpg" alt="Office desk with the two prints Time, and Days to Come, in frames on the wall.">
     </div>
-    <div class="content">
+    <div class="content" data-aos="fade">
       <h3>Abstract Series</h3>
       <p>After much request, the abstract art pieces I made for my home are now available for everyone.</p>
       <a class="btn btn__link blue" href="/prints/collections/abstract">Browse the collection <i class="far fa-arrow-right ml-1" aria-hidden="true"></i></a>
@@ -92,7 +92,7 @@ slug: shop
   </div>
   {% include shop/collection-list.html limit=3 tag='abstract' %}
   
-  <div class="section">
+  <div class="section" data-aos="fade">
     <h2>Shop by collection</h2>
     <div class="list">
       {% for collection in site.collections %}

@@ -1,0 +1,14 @@
+<div class="section hero" data-aos="fade">
+  <div class="wrapper condensed">
+    <img class="avatar" src="/assets/img/avatar.jpg">
+    <p>I'm an <span class="serif details-trigger" id="details-trigger">all-encompassing</span><sup>*</sup> creative with a passion for finding the blend between <span class="serif">aesthetic</span> and <span class="serif">functionality</span>.
+      <span class="details" id="details">
+        * represents a wide array of skills <br> including 
+        <span class="skills">
+          {% for skill in site.data.content.homepage.hero.skills %}
+            <span class="skill" style="--index: {{ forloop.index }}">{{ skill.title }}</span>
+          {% endfor %}
+        </span>
+      </span></p>
+  </div>
+</div>

@@ -94,7 +94,7 @@ h2.treecount {
     }
   }
 }
-.avatar {
+.avatar-depth {
   height: 100px;
   width: 100px;
   margin: 0 auto 20px;
@@ -111,9 +111,8 @@ h2.treecount {
 }
 .shop-section {
   margin: 10em 0;
-
+  
   &.shop-hero {
-    margin: 0;
     border: none;
     min-height: 70vh;
     display: flex;
@@ -316,7 +315,7 @@ h2.treecount {
       position: absolute;
       transition: 0.3s ease;
       opacity: 0;
-      top: 73%;
+      bottom: 7em;
       left: 50%;
       transform: translateY(-10px) translateX(-50%);
 
@@ -433,5 +432,57 @@ h2.treecount {
     pointer-events: all;
     opacity: 1;
     transform: scale(1) translate(-50%,-50%);
+  }
+}
+.collections-list {
+  display: flex;
+  gap: 6em;
+  margin: 10em auto 0;
+  justify-content: flex-start;
+  width: fit-content;
+  padding: 0 ($gutter / 3);
+
+  @media screen and (max-width: $break-tablet) {
+    gap: 2em;
+    margin: 8em auto 0;
+    .wrapper {
+      padding: 0;
+    }
+  }
+  @media screen and (max-width: $break-mobile) {
+    display: block;
+  }
+
+  .filter-collections {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 4em;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    height: fit-content;
+
+    @media screen and (max-width: $break-mobile) {
+      display: none;
+    }
+
+    a {
+      i {
+        margin-right: 0.2em;
+      }
+      &.active {
+        background: $color-black;
+        color: $color-white;
+      }
+      &:hover:not(.active) {
+        background: darken($color-grey, 3);
+      }
+     }
+  }
+  .products__section__header {
+    margin-bottom: 2em;
+    @media screen and (max-width: $break-mobile) {
+      text-align: center;
+    }
   }
 }

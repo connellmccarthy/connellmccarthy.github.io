@@ -7,21 +7,12 @@ description: "How we built the campaign for Shopify's most powerful, secure, and
 cta_heading: "Interested in seeing what I build next?"
 slug: "pos-go"
 thumbnail: pos-go-thumbnail.jpg
+thumbnail_video: true
 ---
 
 {% assign image_path = site.image_path | append: page.slug %}
 
 I had the opportunity to work on the go-to-market campaign for the latest Shopify product launch, [POS Go](https://www.shopify.com/pos/meet-pos-go?ref=connellmccarthy.com){: target="blank"} - the all-in-one mobile POS system built for seamless store checkouts.
-
-<div class="video__container">
-  <button id="pos-go-renders" class="btn btn__circle btn__marketing btn__white btn__scale color__blue video-controller">
-    <span id="button-text" class="visually-hidden">Pause video</span>
-    <i id="button-icon" class="fas fa-pause" aria-hidden="true"></i>
-  </button>
-  <video muted playsinline autoplay loop id="pos-go-renders" state="playing">
-    <source src="{{ image_path }}/pos-go-renders.mp4">
-  </video>
-</div>
 
 ## Creative direction
 

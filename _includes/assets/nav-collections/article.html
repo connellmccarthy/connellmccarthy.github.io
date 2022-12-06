@@ -1,0 +1,3 @@
+{% for article in site.article %}
+  {% include assets/nav-collections/nav-collection-item.html index=forloop.index link=article level=include.level %}
+{% endfor %}

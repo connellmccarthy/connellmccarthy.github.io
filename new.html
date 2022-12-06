@@ -1,0 +1,44 @@
+---
+layout: default
+title: What's new
+cta_heading: Stay connected
+slug: new
+---
+
+<div class="wrapper condensed margin-top">
+  <p class="center" data-aos="fade"><span class="badge blue">What's new</span></p>
+  <div class="section product-list mt-8">
+    {% for link in site.data.linktree.links %}
+      {% if link.article %}
+        {% for article in site.article %}
+          {% if article.slug == link.article %}
+            {% include assets/whats-new-card.html link=article article=true %}
+          {% endif %}
+        {% endfor %}
+      {% else %}
+        {% include assets/whats-new-card.html link=link %}
+      {% endif %}
+    {% endfor %}
+  </div>
+  
+  <div class="section">
+    {% include newsletter.html %}
+  </div>
+
+  <div class="section product-list">
+    {% for network in site.data.content.socials %}
+      <a class="card rounded" data-aos="fade" href="{{ network.url }}" target="_blank" rel="noopener nofollow">
+        <div class="details">
+          <div class="thumbnail thumbnail__small icon">
+            <i class="fab fa-{{ network.icon }}" aria-hidden="true"></i>
+          </div>
+          <p class="title m-0 mb-1">{{ network.name }}</p>
+        </div>
+        <div class="arrow">
+          <span class="visually-hidden">Follow me on {{ network.name }}</span>
+          <i class="far fa-arrow-right external" aria-hidden="true"></i>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</div>

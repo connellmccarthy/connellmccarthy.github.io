@@ -13,7 +13,7 @@ vendor: Connell McCarthy
 product_type: Posters, Prints, & Visual Artwork
 created_at: 2019-03-17T13:34:28-04:00
 handle: time-stood-still
-updated_at: 2022-06-27T13:52:08-04:00
+updated_at: 2022-11-23T20:05:20-05:00
 published_at: 2018-08-22T19:38:24-04:00
 template_suffix: ""
 status: active
@@ -508,6 +508,17 @@ images:
     src: https://cdn.shopify.com/s/files/1/1624/2355/products/PAR_02_0001_6d1a330d-c973-4e9e-a821-7e801bbc4536.png?v=1620178157
     variant_ids: []
     admin_graphql_api_id: gid://shopify/ProductImage/28230441205822
+  - id: 29846623649854
+    product_id: 2062566621246
+    position: 4
+    created_at: 2022-11-23T20:05:20-05:00
+    updated_at: 2022-11-23T20:05:20-05:00
+    alt: null
+    width: 944
+    height: 1426
+    src: https://cdn.shopify.com/s/files/1/1624/2355/products/TimeStoodStill_Colour.jpg?v=1669251920
+    variant_ids: []
+    admin_graphql_api_id: gid://shopify/ProductImage/29846623649854
 image:
   id: 6301857447998
   product_id: 2062566621246

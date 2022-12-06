@@ -13,7 +13,7 @@ vendor: Connell McCarthy
 product_type: Posters, Prints, & Visual Artwork
 created_at: 2018-10-13T21:06:58-04:00
 handle: walking-amongst-giants
-updated_at: 2022-06-27T13:52:05-04:00
+updated_at: 2022-11-23T20:06:11-05:00
 published_at: 2018-08-22T19:38:24-04:00
 template_suffix: ""
 status: active
@@ -508,6 +508,17 @@ images:
     src: https://cdn.shopify.com/s/files/1/1624/2355/products/PAR_02_0001_2739abdf-964e-4b24-9ff9-bb038d6f79c9.png?v=1620178541
     variant_ids: []
     admin_graphql_api_id: gid://shopify/ProductImage/28230458802238
+  - id: 29846627909694
+    product_id: 1491351765054
+    position: 4
+    created_at: 2022-11-23T20:06:11-05:00
+    updated_at: 2022-11-23T20:06:11-05:00
+    alt: null
+    width: 1971
+    height: 1306
+    src: https://cdn.shopify.com/s/files/1/1624/2355/products/WalkingAmongstGiants.jpg?v=1669251971
+    variant_ids: []
+    admin_graphql_api_id: gid://shopify/ProductImage/29846627909694
 image:
   id: 6203637268542
   product_id: 1491351765054

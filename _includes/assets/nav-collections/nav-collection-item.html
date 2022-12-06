@@ -1,0 +1,5 @@
+<li style="--transition-delay: {{ include.index | times: 0.05 }}s">
+  {% assign parent = include.link.title | slugify %}
+  {% assign parent = parent | prepend: 'subnav_' %}
+  {% include assets/nav-item.html link=include.link parent=parent level=include.level %}
+</li>

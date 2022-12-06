@@ -13,7 +13,7 @@ vendor: Connell McCarthy
 product_type: Posters, Prints, & Visual Artwork
 created_at: 2018-08-22T20:00:34-04:00
 handle: winter-lodge
-updated_at: 2022-06-27T13:52:00-04:00
+updated_at: 2022-11-23T20:06:45-05:00
 published_at: 2018-08-22T19:38:24-04:00
 template_suffix: ""
 status: active
@@ -508,6 +508,17 @@ images:
     src: https://cdn.shopify.com/s/files/1/1624/2355/products/PAR_02_0001_e7551ee2-1590-4579-adb3-7185625cac76.png?v=1620178993
     variant_ids: []
     admin_graphql_api_id: gid://shopify/ProductImage/28230489079870
+  - id: 29846629580862
+    product_id: 1419074404414
+    position: 4
+    created_at: 2022-11-23T20:06:45-05:00
+    updated_at: 2022-11-23T20:06:45-05:00
+    alt: null
+    width: 1826
+    height: 1210
+    src: https://cdn.shopify.com/s/files/1/1624/2355/products/WinterLodge.jpg?v=1669252005
+    variant_ids: []
+    admin_graphql_api_id: gid://shopify/ProductImage/29846629580862
 image:
   id: 6198890823742
   product_id: 1419074404414

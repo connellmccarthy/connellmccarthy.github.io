@@ -66,7 +66,7 @@ At the end of the day, designing a creative space is a very personal thing. Itâ€
     {% assign products = "6628430348350,6626197864510" %}
     {% include shop/select_products.html 
       product_ids = products 
-      compressed = true
+      compressed = false
     %}
   </div>
 </div>

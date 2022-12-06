@@ -8,6 +8,7 @@ twitter_username: connellmccarthy
 github_username:  connellmccarthy
 permalink: pretty
 image_path: /assets/articles/
+repository: connellmccarthy/connellmccarthy.github.io
 sass:
   sass_dir: _sass
   style: compressed
@@ -25,7 +26,3 @@ collections:
     output: true
     sort_by: title
     permalink: "/prints/:collection/:path"
-  sketches:
-    output: true
-    sort_by: date
-    permalink: "/:collection/:path"

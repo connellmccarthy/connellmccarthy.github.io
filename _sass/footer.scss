@@ -1,22 +1,9 @@
 .footer {
   width: 100%;
-  background: $color-black;
-  color: $color-white;
   text-align: center;
   margin: 0;
   padding: 0;
   position: relative;
-
-  &:before {
-    content: '';
-    height: $border-radius-large;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: $color-white;
-    border-radius: 0 0 $border-radius-large $border-radius-large;
-  }
   &__contents {
     width: 100%;
     padding: 4em 0 2em;
@@ -35,27 +22,21 @@
     }
   }
   a {
-    color: darken($color-white, 25);
+    color: $color-ink;
     &:hover {
-      color: lighten($color-blue, 15);
+      color: $color-blue;
     }
-  }
-  .muted {
-    color: darken($color-white, 25);
-  }
-  svg path {
-    fill: $color-white;
   }
   .sitemap {
     margin: auto;
-    padding: 0 4em;
+    padding: 0 8em;
     @media screen and (max-width: $break-mobile) {
       padding: 0;
     }
   }
   .copyright {
     font-size: 0.8em;
-    color: darken($color-white, 25);
+    color: $color-ink-muted;
     margin: 0;
     padding: 0 1em 4em;
   }

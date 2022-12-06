@@ -6,34 +6,51 @@
   <body>
     <div class="container">
       {% assign product = page %}
-      {% include navigation.html %}
+      {% include new-nav.html %}
       <div class="crop">
         <main id="swup" class="transition-scale" aria-live="polite">
-          <div class="product-header {% if page.template_suffix == 'dark' %}dark{% endif %}">
-            <img src="{{ page.images[2].src }}">
-            <div class="wrapper">
-              <a class="btn btn__link" href="/prints/collections/all">
-                <i class="fal fa-arrow-left mr-2" aria-hidden="true"></i>
-                Shop all products
-              </a>
-              <div class="product-info">
-                <h1 class="title">{{ page.title }}</h1>
-                <p class="muted price">Starting from ${{ page.variants[0].price | money }} CAD</p>
-                <button id="buying_options" class="btn btn__dark btn__round btn__padding-large">
+          <div class="product__intro">
+            <div class="product__hero">
+              <div class="product-info" data-aos="fade">
+                <div class="product-intro">
+                  <h1 class="title">{{ page.title }}</h1>
+                  <p class="muted price">Starting from ${{ page.variants[0].price | remove: '.00' }} CAD</p>
+                </div>
+                <div class="product-description" data-aos="fade">
+                  {{ page.body_html }}
+                </div>
+              </div>
+              <div class="product-feature-info">
+                {% include shop/product-features.html %}
+                <button id="buying_options" data-aos="fade" class="btn btn__dark btn__round btn__padding-large">
                   Buying options
                 </button>
               </div>
             </div>
-          </div>
-          {% include shop/product-features.html %}
-          <div class="wrapper">
-            <div class="product-description">
-              {{ page.body_html }}
+            <div class="image-feature {% if page.template_suffix == 'dark' %}dark{% endif %}">
+              <img data-aos="fade" src="{{ page.images[3].src }}">
             </div>
+          </div>
+          <div class="wrapper">
             {% include shop/product-form.html %}
             {% include shop/product-value.html %}
+            <div class="section shop-section image-right flex a-center">
+              <div class="content" data-aos="fade">
+                <h3>Museum grade quality</h3>
+                <p>All photos are printed through Giclée, meaning your print will never fade, or turn yellow. Printed on premium photographic paper with a satin lustre finish, brings out the intense colours and rich details.</p>
+              </div>
+              <div class="image {% if page.template_suffix == 'dark' %}dark{% endif %} product__quality border-radius__xlarge" data-aos="fade-up">
+                <img src="{{ page.images[2].src }}">
+              </div>
+            </div>
+            <div class="section white shop-section full">
+              <div class="content" data-aos="fade">
+                <h3>Let's start a gallery wall</h3>
+                <p>Take a look at some prints you might like</p>
+                <a class="btn btn__link blue" href="/prints/collections/all">Shop all products <i class="far fa-arrow-right ml-1" aria-hidden="true"></i></a>
+              </div>
+            </div>
           </div>
-          {% include pagination.html type='product' %}
         </main>
         {% include footer.html %}
       </div>

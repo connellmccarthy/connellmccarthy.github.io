@@ -27,7 +27,7 @@ main:
     - title: Shop by collection
       links: :collections
     - title: Environmental Impact Promise
-      url: /prints/pages/environmental-impact-promise/
+      url: /prints/pages/environmental-impact-promise
 footer:
   - title: Changelog
     url: /changelog/

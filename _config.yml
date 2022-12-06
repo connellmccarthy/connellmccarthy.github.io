@@ -21,8 +21,8 @@ collections:
   collections:
     output: true
     sort_by: title
-    permalink: "/prints/:collection/:path"
+    permalink: "/prints/:collection/:path/"
   products:
     output: true
     sort_by: title
-    permalink: "/prints/:collection/:path"
+    permalink: "/prints/:collection/:path/"

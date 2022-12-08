@@ -10,8 +10,8 @@
         <main id="swup" class="transition-scale" aria-live="polite">
           <div class="collections-list">
             <div class="filter-collections">
-              <a href="/prints/collections/all" class="btn{% if page.url == '/prints/collections/all' %} active{% endif %}">Browse all products</a>  
-              <a href="/prints/collections/new" class="btn{% if page.url == '/prints/collections/new' %} active{% endif %} shop-nav-new">Latest additions <span class="badge blue">New</span></a>
+              <a href="/prints/collections/all/" class="btn{% if page.url == '/prints/collections/all/' %} active{% endif %}">Browse all products</a>  
+              <a href="/prints/collections/new/" class="btn{% if page.url == '/prints/collections/new/' %} active{% endif %} shop-nav-new">Latest additions <span class="badge blue">New</span></a>
               <p class="muted">Shop by collection</p>
               {% for collection in site.collections %}
                 {% if collection.collection_list %}

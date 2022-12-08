@@ -81,6 +81,11 @@ html {
     display: inline-block !important;
   }
 }
+.hide-mobile {
+  @media screen and (max-width: $break-mobile) {
+    display: none !important;
+  }
+}
 
 * {
   box-sizing: border-box;

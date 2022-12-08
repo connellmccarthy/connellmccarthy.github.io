@@ -16,11 +16,18 @@
     </a>
   {% endif %}
   <div class="new-nav__static">
-    <button class="btn btn__plain menu-trigger">Menu</button>
+    <button class="btn btn__plain menu-trigger" title="Menu">
+      <span class="mobile-only"><i class="far fa-bars" aria-hidden="true"></i></span>
+      <span class="hide-mobile">Menu</span>
+    </button>
     <a class="logo btn menu-logo" data-level="1" href="/">
       {% include assets/logo.html %}
     </a>
-    <button class="btn btn__plain cart-trigger">Cart <div class="notif"></div></button>
+    <button class="btn btn__plain cart-trigger" title="Cart">
+      <span class="mobile-only"><i class="far fa-cart-shopping" aria-hidden="true"></i></span>
+      <span class="hide-mobile">Cart</span>
+       <div class="notif"></div>
+    </button>
   </div>
   <div class="new-nav__interactive">
     <ul class="new-nav__items nav_main" id="nav_main">

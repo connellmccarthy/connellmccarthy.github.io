@@ -66,7 +66,7 @@ function init() {
       image2.style.transform = `translateY(${((features.offsetTop / window.scrollY) * 110) - scrolloffset}%)`;
       image3.style.transform = `translateY(${((features.offsetTop / window.scrollY) * 160) - scrolloffset}%)`;
       image4.style.transform = `translateY(${((features.offsetTop / window.scrollY) * 120) - scrolloffset}%)`;
-      image5.style.transform = `translateY(${((features.offsetTop / window.scrollY) * 120) - scrolloffset}%)`;
+      image5.style.transform = `translateY(${((features.offsetTop / window.scrollY) * 140) - scrolloffset}%)`;
     });
   }
 

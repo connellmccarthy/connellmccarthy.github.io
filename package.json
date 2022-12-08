@@ -21,7 +21,7 @@
   "homepage": "https://github.com/connellmccarthy/product#readme",
   "dependencies": {
     "dotenv": "^14.2.0",
-    "node-fetch": "^3.1.1",
+    "node-fetch": "^3.2.10",
     "shopify-api-node": "^3.8.1",
     "yaml": "^1.10.2"
   }

@@ -27,7 +27,7 @@ $nav-animate: 0.4s cubic-bezier(0.33, 1, 0.68, 1);
   border-radius: $border-radius-large;
 
   @media screen and (max-width: $break-mobile) {
-    max-width: unset;
+    max-width: 250px;
   }
 
   &.announcement {

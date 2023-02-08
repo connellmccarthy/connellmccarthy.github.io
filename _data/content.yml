@@ -23,13 +23,9 @@ homepage:
     title: Building
     items:
     - title: Bo & Co
-      description: I started a small design & development studio to keep me working on new projects.
+      description: Bo & Co is a full-service creative studio that specializes in blending art and technology to create captivating digital experiences.
       external: true
       url: https://boandco.studio
-    - title: One Bill
-      description: I built an app to easily keep track of sharing monthly expenses with my partner.
-      external: true
-      url: https://onebill.sh
   projects:
     title: Creative works
     items:

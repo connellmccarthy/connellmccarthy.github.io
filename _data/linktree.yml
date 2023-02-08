@@ -1,4 +1,9 @@
 links:
+- title: Bo & Co Studio
+  description: I'm building a creative studio on the side as a means to keep my creative skills sharp.
+  url: https://boandco.studio?ref=connellmccarthy.com&linktree
+  thumbnail: https://pbs.twimg.com/profile_images/1622372549039460352/7w5Ro4Ti_400x400.jpg
+  external: true
 - title: Meet POS Go
   article: "pos-go"
 - title: COVEO - wanna get to know you

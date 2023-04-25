@@ -23,6 +23,6 @@
     "dotenv": "^14.2.0",
     "node-fetch": "^3.2.10",
     "shopify-api-node": "^3.8.1",
-    "yaml": "^1.10.2"
+    "yaml": "^2.2.2"
   }
 }

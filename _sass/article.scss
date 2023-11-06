@@ -47,8 +47,16 @@ $article-width: 720px;
       min-height: unset;
       height: auto;
       .thumbnail {
-        height: 45vh;
+        margin-top: 2em;
+        height: 50vh;
       }
+    }
+    @media screen and (max-width: $break-mobile) {
+      .thumbnail {
+        margin-top: 2em;
+        height: 25vh;
+      }
+      padding: $gutter ($gutter / 3);
     }
   }
   &-content {

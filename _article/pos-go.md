@@ -8,6 +8,45 @@ cta_heading: "Interested in seeing what I build next?"
 slug: "pos-go"
 thumbnail: pos-go-thumbnail.jpg
 thumbnail_video: true
+credits:
+  description: Thanks to everyone who helped make this campaign what it is.
+  groups:
+    - title: "Collaborators"
+      items:
+        - title: "Shannon Murphy"
+          description: "Content Design Lead"
+          cta: "Connect on linkedin"
+          url: "https://www.linkedin.com/in/shannon-elizabeth-murphy-sem/?ref=connellmccarthy.com"
+        - title: "Nicolas Tual"
+          description: "Design Lead"
+          cta: "Follow on Instagram"
+          url: "https://www.instagram.com/nicolastual.studio/?ref=connellmccarthy.com"
+        - title: "José Silva"
+          description: "Senior Designer"
+          cta: "Connect on linkedin"
+          url: "https://www.linkedin.com/in/jose-silva-61875778/?ref=connellmccarthy.com"
+        - title: "Caroline Gonzales"
+          description: "Senior Designer"
+          cta: "Connect on linkedin"
+          url: "https://www.linkedin.com/in/cargon?ref=connellmccarthy.com"
+        - title: "Tasha Dennis"
+          description: "Senior Content Designer"
+          cta: "Connect on linkedin"
+          url: "https://linkedin.com/in/natasha-dennis-0903a74?ref=connellmccarthy.com"
+        - title: "Melody Cheung"
+          description: "Project Marketing Manager"
+          cta: "Connect on linkedin"
+          url: "https://www.linkedin.com/in/melody-cheung/?ref=connellmccarthy.com"
+    - title: "Agencies"
+      items:
+        - title: "Productions l'Éloi"
+          description: "Photo & Video"
+          cta: "Visit Productions l'Éloi"
+          url: "https://leloi.ca/fr/?ref=connellmccarthy.com"
+        - title: "Jesper Lindborg"
+          description: "3D Rendering"
+          cta: "Visit Jesper Lindborg"
+          url: "https://lindborg.tv/?ref=connellmccarthy.com"
 ---
 
 {% assign image_path = site.image_path | append: page.slug %}
@@ -65,17 +104,3 @@ As the video progressed, I kept refining the sound and composition until it had 
 I couldn’t have asked for a better team to collaborate with. From product, to hardware, to marketing - everyone had such a passion to create the best campaign possible and it was truly inspiring.
 
 {% include slideshow.html path=image_path slug='product_feature' format='jpg' count=6 %}
-
-## The creative team
-
-[Shannon Murphy](https://www.linkedin.com/in/shannon-elizabeth-murphy-sem/?ref=connellmccarthy.com){: target="blank"}
-
-[Nicolas Tual](https://www.instagram.com/nicolastual.studio/?ref=connellmccarthy.com){: target="blank"}
-
-[José Silva](https://www.linkedin.com/in/jose-silva-61875778/?ref=connellmccarthy.com){: target="blank"}
-
-[Caroline Gonzales](https://www.linkedin.com/in/cargon?ref=connellmccarthy.com){: target="blank"}
-
-[Tasha Dennis](https://linkedin.com/in/natasha-dennis-0903a74?ref=connellmccarthy.com){: target="blank"}
-
-[Melody Cheung](https://www.linkedin.com/in/melody-cheung/?ref=connellmccarthy.com){: target="blank"}

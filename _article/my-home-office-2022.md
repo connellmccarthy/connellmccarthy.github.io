@@ -126,8 +126,7 @@ I ended up getting rid of my old shelving unit and replacing it with a corner di
 
 We ended up moving the loveseat to Dani’s office and instead, put together a little vignette of a nice lounge chair and a side table. Above the sideboard, I opted to build a large 46” wide by 36” tall whiteboard instead of putting up a pegboard wall. It’s really helpful to draw out solutions to any problems I need to get out of my head. It was pretty easy to put together just by using whiteboard paint and some trim for the edges.
 
-![A chair and side table sit side by side in front of a white wall with a flag that says 'Make Commerce Better For Everyone']({{ image_path }}/mho-5.jpg){: .inline}
-![Photograph of my whiteboard with a wireframe sketch on the board]({{ image_path }}/mho-4.jpg){: .inline}
+{% include slideshow.html path=image_path slug='mho' unique='1' format='jpg' offset=4 count=2 %}
 
 <div class="section product-list border-radius__normal">
   {% include card.html 
@@ -156,7 +155,6 @@ We ended up moving the loveseat to Dani’s office and instead, put together a l
     external = true %}
 </div>
 
-![Wide photograph of my office facing the studio]({{ image_path }}/mho-6.jpg)
-![Wide photograph of my office facing my workspace]({{ image_path }}/mho-7.jpg)
+{% include slideshow.html path=image_path slug='mho' unique='2' format='jpg' offset=6 count=2 %}
 
 Overall, the changes have made this space much more comfortable and creative. Like I said in the previous article, design is an iterative process and you learn so much about the space by using it day-to-day. I’m excited to see where I take it in the future.

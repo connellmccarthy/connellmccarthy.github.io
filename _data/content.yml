@@ -71,18 +71,21 @@ homepage:
   contact:
     title: Contact
 socials:
-- name: Dribbble
-  icon: dribbble
-  url: https://dribbble.com/connellmccarthy
-- name: Twitter
-  icon: twitter
-  url: https://twitter.com/connellmccarthy
 - name: Instagram
   icon: instagram
   url: https://instagram.com/connellmccarthy
 - name: Linkedin
   icon: linkedin
   url: https://www.linkedin.com/in/connellmccarthy/
+- name: Threads
+  icon: threads
+  url: https://threads.net/connellmccarthy
+- name: Twitter / X
+  icon: twitter
+  url: https://twitter.com/connellmccarthy
+- name: Dribbble
+  icon: dribbble
+  url: https://dribbble.com/connellmccarthy
 newsletter:
   body: Get notified whenever I publish something new, like a new article or a new product.
 shop:

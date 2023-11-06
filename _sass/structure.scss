@@ -240,20 +240,10 @@ h2 {
   align-items: center;
   
   &__50 {
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 100%;
     div {
       &:last-of-type {
-        padding-left: 4em;
-      }
-    }
-
-    @media screen and (max-width: $break-mobile) {
-      grid-template-columns: 100%;
-      div {
-        &:last-of-type {
-          padding-left: 0;
-          padding-top: 2em;
-        }
+        padding-top: 2em;
       }
     }
   }

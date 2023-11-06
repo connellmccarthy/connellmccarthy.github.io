@@ -108,6 +108,10 @@
 
             <div class="article-content">
               {{ content }}
+
+              {% if page.credits %}
+                {% include credits.html credits=page.credits %}
+              {% endif %}
             </div>
           </div>
           <div class="wrapper condensed">

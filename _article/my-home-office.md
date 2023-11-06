@@ -45,8 +45,7 @@ Everything I use to make music is within reach so that I never have to take anyt
 
 My chair and desk were chosen purely based on aesthetics, however, the size of my desk was a big deciding factor. I needed something with a lot of space to put headphones, notebooks, an audio interface, and a thunderbolt system. Being mindful of the real estate you have to work with, and what requirements you have for them will go a long way in helping make a decision on desk sizes.
 
-![A wider view of my home office setup]({{ image_path }}/home-office-panout.jpg){: .inline}
-![My workspace dedicated for my Shopify work]({{ image_path }}/work-office-panout.jpg){: .inline}
+{% include slideshow.html path=image_path slug='office-panout' format='jpg' count=2 %}
 
 Moving on to my Shopify daytime workstation, it’s entirely different. The desk is a lot smaller and has standing capabilities so I’m not sitting the entire day. The wall is white, and the surrounding area is very plain. It was designed so that the minimal workspace was free of distractions and clutter. The walls were also kept plain white to aid in lighting for video calls seeing as though all my meetings are virtual now. Please ignore the bad cable management as I have yet to install the cable management rack that’s sitting in the right corner.
 
@@ -54,10 +53,7 @@ There is still more to do, and there always will be. You should be constantly it
 
 At the end of the day, designing a creative space is a very personal thing. It’s imperative to add little touchpoints that put you in the right headspace for each element of your work that you do. The mental state is where you should start your planning. Look back on times you’ve been most creative, and ask yourself “What made that moment special”? Was it the lighting? The atmosphere, or the tools you had available? When you find the answer to questions like those, you’ll have a better idea of where to begin.
 
-![A closer look at my desk setup]({{ image_path }}/cm-home-office.jpg){: .inline}
-![A closer look at my ergonomic mouse]({{ image_path }}/cm-home-office-3.jpg){: .inline}
-
-![My home office setup for music production]({{ image_path }}/cm-home-office-2.jpg)
+{% include slideshow.html path=image_path slug='cm-home-office' format='jpg' count=3 %}
 
 {::nomarkdown}
 <div class="section product-list border-radius__normal">

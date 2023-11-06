@@ -1,14 +1,21 @@
 $article-width-old: calc(#{$max-width-condensed} - #{$gutter});
-$article-width: 600px;
+$article-width: 720px;
 .article {
   &__hero {
     width: 100%;
+    min-height: 100vh;
+    padding: $gutter;
     display: flex;
     align-items: center;
+    justify-content: center;
+    gap: $gutter;
+
     .thumbnail {
-      background: darken($color-grey, 10);
-      width: auto;
-      height: 100vh;
+      background: $color-grey-light;
+      width: 100%;
+      height: 100%;
+      border-radius: $border-radius-large * 2;
+      overflow: hidden;
       aspect-ratio: 1/1;
       img {
         height: 100%;
@@ -27,22 +34,40 @@ $article-width: 600px;
       }
     }
     .article__info {
-      width: 50%;
-      padding: 0 $gutter;
+      flex-shrink: 0;
+      width: 100%;
       flex-grow: 1;
       flex-shrink: 1;
     }
 
-    @media screen and (max-width: 1500px) {
-      display: block;
+    @media screen and (max-width: $break-tablet) {
+      flex-wrap: wrap;
+      padding: $gutter ($gutter / 2);
+      gap: $gutter / 2;
+      min-height: unset;
+      height: auto;
       .thumbnail {
-        width: 100%;
-        height: 50vh;
+        height: 45vh;
       }
-      .article__info {
-        width: 100%;
-        padding: 0 ($gutter / 3);
-      }
+    }
+  }
+  &-content {
+    max-width: $article-width;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+    margin: auto;
+    border-bottom: 1px dotted $color-border;
+    padding-bottom: 4em;
+    margin-bottom: 4em;
+    .section {
+      margin: 0;
+      width: 100%;
+    }
+    div.language-javascript,
+    div.language-plaintext {
+      width: 100%;
     }
   }
   h1 {
@@ -62,19 +87,14 @@ $article-width: 600px;
   h3:not(.section h3) {
     font-size: 1.6em;
     font-style: unset;
-    margin: 2em auto 0;
-    max-width: $article-width;
   }
   p:not(.section p, .details p, .article-info-static p, .article-info-details p, .followup__container p) {
     font-size: 1.2em;
     color: $color-ink;
-    margin: 2em auto;
-    max-width: $article-width;
   }
   img:not(.article_thumbnail img, .product img, .product_image img, .slideshow img, .thumbnail img) {
     border-radius: $border-radius-large;
     width: 100%;
-    margin: 2em 0 0;
 
     &.inline {
       width: calc(50% - 4px);
@@ -85,33 +105,23 @@ $article-width: 600px;
   video {
     border-radius: $border-radius-large;
     width: 100%;
-    margin: 2em 0 0;
   }
   iframe.youtube-embed {
     width: 100%;
     height: auto;
     aspect-ratio: 16/9;
     border-radius: $border-radius-large;
-    margin: 2em 0;
   }
   em {
     font-size: 0.9em;
     color: lighten($color-ink-muted, 10);
     text-align: center;
     width: 100%;
-    display: inline-block;
-    margin: 0 0 2em;
-  }
-  .card,
-  .audio {
-    max-width: $article-width;
-    margin-left: auto;
-    margin-right: auto;
+    display: block;
+    margin-top: -2em;
   }
   .slideshow {
     position: relative;
-    margin: 1em 0;
-
     &__hitmarkers {
       position: absolute;
       display: flex;
@@ -144,6 +154,7 @@ $article-width: 600px;
       }
     }
     &__container {
+      background: $color-ink-dark;
       border-radius: $border-radius-large;
       overflow-x: scroll;
       display: flex;
@@ -153,6 +164,7 @@ $article-width: 600px;
       img {
         margin: 0;
         scroll-snap-align: center;
+        object-fit: cover;
       }
     }
     &__thumbnails {
@@ -447,4 +459,53 @@ blockquote {
 }
 .section.article_heading {
   margin-top: 10em !important;
+}
+.section.credits {
+  background: $color-grey-light;
+  border: 1px solid $color-border;
+  border-radius: $border-radius-normal;
+  overflow: hidden;
+
+  .heading {
+    padding: 1em 2em;
+    
+    @media screen and (max-width: $break-mobile) {
+      padding: 0.5em 1em;
+    }
+    h3,p {
+      margin: 0;
+    }
+  }
+
+  h4.title {
+    padding: 1em 2em;
+    border-top: 1px solid $color-border;
+    border-bottom: 1px solid $color-border;
+    margin: 0;
+    font-weight: 600;
+    color: $color-ink-dark;
+
+    @media screen and (max-width: $break-mobile) {
+      padding: 0.5em 1em;
+    }
+  }
+  .product-list {
+    background: $color-white;
+    padding: 2em;
+    display: flex;
+    gap: 0.6em;
+    flex-wrap: wrap;
+
+    @media screen and (max-width: $break-mobile) {
+      padding: 1em;
+    }
+
+    a {
+      margin: 0;
+      width: calc(50% - 0.3em);
+      @media screen and (max-width: $break-mobile) {
+        width: 100%;
+      }
+    }
+  }
 }

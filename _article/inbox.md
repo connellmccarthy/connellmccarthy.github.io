@@ -9,6 +9,19 @@ images:
 cta_heading: "Interested in seeing what I build next?"
 slug: "inbox"
 thumbnail: shop-thumbnail.jpg
+credits:
+  description: Thanks to everyone who helped make this campaign what it is.
+  groups:
+    - title: "Collaborators"
+      items:
+        - title: "Shannon Murphy"
+          description: "Content Design Lead"
+          cta: "Connect on linkedin"
+          url: "https://www.linkedin.com/in/shannon-elizabeth-murphy-sem/?ref=connellmccarthy.com"
+        - title: "Annie Berrones"
+          description: "Product Marketing Manager"
+          cta: "Connect on linkedin"
+          url: "https://www.linkedin.com/in/annieberrones/?ref=connellmccarthy.com"
 ---
 
 {% assign image_path = site.image_path | append: page.slug %}
@@ -53,11 +66,7 @@ I’ve always had an interest in 3D rendering, and it’s actually how my career
 
 With the environments I created, we wanted to give one of the scenes more purpose, so I added some merchant shelves and crafted the products that sit on them to match the ones from the photoshoot. The small details went a long way in making everything feel cohesive and the environments ended up being a large part of the Inbox brand, with a few variations we could use in additional materials.
 
-![Side by side comparison of photoshoot shelving next to the 3D modelled products.]({{ image_path }}/article-4.jpg)
-_Side by side comparison of photoshoot shelving next to the 3D modelled products._
-
-![Outlines of the 3D studio environment]({{ image_path }}/article-6.jpg){: .inline}
-![3D studio environment]({{ image_path }}/article-5.jpg){: .inline}
+{% include slideshow.html path=image_path slug='article' unique='1' format='jpg' offset=4 count=3 %}
 
 ## Motion design
 

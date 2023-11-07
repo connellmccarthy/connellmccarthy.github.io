@@ -110,7 +110,11 @@
               {{ content }}
 
               {% if page.credits %}
-                {% include credits.html credits=page.credits %}
+                {% include link-group.html
+                  heading = true
+                  headline = 'Credits'
+                  description = page.credits.description
+                  groups = page.credits.groups %}
               {% endif %}
             </div>
           </div>

@@ -493,6 +493,10 @@ blockquote {
     font-weight: 600;
     color: $color-ink-dark;
 
+    &:first-of-type {
+      border-top: none;
+    }
+
     @media screen and (max-width: $break-mobile) {
       padding: 0.5em 1em;
     }

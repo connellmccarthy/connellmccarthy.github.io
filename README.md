@@ -1,4 +1,4 @@
-![social-share](https://user-images.githubusercontent.com/10442875/151239277-24721359-d444-48bd-b118-7e4244092624.jpg)
+![](https://connellmccarthy.com/assets/img/social-share.jpg)
 
 # Personal Portfolio
 

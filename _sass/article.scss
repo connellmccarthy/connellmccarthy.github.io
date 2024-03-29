@@ -95,10 +95,13 @@ $article-width: 720px;
   h3:not(.section h3) {
     font-size: 1.6em;
     font-style: unset;
+    margin: 0;
+    width: 100%;
   }
   p:not(.section p, .details p, .article-info-static p, .article-info-details p, .followup__container p) {
     font-size: 1.2em;
     color: $color-ink;
+    margin: 0;
   }
   img:not(.article_thumbnail img, .product img, .product_image img, .slideshow img, .thumbnail img) {
     border-radius: $border-radius-large;
@@ -119,6 +122,7 @@ $article-width: 720px;
     height: auto;
     aspect-ratio: 16/9;
     border-radius: $border-radius-large;
+    margin: 4em 0;
   }
   em {
     font-size: 0.9em;
@@ -126,7 +130,7 @@ $article-width: 720px;
     text-align: center;
     width: 100%;
     display: block;
-    margin-top: -2em;
+    margin-top: -1em;
   }
   .slideshow {
     position: relative;
@@ -419,7 +423,7 @@ blockquote {
   border-left: 2px solid $color-border;
   padding: 0 2em;
   max-width: $article-width;
-  margin: auto;
+  margin: 2em;
   p {
     font-size: 1.4em !important;
     color: $color-ink-muted !important;

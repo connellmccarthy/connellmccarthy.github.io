@@ -9,6 +9,7 @@ images:
 cta_heading: "Interested in seeing what I build next?"
 slug: "inbox"
 thumbnail: shop-thumbnail.jpg
+social_share: inbox.jpg
 credits:
   description: Thanks to everyone who helped make this campaign what it is.
   groups:

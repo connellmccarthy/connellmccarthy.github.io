@@ -7,6 +7,7 @@ description: "How my home office has changed one year later. The things I’ve k
 cta_heading: "Interested in seeing how my office evolves?"
 slug: "my-home-office-2022"
 thumbnail: mho-thumbnail.jpg
+social_share: my-home-office-2022.jpg
 followup: 'my-home-office'
 groups:
   studio:

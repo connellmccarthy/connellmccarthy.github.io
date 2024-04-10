@@ -17,10 +17,14 @@
   <meta name="description" content="{{ site.description }}">
   <meta name="twitter:description" content="{{ site.description }}">
 {% endif %}
-{% if page.thumbnail %}
-  <meta name="image" content="{{ site.url }}{{ site.image_path }}{{ page.slug }}/{{ page.thumbnail }}">
-  <meta property="og:image" content="{{ site.url }}{{ site.image_path }}{{ page.slug }}/{{ page.thumbnail }}">
-  <meta name="twitter:image" content="{{ site.url }}{{ site.image_path }}{{ page.slug }}/{{ page.thumbnail }}">
+{% if page.layout == 'article' %}
+  <meta name="image" content="{{ site.url }}/assets/img/social-share/{{ page.slug }}.jpg">
+  <meta property="og:image" content="{{ site.url }}/assets/img/social-share/{{ page.slug }}.jpg">
+  <meta name="twitter:image" content="{{ site.url }}/assets/img/social-share/{{ page.slug }}.jpg">
+{% elsif page.url contains '/prints/' %}
+  <meta name="image" content="{{ site.url }}/assets/img/social-share/prints.jpg">
+  <meta property="og:image" content="{{ site.url }}/assets/img/social-share/prints.jpg">
+  <meta name="twitter:image" content="{{ site.url }}/assets/img/social-share/prints.jpg">
 {% else %}
   <meta name="image" content="{{ site.url }}/assets/img/social-share.jpg">
   <meta property="og:image" content="{{ site.url }}/assets/img/social-share.jpg">

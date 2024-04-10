@@ -7,6 +7,7 @@ description: "How we built the campaign for Shopify's most powerful, secure, and
 cta_heading: "Interested in seeing what I build next?"
 slug: "pos-go"
 thumbnail: pos-go-thumbnail.jpg
+social_share: pos-go.jpg
 thumbnail_video: true
 credits:
   description: Thanks to everyone who helped make this campaign what it is.

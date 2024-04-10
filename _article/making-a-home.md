@@ -7,6 +7,7 @@ description: "In the middle of a worldwide pandemic, we decided it was a good id
 cta_heading: "Follow along on my journey of making this house, a home"
 slug: "making-a-home"
 thumbnail: mah-thumbnail.jpg
+social_share: making-a-home.jpg
 ---
 
 {% assign image_path = site.image_path | append: page.slug %}

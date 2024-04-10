@@ -30,7 +30,7 @@
                     <span id="button-text" class="visually-hidden">Pause video</span>
                     <i id="button-icon" class="fas fa-pause" aria-hidden="true"></i>
                   </button>
-                  <video muted playsinline autoplay loop id="pos-go-renders" state="playing">
+                  <video muted playsinline autoplay loop id="pos-go-renders" state="playing" thumbnail="{{ site.image_path }}{{ page.slug }}/{{ page.thumbnail }}">
                     <source src="{{ site.image_path }}{{ page.slug }}/{{ page.slug }}-thumbnail.mp4">
                   </video>
                 </div>

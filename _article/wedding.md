@@ -7,6 +7,7 @@ description: "I got married and over-engineered everything."
 cta_heading: "Interested in seeing what I build next?"
 slug: "wedding"
 thumbnail: wedding-thumbnail.jpg
+social_share: wedding.jpg
 ---
 
 {% assign image_path = site.image_path | append: page.slug %}

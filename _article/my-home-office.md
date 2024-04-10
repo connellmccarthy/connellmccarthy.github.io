@@ -7,6 +7,7 @@ description: "Designing a productive space that’s conducive to creativity for 
 cta_heading: "Interested in seeing how my office evolves?"
 slug: "my-home-office"
 thumbnail: mho-thumbnail.jpg
+social_share: my-home-office.jpg
 groups:
   studio:
     - title: Studio Peripherals

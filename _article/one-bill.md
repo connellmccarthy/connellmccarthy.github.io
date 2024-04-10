@@ -7,6 +7,7 @@ description: "Building an expense sharing app over the holidays, as a non-develo
 cta_heading: "Interested in seeing what I build next?"
 slug: "one-bill"
 thumbnail: ob-thumbnail.jpg
+social_share: one-bill.jpg
 ---
 
 {% assign image_path = site.image_path | append: page.slug %}

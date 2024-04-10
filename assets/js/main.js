@@ -177,69 +177,108 @@ function init() {
       const id = x.getAttribute('id');
       const count = x.getAttribute('data-count');
       const container = document.querySelector(`.slideshow__container#slideshow_${id}`);
-
-      if (container.clientHeight == 0) {
-        container.querySelector(`img`).onload = () => {
-          initSlides(); 
+      if (container.clientHeight <= 150) {
+        if (container.querySelector(`.first_slideshow_content_${id}`).localName == 'video') {
+          //content is a video (handle oncanplay)
+          container.querySelector(`.first_slideshow_content_${id}`).onloadeddata = () => {
+            initSlides(); 
+          }
+        } else {
+          //content is an image (handle onload)
+          container.querySelector(`.first_slideshow_content_${id}`).onload = () => {
+            initSlides(); 
+          }
         }
       } else {
         initSlides();
       }
 
       function initSlides() {
-        const increment = container.clientWidth;
-        document.querySelector(`#ss_hitmarkers_${id}`).style.height = `${container.clientHeight}px`;
-        container.scrollLeft = 0;
-        var active_image_index = get_active_image;
-        var active_image = document.querySelector(`.slideshow#${id} button.thumbnail.active`).getAttribute('data-id');
-  
-        function get_active_image() {
-          return (container.scrollLeft / increment) + 1;
+        //Video sizing
+        if (document.querySelector(`#ss_video_controls_container_${id}`)) {
+          document.querySelector(`#ss_video_controls_container_${id}`).style.top = `${container.clientHeight / 2}px`;
         }
-        container.addEventListener('scroll', (e) => {
-          var atSnappingPoint = e.target.scrollLeft % e.target.offsetWidth === 0;
-          var timeOut = atSnappingPoint ? 0 : 150;
-          clearTimeout(e.target.scrollTimeout);
-          e.target.scrollTimeout = setTimeout(() => {
-            if (!timeOut) {
+
+        //If slideshow has more than 1 item
+        if (document.querySelector(`.slideshow#${id}`).getAttribute('data-count') > 1) {
+          const increment = container.clientWidth;
+          if (document.querySelector(`#ss_hitmarkers_${id}`)) {
+            document.querySelector(`#ss_hitmarkers_${id}`).style.height = `${container.clientHeight}px`;
+          }
+          container.scrollLeft = 0;
+          var active_image_index = get_active_image;
+          var active_image = document.querySelector(`.slideshow#${id} button.thumbnail.active`).getAttribute('data-id');
+    
+          function get_active_image() {
+            return (container.scrollLeft / increment) + 1;
+          }
+          container.addEventListener('scroll', (e) => {
+            var atSnappingPoint = e.target.scrollLeft % e.target.offsetWidth === 0;
+            var timeOut = atSnappingPoint ? 0 : 150;
+            clearTimeout(e.target.scrollTimeout);
+            e.target.scrollTimeout = setTimeout(() => {
+              if (!timeOut) {
+                document.querySelector(`.slideshow#${id} button.thumbnail#thumb_${active_image}`).classList.toggle('active');
+                document.querySelector(`.slideshow#${id} button.thumbnail#thumb_${id}_${get_active_image()}`).classList.toggle('active');
+                active_image = `${id}_${get_active_image()}`;
+              }
+            }, timeOut);
+          });
+          document.querySelectorAll(`.slideshow#${id} button.ss_nav`).forEach((nav) => {
+            nav.addEventListener('click', () => {
+              let image_index = get_active_image();
+              if (nav.getAttribute('data-direction') == 'prev') {
+                //Previous image
+                if ((get_active_image() - 1) <= 0) {
+                  image_index = count;
+                } else {
+                  image_index --;
+                }
+              } else {
+                // Next image
+                if ((get_active_image() + 1) > count) {
+                  image_index = 1;
+                } else {
+                  image_index ++;
+                }
+              }
+              const image = container.querySelector(`#image_${id}_${image_index}`);
+              image.scrollIntoView({behavior: "smooth", block: "nearest", inline: "start"});
+            });
+          });
+    
+          document.querySelectorAll(`.slideshow#${id} button.thumbnail`).forEach((btn) => {
+            btn.addEventListener('click', () => {
               document.querySelector(`.slideshow#${id} button.thumbnail#thumb_${active_image}`).classList.toggle('active');
-              document.querySelector(`.slideshow#${id} button.thumbnail#thumb_${id}_${get_active_image()}`).classList.toggle('active');
-              active_image = `${id}_${get_active_image()}`;
-            }
-          }, timeOut);
-        });
-        document.querySelectorAll(`.slideshow#${id} button.ss_nav`).forEach((nav) => {
-          nav.addEventListener('click', () => {
-            let image_index = get_active_image();
-            if (nav.getAttribute('data-direction') == 'prev') {
-              //Previous image
-              if ((get_active_image() - 1) <= 0) {
-                image_index = count;
-              } else {
-                image_index --;
-              }
+              btn.classList.toggle('active');
+              const image = container.querySelector(`#image_${btn.getAttribute('data-id')}`);
+              image.scrollIntoView({behavior: "smooth", block: "nearest", inline: "start"});
+              active_image = btn.getAttribute('data-id');
+            });
+          });
+        }
+
+        //Video control handlers
+        if (document.querySelector(`.slideshow#${id} button.slideshow-video-controller`)) {
+          document.querySelector(`#ss_video_controls_${id}`).addEventListener('click', (el) => {
+            if (document.querySelector(`#slideshow_${id} video`).getAttribute('state') == 'playing') {
+              document.querySelector(`#ss_video_controls_button-icon-${id}`).classList.replace('fa-pause', 'fa-play');
+              document.querySelector(`#ss_video_controls_button-text-${id}`).innerText = 'Play video';
             } else {
-              // Next image
-              if ((get_active_image() + 1) > count) {
-                image_index = 1;
-              } else {
-                image_index ++;
-              }
+              document.querySelector(`#ss_video_controls_button-icon-${id}`).classList.replace('fa-play', 'fa-pause');
+              document.querySelector(`#ss_video_controls_button-text-${id}`).innerText = 'Pause video';
             }
-            const image = container.querySelector(`img#image_${id}_${image_index}`);
-            image.scrollIntoView({behavior: "smooth", block: "nearest", inline: "start"});
+            document.querySelectorAll(`#slideshow_${id} video`).forEach((video) => {
+              if (video.getAttribute('state') == 'playing') {
+                video.pause();
+                video.setAttribute('state', 'paused');
+              } else {
+                video.play()
+                video.setAttribute('state', 'playing');
+              }
+            })
           });
-        });
-  
-        document.querySelectorAll(`.slideshow#${id} button.thumbnail`).forEach((btn) => {
-          btn.addEventListener('click', () => {
-            document.querySelector(`.slideshow#${id} button.thumbnail#thumb_${active_image}`).classList.toggle('active');
-            btn.classList.toggle('active');
-            const image = container.querySelector(`img#image_${btn.getAttribute('data-id')}`);
-            image.scrollIntoView({behavior: "smooth", block: "nearest", inline: "start"});
-            active_image = btn.getAttribute('data-id');
-          });
-        });
+        }
       }
     });
   }

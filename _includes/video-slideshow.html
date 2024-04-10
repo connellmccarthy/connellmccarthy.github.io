@@ -12,28 +12,40 @@
 
 
 <div class="slideshow" id="{{ include.slug | append: unique_id }}" data-offset="{{ offset }}" data-count="{{ include.count }}">
+  <div class="slideshow__video_controls" id="ss_video_controls_container_{{ include.slug | append: unique_id }}">
+    <button id="ss_video_controls_{{ include.slug | append: unique_id }}" class="btn btn__circle large btn__marketing btn__dark btn__scale slideshow-video-controller">
+      <span id="ss_video_controls_button-text-{{ include.slug | append: unique_id }}" class="visually-hidden">Pause video</span>
+      <i id="ss_video_controls_button-icon-{{ include.slug | append: unique_id }}" class="fas fa-pause" aria-hidden="true"></i>
+    </button>
+  </div>
+  {% if include.count > 1 %}
   <div class="slideshow__hitmarkers" id="ss_hitmarkers_{{ include.slug | append: unique_id }}">
     <button id="ss_nav_{{ include.slug | append: unique_id }}" class="left ss_nav" data-direction="prev">
       <i class="fas fa-circle-chevron-left" aria-hidden="true"></i>
-      <span class="visually-hidden">Previous image</span>
+      <span class="visually-hidden">Previous video</span>
     </button>
     <button id="ss_nav_{{ include.slug | append: unique_id }}" class="right ss_nav" data-direction="next">
       <i class="fas fa-circle-chevron-right" aria-hidden="true"></i>
-      <span class="visually-hidden">Next image</span>
+      <span class="visually-hidden">Next video</span>
     </button>
   </div>
+  {% endif %}
   <div id="slideshow_{{ include.slug | append: unique_id }}" class="slideshow__container">
     {% for i in (offset..offset_count) %}
       {% assign image_id = i | append: "" %}
-      <img class="first_slideshow_content_{{ include.slug | append: unique_id }}" id="image_{{ include.slug | append: unique_id }}_{{ forloop.index }}" data-id="{{ include.slug | append: unique_id }}_{{ forloop.index }}" src="{{ include.path }}/{{ include.slug }}-{{ i }}.{{ include.format }}">
+      <video class="slideshow__video first_slideshow_content_{{ include.slug | append: unique_id }}" id="image_{{ include.slug | append: unique_id }}_{{ forloop.index }}" data-id="{{ include.slug | append: unique_id }}_{{ forloop.index }}" thumbnail="{{ include.path }}/{{ include.slug }}-{{ i }}.jpg" muted loop playsinline autoplay state="playing" preload="auto">
+        <source src="{{ include.path }}/{{ include.slug }}-{{ i }}.{{ include.format }}" type="video/{{ include.format }}">
+      </video>
     {% endfor %}
   </div>
+  {% if include.count > 1 %}
   <div class="slideshow__thumbnails">
     {% for x in (offset..offset_count) %}
       {% assign image_id = x | append: "" %}
       <button class="thumbnail{% if x == offset %} active{% endif %}" id="thumb_{{ include.slug | append: unique_id }}_{{ forloop.index }}" data-id="{{ include.slug | append: unique_id }}_{{ forloop.index }}">
-        <img src="{{ include.path }}/{{ include.slug }}-{{ x }}.{{ include.format }}">
+        <img src="{{ include.path }}/{{ include.slug }}-{{ x }}.jpg">
       </button>
     {% endfor %}
   </div>
+  {% endif %}
 </div>

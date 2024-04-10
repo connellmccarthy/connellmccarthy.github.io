@@ -336,6 +336,10 @@ img {
     margin-bottom: 0;
   }
 
+  &.changelog_heading {
+    margin-top: 10em;
+  }
+
   @media screen and (max-width: $break-mobile) {
     margin: 4em 0;
   }

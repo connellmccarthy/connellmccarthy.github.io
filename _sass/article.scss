@@ -96,10 +96,13 @@ $article-width: 720px;
   h3:not(.section h3) {
     font-size: 1.6em;
     font-style: unset;
-    margin: 6em 0 0;
+    margin: 4em 0 0;
     width: 100%;
     padding-bottom: 1em;
     border-bottom: $color-border 1px dotted;
+    @media screen and (max-width: $break-mobile) {
+      margin: 2em 0 0;
+    }
   }
   p:not(.section p, .details p, .article-info-static p, .article-info-details p, .followup__container p) {
     font-size: 1.2em;
@@ -115,6 +118,10 @@ $article-width: 720px;
       width: calc(50% - 4px);
       display: inline-block;
       margin: 0 2px;
+    }
+
+    @media screen and (max-width: $break-mobile) {
+      margin: 2em 0 0;
     }
   }
   video:not(.slideshow__video) {
@@ -139,6 +146,9 @@ $article-width: 720px;
   .slideshow {
     position: relative;
     margin: 4em 0;
+    @media screen and (max-width: $break-mobile) {
+      margin: 2em 0;
+    }
     &__video_controls {
       position: absolute;
       top: 50%;
@@ -147,6 +157,19 @@ $article-width: 720px;
       transform: translate(-50%, -50%);
       opacity: 0;
       transition: opacity 0.3s ease;
+      @media screen and (max-width: $break-mobile) {
+        bottom: 0;
+        opacity: 1;
+        transform: translateX(-50%) translateY(25%);
+
+        button {
+          height: 45px !important;
+          width: 45px !important;
+          font-size: 1em !important;
+          background: rgba(0, 0, 0, 0.3);
+          backdrop-filter: blur(4px);
+        }
+      }
     }
     &__hitmarkers {
       position: absolute;

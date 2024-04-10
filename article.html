@@ -15,7 +15,7 @@ slug: articles
 
 <div class="wrapper">
   <div class="articles mt-6">
-    {% assign articles = site.article | sort: "date" | reverse %}
+    {% assign articles = site.article | sort: "date" | reverse | where:"draft",false %}
   
     {% for article in articles %}
       {% assign article_words = article.content | strip_html | strip_newlines | downcase | replace: 'and','' | replace: 'the','' | split:' ' %}

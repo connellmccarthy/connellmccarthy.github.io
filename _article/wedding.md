@@ -1,8 +1,8 @@
 ---
 title: "Our wedding"
 layout: "article"
-date: 2024-04-04T010:00:00-05:00
-draft: true
+date: 2024-04-11T08:30:00
+draft: false
 description: "I got married and over-engineered everything."
 cta_heading: "Interested in seeing what I build next?"
 slug: "wedding"

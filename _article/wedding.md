@@ -123,9 +123,11 @@ Building out an online RSVP system meant that I could add features to check in o
 
 I set up a simple database to keep a record of the submissions and utilized unique identifiers for each RSVP group so multiple submissions could be paired together (i.e., spouses, family members, etc.) and that RSVP group would be accessible by a unique link. The link was emailed out upon submission of the form using the [Sendgrid API](https://sendgrid.com/en-us?ref=connellmccarthy.com){:target="_blank"} and dynamic templates, and the reservation was saved to their browser, so anytime they came to the site, they didn’t need to re-enter their email to get their reservation information. It also allowed for the display of dynamic content on the homepage, such as the announcement banner and buttons that told them to either submit or modify their RSVP.
 
+It was a great exercise for doing more backend development and designing a user experience from all touchpoints. I tried to make everything as efficient as possible and automate as much as I could.
+
 {% include slideshow.html path=image_path slug='rsvp-flow' format='jpg' count=4 %}
 
-It was a great exercise for doing more backend development and designing a user experience from all touchpoints. I tried to make everything as efficient as possible and automate as much as I could.
+{% include video-slideshow.html path=image_path slug='rsvp-example' format='mp4' count=1 %}
 
 ## Signage
 

@@ -25,7 +25,7 @@ Using four font families is a bit much for a brand like this, but there were dif
 
 {% include slideshow.html path=image_path slug='branding' format='jpg' count=5 %}
 
-## Stationary
+## Stationery
 With our venue, website domain, and vendors booked for the day, we needed to send something out to our guests to let them know they’d be invited and to keep their calendars open. We started assembling the save-the-date mailer in late Summer 2022 to mail them out for the 1-year mark in October.
 
 We went to a paper shop and picked out a nice cardstock with a subtle texture and a slightly off-white colour. I kept the design simple, and to minimize the amount of paper waste, I designed 4 to fit perfectly on standard letter-sized paper. I wanted to make them feel customized in a way, so I ordered a custom embosser of the logo, a rounded corner cutter, and a custom stamp for the mixed media effect for our names. I liked the structured type of our names and the organic contrast that the hand-stamped ‘McCarthy’ gave with it.

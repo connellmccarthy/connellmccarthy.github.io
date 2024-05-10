@@ -22,6 +22,7 @@ $border-radius-xxlarge: 48px;
 
 $font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 $font-serif: 'Newsreader', serif;
+$font-mono: monospace;
 
 
 .transition-fade,
@@ -105,12 +106,11 @@ html, body {
 body {
   max-width: $site-max-width;
   margin: 0 auto;
-  background: $color-white;
+  background: $color-grey-light;
   color: $color-ink;
   font-family: $font-family;
   font-size: 13.5px;
   scrollbar-face-color: $color-blue;
-  background: linear-gradient(180deg, #f1f1f1 0%, #FFFFFF 100%);
 
   &.no-scroll {
     overflow-y: hidden;
@@ -350,16 +350,21 @@ i.fa-arrow-right.external {
 }
 
 .card {
-  background: $color-white;
+  background: $color-grey-light;
   padding: 1em;
-  border: 1px solid $color-grey;
+  border: 1px solid darken($color-grey-light, 3);
   border-radius: $border-radius-normal;
   color: inherit;
   text-decoration: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: 0.3s ease;
+  transition: background 0.3s ease;
+
+  &:hover,
+  &:focus {
+    background: darken($color-grey-light, 3);
+  }
 
   &.project {
     background: transparent;
@@ -368,22 +373,6 @@ i.fa-arrow-right.external {
     position: relative;
     z-index: 1;
 
-    &.grey {
-      background: darken($color-grey-light, 1);
-    }
-    &:hover,
-    &:focus {
-      &.grey {
-        background: darken($color-grey-light, 4);
-      }
-      &:not(.grey) {
-        background: transparent;
-        &::after {
-          opacity: 1;
-          transform: scale(1);
-        }
-      }
-    }
     p {
       margin: 0.2em 0.4em;
     }
@@ -398,37 +387,32 @@ i.fa-arrow-right.external {
         font-size: 0.8em;
       }
     }
-    &:not(.grey) {
-      &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        border-radius: $border-radius-normal;
-        background: rgba(0,0,0,0.03);
-        z-index: -1;
-        pointer-events: none;
-        transition: 0.3s ease;
-        transform-origin: center;
-        transform: scale(1.05);
-        opacity: 0;
+
+    &:hover,
+      &:focus {  
+        background: transparent;
+        &::after {
+          opacity: 1;
+          transform: scale(1);
+        }
       }
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      border-radius: $border-radius-normal;
+      background: rgba(0,0,0,0.03);
+      z-index: -1;
+      pointer-events: none;
+      transition: 0.3s ease;
+      transform-origin: center;
+      transform: scale(1.05);
+      opacity: 0;
     }
   }
-
-  &.grey {
-    background: $color-grey-light;
-    &:hover {
-      background: $color-grey;
-    }
-  }
-
-  &:hover {
-    background: $color-grey-light;
-  }
-
   .details {
     display: flex;
     justify-content: flex-start;
@@ -585,7 +569,7 @@ span.badge {
   bottom: 2em;
   left: 2em;
   z-index: 95;
-  background: rgba(250,250,250,0.8);
+  background: rgba(242,242,242,0.8);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   max-width: 300px;

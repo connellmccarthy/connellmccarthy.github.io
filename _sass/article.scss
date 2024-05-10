@@ -108,6 +108,7 @@ $article-width: 720px;
     font-size: 1.2em;
     color: $color-ink;
     margin: 0;
+    width: 100%;
   }
   img:not(.article_thumbnail img, .product img, .product_image img, .slideshow img, .thumbnail img) {
     border-radius: $border-radius-large;
@@ -522,57 +523,30 @@ blockquote {
   margin-top: 8em !important;
   font-size: 1.4em;
 }
-.section.credits {
-  background: $color-grey-light;
-  border: 1px solid $color-border;
-  border-radius: $border-radius-normal;
+.section.link-group {
+  background: #ebebeb;
+  border: 1px solid #ebebeb;
   overflow: hidden;
-
-  .heading {
-    padding: 1em 2em;
-    border-bottom: 1px solid $color-border;
-
-    @media screen and (max-width: $break-mobile) {
-      padding: 0.5em 1em;
-    }
-    h3,p {
-      margin: 0;
-    }
-  }
+  border-radius: $border-radius-normal;
 
   h4.title {
-    padding: 1em 2em;
-    border-top: 1px solid $color-border;
-    border-bottom: 1px solid $color-border;
+    padding: 1em;
     margin: 0;
-    font-weight: 600;
-    color: $color-ink-dark;
-
-    &:first-of-type {
-      border-top: none;
-    }
-
-    @media screen and (max-width: $break-mobile) {
-      padding: 0.5em 1em;
-    }
+    font-size: 0.9em;
+    font-weight: 400;
+    font-family: $font-mono;
+    color: $color-ink-muted;
   }
   .product-list {
-    background: $color-white;
-    padding: 2em;
+    background: $color-grey-light;
     display: flex;
-    gap: 0.6em;
     flex-wrap: wrap;
-
-    @media screen and (max-width: $break-mobile) {
-      padding: 1em;
-    }
-
+    
     a {
       margin: 0;
-      width: calc(50% - 0.3em);
-      @media screen and (max-width: $break-mobile) {
-        width: 100%;
-      }
+      width: 100%;
+      border: none;
+      border-radius: 0;
     }
   }
 }

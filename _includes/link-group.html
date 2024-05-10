@@ -1,10 +1,4 @@
-<div class="section credits">
-  {% if include.heading %}
-    <div class="heading">
-      <h3>{{ include.headline }}</h3>
-      <p class="muted">{{ include.description }}</p>
-    </div>
-  {% endif %}
+<div class="section link-group">
   {% for group in include.groups %}
     <h4 class="title">{{ group.title }}</h4>
     <div class="section product-list">

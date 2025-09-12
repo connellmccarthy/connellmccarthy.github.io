@@ -1,5 +1,6 @@
 links:
 - title: Rate My Fit
+  description: We built a mini app in the Shop app that allows you to rate a photo of your outfit.
   url: https://shop.app/ratemyfit
   icon: fire
   external: true

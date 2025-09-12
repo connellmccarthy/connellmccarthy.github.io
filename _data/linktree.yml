@@ -1,4 +1,8 @@
 links:
+- title: Rate My Fit
+  url: https://shop.app/ratemyfit
+  icon: fire
+  external: true
 - title: Our wedding
   article: "wedding"
 - title: Bo & Co Studio

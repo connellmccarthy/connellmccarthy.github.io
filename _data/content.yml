@@ -22,6 +22,10 @@ homepage:
   building:
     title: Building
     items:
+    - title: COVEO Music
+      description: COVEO is my audio/visual project that connects music and artwork that resonates both emotionally and aesthetically.
+      external: true
+      url: https://coveomusic.com
     - title: Bo & Co
       description: Bo & Co is a full-service creative studio that specializes in blending art and technology to create captivating digital experiences.
       external: true

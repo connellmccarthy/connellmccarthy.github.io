@@ -40,4 +40,17 @@ Run the command `npm run serve` or `bundle exec jekyll serve` and navigate to [l
 
 ## Deployment
 
+First lint all your code by running `npm run lint`. Your VSCode settings should match the settings in the `.prettierrc.json`:
+
+```json
+{
+	"semi": true,
+	"singleQuote": false,
+	"trailingComma": "es5",
+	"arrowParens": "always",
+	"bracketSpacing": true,
+	"printWidth": 120
+}
+```
+
 Add all your changes `git add .`, commit them `commit -m "commit message"`, and push `git push` them for it to deploy to github pages.

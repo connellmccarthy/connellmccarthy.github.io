@@ -19,9 +19,7 @@ _Visual explaining the structure of the T-shape_
 
 Beyond just the alignment of having a growth mindset, Shopify believes that everyone should be dev literate. I agree with this sentiment wholeheartedly. You don’t need to fully learn how to code, but you should understand the fundamentals. For example, designers who understand development basics can help the collaboration process immensely, just by understanding the feasibility of some of their designs. The future isn’t straying from technology, so the more you can broaden your T to help equip yourself with the right tools, the more successful you can be.
 
-
 Danielle and I used to use a spreadsheet to track all of our shared expenses like groceries, mortgage, bills, etc. and it got pretty complicated and hard to maintain when it came to which items were paid by which transfers. Instead of trying to improve the spreadsheet, and living by my internal motto of _“If something is worth doing, it’s worth overdoing”_, I took it as an opportunity to build an app to track all of it and learn more about development in the process. I used to do a fair bit of development back in the days of PHP, so this was more of a way to modernize my development skills.
-
 
 I started with database modeling, trying to figure out how everything relates to each other and the best way to store the information. It helps when you already have a few months of spreadsheet data to help figure it out. I won’t go too much into the details, but at a very top level - bills contain the information for the expense and they get connected to transfers once they’ve been marked as paid.
 
@@ -39,7 +37,7 @@ After the mocks were done I had a general understanding of the views required an
 
 The monthly view was going to be the biggest lift of the app, so that’s where I started. I figured a lot of the data I pulled would be reusable on the index page, and the transfer select page. I originally started with trying to use [MongoDB](https://www.mongodb.com/){: target="blank"} as the home for the data but trying to learn the aggregation portion of it was making me lose my hair. I figured learning more about Node outweighed learning about Mongo, and I returned to SQL for the database management.
 
-I was amazed at how quickly things were coming together; javascript is pretty intuitive, so everything seemed to go pretty smooth. I did run into an issue with Pug when it came to nesting a condition. Essentially my query returns the block of data for the transfers along with the items the transfer contains. My way of separating the data is by saving the transfer id, and detecting if it’s changed. If it’s a new id it should render the top portion of the transfer. This logic worked out nicely when it came to just printing stuff on the page. When it came to designing it, however, it created a flaw. I wanted each transfer and its items to be inside a container with rounded corners. The easiest way to do that in CSS is by using the `last-child` selector, but the problem was knowing when a transfer had closed. I had to do some hacky logic that essentially set a status of if we were at the start, create a div that wrapped all the content, and if it wasn’t the start, close the div. That worked, but the error in that is that for the last item, the closing tag was never called. I had to create another hacky solution where it detected if it was the last item in the array, and if it was, close the tag. 
+I was amazed at how quickly things were coming together; javascript is pretty intuitive, so everything seemed to go pretty smooth. I did run into an issue with Pug when it came to nesting a condition. Essentially my query returns the block of data for the transfers along with the items the transfer contains. My way of separating the data is by saving the transfer id, and detecting if it’s changed. If it’s a new id it should render the top portion of the transfer. This logic worked out nicely when it came to just printing stuff on the page. When it came to designing it, however, it created a flaw. I wanted each transfer and its items to be inside a container with rounded corners. The easiest way to do that in CSS is by using the `last-child` selector, but the problem was knowing when a transfer had closed. I had to do some hacky logic that essentially set a status of if we were at the start, create a div that wrapped all the content, and if it wasn’t the start, close the div. That worked, but the error in that is that for the last item, the closing tag was never called. I had to create another hacky solution where it detected if it was the last item in the array, and if it was, close the tag.
 
 ```javascript
 if transfers.length
@@ -77,7 +75,7 @@ if transfers.length
           p.accent.m-0 #{item.split}% of $#{prettyNumber(item.amount)}
       .amount
         p.w-medium.m-0.mb-1 $#{prettyNumber(item.amount_split)}
-    
+
     -if (item == last_item) { //If it's the last item in the array, close the div
       | </div>
     -}

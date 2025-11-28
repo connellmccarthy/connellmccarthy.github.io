@@ -19,62 +19,62 @@ $step: 0.2;
   .m-#{$i} {
     margin: #{$i * $step}em;
     @media only screen and (max-width: $mobile) {
-      margin: #{($i * $step)/ 2}em;
+      margin: #{($i * $step) / 2}em;
     }
   }
   .mt-#{$i} {
     margin-top: #{$i * $step}em;
     @media only screen and (max-width: $mobile) {
-      margin-top: #{($i * $step)/ 2}em;
+      margin-top: #{($i * $step) / 2}em;
     }
   }
   .mr-#{$i} {
     margin-right: #{$i * $step}em;
     @media only screen and (max-width: $mobile) {
-      margin-right: #{($i * $step)/ 2}em;
+      margin-right: #{($i * $step) / 2}em;
     }
   }
   .mb-#{$i} {
     margin-bottom: #{$i * $step}em;
     @media only screen and (max-width: $mobile) {
-      margin-bottom: #{($i * $step)/ 2}em;
+      margin-bottom: #{($i * $step) / 2}em;
     }
   }
   .ml-#{$i} {
     margin-left: #{$i * $step}em;
     @media only screen and (max-width: $mobile) {
-      margin-left: #{($i * $step)/ 2}em;
+      margin-left: #{($i * $step) / 2}em;
     }
   }
 
   .p-#{$i} {
     padding: #{$i * $step}em;
     @media only screen and (max-width: $mobile) {
-      padding: #{($i * $step)/ 2}em;
+      padding: #{($i * $step) / 2}em;
     }
   }
   .pt-#{$i} {
     padding-top: #{$i * $step}em;
     @media only screen and (max-width: $mobile) {
-      padding-top: #{($i * $step)/ 2}em;
+      padding-top: #{($i * $step) / 2}em;
     }
   }
   .pr-#{$i} {
     padding-right: #{$i * $step}em;
     @media only screen and (max-width: $mobile) {
-      padding-right: #{($i * $step)/ 2}em;
+      padding-right: #{($i * $step) / 2}em;
     }
   }
   .pb-#{$i} {
     padding-bottom: #{$i * $step}em;
     @media only screen and (max-width: $mobile) {
-      padding-bottom: #{($i * $step)/ 2}em;
+      padding-bottom: #{($i * $step) / 2}em;
     }
   }
   .pl-#{$i} {
     padding-left: #{$i * $step}em;
     @media only screen and (max-width: $mobile) {
-      padding-left: #{($i * $step)/ 2}em;
+      padding-left: #{($i * $step) / 2}em;
     }
   }
 }

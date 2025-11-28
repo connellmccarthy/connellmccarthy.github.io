@@ -1,42 +1,88 @@
 <div class="product_page">
   <div class="product_image" id="product_image_container-{{ product.product_id }}" data-aos="fade-up">
-    <img id="product_image-{{ product.product_id }}" data-product-id="{{ product.product_id }}" src="{{ product.images[0].src }}">
+    <img
+      id="product_image-{{ product.product_id }}"
+      data-product-id="{{ product.product_id }}"
+      src="{{ product.images[0].src }}"
+    />
   </div>
   <div class="product_form" data-aos="fade">
     <p class="title">{{ product.title }}</p>
-    <p class="price" id="product_price-{{ product.product_id }}">${{ product.variants[0].price | remove: '.00' }} CAD</p>
+    <p class="price" id="product_price-{{ product.product_id }}">
+      ${{ product.variants[0].price | remove: '.00' }} CAD
+    </p>
     <hr />
     <form id="AddToCartForm-{{ product.product_id }}">
       <div class="options">
-        {% assign options = product.options | reverse %}
-        {% for option in options %}
-          {% assign option_index = forloop.index0 %}
-          {% assign is_color = false %}
-          {% assign downcased_option = option.name | downcase %}
-          {% if downcased_option contains 'color' or downcased_option contains 'colour' %}
-            {% assign is_color = true %}
-          {% endif %}
-          <p class="header muted">{{ option.name }}</p>
-          {% for value in option.values %}
-            <div data-value="{{ value | slugify }}" class="swatch-element {% if is_color %}color {% endif %}{{ value | slugify }}">
-              <input class="{% if is_color %}color {% endif %}{{ value | slugify }}" id="swatch-{{ option_index }}-{{ value | slugify }}" type="radio" name="option-{{ option_index }}" data-product-id="{{ product.product_id }}" value="{{ value | slugify }}"{% if forloop.first %} checked{% endif %} data-value="{{ value | escape }}"/>
-              <label class="{% if is_color %}color {% endif %}{{ value | slugify }}" for="swatch-{{ option_index }}-{{ value | slugify }}" data-product-id="{{ product.product_id }}">
-                {{ value }}
-              </label>
-            </div>
-          {% endfor %}
-        {% endfor %}
+        {% assign options = product.options | reverse %} {% for option in options %} {% assign option_index =
+        forloop.index0 %} {% assign is_color = false %} {% assign downcased_option = option.name | downcase %} {% if
+        downcased_option contains 'color' or downcased_option contains 'colour' %} {% assign is_color = true %} {% endif
+        %}
+        <p class="header muted">{{ option.name }}</p>
+        {% for value in option.values %}
+        <div
+          data-value="{{ value | slugify }}"
+          class="swatch-element {% if is_color %}color {% endif %}{{ value | slugify }}"
+        >
+          <input
+            class="{% if is_color %}color {% endif %}{{ value | slugify }}"
+            id="swatch-{{ option_index }}-{{ value | slugify }}"
+            type="radio"
+            name="option-{{ option_index }}"
+            data-product-id="{{ product.product_id }}"
+            value="{{ value | slugify }}"
+            {%
+            if
+            forloop.first
+            %}
+            checked{%
+            endif
+            %}
+            data-value="{{ value | escape }}"
+          />
+          <label
+            class="{% if is_color %}color {% endif %}{{ value | slugify }}"
+            for="swatch-{{ option_index }}-{{ value | slugify }}"
+            data-product-id="{{ product.product_id }}"
+          >
+            {{ value }}
+          </label>
+        </div>
+        {% endfor %} {% endfor %}
         <input type="hidden" name="title" id="product-title-{{ product.product_id }}" value="{{ product.title }}" />
         <input type="hidden" name="url" id="product-url-{{ product.product_id }}" value="{{ product.url }}" />
-        <input type="hidden" name="id" id="product-select-{{ product.product_id }}" value="{{ product.variants.first.id }}" />
-        <input type="hidden" name="image" id="product-image-{{ product.product_id }}" value="{{ product.images[0].src }}" />
-        <input type="hidden" name="price" id="product-price-{{ product.product_id }}" value="{{ product.variants.first.price }}" />
+        <input
+          type="hidden"
+          name="id"
+          id="product-select-{{ product.product_id }}"
+          value="{{ product.variants.first.id }}"
+        />
+        <input
+          type="hidden"
+          name="image"
+          id="product-image-{{ product.product_id }}"
+          value="{{ product.images[0].src }}"
+        />
+        <input
+          type="hidden"
+          name="price"
+          id="product-price-{{ product.product_id }}"
+          value="{{ product.variants.first.price }}"
+        />
         <hr class="mt-10" />
-        <button type="submit" class="btn btn__dark btn__round btn__padding-large product-modal-trigger" data-product-id="{{ product.product_id }}">
+        <button
+          type="submit"
+          class="btn btn__dark btn__round btn__padding-large product-modal-trigger"
+          data-product-id="{{ product.product_id }}"
+        >
           Add to cart
         </button>
         {% if product.product_type == 'Photo Print' %}
-          <p class="muted print-info">This gorgeous photograph is printed on a premium 240gsm paper with a satin lustre finish, and subtle pearl-like texture. It's printed using water based inks, uses a 10-mil RC base which gives prints a photographic feel, and keeps the paper cockle-free.</p>
+        <p class="muted print-info">
+          This gorgeous photograph is printed on a premium 240gsm paper with a satin lustre finish, and subtle
+          pearl-like texture. It's printed using water based inks, uses a 10-mil RC base which gives prints a
+          photographic feel, and keeps the paper cockle-free.
+        </p>
         {% endif %}
       </div>
     </form>

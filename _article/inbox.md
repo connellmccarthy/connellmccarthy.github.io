@@ -5,7 +5,7 @@ date: 2021-08-25T17:42:00-05:00
 draft: false
 description: "How I used my passion projects to build powerful creative for Shopify Inbox."
 images:
-- /article/inbox/shop-thumbnail.jpg
+  - /article/inbox/shop-thumbnail.jpg
 cta_heading: "Interested in seeing what I build next?"
 slug: "inbox"
 thumbnail: shop-thumbnail.jpg
@@ -29,7 +29,7 @@ credits:
 
 I can’t sit still. Whether it’s taking photos, making music, or building something - my happiness is directly linked to my productivity. So, you can imagine I have a lot of hobbies in which I spend most, if not, all of my free time doing. I constantly see these hobbies as skills I can add to my toolbelt, and they help me to be a better creative.
 
-I’ve been trying to find a role at [Shopify](https://shopify.com/){: target="_blank"} where I could utilize these other skills I have to create a better user experience. Unfortunately, I haven’t had much luck. A small portion is because the company is so big that we have a person who does motion, a person to do the development, a person to do the photography, etc. all embedded or accessible to each team. Don’t get me wrong, I’ve been able to stretch my role as a “designer” as much as I could in the past, but the projects have never been as all-encompassing as the launch of Inbox.
+I’ve been trying to find a role at [Shopify](https://shopify.com/){: target="\_blank"} where I could utilize these other skills I have to create a better user experience. Unfortunately, I haven’t had much luck. A small portion is because the company is so big that we have a person who does motion, a person to do the development, a person to do the photography, etc. all embedded or accessible to each team. Don’t get me wrong, I’ve been able to stretch my role as a “designer” as much as I could in the past, but the projects have never been as all-encompassing as the launch of Inbox.
 
 I joined the Messaging UX team mid-spring of this year, it’s a small team working on bringing a new product to market. Being the sole visual designer working on the marketing campaign meant that there was a lot of potential to be scrappy and have the freedom to go beyond the normal role of a designer.
 
@@ -40,16 +40,16 @@ _Early visual explorations for the Inbox brochure page._
 
 ## Photography
 
-When we started diving into the work we got approval to put together a photoshoot so that we could curate original content for the [brochure page](https://www.shopify.com/inbox){: target="_blank"} and future marketing materials.
+When we started diving into the work we got approval to put together a photoshoot so that we could curate original content for the [brochure page](https://www.shopify.com/inbox){: target="\_blank"} and future marketing materials.
 
-I’ve been doing [photography](https://www.instagram.com/connellmccarthy/){: target="_blank"} as a hobby for about 6 years now, and I sell my landscape [photographs as prints](https://shop.connellmccarthy.com/){: target="_blank"}. I had a brief stint as an Instagram “influencer” in which brands would send me products to take photos of to post, and I even ventured out into doing photography for brands directly. It started feeling more like work and less of a hobby so I dialed it back and only shot content for myself.
+I’ve been doing [photography](https://www.instagram.com/connellmccarthy/){: target="\_blank"} as a hobby for about 6 years now, and I sell my landscape [photographs as prints](https://shop.connellmccarthy.com/){: target="\_blank"}. I had a brief stint as an Instagram “influencer” in which brands would send me products to take photos of to post, and I even ventured out into doing photography for brands directly. It started feeling more like work and less of a hobby so I dialed it back and only shot content for myself.
 
 Fast forward to this Inbox project, I was really excited to tap back into my experience with that to better collaborate and art direct the shoot. I got to work on building out a creative brief and art direction in which we could use to partner with a photographer/studio. Since Inbox is a conversational product I tried brainstorming how to showcase a conversation between a merchant and a buyer - but in a digital environment. I had an idea of having a buyer in their home environment, and a merchant in their back-office both sitting at a table that was almost identical so that it’d connect the two even though they were in different places and bring in this level of symmetry. I put together this fantastic sketch that everyone seemed to love.
 
 ![Very rough sketch to illustrate the idea of connecting two people through digital conversation.]({{ image_path }}/article-2.jpg)
 _Very rough sketch to illustrate the idea of connecting two people through digital conversation._
 
-I sent this over to [Rémi Thériault](https://www.remitheriault.com/){: target="_blank"}, a photographer with whom we’ve worked in the past. He and [his agency](https://houseofcommon.studio/){: target="_blank"} were on board for the task even with our incredibly short timelines. It was going to be a challenge to shoot in different locations but ensure that the camera stayed at the same distance, perspective, height, and angle to get that perfect symmetrical cut. We cast Kagiso and Nicolai to be the merchant and buyer respectively and chose a wardrobe that included colours from the Inbox palette. Our prop stylist [Melissa](https://www.melissamilakovic.com/){: target="_blank"} had a big job to curate pieces that both fit the Shopify direction and some individual pieces that introduced a pop of Inbox red. The table was also a huge factor, and she went above and beyond to get the table that was the centerpiece of the shoot.
+I sent this over to [Rémi Thériault](https://www.remitheriault.com/){: target="\_blank"}, a photographer with whom we’ve worked in the past. He and [his agency](https://houseofcommon.studio/){: target="\_blank"} were on board for the task even with our incredibly short timelines. It was going to be a challenge to shoot in different locations but ensure that the camera stayed at the same distance, perspective, height, and angle to get that perfect symmetrical cut. We cast Kagiso and Nicolai to be the merchant and buyer respectively and chose a wardrobe that included colours from the Inbox palette. Our prop stylist [Melissa](https://www.melissamilakovic.com/){: target="\_blank"} had a big job to curate pieces that both fit the Shopify direction and some individual pieces that introduced a pop of Inbox red. The table was also a huge factor, and she went above and beyond to get the table that was the centerpiece of the shoot.
 
 ![Inbox palette with examples of products that can add in a touch of colour.]({{ image_path }}/article-3.jpg)
 _Inbox palette with examples of products that can add in a touch of colour._
@@ -72,7 +72,6 @@ With the environments I created, we wanted to give one of the scenes more purpos
 ## Motion design
 
 Similar to the 3D render skills I had, I also used to do a lot of animation work for music releases. I’m pretty fluent in Adobe After Effects so I knew I could create some motion graphics to better communicate the product and its features. I feel like adding some motion gives better focus on what information you want your user to digest at a particular time or order, and gives you full control of the complete narrative.
-
 
 <div class="section light-grey grid grid__50 border-radius__normal">
   {% include vimeo.html video_id='592913505' %}
@@ -98,12 +97,11 @@ Similar to the 3D render skills I had, I also used to do a lot of animation work
   </div>
 </div>
 
-
-Knowing that we’d have these animated pieces, I suggested using those to build out a promo video for the launch as well. [Shannon](https://www.shannonelizabethmurphy.com/){: target="_blank"}, the content designer, and I worked together on getting a storyboard drafted, and I immediately started thinking about the audio since music is crucial in building the right energy and flow. The timelines were tight so licensing a song would take too long, and since we were using original content for everything else I felt like using a royalty-free track wasn’t the right fit.
+Knowing that we’d have these animated pieces, I suggested using those to build out a promo video for the launch as well. [Shannon](https://www.shannonelizabethmurphy.com/){: target="\_blank"}, the content designer, and I worked together on getting a storyboard drafted, and I immediately started thinking about the audio since music is crucial in building the right energy and flow. The timelines were tight so licensing a song would take too long, and since we were using original content for everything else I felt like using a royalty-free track wasn’t the right fit.
 
 ## Music production
 
-On the side, I make and release music under the artist names [COVEO](http://coveomusic.com/){: target="_blank"} and [Salété](https://saletemusic.com/){: target="_blank"}. With COVEO being more of my more melodic and euphoric sound, and Salété being for more of my dark and electronic-themed songs. I’ve been into music for as long as I can remember, growing up playing the piano and trumpet and then combining my passion for computers with music in the early 2010s.
+On the side, I make and release music under the artist names [COVEO](http://coveomusic.com/){: target="\_blank"} and [Salété](https://saletemusic.com/){: target="\_blank"}. With COVEO being more of my more melodic and euphoric sound, and Salété being for more of my dark and electronic-themed songs. I’ve been into music for as long as I can remember, growing up playing the piano and trumpet and then combining my passion for computers with music in the early 2010s.
 
 Given this opportunity with Inbox, I asked the team to trust me and opted to make the music myself so we could create the exact tone we wanted to convey. I put together two directions, one had more funk, and the other tied into the campaign wrapper of ‘Power’. It was a no-brainer to go with the latter.
 
@@ -115,7 +113,6 @@ The video came together quite quickly. We had the timing cuts, and initial text 
 
 ## Outcome
 
-I didn’t do this campaign alone, I was joined by the super talented Shannon Murphy who led the campaign, [Annie Berrones](https://www.linkedin.com/in/annieberrones/){: target="_blank"} who managed the project, and the whole product team at our backs. You’ll see the incredible work that Shannon did throughout the [brochure page](https://www.shopify.com/inbox){: target="_blank"} and comms, and she made my job so easy to put it all together. This product launch wouldn’t have been possible without the team, the wonderful people who helped give feedback, and finally the trust from my peers who supported me in going above and beyond. I’m glad that after all this time, I have found a role that is deeply, truly, for me.
-
+I didn’t do this campaign alone, I was joined by the super talented Shannon Murphy who led the campaign, [Annie Berrones](https://www.linkedin.com/in/annieberrones/){: target="\_blank"} who managed the project, and the whole product team at our backs. You’ll see the incredible work that Shannon did throughout the [brochure page](https://www.shopify.com/inbox){: target="\_blank"} and comms, and she made my job so easy to put it all together. This product launch wouldn’t have been possible without the team, the wonderful people who helped give feedback, and finally the trust from my peers who supported me in going above and beyond. I’m glad that after all this time, I have found a role that is deeply, truly, for me.
 
 {% include vimeo.html video_id='592913268' %}

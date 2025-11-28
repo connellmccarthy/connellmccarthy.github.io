@@ -7,7 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "products": "node products.js",
-    "serve": "bundle exec jekyll serve -o -l --host=0.0.0.0"
+    "serve": "bundle exec jekyll serve -o -l --host=0.0.0.0",
+    "lint": "npx prettier '**/*.{js,md,yml,html,scss}' '!**/assets/**/*.min.js' '!**/_site/' '!**/package-lock.json' '!**/package.json' --config .prettierrc.json --write"
   },
   "repository": {
     "type": "git",

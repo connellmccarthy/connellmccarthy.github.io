@@ -1,33 +1,33 @@
 main:
   links:
-  - title: Info
-    slug: info
-    icon: home
-    url: /
-  - title: What's new
-    slug: new
-    icon: sparkles
-    url: /new/
-  - title: Writing
-    slug: article
-    icon: book
-    url: /article/
-  - title: Prints
-    slug: prints
-    icon: camera-retro
-    links:
-    - title: Overview
-      url: /prints/
-    - title: Browse all products
-      url: /prints/collections/all/
-    - title: Latest additions
-      badge: New
-      badge_color: blue
-      url: /prints/collections/new/
-    - title: Shop by collection
-      links: :collections
-    - title: Environmental Impact Promise
-      url: /prints/pages/environmental-impact-promise
+    - title: Info
+      slug: info
+      icon: home
+      url: /
+    - title: What's new
+      slug: new
+      icon: sparkles
+      url: /new/
+    - title: Writing
+      slug: article
+      icon: book
+      url: /article/
+    - title: Prints
+      slug: prints
+      icon: camera-retro
+      links:
+        - title: Overview
+          url: /prints/
+        - title: Browse all products
+          url: /prints/collections/all/
+        - title: Latest additions
+          badge: New
+          badge_color: blue
+          url: /prints/collections/new/
+        - title: Shop by collection
+          links: :collections
+        - title: Environmental Impact Promise
+          url: /prints/pages/environmental-impact-promise
 footer:
   - title: Changelog
     url: /changelog/

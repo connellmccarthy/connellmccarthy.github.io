@@ -7,11 +7,7 @@ slug: index
 
 <h1 class="visually-hidden">{{ site.title }}</h1>
 
-{% include index/hero.html %}
-
-{% include index/showreel.html %}
-
-{% include index/about.html %}
+{% include index/hero.html %} {% include index/showreel.html %} {% include index/about.html %}
 
 <div class="section" data-aos="fade">
   <div class="wrapper condensed chapter">
@@ -19,16 +15,9 @@ slug: index
       <h3>{{ site.data.content.homepage.building.title }}</h3>
     </div>
     <div class="chapter__content">
-      {% for project in site.data.content.homepage.building.items %}
-        {% include card.html
-          style = 'project'
-          title = project.title
-          description = project.description
-          url = project.url
-          arrow = true
-          external = project.external
-        %}
-      {% endfor %}
+      {% for project in site.data.content.homepage.building.items %} {% include card.html style = 'project' title =
+      project.title description = project.description url = project.url arrow = true external = project.external %} {%
+      endfor %}
     </div>
   </div>
 </div>
@@ -40,31 +29,14 @@ slug: index
         <h3>{{ site.data.content.homepage.articles.title }}</h3>
       </div>
       <div class="chapter__content">
-        {% assign articles = site.article | reverse | where:"draft",false %}
-          {% for project in articles limit:3 %}
-            {% assign year  = project.date | date: '%Y' %}
-            {% include card.html
-              style = 'project'
-              title = project.title
-              badge = year
-              badge_color = 'grey'
-              description = project.description
-              arrow = false
-              url = project.url
-            %}
-          {% endfor %}
-        </div>
+        {% assign articles = site.article | reverse | where:"draft",false %} {% for project in articles limit:3 %} {%
+        assign year = project.date | date: '%Y' %} {% include card.html style = 'project' title = project.title badge =
+        year badge_color = 'grey' description = project.description arrow = false url = project.url %} {% endfor %}
+      </div>
     </div>
     <a href="/article" class="btn btn__basic center mt-8">Browse all articles</a>
   </div>
 </div>
 
-{% include index/features.html %}
-
-{% include index/experience.html %}
-
-{% include index/location.html %}
-
-{% include index/contact.html %}
-
-{% include newsletter.html %}
+{% include index/features.html %} {% include index/experience.html %} {% include index/location.html %} {% include
+index/contact.html %} {% include newsletter.html %}

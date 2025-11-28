@@ -9,44 +9,53 @@ slug: articles
 
 <div class="wrapper condensed">
   <div class="section center article_heading">
-    <p>I was the worst when it came to sharing my work and the rationale behind it. In an attempt to be more transparent and to live up to the <span class="serif">'do things, tell people'</span> motto, I started writing about my processes.</p>
+    <p>
+      I was the worst when it came to sharing my work and the rationale behind it. In an attempt to be more transparent
+      and to live up to the
+      <span class="serif">'do things, tell people'</span> motto, I started writing about my processes.
+    </p>
   </div>
 </div>
 
 <div class="wrapper">
   <div class="articles mt-6">
-    {% assign articles = site.article | sort: "date" | reverse | where:"draft",false %}
-  
-    {% for article in articles %}
-      {% assign article_words = article.content | strip_html | strip_newlines | downcase | replace: 'and','' | replace: 'the','' | split:' ' %}
-      {% assign word_count = article_words | size %}
+    {% assign articles = site.article | sort: "date" | reverse | where:"draft",false %} {% for article in articles %} {%
+    assign article_words = article.content | strip_html | strip_newlines | downcase | replace: 'and','' | replace:
+    'the','' | split:' ' %} {% assign word_count = article_words | size %}
 
-      <div class="articles__item">
-        <a class="articles__item__thumb" href="{{ article.url }}">
-          <div class="article_thumbnail">
-            <img src="{{ site.image_path }}{{ article.slug }}/{{ article.thumbnail }}">
-          </div>
-        </a>
-        <div class="articles__item__info">
-          <p class="muted m-0">{{ article.title }}</p>
-          <p class="description m-0">{{ article.description }}</p>
-          <div class="article-info-details left">
-            <div class="article-details">
-              <p class="muted">Publish date</p>
-              <p>{{ article.date | date: "%B %d, %Y" }}</p>
-            </div>
-            <div class="article-details">
-              <p class="muted">Reading time</p>
-              <p>{{ word_count | times: 0.0076 | round }} minutes</p>
-            </div>
-          </div>
-          <a class="btn btn__dark btn__round btn__marketing" href="{{ article.url }}">Read article <i class="far fa-arrow-right" aria-hidden="true"></i></a>
+    <div class="articles__item">
+      <a class="articles__item__thumb" href="{{ article.url }}">
+        <div class="article_thumbnail">
+          <img src="{{ site.image_path }}{{ article.slug }}/{{ article.thumbnail }}" />
         </div>
+      </a>
+      <div class="articles__item__info">
+        <p class="muted m-0">{{ article.title }}</p>
+        <p class="description m-0">{{ article.description }}</p>
+        <div class="article-info-details left">
+          <div class="article-details">
+            <p class="muted">Publish date</p>
+            <p>{{ article.date | date: "%b %d, %Y" }}</p>
+          </div>
+          <div class="article-details">
+            <p class="muted">Reading time</p>
+            <p>{{ word_count | times: 0.0076 | round }} minutes</p>
+          </div>
+          <div class="article-details">
+            <p class="muted">Engagement</p>
+            <p>
+              <span class="count loading" data-id="{{ article.slug }}">{% include assets/icons/loading.html %}</span>
+              likes
+            </p>
+          </div>
+        </div>
+        <a class="btn btn__dark btn__round btn__marketing" href="{{ article.url }}"
+          >Read article <i class="far fa-arrow-right" aria-hidden="true"></i
+        ></a>
       </div>
+    </div>
     {% endfor %}
   </div>
 </div>
 
-<div class="wrapper">
-  {% include newsletter.html %}
-</div>
+<div class="wrapper">{% include newsletter.html %}</div>

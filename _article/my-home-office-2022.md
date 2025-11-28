@@ -8,7 +8,7 @@ cta_heading: "Interested in seeing how my office evolves?"
 slug: "my-home-office-2022"
 thumbnail: mho-thumbnail.jpg
 social_share: my-home-office-2022.jpg
-followup: 'my-home-office'
+followup: "my-home-office"
 groups:
   studio:
     - title: Updated Studio Hardware
@@ -81,7 +81,6 @@ groups:
           description: "Haneda from Structube"
           cta: "Visit Structubes Website"
           url: "https://www.structube.com/en_ca/haneda-sideboard-140-cm-40-10-68?pid=24106&ref=connellmccarthy.com"
-
 ---
 
 {% assign image_path = site.image_path | append: page.slug %}
@@ -89,7 +88,7 @@ groups:
 At the start of the pandemic, my workplace announced that we were moving into a ‘digital by default’ state. In-person offices were now a thing of the past. Moving forward we all were working from home – forever. When we bought our new house I made the conscious decision to make sure my day job and my passion projects were separated while still in the same room.
 
 ![My 2022 home studio setup]({{ image_path }}/mho-1.jpg)
-*My 2022 home studio setup*
+_My 2022 home studio setup_
 
 {% include link-group.html groups = page.groups.studio %}
 
@@ -109,7 +108,7 @@ Unfortunately, while the thought still applies to keeping it minimal, the blank 
 
 I put up some acoustic panels to help with dampening the reverb in the space and put up some posters that either I created or that inspire me. I switched my display setup from the display + laptop combo into a single Apple Display. I saw it pop up on our internal classifieds and immediately reached out to get it. Consolidating to a single display helped me spend less time being distracted with Slack conversations and notifications seeing as it wasn’t always open on the side.
 
-I built a website for one of our recent marketing initiatives, [Shopify Magazine](https://magazine.shopify.com/?ref=connellmccarthy.com){: target="_blank"}, and as a thank you the team sent me a new laptop holder from [Grovemade](https://grovemade.com/?ref=connellmccarthy.com){: target="_blank" }. The subtle touch of wood on the all-white desktop is a nice touch. I use the Apple Magic Keyboard and mouse atop a tan leather desk mat. I still had a problem with my face being dark during meetings because of the backlighting from the windows on the side of my office, so I picked up a new desk lamp that fits the aesthetic perfectly. I put in a [Philips Hue](https://www.philips-hue.com/en-ca?ref=connellmccarthy.com){: target="_blank"} bulb so that it’s controlled with the rest of the office lighting.
+I built a website for one of our recent marketing initiatives, [Shopify Magazine](https://magazine.shopify.com/?ref=connellmccarthy.com){: target="\_blank"}, and as a thank you the team sent me a new laptop holder from [Grovemade](https://grovemade.com/?ref=connellmccarthy.com){: target="\_blank" }. The subtle touch of wood on the all-white desktop is a nice touch. I use the Apple Magic Keyboard and mouse atop a tan leather desk mat. I still had a problem with my face being dark during meetings because of the backlighting from the windows on the side of my office, so I picked up a new desk lamp that fits the aesthetic perfectly. I put in a [Philips Hue](https://www.philips-hue.com/en-ca?ref=connellmccarthy.com){: target="\_blank"} bulb so that it’s controlled with the rest of the office lighting.
 
 {% include link-group.html groups = page.groups.shopify %}
 

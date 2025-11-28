@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital@1&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Newsreader:ital@1&display=swap");
 
 $mobile: 768px;
 $gutter: 6em;
@@ -20,15 +20,18 @@ $border-radius-large: 12px;
 $border-radius-xlarge: 24px;
 $border-radius-xxlarge: 48px;
 
-$font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-$font-serif: 'Newsreader', serif;
+$font-family:
+  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol";
+$font-serif: "Newsreader", serif;
 $font-mono: monospace;
-
 
 .transition-fade,
 .transition-scale {
   opacity: 1;
-  transition: opacity 0.3s, transform 0.4s;
+  transition:
+    opacity 0.3s,
+    transform 0.4s;
   transform-origin: 50% 50vh;
 }
 
@@ -38,42 +41,42 @@ $font-mono: monospace;
 }
 
 html {
-	&.is-animating {
+  &.is-animating {
     .transition-fade,
-		.transition-scale {
-			opacity: 0;
-		}
+    .transition-scale {
+      opacity: 0;
+    }
     .transition-scale {
       transform: scale(1.02);
     }
-		&.is-leaving {
+    &.is-leaving {
       .transition-fade,
-			.transition-scale {
-				opacity: 0;
-			}
+      .transition-scale {
+        opacity: 0;
+      }
       .transition-scale {
         transform: scale(0.98);
       }
-		}
-		&.swup-theme-reverse {
+    }
+    &.swup-theme-reverse {
       .transition-fade,
-			.transition-scale {
-				opacity: 0;
-			}
+      .transition-scale {
+        opacity: 0;
+      }
       .transition-scale {
         transform: scale(0.98);
       }
-			&.is-leaving {
+      &.is-leaving {
         .transition-fade,
-				.transition-scale {
-					opacity: 0;
-				}
+        .transition-scale {
+          opacity: 0;
+        }
         .transition-scale {
           transform: scale(1.02);
         }
-			}
-		}
-	}
+      }
+    }
+  }
 }
 
 .mobile-only {
@@ -100,7 +103,8 @@ html {
   white-space: nowrap;
   width: 1px;
 }
-html, body {
+html,
+body {
   padding: 0;
 }
 body {
@@ -168,7 +172,7 @@ sup {
     counter-increment: footnotes;
     position: relative;
     &::before {
-      content: '[' counter(footnotes) ']';
+      content: "[" counter(footnotes) "]";
       font-size: 0.8em;
       font-family: $font-family;
       position: absolute;
@@ -178,16 +182,22 @@ sup {
   }
 }
 
-a,button,
+a,
+button,
 input {
   &:focus-visible {
     outline: 2px solid lighten($color-blue, 30);
   }
 }
-h1,h2,h3 {
+h1,
+h2,
+h3 {
   color: $color-ink-dark;
 }
-h1,h2,h3,p {
+h1,
+h2,
+h3,
+p {
   line-height: 1.8em;
 }
 h1 {
@@ -238,7 +248,7 @@ h2 {
 .grid {
   display: grid;
   align-items: center;
-  
+
   &__50 {
     grid-template-columns: 100%;
     div {
@@ -279,7 +289,7 @@ img {
   margin: 6em 0;
 
   &.green {
-    background: #E5EEE5;
+    background: #e5eee5;
     padding: 6em 3em;
 
     p.muted {
@@ -389,22 +399,22 @@ i.fa-arrow-right.external {
     }
 
     &:hover,
-      &:focus {  
-        background: transparent;
-        &::after {
-          opacity: 1;
-          transform: scale(1);
-        }
+    &:focus {
+      background: transparent;
+      &::after {
+        opacity: 1;
+        transform: scale(1);
       }
+    }
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
       height: 100%;
       width: 100%;
       border-radius: $border-radius-normal;
-      background: rgba(0,0,0,0.03);
+      background: rgba(0, 0, 0, 0.03);
       z-index: -1;
       pointer-events: none;
       transition: 0.3s ease;
@@ -532,7 +542,7 @@ span.badge {
 .fade {
   height: 100vh;
   width: 100vw;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
   position: fixed;
   z-index: 97;
   top: 0;
@@ -547,7 +557,7 @@ span.badge {
   &.menu-trigger {
     z-index: 95;
   }
-  
+
   &.active {
     opacity: 1;
     pointer-events: all;
@@ -569,7 +579,7 @@ span.badge {
   bottom: 2em;
   left: 2em;
   z-index: 95;
-  background: rgba(242,242,242,0.8);
+  background: rgba(242, 242, 242, 0.8);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   max-width: 300px;

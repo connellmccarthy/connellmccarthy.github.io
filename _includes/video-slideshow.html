@@ -1,21 +1,27 @@
-{% assign offset = 1 %}
-{% assign offset_count = include.count %}
-{% if include.offset %}
-  {% assign offset = include.offset %}
-  {% assign offset_count = include.count | plus: include.offset | minus: 1 %}
-{% endif %}
+{% assign offset = 1 %} {% assign offset_count = include.count %} {% if include.offset %} {% assign offset =
+include.offset %} {% assign offset_count = include.count | plus: include.offset | minus: 1 %} {% endif %} {% assign
+unique_id = "now" | date: '%s' %} {% if include.unique %} {% assign unique_id = unique_id | plus: include.unique %} {%
+endif %}
 
-{% assign unique_id = "now" | date: '%s' %}
-{% if include.unique %}
-  {% assign unique_id = unique_id | plus: include.unique %}
-{% endif %}
-
-
-<div class="slideshow" id="{{ include.slug | append: unique_id }}" data-offset="{{ offset }}" data-count="{{ include.count }}">
+<div
+  class="slideshow"
+  id="{{ include.slug | append: unique_id }}"
+  data-offset="{{ offset }}"
+  data-count="{{ include.count }}"
+>
   <div class="slideshow__video_controls" id="ss_video_controls_container_{{ include.slug | append: unique_id }}">
-    <button id="ss_video_controls_{{ include.slug | append: unique_id }}" class="btn btn__circle large btn__marketing btn__dark btn__scale slideshow-video-controller">
-      <span id="ss_video_controls_button-text-{{ include.slug | append: unique_id }}" class="visually-hidden">Pause video</span>
-      <i id="ss_video_controls_button-icon-{{ include.slug | append: unique_id }}" class="fas fa-pause" aria-hidden="true"></i>
+    <button
+      id="ss_video_controls_{{ include.slug | append: unique_id }}"
+      class="btn btn__circle large btn__marketing btn__dark btn__scale slideshow-video-controller"
+    >
+      <span id="ss_video_controls_button-text-{{ include.slug | append: unique_id }}" class="visually-hidden"
+        >Pause video</span
+      >
+      <i
+        id="ss_video_controls_button-icon-{{ include.slug | append: unique_id }}"
+        class="fas fa-pause"
+        aria-hidden="true"
+      ></i>
     </button>
   </div>
   {% if include.count > 1 %}
@@ -31,20 +37,36 @@
   </div>
   {% endif %}
   <div id="slideshow_{{ include.slug | append: unique_id }}" class="slideshow__container">
-    {% for i in (offset..offset_count) %}
-      {% assign image_id = i | append: "" %}
-      <video class="slideshow__video first_slideshow_content_{{ include.slug | append: unique_id }}" id="image_{{ include.slug | append: unique_id }}_{{ forloop.index }}" data-id="{{ include.slug | append: unique_id }}_{{ forloop.index }}" thumbnail="{{ include.path }}/{{ include.slug }}-{{ i }}.jpg" muted loop playsinline autoplay state="playing" preload="auto">
-        <source src="{{ include.path }}/{{ include.slug }}-{{ i }}.{{ include.format }}" type="video/{{ include.format }}">
-      </video>
+    {% for i in (offset..offset_count) %} {% assign image_id = i | append: "" %}
+    <video
+      class="slideshow__video first_slideshow_content_{{ include.slug | append: unique_id }}"
+      id="image_{{ include.slug | append: unique_id }}_{{ forloop.index }}"
+      data-id="{{ include.slug | append: unique_id }}_{{ forloop.index }}"
+      thumbnail="{{ include.path }}/{{ include.slug }}-{{ i }}.jpg"
+      muted
+      loop
+      playsinline
+      autoplay
+      state="playing"
+      preload="auto"
+    >
+      <source
+        src="{{ include.path }}/{{ include.slug }}-{{ i }}.{{ include.format }}"
+        type="video/{{ include.format }}"
+      />
+    </video>
     {% endfor %}
   </div>
   {% if include.count > 1 %}
   <div class="slideshow__thumbnails">
-    {% for x in (offset..offset_count) %}
-      {% assign image_id = x | append: "" %}
-      <button class="thumbnail{% if x == offset %} active{% endif %}" id="thumb_{{ include.slug | append: unique_id }}_{{ forloop.index }}" data-id="{{ include.slug | append: unique_id }}_{{ forloop.index }}">
-        <img src="{{ include.path }}/{{ include.slug }}-{{ x }}.jpg">
-      </button>
+    {% for x in (offset..offset_count) %} {% assign image_id = x | append: "" %}
+    <button
+      class="thumbnail{% if x == offset %} active{% endif %}"
+      id="thumb_{{ include.slug | append: unique_id }}_{{ forloop.index }}"
+      data-id="{{ include.slug | append: unique_id }}_{{ forloop.index }}"
+    >
+      <img src="{{ include.path }}/{{ include.slug }}-{{ x }}.jpg" />
+    </button>
     {% endfor %}
   </div>
   {% endif %}

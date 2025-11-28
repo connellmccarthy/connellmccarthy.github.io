@@ -40,7 +40,8 @@
       gap: 0em;
     }
 
-    h1,p {
+    h1,
+    p {
       margin: 0;
     }
     p {
@@ -126,7 +127,7 @@
     @media screen and (max-width: $break-mobile) {
       display: grid;
     }
-    
+
     li {
       width: 100%;
       text-align: left;
@@ -156,7 +157,7 @@
 }
 .product_page {
   width: 100%;
-  margin:auto;
+  margin: auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -170,10 +171,10 @@
   .product_image {
     width: 55%;
     position: relative;
-    
+
     &.loading {
       &:after {
-        content: '';
+        content: "";
         height: 15px;
         width: 15px;
         border-top: 2px solid $color-white;
@@ -315,7 +316,7 @@
       padding: 0.8em 1.2em 0.8em 3em;
 
       &:after {
-        content: '';
+        content: "";
         height: 22px;
         width: 22px;
         position: absolute;
@@ -327,12 +328,25 @@
 
       &.full-colour {
         &:after {
-          background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), conic-gradient(from 180deg at 50% 50%, #E45959 0deg, #E4B559 80.63deg, #96E194 170.63deg, #588DDC 264.38deg, #E45959 360deg), linear-gradient(0deg, #D9D9D9, #D9D9D9);
+          background:
+            radial-gradient(50% 50% at 50% 50%, #ffffff 0%, rgba(255, 255, 255, 0) 100%),
+            conic-gradient(
+              from 180deg at 50% 50%,
+              #e45959 0deg,
+              #e4b559 80.63deg,
+              #96e194 170.63deg,
+              #588ddc 264.38deg,
+              #e45959 360deg
+            ),
+            linear-gradient(0deg, #d9d9d9, #d9d9d9);
         }
       }
       &.black-white {
         &:after {
-          background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), conic-gradient(from 180deg at 50% 50%, #414141 0deg, #222222 105deg, #868686 241.88deg, #414141 360deg), linear-gradient(0deg, #000000, #000000);
+          background:
+            radial-gradient(50% 50% at 50% 50%, #ffffff 0%, rgba(255, 255, 255, 0) 100%),
+            conic-gradient(from 180deg at 50% 50%, #414141 0deg, #222222 105deg, #868686 241.88deg, #414141 360deg),
+            linear-gradient(0deg, #000000, #000000);
         }
       }
     }

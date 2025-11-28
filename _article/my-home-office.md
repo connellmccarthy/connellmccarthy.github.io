@@ -24,7 +24,7 @@ groups:
           url: "https://www.structube.com/en/tokyo-desk-180cm-53-01-10?pid=11600&ref=connellmccarthy.com"
         - title: "Display"
           icon: "desktop"
-          description: "34\" UltraWide from LG"
+          description: '34" UltraWide from LG'
           cta: "Visit LGs Website"
           url: "https://www.lg.com/us/monitors/lg-34UM68-P-ultrawide-monitor?ref=connellmccarthy.com"
         - title: "Keyboard"
@@ -94,7 +94,7 @@ groups:
           url: "https://www.structube.com/en/lars-elm-wood-and-iron-counter-stool-66-cm-67-06-50?pid=20108&ref=connellmccarthy.com"
         - title: "Monitor"
           icon: "desktop"
-          description: "28\" 4K ZeroFrame CB2 from Acer"
+          description: '28" 4K ZeroFrame CB2 from Acer'
           cta: "Visit Acers Website"
           url: "https://www.acer.com/ac/en/CA/content/model/UM.PB2AA.001?ref=connellmccarthy.com"
         - title: "Keyboard"
@@ -131,6 +131,7 @@ My chair and desk were chosen purely based on aesthetics, however, the size of m
 {% include link-group.html groups=page.groups.studio %}
 
 {::nomarkdown}
+
 <div class="section product-list border-radius__normal">
   <h3 class="mb-4">Interested in the prints on the wall?</h3>
   <div class="shop-product-list two">

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     {% include head.html %}
@@ -7,9 +7,7 @@
     <div class="container">
       {% include new-nav.html %}
       <div class="crop">
-        <main id="swup" class="transition-scale" aria-live="polite">
-          {{ content }}
-        </main>
+        <main id="swup" class="transition-scale" aria-live="polite">{{ content }}</main>
         {% include footer.html %}
       </div>
     </div>

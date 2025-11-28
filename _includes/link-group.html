@@ -1,17 +1,9 @@
 <div class="section link-group">
   {% for group in include.groups %}
-    <h4 class="title">{{ group.title }}</h4>
-    <div class="section product-list">
-      {% for item in group.items %}
-        {% include card.html 
-          title = item.title
-          icon = item.icon
-          description = item.description
-          cta = item.cta
-          url = item.url
-          size = 'small'
-          external = true %}
-      {% endfor %}
-    </div>
+  <h4 class="title">{{ group.title }}</h4>
+  <div class="section product-list">
+    {% for item in group.items %} {% include card.html title = item.title icon = item.icon description =
+    item.description cta = item.cta url = item.url size = 'small' external = true %} {% endfor %}
+  </div>
   {% endfor %}
 </div>

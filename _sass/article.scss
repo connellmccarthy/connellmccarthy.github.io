@@ -190,7 +190,7 @@ $article-width: 720px;
         font-size: 2em;
         cursor: pointer;
         color: #fff;
-        text-shadow: 0px 2px 15px rgba(0,0,0,0.3);
+        text-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);
         transition: color 0.3s ease;
         padding: 0 1em;
         text-align: center;
@@ -269,7 +269,7 @@ $article-width: 720px;
         opacity: 1;
       }
     }
-  } 
+  }
 }
 
 .followup__container {
@@ -308,7 +308,7 @@ $article-width: 720px;
   &.left {
     justify-content: flex-start;
     text-align: left;
-    
+
     .article-details:first-of-type {
       margin: 0 2em 0 0;
     }
@@ -385,7 +385,7 @@ $article-width: 720px;
     transform: translateY(0);
     pointer-events: all;
   }
-  
+
   .wrapper {
     display: flex;
     justify-content: space-between;
@@ -541,12 +541,28 @@ blockquote {
     background: $color-grey-light;
     display: flex;
     flex-wrap: wrap;
-    
+
     a {
       margin: 0;
       width: 100%;
       border: none;
       border-radius: 0;
+    }
+  }
+}
+.count {
+  &.loading {
+    svg {
+      opacity: 0.6;
+      animation: countLoading 1s infinite linear;
+    }
+  }
+  @keyframes countLoading {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
     }
   }
 }

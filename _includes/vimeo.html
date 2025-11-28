@@ -1,3 +1,13 @@
-<div style="position: relative; {% if include.compressed %}padding-bottom: 50%;{% else %}padding-bottom: 56.25%;{% endif %} height: 0; overflow: hidden;border-radius:6px;width: 100%;">
-  <iframe id="vimeo" src="https://player.vimeo.com/video/{{ include.video_id }}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="vimeo video" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<div
+  style="position: relative; {% if include.compressed %}padding-bottom: 50%;{% else %}padding-bottom: 56.25%;{% endif %} height: 0; overflow: hidden;border-radius:6px;width: 100%;"
+>
+  <iframe
+    id="vimeo"
+    src="https://player.vimeo.com/video/{{ include.video_id }}"
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0"
+    title="vimeo video"
+    webkitallowfullscreen
+    mozallowfullscreen
+    allowfullscreen
+  ></iframe>
 </div>

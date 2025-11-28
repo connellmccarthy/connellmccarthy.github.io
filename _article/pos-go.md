@@ -90,7 +90,7 @@ We knew we needed to create a promo video that really brought the energy and imp
 
 Outside of my day job, I make music under the artist name [COVEO](https://open.spotify.com/artist/4xRSaHrn9OCfNjU84QzdKJ?si=uN89zseASLyxqvmZNsCpiw?ref=connellmccarthy.com){: target="blank"}, and I always try to bring those skills into my day-to-day work when needed. I had previously made a custom track for the [Inbox launch campaign](https://connellmccarthy.com/article/inbox/?ref=connellmccarthy.com){: target="blank"}, and the team was excited to do something similar for this project.
 
-We had an initial direction based on a [Jamie xx](https://open.spotify.com/artist/7A0awCXkE1FtSU8B0qwOJQ?si=SW2NxV0zS5STJAdZ_FihBQ?ref=connellmccarthy.com){: target="blank"} track, but it ended up being too dark for the general audience. 
+We had an initial direction based on a [Jamie xx](https://open.spotify.com/artist/7A0awCXkE1FtSU8B0qwOJQ?si=SW2NxV0zS5STJAdZ_FihBQ?ref=connellmccarthy.com){: target="blank"} track, but it ended up being too dark for the general audience.
 
 {% include audio.html title='SHOP_POS_GO_PROMO_V4' src_prefix=image_path src='shop_pos_go_promo_v4.mp3' id='promo_v4' %}
 

@@ -2,20 +2,28 @@
   <ul data-aos="fade">
     <li>
       <svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="1.25" y="0.75" width="26.5" height="26.5" stroke="#717171" stroke-width="1.5"/>
-        <rect x="1.25" y="7.28345" width="19.9667" height="19.9667" stroke="#717171" stroke-width="1.5"/>
-        <rect x="1.25" y="13.8167" width="13.4333" height="13.4333" fill="#EDEDED" stroke="#717171" stroke-width="1.5"/>
-      </svg>        
+        <rect x="1.25" y="0.75" width="26.5" height="26.5" stroke="#717171" stroke-width="1.5" />
+        <rect x="1.25" y="7.28345" width="19.9667" height="19.9667" stroke="#717171" stroke-width="1.5" />
+        <rect
+          x="1.25"
+          y="13.8167"
+          width="13.4333"
+          height="13.4333"
+          fill="#EDEDED"
+          stroke="#717171"
+          stroke-width="1.5"
+        />
+      </svg>
       <p class="muted">Various sizing options</p>
     </li>
-    <li>   
+    <li>
       <i class="fal fa-file" aria-hidden="true"></i>
       {% if page.product_type == 'Photo print' %}
-        <p class="muted">Premium lustre photo paper</p>
+      <p class="muted">Premium lustre photo paper</p>
       {% elsif page.product_type == 'Fine art' %}
-        <p class="muted">Fine art paper</p>
+      <p class="muted">Fine art paper</p>
       {% else %}
-        <p class="muted">Premium lustre photo paper</p>
+      <p class="muted">Premium lustre photo paper</p>
       {% endif %}
     </li>
     <li>

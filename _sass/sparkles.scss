@@ -21,14 +21,12 @@
     $yg: $group-distr-r * sin($group-curr-angle);
 
     @for $j from 0 to $n-particles {
-      $particle-curr-angle: $group-curr-angle +
-        $particle-off-angle +
-        $j *
-        $particle-base-angle;
+      $particle-curr-angle: $group-curr-angle + $particle-off-angle + $j * $particle-base-angle;
       $xs: $xg + $diameter * cos($particle-curr-angle);
       $ys: $yg + $diameter * sin($particle-curr-angle);
 
-      $shadow-list: $shadow-list,
+      $shadow-list:
+        $shadow-list,
         $xs $ys 0 $spread-r hsl(0, 100%, 75%);
     }
   }

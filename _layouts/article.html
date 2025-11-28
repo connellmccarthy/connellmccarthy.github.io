@@ -1,107 +1,131 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-		{% include head.html %}
-	</head>
-	<body>
-		<div class="container">
-			{% include new-nav.html %}
-			<div class="crop">
-				<main id="swup" class="transition-scale article" aria-live="polite">
-					<div class="article_appreciation_sticky">
-						<div class="appreciation_info" aria-hidden="true">
-							<p>Enjoying the article?</p>
-							<p>Give it a like, it's free!</p>
-							<svg width="53" height="34" viewBox="0 0 53 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path
-									d="M1.15317 1C1.15317 5.73044 0.402096 11.135 2.22627 15.5941C4.72028 21.6906 10.7468 26.2532 16.7011 28.8051C23.3193 31.6414 32.3832 30.5951 39.1169 28.7097C42.6647 27.7163 47.3063 25.8958 50.9447 25.8958"
-									stroke="#DADADA"
-									stroke-width="2"
-									stroke-linecap="round"
-								/>
-								<path d="M41 20C44.8662 21.2887 48.8568 22.5369 51.7309 25.5801C53.1716 27.1055 47.2731 32.36 45.7216 32.8771" stroke="#DADADA" stroke-width="2" stroke-linecap="round" />
-							</svg>
-						</div>
-						<button id="like_button_sticky" class="btn btn__marketing btn__circle large btn__dark like_button btn__scale">
-							<i class="far fa-heart like_button_icon"></i>
-							<span class="count loading" data-id="{{ page.slug }}">{% include assets/icons/loading.html %}</span>
-						</button>
-					</div>
-					<div class="article__hero">
-						<div data-aos="fade-right" class="thumbnail">
-							{% if page.thumbnail_video %}
-							<div class="video__container">
-								<button id="pos-go-renders" class="btn btn__circle btn__marketing btn__white btn__scale color__blue video-controller">
-									<span id="button-text" class="visually-hidden">Pause video</span>
-									<i id="button-icon" class="fas fa-pause" aria-hidden="true"></i>
-								</button>
-								<video muted playsinline autoplay loop id="pos-go-renders" state="playing" thumbnail="{{ site.image_path }}{{ page.slug }}/{{ page.thumbnail }}">
-									<source src="{{ site.image_path }}{{ page.slug }}/{{ page.slug }}-thumbnail.mp4" />
-								</video>
-							</div>
-							{% else %}
-							<img src="{{ site.image_path }}{{ page.slug }}/{{ page.thumbnail }}" />
-							{% endif %}
-						</div>
-						<div class="article__info" data-aos="fade">
-							<div class="article-info-static">
-								<p class="center title mb-6">{{ page.title }}</p>
-							</div>
-							<h1>{{ page.description }}</h1>
-							<div class="article-info-details">
-								{% assign article_words = content | strip_html | strip_newlines | downcase | replace: 'and','' | replace: 'the','' | split:' ' %} {% assign word_count = article_words | size %}
-								<div class="article-details">
-									<p class="muted">Publish date</p>
-									<p>{{ page.date | date: "%B %d, %Y" }}</p>
-								</div>
-								<div class="article-details">
-									<p class="muted">Reading time</p>
-									<p>{{ word_count | times: 0.0076 | round }} minutes</p>
-								</div>
-								<div class="article-details">
-									<p class="muted">Engagement</p>
-									<p class="like_info">
-										<i class="far fa-heart like_button_icon mr-1"></i>
-										<span class="count loading" data-id="{{ page.slug }}">{% include assets/icons/loading.html %}</span> likes
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="wrapper">
-						{% assign hasfollowup = site.article | where: 'followup', page.slug %} {% if page.followup %}
-						<div class="followup__container">
-							<p class="followup__title">
-								<i class="fas fa-reply" aria-hidden="true"></i>
-								This is a follow-up to the original article
-							</p>
-							{% assign followups = site.article | where: 'slug', page.followup %} {% for followup in followups %} {% assign year = followup.date | date: '%Y' %} {% include card.html style = 'project
-							grey' title = followup.title badge = year badge_color = 'grey' description = followup.description url = followup.url %} {% endfor %}
-						</div>
-						{% elsif hasfollowup.size >= 1 %}
-						<div class="followup__container">
-							<p class="followup__title">
-								<i class="fas fa-reply" aria-hidden="true"></i>
-								Read the latest update
-							</p>
-							{% for followup in hasfollowup %} {% assign year = followup.date | date: '%Y' %} {% include card.html style = 'project grey' title = followup.title badge = year description =
-							followup.description url = followup.url %} {% endfor %}
-						</div>
-						{% else %}
-						<div class="article-spacer"></div>
-						{% endif %}
+  <head>
+    {% include head.html %}
+  </head>
+  <body>
+    <div class="container">
+      {% include new-nav.html %}
+      <div class="crop">
+        <main id="swup" class="transition-scale article" aria-live="polite">
+          <div class="article_appreciation_sticky">
+            <div class="appreciation_info" aria-hidden="true">
+              <p>Enjoying the article?</p>
+              <p>Give it a like, it's free!</p>
+              <svg width="53" height="34" viewBox="0 0 53 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M1.15317 1C1.15317 5.73044 0.402096 11.135 2.22627 15.5941C4.72028 21.6906 10.7468 26.2532 16.7011 28.8051C23.3193 31.6414 32.3832 30.5951 39.1169 28.7097C42.6647 27.7163 47.3063 25.8958 50.9447 25.8958"
+                  stroke="#DADADA"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M41 20C44.8662 21.2887 48.8568 22.5369 51.7309 25.5801C53.1716 27.1055 47.2731 32.36 45.7216 32.8771"
+                  stroke="#DADADA"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <button
+              id="like_button_sticky"
+              class="btn btn__marketing btn__circle large btn__dark like_button btn__scale"
+            >
+              <i class="far fa-heart like_button_icon"></i>
+              <span class="count loading" data-id="{{ page.slug }}">{% include assets/icons/loading.html %}</span>
+            </button>
+          </div>
+          <div class="article__hero">
+            <div data-aos="fade-right" class="thumbnail">
+              {% if page.thumbnail_video %}
+              <div class="video__container">
+                <button
+                  id="pos-go-renders"
+                  class="btn btn__circle btn__marketing btn__white btn__scale color__blue video-controller"
+                >
+                  <span id="button-text" class="visually-hidden">Pause video</span>
+                  <i id="button-icon" class="fas fa-pause" aria-hidden="true"></i>
+                </button>
+                <video
+                  muted
+                  playsinline
+                  autoplay
+                  loop
+                  id="pos-go-renders"
+                  state="playing"
+                  thumbnail="{{ site.image_path }}{{ page.slug }}/{{ page.thumbnail }}"
+                >
+                  <source src="{{ site.image_path }}{{ page.slug }}/{{ page.slug }}-thumbnail.mp4" />
+                </video>
+              </div>
+              {% else %}
+              <img src="{{ site.image_path }}{{ page.slug }}/{{ page.thumbnail }}" />
+              {% endif %}
+            </div>
+            <div class="article__info" data-aos="fade">
+              <div class="article-info-static">
+                <p class="center title mb-6">{{ page.title }}</p>
+              </div>
+              <h1>{{ page.description }}</h1>
+              <div class="article-info-details">
+                {% assign article_words = content | strip_html | strip_newlines | downcase | replace: 'and','' |
+                replace: 'the','' | split:' ' %} {% assign word_count = article_words | size %}
+                <div class="article-details">
+                  <p class="muted">Publish date</p>
+                  <p>{{ page.date | date: "%B %d, %Y" }}</p>
+                </div>
+                <div class="article-details">
+                  <p class="muted">Reading time</p>
+                  <p>{{ word_count | times: 0.0076 | round }} minutes</p>
+                </div>
+                <div class="article-details">
+                  <p class="muted">Engagement</p>
+                  <p class="like_info">
+                    <i class="far fa-heart like_button_icon mr-1"></i>
+                    <span class="count loading" data-id="{{ page.slug }}">{% include assets/icons/loading.html %}</span>
+                    likes
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="wrapper">
+            {% assign hasfollowup = site.article | where: 'followup', page.slug %} {% if page.followup %}
+            <div class="followup__container">
+              <p class="followup__title">
+                <i class="fas fa-reply" aria-hidden="true"></i>
+                This is a follow-up to the original article
+              </p>
+              {% assign followups = site.article | where: 'slug', page.followup %} {% for followup in followups %} {%
+              assign year = followup.date | date: '%Y' %} {% include card.html style = 'project grey' title =
+              followup.title badge = year badge_color = 'grey' description = followup.description url = followup.url %}
+              {% endfor %}
+            </div>
+            {% elsif hasfollowup.size >= 1 %}
+            <div class="followup__container">
+              <p class="followup__title">
+                <i class="fas fa-reply" aria-hidden="true"></i>
+                Read the latest update
+              </p>
+              {% for followup in hasfollowup %} {% assign year = followup.date | date: '%Y' %} {% include card.html
+              style = 'project grey' title = followup.title badge = year description = followup.description url =
+              followup.url %} {% endfor %}
+            </div>
+            {% else %}
+            <div class="article-spacer"></div>
+            {% endif %}
 
-						<div class="article-content">
-							{{ content }} {% if page.credits %}
-							<h2 id="credits">Credits</h2>
-							<p>{{ page.credits.description }}</p>
-							{% include link-group.html groups = page.credits.groups %} {% endif %}
-						</div>
-					</div>
-					<div class="wrapper condensed">{% include newsletter.html %}</div>
-				</main>
-				{% include footer.html %}
-			</div>
-		</div>
-	</body>
+            <div class="article-content">
+              {{ content }} {% if page.credits %}
+              <h2 id="credits">Credits</h2>
+              <p>{{ page.credits.description }}</p>
+              {% include link-group.html groups = page.credits.groups %} {% endif %}
+            </div>
+          </div>
+          <div class="wrapper condensed">{% include newsletter.html %}</div>
+        </main>
+        {% include footer.html %}
+      </div>
+    </div>
+  </body>
 </html>

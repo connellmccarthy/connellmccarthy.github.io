@@ -17,6 +17,7 @@ On a misty Saturday afternoon in October, my wife and I said our vows in front o
 It started early on. We got engaged in March of 2022, and within the following weeks, we had almost everything booked and planned. We managed to get one of the last Saturdays of 2023 at the [Ottawa Art Gallery](https://oaggao.ca/?ref=connellmccarthy.com){:target="blank"}, which was a rude awakening for me as I was blissfully unaware of the chaos of the wedding industry. Shortly after everything was booked, it was time to get to work creating the wedding of our dreams.
 
 ## Branding
+
 The first thing to figure out was the general aesthetic and branding for the wedding. It’s a bit unnecessary, but this is my area of expertise, so I wanted to go all out. I started with a graphic device to act as a ‘Logo’ for the event, chose typefaces for the typography, and defined a colour palette so that all the materials felt consistent and cohesive.
 
 Since our wedding was in the fall, we opted to keep the palette in line with a warm autumn tonal range. Leading with cream as the primary colour, some warm terracotta paired with a desaturated olive green was a nice way to keep it minimal and add a touch of colour.
@@ -26,60 +27,62 @@ Using four font families is a bit much for a brand like this, but there were dif
 {% include slideshow.html path=image_path slug='branding' format='jpg' count=5 %}
 
 ## Stationery
+
 With our venue, website domain, and vendors booked for the day, we needed to send something out to our guests to let them know they’d be invited and to keep their calendars open. We started assembling the save-the-date mailer in late Summer 2022 to mail them out for the 1-year mark in October.
 
 We went to a paper shop and picked out a nice cardstock with a subtle texture and a slightly off-white colour. I kept the design simple, and to minimize the amount of paper waste, I designed 4 to fit perfectly on standard letter-sized paper. I wanted to make them feel customized in a way, so I ordered a custom embosser of the logo, a rounded corner cutter, and a custom stamp for the mixed media effect for our names. I liked the structured type of our names and the organic contrast that the hand-stamped ‘McCarthy’ gave with it.
 
 {% include slideshow.html path=image_path slug='std' format='jpg' count=4 %}
 
-After the save-the-date, I moved on to planning the RSVP mailout. I knew I wanted to do something more intricate, like a half-moon cut on the top of the RSVP and an information card inserted between pieces. A few paper options from the [Cardstock Warehouse](https://cardstock-warehouse.com/?ref=connellmccarthy.com){:target="_blank"} fell within our palette, so I mocked them all to see which felt better. We picked Rust and used a [Ghost Toner](https://www.ghost-white-toner.com/?ref=connellmccarthy.com){:target="_blank"} cartridge to print white ink on them.
+After the save-the-date, I moved on to planning the RSVP mailout. I knew I wanted to do something more intricate, like a half-moon cut on the top of the RSVP and an information card inserted between pieces. A few paper options from the [Cardstock Warehouse](https://cardstock-warehouse.com/?ref=connellmccarthy.com){:target="\_blank"} fell within our palette, so I mocked them all to see which felt better. We picked Rust and used a [Ghost Toner](https://www.ghost-white-toner.com/?ref=connellmccarthy.com){:target="\_blank"} cartridge to print white ink on them.
 
 {% include slideshow.html path=image_path slug='rsvp-planning' format='jpg' count=2 %}
 
-Manufacturing the RSVP itself was a significant learning process. I bought a [Cricut Maker 3](https://cricut.com/en-us/cutting-machines/cricut-maker/cricut-maker-3/cricut-maker-3/2008334.html?ref=connellmccarthy.com){:target="_blank"} to make custom cuts like the half-moon top. It allowed us to add more customization, such as the scoring line for the front flap, debossing both the logo on the top and a box around the QR code, and even the opportunity for a gold foil edge piece. It took a lot of prototyping, but I finally produced almost 80 invites on premium heavy-weight cotton cardstock from [LCI Paper](https://lcipaper.com/?ref=connellmccarthy.com){:target="_blank"}. The result was a high-quality invite that looked and felt like a professional made it.
+Manufacturing the RSVP itself was a significant learning process. I bought a [Cricut Maker 3](https://cricut.com/en-us/cutting-machines/cricut-maker/cricut-maker-3/cricut-maker-3/2008334.html?ref=connellmccarthy.com){:target="\_blank"} to make custom cuts like the half-moon top. It allowed us to add more customization, such as the scoring line for the front flap, debossing both the logo on the top and a box around the QR code, and even the opportunity for a gold foil edge piece. It took a lot of prototyping, but I finally produced almost 80 invites on premium heavy-weight cotton cardstock from [LCI Paper](https://lcipaper.com/?ref=connellmccarthy.com){:target="\_blank"}. The result was a high-quality invite that looked and felt like a professional made it.
 
 {% include slideshow.html path=image_path slug='invites' format='jpg' count=4 %}
 
 Weirdly enough, one of the things that got me excited was the envelope labels. Instead of having a very large Illustrator document with all the labels for 80 envelopes, I built a script that pulled the information from a CSV and generated a printable PDF on standard letter-sized label paper. I used a few CSS parameters to optimize the layout for printing and a simple for loop in Liquid to render the labels with minimal effort.
 
 ```javascript
-var list = []
-fs.createReadStream('_data/invites.csv')
+var list = [];
+fs.createReadStream("_data/invites.csv")
   .pipe(csvParser())
-  .on('data', function(data){
+  .on("data", function (data) {
     try {
       let item = {
         name: data.MAIL_NAME,
-        address: data.ADDRESS
-      }
-      list.push(item)
-    }
-    catch(err) {
-      throw(err)
+        address: data.ADDRESS,
+      };
+      list.push(item);
+    } catch (err) {
+      throw err;
     }
   })
-  .on('end',function(){
-    res.render('labels', {
+  .on("end", function () {
+    res.render("labels", {
       content: content,
-      labels: list
-    })
-  })
+      labels: list,
+    });
+  });
 ```
-*Javascript function for all the invite data*{:class="code-caption"}
+
+_Javascript function for all the invite data_{:class="code-caption"}
 
 ```css
 @media print {
-    @page {
-        size: A4;
-        size: portrait;
-        margin: 0.5cm;
-    }
-    li {
-      page-break-inside: avoid;
-    }
+  @page {
+    size: A4;
+    size: portrait;
+    margin: 0.5cm;
+  }
+  li {
+    page-break-inside: avoid;
+  }
 }
 ```
-*CSS for print format and sizing*{:class="code-caption"}
+
+_CSS for print format and sizing_{:class="code-caption"}
 
 ```liquid
 {% raw %}
@@ -101,7 +104,8 @@ fs.createReadStream('_data/invites.csv')
 {% endfor %}
 {% endraw %}
 ```
-*Liquid loop for each invite item*{:class="code-caption"}
+
+_Liquid loop for each invite item_{:class="code-caption"}
 
 {% include slideshow.html path=image_path slug='labels' format='jpg' count=3 %}
 
@@ -109,7 +113,7 @@ fs.createReadStream('_data/invites.csv')
 
 For the website I looked into using pre-existing services like The Knot or Say.ido, but I wasn’t happy with the amount of customization or templates that they offered. Obviously, the next rational decision would be to build it all out from scratch. Fair warning: it’s about to get a little nerdy, so if you came for the pretty pictures, I’d skip forward a bit.
 
-When I started planning the tech stack, I wanted to keep it lightweight and quick to get up and running. My go-to stack leading up to this was a Node.js Express app using liquid.js as the frontend framework, so I went with what I knew. I was pulling live data from a database with this website, meaning I needed a dedicated server instead of a static service like [Netlify](https://netlify.com/?ref=connellmccarthy.com){:target="_blank"}. I dove into the world of [Amazon’s AWS](https://aws.amazon.com/?ref=connellmccarthy.com){:target="_blank"} services and concluded that the [Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/?ref=connellmccarthy.com){:target="_blank"} environment was the best for my site. I didn’t realize how complicated AWS services can be, but I’m so glad I stuck it out and kept figuring out all the required services like Code Pipeline, Route 53, Certificate Manager, WAF & Shield, and Key Management Service.
+When I started planning the tech stack, I wanted to keep it lightweight and quick to get up and running. My go-to stack leading up to this was a Node.js Express app using liquid.js as the frontend framework, so I went with what I knew. I was pulling live data from a database with this website, meaning I needed a dedicated server instead of a static service like [Netlify](https://netlify.com/?ref=connellmccarthy.com){:target="\_blank"}. I dove into the world of [Amazon’s AWS](https://aws.amazon.com/?ref=connellmccarthy.com){:target="\_blank"} services and concluded that the [Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/?ref=connellmccarthy.com){:target="\_blank"} environment was the best for my site. I didn’t realize how complicated AWS services can be, but I’m so glad I stuck it out and kept figuring out all the required services like Code Pipeline, Route 53, Certificate Manager, WAF & Shield, and Key Management Service.
 
 The first iteration of the page was a simple informational lander for people to navigate to when the save-the-date got mailed out. I started with a very low-fidelity wireframe to get an idea of content structure and hierarchy. With that figured out, I worked on adding the branding elements I had already finished earlier. I kept it very minimal and clean, which allowed me to dedicate more to some moments of delight, like the ‘McCarthy’ being written on page load, some interactive photo moments in our story, and a cool Instagram story inspired storybook of some photos of Dani and I.
 
@@ -121,7 +125,7 @@ After a few months of focusing on other things for the wedding, the proper RSVP 
 
 Building out an online RSVP system meant that I could add features to check in on your reservation and modify your reservation up until a cutoff date. Every wedding I’ve been to, somehow, between RSVP’ing and the actual day of, I forget what meals I’ve chosen. I wanted to solve that with this system. Another benefit to building our own system is that it allowed us to serve follow-up information, like accommodation discounts and registry information, at specific points in the user journey.
 
-I set up a simple database to keep a record of the submissions and utilized unique identifiers for each RSVP group so multiple submissions could be paired together (i.e., spouses, family members, etc.) and that RSVP group would be accessible by a unique link. The link was emailed out upon submission of the form using the [Sendgrid API](https://sendgrid.com/en-us?ref=connellmccarthy.com){:target="_blank"} and dynamic templates, and the reservation was saved to their browser, so anytime they came to the site, they didn’t need to re-enter their email to get their reservation information. It also allowed for the display of dynamic content on the homepage, such as the announcement banner and buttons that told them to either submit or modify their RSVP.
+I set up a simple database to keep a record of the submissions and utilized unique identifiers for each RSVP group so multiple submissions could be paired together (i.e., spouses, family members, etc.) and that RSVP group would be accessible by a unique link. The link was emailed out upon submission of the form using the [Sendgrid API](https://sendgrid.com/en-us?ref=connellmccarthy.com){:target="\_blank"} and dynamic templates, and the reservation was saved to their browser, so anytime they came to the site, they didn’t need to re-enter their email to get their reservation information. It also allowed for the display of dynamic content on the homepage, such as the announcement banner and buttons that told them to either submit or modify their RSVP.
 
 It was a great exercise for doing more backend development and designing a user experience from all touchpoints. I tried to make everything as efficient as possible and automate as much as I could.
 
@@ -153,7 +157,7 @@ For the scent, we went with a tobacco leaf and pine, which the tobacco was a nod
 
 ## Jukebox
 
-By now, I’m sure you’ve caught on that the theme of the wedding was ‘DIY’. Instead of going with a DJ, we opted to curate and play a playlist through Spotify, but I still wanted the opportunity for guests to request songs. Thinking about how that could work, I realized I could dive into the Spotify API and see if there was an opportunity to build something custom. I found the [spotify-web-api-node](https://github.com/thelinmichael/spotify-web-api-node?ref=connellmccarthy.com){:target="_blank"} library, which plugged in nicely to the existing website built in Node.js. With that, I started designing an iPad app experience that worked as a sort of Jukebox. I wanted to keep it super simple, with a top result big and bold and other matches in a smaller list view. The bottom bar would display the current playing song and the songs in the queue. 
+By now, I’m sure you’ve caught on that the theme of the wedding was ‘DIY’. Instead of going with a DJ, we opted to curate and play a playlist through Spotify, but I still wanted the opportunity for guests to request songs. Thinking about how that could work, I realized I could dive into the Spotify API and see if there was an opportunity to build something custom. I found the [spotify-web-api-node](https://github.com/thelinmichael/spotify-web-api-node?ref=connellmccarthy.com){:target="\_blank"} library, which plugged in nicely to the existing website built in Node.js. With that, I started designing an iPad app experience that worked as a sort of Jukebox. I wanted to keep it super simple, with a top result big and bold and other matches in a smaller list view. The bottom bar would display the current playing song and the songs in the queue.
 
 Essentially, the way it works is that you select a playlist as the source of music to play if there are no requests. If you request a song that exists on the playlist, it will ensure that that song doesn’t play a second time.
 

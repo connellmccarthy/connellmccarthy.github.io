@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     {% include head.html %}
@@ -10,66 +10,50 @@
         <main id="swup" class="transition-scale" aria-live="polite">
           <div class="collections-list">
             <div class="filter-collections">
-              <a href="/prints/collections/all/" class="btn{% if page.url == '/prints/collections/all/' %} active{% endif %}">Browse all products</a>  
-              <a href="/prints/collections/new/" class="btn{% if page.url == '/prints/collections/new/' %} active{% endif %} shop-nav-new">Latest additions <span class="badge blue">New</span></a>
+              <a
+                href="/prints/collections/all/"
+                class="btn{% if page.url == '/prints/collections/all/' %} active{% endif %}"
+                >Browse all products</a
+              >
+              <a
+                href="/prints/collections/new/"
+                class="btn{% if page.url == '/prints/collections/new/' %} active{% endif %} shop-nav-new"
+                >Latest additions <span class="badge blue">New</span></a
+              >
               <p class="muted">Shop by collection</p>
-              {% for collection in site.collections %}
-                {% if collection.collection_list %}
-                  <a class="btn{% if page.url == collection.url %} active{% endif %}" href="{{ collection.url }}"><i class="far fa-{{ collection.icon }} muted" aria-hidden="true"></i> {{ collection.title }}</a>
-                {% endif %}
-              {% endfor %}
+              {% for collection in site.collections %} {% if collection.collection_list %}
+              <a class="btn{% if page.url == collection.url %} active{% endif %}" href="{{ collection.url }}"
+                ><i class="far fa-{{ collection.icon }} muted" aria-hidden="true"></i> {{ collection.title }}</a
+              >
+              {% endif %} {% endfor %}
             </div>
             <div class="products__section">
               <div class="wrapper">
                 <div class="products__section__header">
-                  {% if page.slug == 'shop-all' %}
-                    {% assign product_count = site.products.size %}
-                  {% else %}
-                    {% assign product_count = 0 %}
-                    {% for product in site.products %}
-                      {% assign page_tags = page.identifier | split: ', ' %}
-                      {% assign product_tags = product.tags | replace: ',', ', ' %}
-                      {% assign display = false %}
-                      {% for tag in page_tags %}
-                        {% if product_tags contains tag %}
-                          {% assign display = true %}
-                        {% endif %}
-                      {% endfor %}
-                      {% if display %}
-                        {% assign product_count = product_count | plus: 1 %}
-                      {% endif %}
-                    {% endfor %}
-                  {% endif %}
-                  <h3>{{ page.title }} 	<span class="muted">&#8212; ({{ product_count }})</span></h3>
+                  {% if page.slug == 'shop-all' %} {% assign product_count = site.products.size %} {% else %} {% assign
+                  product_count = 0 %} {% for product in site.products %} {% assign page_tags = page.identifier | split:
+                  ', ' %} {% assign product_tags = product.tags | replace: ',', ', ' %} {% assign display = false %} {%
+                  for tag in page_tags %} {% if product_tags contains tag %} {% assign display = true %} {% endif %} {%
+                  endfor %} {% if display %} {% assign product_count = product_count | plus: 1 %} {% endif %} {% endfor
+                  %} {% endif %}
+                  <h3>
+                    {{ page.title }}
+                    <span class="muted">&#8212; ({{ product_count }})</span>
+                  </h3>
                   <p class="muted mt-0">{{ page.description }}</p>
                 </div>
                 <div class="shop-product-list">
-                  {% if page.slug == 'shop-all' %}
-                    {% for product in site.products %}
-                      {% include shop/product-card.html %}
-                    {% endfor %}
-                  {% else %}
-                    {% for product in site.products %}
-                      {% assign page_tags = page.identifier | split: ', ' %}
-                      {% assign product_tags = product.tags | replace: ',', ', ' %}
-                      {% assign display = false %}
-                      {% for tag in page_tags %}
-                        {% if product_tags contains tag %}
-                          {% assign display = true %}
-                        {% endif %}
-                      {% endfor %}
-                      {% if display %}
-                        {% include shop/product-card.html %}
-                      {% endif %}
-                    {% endfor %}
-                  {% endif %}
+                  {% if page.slug == 'shop-all' %} {% for product in site.products %} {% include shop/product-card.html
+                  %} {% endfor %} {% else %} {% for product in site.products %} {% assign page_tags = page.identifier |
+                  split: ', ' %} {% assign product_tags = product.tags | replace: ',', ', ' %} {% assign display = false
+                  %} {% for tag in page_tags %} {% if product_tags contains tag %} {% assign display = true %} {% endif
+                  %} {% endfor %} {% if display %} {% include shop/product-card.html %} {% endif %} {% endfor %} {%
+                  endif %}
                 </div>
               </div>
             </div>
           </div>
-          <div class="wrapper">
-            {% include newsletter.html %}
-          </div>
+          <div class="wrapper">{% include newsletter.html %}</div>
         </main>
         {% include footer.html %}
       </div>

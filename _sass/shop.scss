@@ -73,14 +73,14 @@ h2.treecount {
     position: relative;
     display: inline-block;
     &:after {
-      content: '';
+      content: "";
       height: 25px;
       width: 25px;
       border-radius: 50%;
       border-top: 2px solid $color-ink;
-      border-left: 2px solid rgba(0,0,0,0.2);
-      border-right: 2px solid rgba(0,0,0,0.2);
-      border-bottom: 2px solid rgba(0,0,0,0.2);
+      border-left: 2px solid rgba(0, 0, 0, 0.2);
+      border-right: 2px solid rgba(0, 0, 0, 0.2);
+      border-bottom: 2px solid rgba(0, 0, 0, 0.2);
       position: absolute;
       margin-top: 0.08em;
       top: 50%;
@@ -101,7 +101,7 @@ h2.treecount {
   overflow: hidden;
   border-radius: 50%;
   border: 3px solid #ffffff;
-  box-shadow: 0 10px 25px -15px rgba(0,0,0,0.35);
+  box-shadow: 0 10px 25px -15px rgba(0, 0, 0, 0.35);
 
   img {
     width: 100%;
@@ -111,7 +111,7 @@ h2.treecount {
 }
 .shop-section {
   margin: 10em 0;
-  
+
   &.shop-hero {
     border: none;
     min-height: 70vh;
@@ -287,7 +287,7 @@ h2.treecount {
     opacity: 0;
     padding: 0.4em 1em;
     border-radius: 50px;
-    transition: .4s ease-in-out;
+    transition: 0.4s ease-in-out;
     pointer-events: none;
     @media screen and (max-width: $break-mobile) {
       opacity: 1;
@@ -384,7 +384,7 @@ h2.treecount {
   top: 50%;
   left: 50%;
   background: $color-white;
-  transform: scale(0.8) translate(-50%,-50%);
+  transform: scale(0.8) translate(-50%, -50%);
   z-index: 98;
   padding: 2em;
   border-radius: $border-radius-large;
@@ -431,7 +431,7 @@ h2.treecount {
   &.active {
     pointer-events: all;
     opacity: 1;
-    transform: scale(1) translate(-50%,-50%);
+    transform: scale(1) translate(-50%, -50%);
   }
 }
 .collections-list {
@@ -477,7 +477,7 @@ h2.treecount {
       &:hover:not(.active) {
         background: darken($color-grey, 3);
       }
-     }
+    }
   }
   .products__section__header {
     margin-bottom: 2em;

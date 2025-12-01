@@ -7,8 +7,11 @@ $syntax-color-pink: #a020d3;
 $syntax-color-green: #3c845c;
 $syntax-color-red-light: #d22d1f;
 
-.highlighter-rouge {
-  width: 100%;
+code {
+  background-color: $color-grey;
+  border-radius: $border-radius-normal;
+  padding: 0.2em;
+  font-size: 0.85em;
 }
 .highlight pre {
   background-color: $color-grey;

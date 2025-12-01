@@ -39,6 +39,8 @@ The monthly view was going to be the biggest lift of the app, so that’s where 
 
 I was amazed at how quickly things were coming together; javascript is pretty intuitive, so everything seemed to go pretty smooth. I did run into an issue with Pug when it came to nesting a condition. Essentially my query returns the block of data for the transfers along with the items the transfer contains. My way of separating the data is by saving the transfer id, and detecting if it’s changed. If it’s a new id it should render the top portion of the transfer. This logic worked out nicely when it came to just printing stuff on the page. When it came to designing it, however, it created a flaw. I wanted each transfer and its items to be inside a container with rounded corners. The easiest way to do that in CSS is by using the `last-child` selector, but the problem was knowing when a transfer had closed. I had to do some hacky logic that essentially set a status of if we were at the start, create a div that wrapped all the content, and if it wasn’t the start, close the div. That worked, but the error in that is that for the last item, the closing tag was never called. I had to create another hacky solution where it detected if it was the last item in the array, and if it was, close the tag.
 
+_core/views/monthly/index.pug_{:class="code-caption"}
+
 ```javascript
 if transfers.length
   h4.mb-1.muted Transfers
@@ -94,6 +96,8 @@ I designed it to be a full format mobile app, so I dusted off the old Xcode and 
 
 Here's a little demo of it so far.
 
-{% include vimeo.html video_id='503643833' %}
+<div class="section">
+  {% include vimeo.html video_id='503643833' %}
+</div>
 
 I learned a lot more than I anticipated going into this, so I highly recommend anyone out there to do something similar yourself. Take some time to broaden your T, and become more literate in a field you’re interested in. Send me a note on [Twitter](https://twitter.com/connellmccarthy){: target="blank"} with feedback, improvements, ideas, etc. I'd love to hear them.

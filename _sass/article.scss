@@ -95,13 +95,17 @@ $article-padding: 3rem;
     svg.closingIcon {
       margin-top: 1em;
     }
-    .section {
+    .section:not(.product-feature) {
       margin: 0;
       width: calc(100% - #{var(--article-padding)} * 2);
     }
     .highlighter-rouge {
       width: 100%;
-      padding: 0 var(--article-padding);
+      .highlight:not(pre.highlight) {
+        font-size: 1.2em;
+        width: 100%;
+        padding: 0 var(--article-padding);
+      }
     }
   }
   h1 {

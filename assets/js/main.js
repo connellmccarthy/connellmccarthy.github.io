@@ -75,16 +75,23 @@ function init() {
   //Video player indicator
   if (document.querySelector("video")) {
     document.querySelectorAll("video").forEach((video) => {
-      video.addEventListener("loadeddata", () => {
-        video.parentElement.style.setProperty("--duration", `${video.duration}s`);
-        video.addEventListener("playing", () => {
-          video.parentElement.classList.add("playing");
+      if (video.readyState >= video.HAVE_CURRENT_DATA) {
+        listenToVideoState(video);
+      } else {
+        video.addEventListener("loadeddata", () => {
+          listenToVideoState(video);
         });
-        video.addEventListener("pause", () => {
-          video.parentElement.classList.remove("playing");
-        });
-      });
+      }
     });
+    function listenToVideoState(video) {
+      video.parentElement.style.setProperty("--duration", `${video.duration}s`);
+      video.addEventListener("playing", () => {
+        video.parentElement.classList.add("playing");
+      });
+      video.addEventListener("pause", () => {
+        video.parentElement.classList.remove("playing");
+      });
+    }
   }
 
   if (document.querySelector("button.video-controller")) {
@@ -245,21 +252,19 @@ function init() {
           function get_active_image() {
             return container.scrollLeft / increment + 1;
           }
+          function atSnappingPoint(num) {
+            return num % 1 === 0;
+          }
           container.addEventListener("scroll", (e) => {
-            var atSnappingPoint = e.target.scrollLeft % e.target.offsetWidth === 0;
-            var timeOut = atSnappingPoint ? 0 : 150;
-            clearTimeout(e.target.scrollTimeout);
-            e.target.scrollTimeout = setTimeout(() => {
-              if (!timeOut) {
-                document
-                  .querySelector(`.slideshow#${id} button.thumbnail#thumb_${active_image}`)
-                  .classList.toggle("active");
-                document
-                  .querySelector(`.slideshow#${id} button.thumbnail#thumb_${id}_${get_active_image()}`)
-                  .classList.toggle("active");
-                active_image = `${id}_${get_active_image()}`;
-              }
-            }, timeOut);
+            if (atSnappingPoint(get_active_image())) {
+              document
+                .querySelector(`.slideshow#${id} button.thumbnail#thumb_${active_image}`)
+                .classList.toggle("active");
+              document
+                .querySelector(`.slideshow#${id} button.thumbnail#thumb_${id}_${get_active_image()}`)
+                .classList.toggle("active");
+              active_image = `${id}_${get_active_image()}`;
+            }
           });
           document.querySelectorAll(`.slideshow#${id} button.ss_nav`).forEach((nav) => {
             nav.addEventListener("click", () => {
@@ -333,8 +338,9 @@ function init() {
   //Newsletter form
   if (document.querySelector("form.newsletter_form")) {
     if (window.localStorage.getItem("newsletter")) {
-      document.querySelector("#newsletter__body").innerText =
-        `You're already receiving email notifications to ${window.localStorage.getItem("newsletter")}`;
+      document.querySelector(
+        "#newsletter__body"
+      ).innerText = `You're already receiving email notifications to ${window.localStorage.getItem("newsletter")}`;
       document.querySelector("form.newsletter_form").remove();
     } else {
       document.querySelector("form.newsletter_form").addEventListener("submit", (event) => {

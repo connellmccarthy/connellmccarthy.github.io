@@ -73,14 +73,13 @@ $article-padding: 3rem;
         margin-top: 2em;
         height: 25vh;
       }
+      gap: 0;
       padding: $gutter ($gutter / 3) ($gutter / 2);
     }
   }
   &-content {
     background-color: $color-white;
-    box-shadow:
-      0 0 1px rgba(0, 0, 0, 0.4),
-      0 0 35px rgba(150, 150, 150, 0.1);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.4), 0 0 35px rgba(150, 150, 150, 0.1);
     padding: 2em 0 var(--article-padding);
     border-radius: $border-radius-xlarge;
     max-width: $article-width;
@@ -134,13 +133,13 @@ $article-padding: 3rem;
     }
   }
   p:not(
-    .section p,
-    .details p,
-    .article-info-static p,
-    .article-info-details p,
-    .followup__container p,
-    .appreciation_info p
-  ) {
+      .section p,
+      .details p,
+      .article-info-static p,
+      .article-info-details p,
+      .followup__container p,
+      .appreciation_info p
+    ) {
     font-size: 1.2em;
     color: $color-ink;
     margin: 0;

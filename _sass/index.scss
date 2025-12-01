@@ -8,13 +8,6 @@
   }
 }
 
-video:not(.slideshow__video) {
-  width: 100%;
-  border-radius: $border-radius-xlarge;
-  @media screen and (max-width: $break-mobile) {
-    border-radius: $border-radius-large;
-  }
-}
 .video__container {
   width: 100%;
   height: auto;

@@ -132,7 +132,7 @@ My chair and desk were chosen purely based on aesthetics, however, the size of m
 
 {::nomarkdown}
 
-<div class="section product-list border-radius__normal">
+<div class="section product-feature product-list">
   <h3 class="mb-4">Interested in the prints on the wall?</h3>
   <div class="shop-product-list two">
     {% assign products = "6628430348350,6626197864510" %}

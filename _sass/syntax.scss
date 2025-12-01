@@ -16,10 +16,20 @@ $syntax-color-red-light: #d22d1f;
   overflow-x: auto;
   display: block;
   padding: 2em;
-  border-radius: 12px;
+  border-radius: 0 0 $border-radius-normal $border-radius-normal;
+  margin: 0;
 }
 em.code-caption {
-  margin-top: -2em;
+  position: relative;
+  top: 1.7rem;
+  background-color: $color-border;
+  border-radius: $border-radius-normal $border-radius-normal 0 0;
+  font-size: 0.7em;
+  font-style: normal;
+  font-family: monospace;
+  text-align: left;
+  color: $color-ink-muted;
+  padding: 0 1em;
 }
 .highlight .hll {
   background-color: #ffffcc;

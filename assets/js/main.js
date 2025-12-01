@@ -72,12 +72,27 @@ function init() {
     });
   }
 
+  //Video player indicator
+  if (document.querySelector("video")) {
+    document.querySelectorAll("video").forEach((video) => {
+      video.addEventListener("loadeddata", () => {
+        video.parentElement.style.setProperty("--duration", `${video.duration}s`);
+        video.addEventListener("playing", () => {
+          video.parentElement.classList.add("playing");
+        });
+        video.addEventListener("pause", () => {
+          video.parentElement.classList.remove("playing");
+        });
+      });
+    });
+  }
+
   if (document.querySelector("button.video-controller")) {
     document.querySelectorAll("button.video-controller").forEach((x) => {
       const button = x;
       const button_text = document.querySelector(`#${x.getAttribute("id")} span#button-text`);
       const button_icon = document.querySelector(`#${x.getAttribute("id")} i#button-icon`);
-      const video = document.querySelector(`video#${x.getAttribute("id")}`);
+      const video = document.querySelector(`video#${x.getAttribute("data-id")}`);
       button.addEventListener("click", () => {
         if (video.getAttribute("state") == "playing") {
           video.pause();
@@ -189,20 +204,26 @@ function init() {
       const id = x.getAttribute("id");
       const count = x.getAttribute("data-count");
       const container = document.querySelector(`.slideshow__container#slideshow_${id}`);
-      if (container.clientHeight <= 150) {
-        if (container.querySelector(`.first_slideshow_content_${id}`).localName == "video") {
-          //content is a video (handle oncanplay)
-          container.querySelector(`.first_slideshow_content_${id}`).onloadeddata = () => {
-            initSlides();
-          };
+      const firstElement = container.querySelector(`.first_slideshow_content_${id}`);
+
+      if (firstElement.localName == "video") {
+        //content is a video (handle oncanplay)
+        if (firstElement.readyState >= firstElement.HAVE_CURRENT_DATA) {
+          initSlides();
         } else {
-          //content is an image (handle onload)
-          container.querySelector(`.first_slideshow_content_${id}`).onload = () => {
+          firstElement.onloadeddata = () => {
             initSlides();
           };
         }
       } else {
-        initSlides();
+        //content is an image (handle onload)
+        if (firstElement.complete) {
+          initSlides();
+        } else {
+          firstElement.onload = () => {
+            initSlides();
+          };
+        }
       }
 
       function initSlides() {

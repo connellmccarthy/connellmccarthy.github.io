@@ -6,8 +6,23 @@ $color-grey-light: #fafafa;
 $color-ink: #3f3f3f;
 $color-ink-dark: #0f0f0f;
 $color-ink-muted: #717171;
+$color-ink-muted-light: #cdcdcd;
 $color-blue: #5200ff;
 $color-heart: #db4a6d;
+
+:root {
+  --color-white: #{$color-white};
+  --color-black: #{$color-black};
+  --color-border: #{$color-border};
+  --color-grey: #{$color-grey};
+  --color-grey-light: #{$color-grey-light};
+  --color-ink: #{$color-ink};
+  --color-ink-dark: #{$color-ink-dark};
+  --color-ink-muted: #{$color-ink-muted};
+  --color-ink-muted-light: #{$color-ink-muted-light};
+  --color-blue: #{$color-blue};
+  --color-heart: #{$color-heart};
+}
 
 .muted {
   color: $color-ink-muted;

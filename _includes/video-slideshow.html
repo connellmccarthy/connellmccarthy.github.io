@@ -38,23 +38,25 @@ endif %}
   {% endif %}
   <div id="slideshow_{{ include.slug | append: unique_id }}" class="slideshow__container">
     {% for i in (offset..offset_count) %} {% assign image_id = i | append: "" %}
-    <video
-      class="slideshow__video first_slideshow_content_{{ include.slug | append: unique_id }}"
-      id="image_{{ include.slug | append: unique_id }}_{{ forloop.index }}"
-      data-id="{{ include.slug | append: unique_id }}_{{ forloop.index }}"
-      thumbnail="{{ include.path }}/{{ include.slug }}-{{ i }}.jpg"
-      muted
-      loop
-      playsinline
-      autoplay
-      state="playing"
-      preload="auto"
-    >
-      <source
-        src="{{ include.path }}/{{ include.slug }}-{{ i }}.{{ include.format }}"
-        type="video/{{ include.format }}"
-      />
-    </video>
+    <div class="video">
+      <video
+        class="slideshow__video {% if forloop.index == 1 %}first_slideshow_content_{{ include.slug | append: unique_id }}{% endif %}"
+        id="image_{{ include.slug | append: unique_id }}_{{ forloop.index }}"
+        data-id="{{ include.slug | append: unique_id }}_{{ forloop.index }}"
+        thumbnail="{{ include.path }}/{{ include.slug }}-{{ i }}.jpg"
+        muted
+        loop
+        playsinline
+        autoplay
+        state="playing"
+        preload="auto"
+      >
+        <source
+          src="{{ include.path }}/{{ include.slug }}-{{ i }}.{{ include.format }}"
+          type="video/{{ include.format }}"
+        />
+      </video>
+    </div>
     {% endfor %}
   </div>
   {% if include.count > 1 %}

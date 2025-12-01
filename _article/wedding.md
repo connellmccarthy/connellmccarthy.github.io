@@ -44,6 +44,8 @@ Manufacturing the RSVP itself was a significant learning process. I bought a [Cr
 
 Weirdly enough, one of the things that got me excited was the envelope labels. Instead of having a very large Illustrator document with all the labels for 80 envelopes, I built a script that pulled the information from a CSV and generated a printable PDF on standard letter-sized label paper. I used a few CSS parameters to optimize the layout for printing and a simple for loop in Liquid to render the labels with minimal effort.
 
+_labels.js_{:class="code-caption"}
+
 ```javascript
 var list = [];
 fs.createReadStream("_data/invites.csv")
@@ -67,7 +69,7 @@ fs.createReadStream("_data/invites.csv")
   });
 ```
 
-_Javascript function for all the invite data_{:class="code-caption"}
+_labels.css_{:class="code-caption"}
 
 ```css
 @media print {
@@ -82,7 +84,7 @@ _Javascript function for all the invite data_{:class="code-caption"}
 }
 ```
 
-_CSS for print format and sizing_{:class="code-caption"}
+_labels.liquid_{:class="code-caption"}
 
 ```liquid
 {% raw %}
@@ -104,8 +106,6 @@ _CSS for print format and sizing_{:class="code-caption"}
 {% endfor %}
 {% endraw %}
 ```
-
-_Liquid loop for each invite item_{:class="code-caption"}
 
 {% include slideshow.html path=image_path slug='labels' format='jpg' count=3 %}
 

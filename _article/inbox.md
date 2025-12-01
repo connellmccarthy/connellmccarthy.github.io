@@ -115,4 +115,6 @@ The video came together quite quickly. We had the timing cuts, and initial text 
 
 I didn’t do this campaign alone, I was joined by the super talented Shannon Murphy who led the campaign, [Annie Berrones](https://www.linkedin.com/in/annieberrones/){: target="\_blank"} who managed the project, and the whole product team at our backs. You’ll see the incredible work that Shannon did throughout the [brochure page](https://www.shopify.com/inbox){: target="\_blank"} and comms, and she made my job so easy to put it all together. This product launch wouldn’t have been possible without the team, the wonderful people who helped give feedback, and finally the trust from my peers who supported me in going above and beyond. I’m glad that after all this time, I have found a role that is deeply, truly, for me.
 
-{% include vimeo.html video_id='592913268' %}
+<div class="section">
+  {% include vimeo.html video_id='592913268' %}
+</div>

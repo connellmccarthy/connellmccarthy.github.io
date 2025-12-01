@@ -40,23 +40,26 @@
               {% if page.thumbnail_video %}
               <div class="video__container">
                 <button
-                  id="pos-go-renders"
+                  id="pos-go-renders-trigger"
+                  data-id="pos-go-renders"
                   class="btn btn__circle btn__marketing btn__white btn__scale color__blue video-controller"
                 >
                   <span id="button-text" class="visually-hidden">Pause video</span>
                   <i id="button-icon" class="fas fa-pause" aria-hidden="true"></i>
                 </button>
-                <video
-                  muted
-                  playsinline
-                  autoplay
-                  loop
-                  id="pos-go-renders"
-                  state="playing"
-                  thumbnail="{{ site.image_path }}{{ page.slug }}/{{ page.thumbnail }}"
-                >
-                  <source src="{{ site.image_path }}{{ page.slug }}/{{ page.slug }}-thumbnail.mp4" />
-                </video>
+                <div class="video">
+                  <video
+                    muted
+                    playsinline
+                    autoplay
+                    loop
+                    id="pos-go-renders"
+                    state="playing"
+                    thumbnail="{{ site.image_path }}{{ page.slug }}/{{ page.thumbnail }}"
+                  >
+                    <source src="{{ site.image_path }}{{ page.slug }}/{{ page.slug }}-thumbnail.mp4" />
+                  </video>
+                </div>
               </div>
               {% else %}
               <img src="{{ site.image_path }}{{ page.slug }}/{{ page.thumbnail }}" />
@@ -89,7 +92,7 @@
               </div>
             </div>
           </div>
-          <div class="wrapper">
+          <div class="wrapper article">
             {% assign hasfollowup = site.article | where: 'followup', page.slug %} {% if page.followup %}
             <div class="followup__container">
               <p class="followup__title">
@@ -111,15 +114,44 @@
               style = 'project grey' title = followup.title badge = year description = followup.description url =
               followup.url %} {% endfor %}
             </div>
-            {% else %}
-            <div class="article-spacer"></div>
             {% endif %}
 
             <div class="article-content">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="var(--color-ink-muted-light)"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="headerIcon lucide lucide-pilcrow-icon lucide-pilcrow"
+              >
+                <path d="M13 4v16" />
+                <path d="M17 4v16" />
+                <path d="M19 4H9.5a4.5 4.5 0 0 0 0 9H13" />
+              </svg>
               {{ content }} {% if page.credits %}
               <h2 id="credits">Credits</h2>
               <p>{{ page.credits.description }}</p>
               {% include link-group.html groups = page.credits.groups %} {% endif %}
+              <svg
+                class="closingIcon"
+                width="53"
+                height="24"
+                viewBox="0 0 53 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16.3799 7.98716C19.3799 1.48716 20.8799 -5.01282 7.87993 10.9872C-14.2201 38.1872 23.3799 6.4872 30.3799 10.9872C39.7846 17.033 33.8799 7.98716 44.8799 10.9872M50.8799 10.9872H51.3799"
+                  stroke="var(--color-ink-muted-light)"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
             </div>
           </div>
           <div class="wrapper condensed">{% include newsletter.html %}</div>

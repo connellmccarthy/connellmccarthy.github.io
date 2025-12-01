@@ -22,7 +22,7 @@ endif %}
   <div id="slideshow_{{ include.slug | append: unique_id }}" class="slideshow__container">
     {% for i in (offset..offset_count) %} {% assign image_id = i | append: "" %}
     <img
-      class="first_slideshow_content_{{ include.slug | append: unique_id }}"
+      class="{% if forloop.index == 1 %}first_slideshow_content_{{ include.slug | append: unique_id }}{% endif %}"
       id="image_{{ include.slug | append: unique_id }}_{{ forloop.index }}"
       data-id="{{ include.slug | append: unique_id }}_{{ forloop.index }}"
       src="{{ include.path }}/{{ include.slug }}-{{ i }}.{{ include.format }}"

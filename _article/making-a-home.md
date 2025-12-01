@@ -27,7 +27,7 @@ Fast forward to April, and I saw a house pop up that fell into our requirements,
 
 The viewing was brief since we had already spent hours upon hours going through the virtual tour, even to the point where we had a sense of deja vu as soon as we stepped into the house. The house had no other offers and little interest seeing as though the pandemic had now been ongoing for longer than a month. The market was slowing down with more people hesitant to purchase anything because of the uncertain circumstances we were all faced with. We went back and forth for a while negotiating the terms of the deal, but once all was said and done, we ended up firming the deal below asking and with a 6 month out closing date.
 
-_That was a lot of time to plan._
+**That was a lot of time to plan.**
 
 The main selling point of the house for us was the kitchen. We looked at countless listings of beautiful houses with every other box checked, but the kitchens would all need some sort of renovations to make it ours. This kitchen was the exception.
 

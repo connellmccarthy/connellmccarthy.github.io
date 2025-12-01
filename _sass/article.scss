@@ -1,5 +1,18 @@
 $article-width-old: calc(#{$max-width-condensed} - #{$gutter});
-$article-width: 720px;
+$article-width: 640px;
+$article-padding: 3rem;
+
+:root {
+  --article-padding: #{$article-padding};
+  @media screen and (max-width: $break-mobile) {
+    --article-padding: #{$article-padding / 2};
+  }
+}
+@media screen and (max-width: $break-mobile) {
+  .wrapper.article {
+    padding: 0 1em;
+  }
+}
 .article {
   &__hero {
     width: 100%;
@@ -24,12 +37,16 @@ $article-width: 720px;
       }
       .video__container {
         height: 100%;
-        video {
+        .video {
           height: 100%;
           width: 100%;
-          object-fit: cover;
           border-radius: 0;
           margin: 0;
+          video {
+            height: 100%;
+            object-fit: cover;
+            border-radius: unset;
+          }
         }
       }
     }
@@ -56,27 +73,35 @@ $article-width: 720px;
         margin-top: 2em;
         height: 25vh;
       }
-      padding: $gutter ($gutter / 3);
+      gap: 0;
+      padding: $gutter ($gutter / 3) ($gutter / 2);
     }
   }
   &-content {
+    background-color: $color-white;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.4), 0 0 35px rgba(150, 150, 150, 0.1);
+    padding: 2em 0 var(--article-padding);
+    border-radius: $border-radius-xlarge;
     max-width: $article-width;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2em;
     margin: auto;
-    border-bottom: 1px dotted $color-border;
-    padding-bottom: 4em;
     margin-bottom: 4em;
+    svg.headerIcon {
+      margin-bottom: 1em;
+    }
+    svg.closingIcon {
+      margin-top: 1em;
+    }
     .section {
       margin: 0;
-      width: 100%;
+      width: calc(100% - #{var(--article-padding)} * 2);
     }
-    div.language-javascript,
-    div.language-plaintext,
-    div.language-liquid {
+    .highlighter-rouge {
       width: 100%;
+      padding: 0 var(--article-padding);
     }
   }
   h1 {
@@ -88,38 +113,43 @@ $article-width: 720px;
     text-align: center;
     max-width: 544px;
     margin: 0 auto;
+    padding: 0 var(--article-padding);
     @media screen and (max-width: $break-mobile) {
       font-size: 2em;
     }
   }
   h2:not(#newsletter__heading),
   h3:not(.section h3) {
-    font-size: 1.6em;
+    font-size: 1.2em;
     font-style: unset;
-    margin: 4em 0 0;
+    margin: 2em 0 0;
     width: 100%;
-    padding-bottom: 1em;
+    padding: 0.4rem var(--article-padding);
+    border-top: $color-border 1px dotted;
     border-bottom: $color-border 1px dotted;
+    background-color: $color-grey-light;
     @media screen and (max-width: $break-mobile) {
       margin: 2em 0 0;
     }
   }
-  p:not(.section p, .details p, .article-info-static p, .article-info-details p, .followup__container p) {
+  p:not(
+      .section p,
+      .details p,
+      .article-info-static p,
+      .article-info-details p,
+      .followup__container p,
+      .appreciation_info p
+    ) {
     font-size: 1.2em;
     color: $color-ink;
     margin: 0;
     width: 100%;
+    padding: 0 var(--article-padding);
   }
   img:not(.article_thumbnail img, .product img, .product_image img, .slideshow img, .thumbnail img) {
     border-radius: $border-radius-large;
-    width: 100%;
-    margin: 4em 0;
-
-    &.inline {
-      width: calc(50% - 4px);
-      display: inline-block;
-      margin: 0 2px;
-    }
+    width: calc(100% - #{var(--article-padding)} * 2);
+    border: 1px solid rgba(0, 0, 0, 0.1);
 
     @media screen and (max-width: $break-mobile) {
       margin: 2em 0 0;
@@ -130,11 +160,14 @@ $article-width: 720px;
     width: 100%;
   }
   iframe.youtube-embed {
-    width: 100%;
+    width: calc(100% - #{var(--article-padding)});
     height: auto;
     aspect-ratio: 16/9;
     border-radius: $border-radius-large;
     margin: 4em 0;
+  }
+  .vimeo-embed {
+    width: 100%;
   }
   em {
     font-size: 0.9em;
@@ -146,7 +179,8 @@ $article-width: 720px;
   }
   .slideshow {
     position: relative;
-    margin: 4em 0;
+    margin: 2em 0;
+    padding: 0 var(--article-padding);
     @media screen and (max-width: $break-mobile) {
       margin: 2em 0;
     }
@@ -176,8 +210,8 @@ $article-width: 720px;
       position: absolute;
       display: flex;
       top: 0;
-      left: 0;
-      width: 100%;
+      left: var(--article-padding);
+      width: calc(100% - #{var(--article-padding)} * 2);
       justify-content: space-between;
       pointer-events: none;
       z-index: 2;
@@ -205,7 +239,7 @@ $article-width: 720px;
       }
     }
     &__container {
-      background: $color-ink-dark;
+      background: $color-white;
       border-radius: $border-radius-large;
       overflow-x: scroll;
       display: flex;
@@ -214,6 +248,7 @@ $article-width: 720px;
       scroll-snap-type: x mandatory;
       position: relative;
       z-index: 1;
+      border: 1px solid rgba(0, 0, 0, 0.1);
       img,
       video {
         margin: 0;
@@ -222,6 +257,7 @@ $article-width: 720px;
       }
       video {
         width: 100%;
+        height: 100%;
       }
     }
     &__thumbnails {
@@ -463,17 +499,11 @@ $article-width: 720px;
     }
   }
 }
-.product-list {
-  a.card:not(:last-of-type) {
-    margin-bottom: 0.6em;
-  }
-}
 
 blockquote {
-  border-left: 2px solid $color-border;
+  width: 100%;
+  border-left: 6px solid $color-border;
   padding: 0 2em;
-  max-width: $article-width;
-  margin: 2em;
   p {
     font-size: 1.4em !important;
     color: $color-ink-muted !important;
@@ -492,9 +522,8 @@ blockquote {
   align-items: flex-end;
   .appreciation_info {
     position: relative;
-    left: 5em;
+    left: 3em;
     top: -3em;
-    font-size: 0.9em;
     opacity: 0;
     pointer-events: none;
     transition: 0.4s ease;
@@ -519,6 +548,21 @@ blockquote {
     }
   }
 }
+.product-list {
+  a.card:not(:last-of-type) {
+    margin-bottom: 0.6em;
+  }
+}
+.section.product-feature {
+  margin-top: 2rem;
+  background-color: $color-grey-light;
+  padding: 2rem var(--article-padding);
+  border-top: 1px dotted $color-border;
+  border-bottom: 1px dotted $color-border;
+  .product {
+    margin-bottom: 0;
+  }
+}
 .section.article_heading {
   margin-top: 8em !important;
   font-size: 1.4em;
@@ -528,6 +572,7 @@ blockquote {
   border: 1px solid #ebebeb;
   overflow: hidden;
   border-radius: $border-radius-normal;
+  width: calc(100% - #{var(--article-padding)} * 2);
 
   h4.title {
     padding: 1em;

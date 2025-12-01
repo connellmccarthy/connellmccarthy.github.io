@@ -2,7 +2,7 @@
   background: $color-grey-light;
   border: 1px solid $color-border;
   padding: 2em;
-  width: 100%;
+  width: calc(100% - #{$article-padding} * 2);
   margin: 2em auto;
   position: relative;
   overflow: hidden;

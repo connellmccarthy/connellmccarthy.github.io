@@ -44,12 +44,12 @@ First lint all your code by running `npm run lint`. Your VSCode settings should 
 
 ```json
 {
-	"semi": true,
-	"singleQuote": false,
-	"trailingComma": "es5",
-	"arrowParens": "always",
-	"bracketSpacing": true,
-	"printWidth": 120
+  "semi": true,
+  "singleQuote": false,
+  "trailingComma": "es5",
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "printWidth": 120
 }
 ```
 

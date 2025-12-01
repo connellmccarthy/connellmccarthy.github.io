@@ -19,7 +19,11 @@ _Visual explaining the structure of the T-shape_
 
 Beyond just the alignment of having a growth mindset, Shopify believes that everyone should be dev literate. I agree with this sentiment wholeheartedly. You don’t need to fully learn how to code, but you should understand the fundamentals. For example, designers who understand development basics can help the collaboration process immensely, just by understanding the feasibility of some of their designs. The future isn’t straying from technology, so the more you can broaden your T to help equip yourself with the right tools, the more successful you can be.
 
-Danielle and I used to use a spreadsheet to track all of our shared expenses like groceries, mortgage, bills, etc. and it got pretty complicated and hard to maintain when it came to which items were paid by which transfers. Instead of trying to improve the spreadsheet, and living by my internal motto of _“If something is worth doing, it’s worth overdoing”_, I took it as an opportunity to build an app to track all of it and learn more about development in the process. I used to do a fair bit of development back in the days of PHP, so this was more of a way to modernize my development skills.
+Danielle and I used to use a spreadsheet to track all of our shared expenses like groceries, mortgage, bills, etc. and it got pretty complicated and hard to maintain when it came to which items were paid by which transfers. Instead of trying to improve the spreadsheet, and living by my internal motto of:
+
+> “If something is worth doing, it’s worth overdoing”
+
+I took it as an opportunity to build an app to track all of it and learn more about development in the process. I used to do a fair bit of development back in the days of PHP, so this was more of a way to modernize my development skills.
 
 I started with database modeling, trying to figure out how everything relates to each other and the best way to store the information. It helps when you already have a few months of spreadsheet data to help figure it out. I won’t go too much into the details, but at a very top level - bills contain the information for the expense and they get connected to transfers once they’ve been marked as paid.
 

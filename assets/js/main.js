@@ -376,7 +376,9 @@ function init() {
         if (icon.classList.contains("fa-play")) {
           if (audio_playing) {
             audio_playing.pause();
-            document.getElementById(`icon-${audio_playing.options.id}`).classList.replace("fa-pause", "fa-play");
+            if (document.getElementById(`icon-${audio_playing.options.id}`)) {
+              document.getElementById(`icon-${audio_playing.options.id}`).classList.replace("fa-pause", "fa-play");
+            }
             audio_playing = newAudio;
           } else {
             audio_playing = newAudio;

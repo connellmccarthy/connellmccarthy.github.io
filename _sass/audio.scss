@@ -6,10 +6,12 @@
   margin: 2em auto;
   position: relative;
   overflow: hidden;
+  font-size: 1.2em;
 
   @media screen and (max-width: $break-mobile) {
-    width: 100%;
-    padding: 2em;
+    width: calc(100% - #{$article-padding / 2} * 2);
+    padding: 1.2em 1.2em 2em;
+    font-size: 1em;
   }
 
   .flex {

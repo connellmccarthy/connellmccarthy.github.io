@@ -64,7 +64,7 @@ The colour palette was the piece of the campaign that brought it all together. W
 
 We prioritized applying the campaign creative to the landing pages first, so that we could see it all together in one place, and then take pieces of it and repurpose it for other touchpoints like ads, direct mail, paid social, and emails.
 
-{% include slideshow.html path=image_path slug='touchpoints' format='jpg' count=3 %}
+{% include gallery.html path=image_path slug='touchpoints' format='jpg' count=3 %}
 
 ## Photography
 
@@ -72,7 +72,7 @@ We worked together with two merchants who were part of the beta program to take 
 
 I had a jam-packed itinerary starting with a flight to Toronto in the morning to meet up with the team, and then a flight to Los Angeles. Once we landed, we rented a car and proceeded to make the two-hour drive to Santa Barbara. A brief stop along the coast for In-N-Out, we made it to Santa Barbara just after sundown. The shoot was the following morning, and by that afternoon we were on the road again back to Los Angeles so we could catch our flights to Austin.
 
-{% include slideshow.html path=image_path slug='merchant_photography' format='jpg' count=7 %}
+{% include gallery.html path=image_path slug='merchant_photography' format='jpg' count=7 %}
 
 Working with merchants in their environment is always an amazing experience. You get real-time feedback about what kind of pain points they have with our products, and you come back feeling inspired to make the experiences better for them.
 
@@ -80,13 +80,13 @@ The next week, the team had a studio shoot in Montreal with [L’Éloi](https://
 
 ![Two behind the scenes photos including all the photo equipment on set.]({{ image_path }}/studio_photography.jpg)
 
-{% include slideshow.html path=image_path slug='studio_photography' format='jpg' count=3 %}
+{% include gallery.html path=image_path slug='studio_photography' format='jpg' count=3 %}
 
 ## Promo video
 
 We knew we needed to create a promo video that really brought the energy and impact that matched the scale of this product launch. In order to do that, we needed to get bold with the copy and with the pace of the animations. With such a short amount of time to communicate everything we wanted to touch on, the words on screen needed to be as short and descriptive as possible. Storyboarding took a few iterations to fine tune the messaging and tone, but once that was finished it was onto the music.
 
-{% include slideshow.html path=image_path slug='storyboarding' format='jpg' count=2 %}
+{% include gallery.html path=image_path slug='storyboarding' format='jpg' count=2 %}
 
 Outside of my day job, I make music under the artist name [COVEO](https://open.spotify.com/artist/4xRSaHrn9OCfNjU84QzdKJ?si=uN89zseASLyxqvmZNsCpiw?ref=connellmccarthy.com){: target="blank"}, and I always try to bring those skills into my day-to-day work when needed. I had previously made a custom track for the [Inbox launch campaign](https://connellmccarthy.com/article/inbox/?ref=connellmccarthy.com){: target="blank"}, and the team was excited to do something similar for this project.
 
@@ -104,4 +104,4 @@ As the video progressed, I kept refining the sound and composition until it had 
 
 I couldn’t have asked for a better team to collaborate with. From product, to hardware, to marketing - everyone had such a passion to create the best campaign possible and it was truly inspiring.
 
-{% include slideshow.html path=image_path slug='product_feature' format='jpg' count=6 %}
+{% include gallery.html path=image_path slug='product_feature' format='jpg' count=6 %}

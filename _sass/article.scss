@@ -13,6 +13,7 @@ $article-padding: 3rem;
     padding: 0 1em;
   }
 }
+
 .article {
   &__hero {
     width: 100%;
@@ -151,21 +152,24 @@ $article-padding: 3rem;
     width: 100%;
     padding: 0 var(--article-padding);
   }
-  img:not(.article_thumbnail img, .product img, .product_image img, .slideshow img, .thumbnail img) {
+  img:not(.article_thumbnail img, .product img, .product_image img, .gallery img, .thumbnail img, .lightbox img) {
+    width: calc(100% - (var(--article-padding) * 2));
+    cursor: pointer;
     border-radius: $border-radius-large;
-    width: calc(100% - #{var(--article-padding)} * 2);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+
+    transition: transform 0.3s ease;
+    transform: scale(1);
+    &:active {
+      transform: scale(0.99);
+    }
 
     @media screen and (max-width: $break-mobile) {
       margin: 2em 0 0;
     }
   }
-  video:not(.slideshow__video) {
-    border-radius: $border-radius-large;
-    width: 100%;
-  }
   iframe.youtube-embed {
-    width: calc(100% - #{var(--article-padding)});
+    width: calc(100% - (var(--article-padding) * 2));
     height: auto;
     aspect-ratio: 16/9;
     border-radius: $border-radius-large;
@@ -180,136 +184,6 @@ $article-padding: 3rem;
     text-align: center;
     width: 100%;
     display: block;
-    margin-top: -1em;
-  }
-  .slideshow {
-    position: relative;
-    margin: 2em 0;
-    padding: 0 var(--article-padding);
-    @media screen and (max-width: $break-mobile) {
-      margin: 2em 0;
-    }
-    &__video_controls {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      z-index: 3;
-      transform: translate(-50%, -50%);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      @media screen and (max-width: $break-mobile) {
-        bottom: 0;
-        opacity: 1;
-        transform: translateX(-50%) translateY(25%);
-
-        button {
-          height: 45px !important;
-          width: 45px !important;
-          font-size: 1em !important;
-          background: rgba(0, 0, 0, 0.3);
-          backdrop-filter: blur(4px);
-        }
-      }
-    }
-    &__hitmarkers {
-      position: absolute;
-      display: flex;
-      top: 0;
-      left: var(--article-padding);
-      width: calc(100% - #{var(--article-padding)} * 2);
-      justify-content: space-between;
-      pointer-events: none;
-      z-index: 2;
-      button {
-        width: fit-content;
-        pointer-events: all;
-        appearance: none;
-        border: none;
-        background: none;
-        font-size: 2em;
-        cursor: pointer;
-        color: #fff;
-        text-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);
-        transition: color 0.3s ease;
-        padding: 0 1em;
-        text-align: center;
-
-        @media screen and (max-width: $break-mobile) {
-          padding: 0 0.5em;
-        }
-
-        &:hover {
-          color: lighten($color-blue, 25);
-        }
-      }
-    }
-    &__container {
-      background: $color-white;
-      border-radius: $border-radius-large;
-      overflow-x: scroll;
-      display: flex;
-      flex: none;
-      flex-flow: row nowrap;
-      scroll-snap-type: x mandatory;
-      position: relative;
-      z-index: 1;
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      img,
-      video {
-        margin: 0;
-        scroll-snap-align: center;
-        object-fit: cover;
-      }
-      video {
-        width: 100%;
-        height: 100%;
-      }
-    }
-    &__thumbnails {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 1em 0;
-      flex-wrap: wrap;
-
-      button {
-        appearance: none;
-        -webkit-appearance: none;
-        background: none;
-        padding: 0;
-        margin: 0.5em;
-        overflow: hidden;
-        border-radius: $border-radius-normal;
-        border: 3px solid transparent;
-        cursor: pointer;
-        transition: border 0.3s ease;
-
-        @media screen and (max-width: $break-mobile) {
-          margin: 0;
-        }
-
-        &:hover {
-          border: 3px solid $color-border;
-        }
-        &.active {
-          border: 3px solid $color-blue;
-        }
-        img {
-          width: 100px;
-          border-radius: 0;
-          display: block;
-          vertical-align: middle;
-          @media screen and (max-width: $break-mobile) {
-            width: 70px;
-          }
-        }
-      }
-    }
-    &:hover {
-      .slideshow__video_controls {
-        opacity: 1;
-      }
-    }
   }
 }
 

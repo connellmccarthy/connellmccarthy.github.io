@@ -24,7 +24,7 @@ Since our wedding was in the fall, we opted to keep the palette in line with a w
 
 Using four font families is a bit much for a brand like this, but there were different needs for digital materials vs. small-scale print materials like the save-the-date, RSVP invitation, and menu. Mainly though, I just couldn’t make up my mind, so I chose all of them.
 
-{% include slideshow.html path=image_path slug='branding' format='jpg' count=5 %}
+{% include gallery.html path=image_path slug='branding' format='jpg' count=5 %}
 
 ## Stationery
 
@@ -32,15 +32,15 @@ With our venue, website domain, and vendors booked for the day, we needed to sen
 
 We went to a paper shop and picked out a nice cardstock with a subtle texture and a slightly off-white colour. I kept the design simple, and to minimize the amount of paper waste, I designed 4 to fit perfectly on standard letter-sized paper. I wanted to make them feel customized in a way, so I ordered a custom embosser of the logo, a rounded corner cutter, and a custom stamp for the mixed media effect for our names. I liked the structured type of our names and the organic contrast that the hand-stamped ‘McCarthy’ gave with it.
 
-{% include slideshow.html path=image_path slug='std' format='jpg' count=4 %}
+{% include gallery.html path=image_path slug='std' format='jpg' count=4 %}
 
 After the save-the-date, I moved on to planning the RSVP mailout. I knew I wanted to do something more intricate, like a half-moon cut on the top of the RSVP and an information card inserted between pieces. A few paper options from the [Cardstock Warehouse](https://cardstock-warehouse.com/?ref=connellmccarthy.com){:target="\_blank"} fell within our palette, so I mocked them all to see which felt better. We picked Rust and used a [Ghost Toner](https://www.ghost-white-toner.com/?ref=connellmccarthy.com){:target="\_blank"} cartridge to print white ink on them.
 
-{% include slideshow.html path=image_path slug='rsvp-planning' format='jpg' count=2 %}
+{% include gallery.html path=image_path slug='rsvp-planning' format='jpg' count=2 %}
 
 Manufacturing the RSVP itself was a significant learning process. I bought a [Cricut Maker 3](https://cricut.com/en-us/cutting-machines/cricut-maker/cricut-maker-3/cricut-maker-3/2008334.html?ref=connellmccarthy.com){:target="\_blank"} to make custom cuts like the half-moon top. It allowed us to add more customization, such as the scoring line for the front flap, debossing both the logo on the top and a box around the QR code, and even the opportunity for a gold foil edge piece. It took a lot of prototyping, but I finally produced almost 80 invites on premium heavy-weight cotton cardstock from [LCI Paper](https://lcipaper.com/?ref=connellmccarthy.com){:target="\_blank"}. The result was a high-quality invite that looked and felt like a professional made it.
 
-{% include slideshow.html path=image_path slug='invites' format='jpg' count=4 %}
+{% include gallery.html path=image_path slug='invites' format='jpg' count=4 %}
 
 Weirdly enough, one of the things that got me excited was the envelope labels. Instead of having a very large Illustrator document with all the labels for 80 envelopes, I built a script that pulled the information from a CSV and generated a printable PDF on standard letter-sized label paper. I used a few CSS parameters to optimize the layout for printing and a simple for loop in Liquid to render the labels with minimal effort.
 
@@ -107,7 +107,7 @@ _labels.liquid_{:class="code-caption"}
 {% endraw %}
 ```
 
-{% include slideshow.html path=image_path slug='labels' format='jpg' count=3 %}
+{% include gallery.html path=image_path slug='labels' format='jpg' count=3 %}
 
 ## Website
 
@@ -117,7 +117,7 @@ When I started planning the tech stack, I wanted to keep it lightweight and quic
 
 The first iteration of the page was a simple informational lander for people to navigate to when the save-the-date got mailed out. I started with a very low-fidelity wireframe to get an idea of content structure and hierarchy. With that figured out, I worked on adding the branding elements I had already finished earlier. I kept it very minimal and clean, which allowed me to dedicate more to some moments of delight, like the ‘McCarthy’ being written on page load, some interactive photo moments in our story, and a cool Instagram story inspired storybook of some photos of Dani and I.
 
-{% include video-slideshow.html path=image_path slug='website-features' format='mp4' count=3 %}
+{% include gallery.html path=image_path slug='website-features' format='mp4' count=3 %}
 
 After a few months of focusing on other things for the wedding, the proper RSVP invites needed to go out. Again, I was thinking about using a pre-existing service, but unfortunately, all the ones I looked at didn’t have an API I could tap into for a cohesive experience. I returned to the drawing board on how to make our RSVP system from scratch. Dani and I spent a good amount of time journey-mapping the experience for our users from the mailed RSVP all the way to surfacing more relevant information.
 
@@ -129,19 +129,19 @@ I set up a simple database to keep a record of the submissions and utilized uniq
 
 It was a great exercise for doing more backend development and designing a user experience from all touchpoints. I tried to make everything as efficient as possible and automate as much as I could.
 
-{% include slideshow.html path=image_path slug='rsvp-flow' format='jpg' count=4 %}
+{% include gallery.html path=image_path slug='rsvp-flow' format='jpg' count=4 %}
 
-{% include video-slideshow.html path=image_path slug='rsvp-example' format='mp4' count=1 %}
+{% include gallery.html path=image_path slug='rsvp-example' format='mp4' count=1 %}
 
 ## Signage
 
 Getting out of the digital realm, we knew there were going to be a few pieces of signage we’d build out ourselves. One of those pieces was an important full-size welcome sign that was branded to match the invites and the rest of the materials. Dani planned out this build herself after I put together the scale mockup. We figured out how to cut the pieces out of a singular 8’x4’ sheet of MDF and got to work. Within a day, the pieces were cut and sanded down in the shape we needed, and we painted the first couple of coats. After the paint had dried completely, Dani’s dad and I made a few collapsable feet on the backs so they could stand and be transported easily. I brought them back to our house and used the Cricut machine to cut out the vinyl lettering to place on the front. I wanted a mixed media effect similar to the RSVP, so I cut a stencil for the logo on the top and the ‘McCarthy’ and hand-painted them both. They turned out so much better than I thought.
 
-{% include slideshow.html path=image_path slug='welcome-sign' format='jpg' count=8 %}
+{% include gallery.html path=image_path slug='welcome-sign' format='jpg' count=8 %}
 
 I made a few other small signs out of MDF and vinyl lettering, along with some printed signage for the tables and areas around the wedding venue. I kept the menus clean and minimal using the leftover paper scraps from the RSVP invites.
 
-{% include slideshow.html path=image_path slug='signage' format='jpg' count=4 %}
+{% include gallery.html path=image_path slug='signage' format='jpg' count=4 %}
 
 ## Candles
 
@@ -153,7 +153,7 @@ Each candle holder needed to cure for upwards of 12 hours in the mould, and we n
 
 For the scent, we went with a tobacco leaf and pine, which the tobacco was a nod to Dani’s Pépère and the pine to represent our love for the great outdoors. With the help of our friends, we had a candle-making party where we melted and poured wax, stuck labels on the candles, and cut the wicks. We made roughly 125 candles.
 
-{% include slideshow.html path=image_path slug='candles' format='jpg' count=4 %}
+{% include gallery.html path=image_path slug='candles' format='jpg' count=4 %}
 
 ## Jukebox
 
@@ -163,15 +163,15 @@ Essentially, the way it works is that you select a playlist as the source of mus
 
 The scaffold for the app structure was pretty simple. There’s an authorization route for credentials handling, an onboarding route for playlist selection, a player route to handle the current playing song and the queue display, and a search route for results and queue handling. I added a little database to keep a record of all the requested songs so we could go back and look at all the songs that were played during the night.
 
-{% include slideshow.html path=image_path slug='jukebox-figma' format='jpg' count=4 %}
+{% include gallery.html path=image_path slug='jukebox-figma' format='jpg' count=4 %}
 
 The benefit of using the same framework for the jukebox as the wedding website is that I could give guests the opportunity to start building a playlist of songs before the wedding day. I branded a ‘Get ahead of the jukebox line’ feature, surfaced the module on the homepage and the RSVP details page, and linked to it in emails. It helped us figure out the dance playlist without stressing too much over the songs.
 
-{% include video-slideshow.html path=image_path slug='jukebox-module' format='mp4' count=1 %}
+{% include gallery.html path=image_path slug='jukebox-module' format='mp4' count=1 %}
 
 It was a fun little activation at the wedding, and I don’t think there was a moment where the dance floor was empty or the jukebox table didn’t have a little crowd around it. I wish I could say it worked flawlessly, but the venue wifi had a timeout of 15 minutes, so that meant that every 15 minutes, you had to reconnect to the wifi. Note to my future self is to use an iPad with a data plan or tether my phone from the get-go. Beyond that, it was such a fun exercise for me to dive into another app build.
 
-{% include video-slideshow.html path=image_path slug='jukebox-demo' format='mp4' count=1 %}
+{% include gallery.html path=image_path slug='jukebox-demo' format='mp4' count=1 %}
 
 ## Recap
 

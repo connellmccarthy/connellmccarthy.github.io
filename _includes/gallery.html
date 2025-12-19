@@ -1,0 +1,50 @@
+{% assign assets = "" | split: "" %} {% unless include.assets %} {% assign offset = 1 %} {% assign offset_count =
+include.count %} {% if include.offset %} {% assign offset = include.offset %} {% assign offset_count = include.count |
+plus: include.offset | minus: 1 %} {% endif %} {% assign ordered_assets = "" | split: "" %} {% for i in
+(offset..offset_count) %} {% capture temp_asset %}{{ include.slug }}-{{ i }}.{{ include.format }}{% endcapture %} {%
+assign ordered_assets = temp_asset | concat: ordered_assets %} {% endfor %} {% assign assets = ordered_assets | reverse
+%} {% else %} {% assign assets = include.assets | split: ',' %} {% endunless %} {% assign unique_id = "now" | date: '%s'
+%} {% if include.unique %} {% assign unique_id = unique_id | plus: include.unique %} {% endif %}
+
+<div
+  class="gallery"
+  data-gallery
+  id="{{ include.slug | append: unique_id }}"
+  data-offset="{{ offset }}"
+  data-count="{{ include.count }}"
+>
+  <div id="gallery_{{ include.slug | append: unique_id }}" class="gallery__track" data-gallery-track>
+    {% for asset in assets %} {% assign filename = asset | split: "." %}
+    <div
+      class="gallery__slide {% if assets.size == 1 %}solo{% endif %}"
+      data-gallery-slide
+      data-index="{{ forloop.index0 }}"
+    >
+      {% if filename.last == 'mp4' or filename.last == 'webm' or filename.last == 'mov' %}
+      <div class="video">
+        <video
+          class="gallery__video"
+          id="image_{{ include.slug | append: unique_id }}_{{ forloop.index }}"
+          data-id="{{ include.slug | append: unique_id }}_{{ forloop.index }}"
+          thumbnail="{{ include.path }}/{{ filename.first }}.jpg"
+          muted
+          loop
+          playsinline
+          autoplay
+          state="playing"
+          preload="auto"
+        >
+          <source src="{{ include.path }}/{{ filename.first }}.{{ filename.last }}" type="video/{{ filename.last }}" />
+        </video>
+      </div>
+      {% else %}
+      <img
+        id="image_{{ include.slug | append: unique_id }}_{{ forloop.index }}"
+        data-id="{{ include.slug | append: unique_id }}_{{ forloop.index }}"
+        src="{{ include.path }}/{{ asset }}"
+      />
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</div>

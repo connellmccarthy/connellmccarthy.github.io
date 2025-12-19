@@ -38,7 +38,7 @@ The kitchen island is unnecessarily big, standing at 14ft long, it’s going to 
 
 After defining the general direction for the kitchen look and feel, I started making a to-scale 3D model so we could start exploring fixtures, colors, and trims. Thankfully the virtual tour program allowed you to measure things in the program, so it made the modeling easy.
 
-{% include slideshow.html path=image_path slug='render' format='jpg' count=4 %}
+{% include gallery.html path=image_path slug='render' format='jpg' count=4 %}
 
 We decided that we were going to change the backsplash from grey to white, swap the silver faucet for a new black one, and change out the pendant lighting. The original plan for colors was to make the cabinets along the wall all black with gold handles and keep the island white with black handles. The difficult thing about that was trying to find some light fixtures that didn’t blend into the black wall of cabinets. We also decided that we were going to replace the quarter round trim along the island with a wider board and batten style to match the edges of the cabinet doors. I explored what it would look like with the island only being black, and the wall cabinets staying white, explored various light pendants, and constantly was changing handle colors.
 
@@ -51,8 +51,8 @@ I’m in love with the way it turned out. The island is such a statement piece a
 ![The final kitchen result.]({{ image_path }}/final-kitchen.jpg)
 _The final kitchen result_
 
-{% include slideshow.html path=image_path slug='accents' format='jpg' count=2 %}
+{% include gallery.html path=image_path slug='accents' format='jpg' count=2 %}
 
-{% include slideshow.html path=image_path slug='island' format='jpg' count=3 %}
+{% include gallery.html path=image_path slug='island' format='jpg' count=3 %}
 
 With the kitchen fully complete, the next few things are putting up the homemade shelves that wrap the fireplace in the living room, waiting for the new couch delivery, and starting work on the built-in bookcase in the dining room.

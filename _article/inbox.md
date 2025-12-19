@@ -67,7 +67,7 @@ I’ve always had an interest in 3D rendering, and it’s actually how my career
 
 With the environments I created, we wanted to give one of the scenes more purpose, so I added some merchant shelves and crafted the products that sit on them to match the ones from the photoshoot. The small details went a long way in making everything feel cohesive and the environments ended up being a large part of the Inbox brand, with a few variations we could use in additional materials.
 
-{% include slideshow.html path=image_path slug='article' unique='1' format='jpg' offset=4 count=3 %}
+{% include gallery.html path=image_path slug='article' unique='1' format='jpg' offset=4 count=3 %}
 
 ## Motion design
 

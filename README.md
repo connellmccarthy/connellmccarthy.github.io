@@ -40,7 +40,7 @@ To add a gallery of media, use the gallery component. There are two methods.
     {% include gallery.html path='IMAGE_PATH' slug='UNIQUE-SLUG' format='FILETYPE' count=NUM_OF_MEDIA %}
     ```
   
-    It will output all the files starting from 1 to `NUM_OF_MEDIA` (ie. `/{IMAGE_PATH}/{UNIQUE-SLUG}-{NUM}.{FORMAT}`)
+    It will output all the files starting from 1 to `NUM_OF_MEDIA` (ie. `/{IMAGE_PATH}/{UNIQUE-SLUG}-{INDEX}.{FILETYPE}`)
 
 2. If you want a variety of media, images and videos, and don't have them all named in sequential order, you can make the array and pass it in:
 

@@ -126,7 +126,7 @@ Everything I use to make music is within reach so that I never have to take anyt
 
 My chair and desk were chosen purely based on aesthetics, however, the size of my desk was a big deciding factor. I needed something with a lot of space to put headphones, notebooks, an audio interface, and a thunderbolt system. Being mindful of the real estate you have to work with, and what requirements you have for them will go a long way in helping make a decision on desk sizes.
 
-{% include slideshow.html path=image_path slug='cm-home-office' format='jpg' count=4 %}
+{% include gallery.html path=image_path slug='cm-home-office' format='jpg' count=4 %}
 
 {% include link-group.html groups=page.groups.studio %}
 

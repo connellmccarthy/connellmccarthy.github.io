@@ -604,12 +604,40 @@ span.badge {
 }
 
 .video {
+  --delay: 0s;
   width: 100%;
   flex-shrink: 0;
   position: relative;
   margin: 0;
   scroll-snap-align: center;
   overflow: hidden;
+
+  .video-controller {
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      opacity 0.4s ease,
+      visibility 0.4s ease;
+
+    @media screen and (max-width: $break-mobile) {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  &:hover {
+    .video-controller {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
 
   video {
     width: 100%;
@@ -622,7 +650,7 @@ span.badge {
     }
   }
 
-  &:not(.slideshow__container .video) {
+  &:not(.gallery__slide .video, .lightbox .video) {
     border-radius: $border-radius-xlarge;
     @media screen and (max-width: $break-mobile) {
       border-radius: $border-radius-large;
@@ -644,7 +672,7 @@ span.badge {
   }
   &:after {
     background: $color-blue;
-    animation: videoIndicator var(--duration) linear forwards infinite;
+    animation: videoIndicator var(--duration) var(--delay) linear forwards infinite;
     animation-play-state: paused;
     transform-origin: bottom left;
     transform: scale(0, 1);

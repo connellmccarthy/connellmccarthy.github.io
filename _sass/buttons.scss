@@ -132,6 +132,16 @@ button.btn {
     }
   }
 
+  &__basic--dark {
+    background: rgba(25, 25, 25, 0.8);
+    color: rgb(200, 200, 200);
+    border: rgba(50, 50, 50, 0.8) 1px solid;
+    backdrop-filter: blur(10px);
+    &:hover {
+      color: rgb(235, 235, 235);
+    }
+  }
+
   &__white {
     background: $color-white;
     color: $color-ink-dark;
@@ -192,6 +202,27 @@ button.btn {
     }
     &:active {
       transform: scale(1);
+    }
+  }
+
+  &__scale--subtle {
+    transform: scale(1);
+    transition:
+      transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+      color 0.6s ease;
+    svg,
+    i {
+      transition: 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      transform: scale(1);
+    }
+    &:hover {
+      svg,
+      i {
+        transform: scale(1.1);
+      }
+    }
+    &:active {
+      transform: scale(0.95);
     }
   }
 

@@ -1,14 +1,6 @@
 <div class="section" data-aos="fade">
   <div class="wrapper video_wrapper">
     <div class="video__container">
-      <button
-        data-id="showreel-video"
-        id="showreel-trigger"
-        class="btn btn__circle btn__marketing btn__white btn__scale color__blue video-controller"
-      >
-        <span id="button-text" class="visually-hidden">Pause video</span>
-        <i id="button-icon" class="fas fa-pause" aria-hidden="true"></i>
-      </button>
       <div
         class="video"
         data-aos="index-showreel"
@@ -16,6 +8,15 @@
         data-aos-easing="cubic-bezier(0.22, 1, 0.36, 1)"
         id="showreel"
       >
+        <button
+          id="showreel-controller"
+          data-id="showreel-video"
+          data-for="showreel-video"
+          class="btn btn__basic--dark btn__circle btn__icon btn__scale--subtle video-controller"
+        >
+          <span id="button-text" class="visually-hidden">Pause video</span>
+          <i id="button-icon" class="fas fa-pause" aria-hidden="true"></i>
+        </button>
         <video
           id="showreel-video"
           poster="/assets/img/showreel.jpg"

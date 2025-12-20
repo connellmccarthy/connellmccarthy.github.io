@@ -87,30 +87,31 @@ function init() {
       video.parentElement.style.setProperty("--duration", `${video.duration}s`);
       video.addEventListener("playing", () => {
         video.parentElement.classList.add("playing");
+        video.setAttribute("state", "playing");
       });
       video.addEventListener("pause", () => {
         video.parentElement.classList.remove("playing");
+        video.setAttribute("state", "paused");
       });
     }
   }
 
   if (document.querySelector("button.video-controller")) {
-    document.querySelectorAll("button.video-controller").forEach((x) => {
-      const button = x;
-      const button_text = document.querySelector(`#${x.getAttribute("id")} span#button-text`);
-      const button_icon = document.querySelector(`#${x.getAttribute("id")} i#button-icon`);
-      const video = document.querySelector(`video#${x.getAttribute("data-id")}`);
+    document.querySelectorAll("button.video-controller").forEach((button) => {
+      const button_text = button.querySelector(`#button-text`);
+      const button_icon = button.querySelector(`#button-icon`);
+      const video = document.querySelector(`video#${button.getAttribute("data-for")}`);
       button.addEventListener("click", () => {
-        if (video.getAttribute("state") == "playing") {
-          video.pause();
-          video.setAttribute("state", "paused");
-          button_icon.classList.replace("fa-pause", "fa-play");
-          button_text.innerText = "Play video";
-        } else {
+        if (video.paused) {
           video.play();
           video.setAttribute("state", "playing");
           button_icon.classList.replace("fa-play", "fa-pause");
           button_text.innerText = "Pause video";
+        } else {
+          video.pause();
+          video.setAttribute("state", "paused");
+          button_icon.classList.replace("fa-pause", "fa-play");
+          button_text.innerText = "Play video";
         }
       });
     });
@@ -205,142 +206,33 @@ function init() {
       }
     });
   }
-  //Slideshow module
-  if (document.querySelector(".slideshow")) {
-    document.querySelectorAll(".slideshow").forEach((x) => {
-      const id = x.getAttribute("id");
-      const count = x.getAttribute("data-count");
-      const container = document.querySelector(`.slideshow__container#slideshow_${id}`);
-      const firstElement = container.querySelector(`.first_slideshow_content_${id}`);
 
-      if (firstElement.localName == "video") {
-        //content is a video (handle oncanplay)
-        if (firstElement.readyState >= firstElement.HAVE_CURRENT_DATA) {
-          initSlides();
-        } else {
-          firstElement.onloadeddata = () => {
-            initSlides();
-          };
-        }
-      } else {
-        //content is an image (handle onload)
-        if (firstElement.complete) {
-          initSlides();
-        } else {
-          firstElement.onload = () => {
-            initSlides();
-          };
-        }
-      }
-
-      function initSlides() {
-        //Video sizing
-        if (document.querySelector(`#ss_video_controls_container_${id}`)) {
-          document.querySelector(`#ss_video_controls_container_${id}`).style.top = `${container.clientHeight / 2}px`;
-        }
-
-        //If slideshow has more than 1 item
-        if (document.querySelector(`.slideshow#${id}`).getAttribute("data-count") > 1) {
-          const increment = container.clientWidth;
-          if (document.querySelector(`#ss_hitmarkers_${id}`)) {
-            document.querySelector(`#ss_hitmarkers_${id}`).style.height = `${container.clientHeight}px`;
-          }
-          container.scrollLeft = 0;
-          var active_image_index = get_active_image;
-          var active_image = document.querySelector(`.slideshow#${id} button.thumbnail.active`).getAttribute("data-id");
-
-          function get_active_image() {
-            return container.scrollLeft / increment + 1;
-          }
-          function atSnappingPoint(num) {
-            return num % 1 === 0;
-          }
-          container.addEventListener("scroll", (e) => {
-            if (atSnappingPoint(get_active_image())) {
-              document
-                .querySelector(`.slideshow#${id} button.thumbnail#thumb_${active_image}`)
-                .classList.toggle("active");
-              document
-                .querySelector(`.slideshow#${id} button.thumbnail#thumb_${id}_${get_active_image()}`)
-                .classList.toggle("active");
-              active_image = `${id}_${get_active_image()}`;
-            }
+  //Article media
+  if (document.querySelector("[data-lightbox]")) {
+    const lightbox = new Lightbox();
+    if (document.querySelector("[data-article-content]")) {
+      document
+        .querySelector("[data-article-content]")
+        .querySelectorAll("img, .video")
+        .forEach((el) => {
+          el.addEventListener("click", () => {
+            const slides = [];
+            slides.push(el);
+            lightbox.open(slides, 0);
           });
-          document.querySelectorAll(`.slideshow#${id} button.ss_nav`).forEach((nav) => {
-            nav.addEventListener("click", () => {
-              let image_index = get_active_image();
-              if (nav.getAttribute("data-direction") == "prev") {
-                //Previous image
-                if (get_active_image() - 1 <= 0) {
-                  image_index = count;
-                } else {
-                  image_index--;
-                }
-              } else {
-                // Next image
-                if (get_active_image() + 1 > count) {
-                  image_index = 1;
-                } else {
-                  image_index++;
-                }
-              }
-              const image = container.querySelector(`#image_${id}_${image_index}`);
-              image.scrollIntoView({
-                behavior: "smooth",
-                block: "nearest",
-                inline: "start",
-              });
-            });
-          });
-
-          document.querySelectorAll(`.slideshow#${id} button.thumbnail`).forEach((btn) => {
-            btn.addEventListener("click", () => {
-              document
-                .querySelector(`.slideshow#${id} button.thumbnail#thumb_${active_image}`)
-                .classList.toggle("active");
-              btn.classList.toggle("active");
-              const image = container.querySelector(`#image_${btn.getAttribute("data-id")}`);
-              image.scrollIntoView({
-                behavior: "smooth",
-                block: "nearest",
-                inline: "start",
-              });
-              active_image = btn.getAttribute("data-id");
-            });
-          });
-        }
-
-        //Video control handlers
-        if (document.querySelector(`.slideshow#${id} button.slideshow-video-controller`)) {
-          document.querySelector(`#ss_video_controls_${id}`).addEventListener("click", (el) => {
-            if (document.querySelector(`#slideshow_${id} video`).getAttribute("state") == "playing") {
-              document.querySelector(`#ss_video_controls_button-icon-${id}`).classList.replace("fa-pause", "fa-play");
-              document.querySelector(`#ss_video_controls_button-text-${id}`).innerText = "Play video";
-            } else {
-              document.querySelector(`#ss_video_controls_button-icon-${id}`).classList.replace("fa-play", "fa-pause");
-              document.querySelector(`#ss_video_controls_button-text-${id}`).innerText = "Pause video";
-            }
-            document.querySelectorAll(`#slideshow_${id} video`).forEach((video) => {
-              if (video.getAttribute("state") == "playing") {
-                video.pause();
-                video.setAttribute("state", "paused");
-              } else {
-                video.play();
-                video.setAttribute("state", "playing");
-              }
-            });
-          });
-        }
-      }
-    });
+        });
+    }
+    //gallery drag to scroll
+    if (document.querySelector("[data-gallery]")) {
+      document.querySelectorAll("[data-gallery]").forEach((el) => new Gallery(el, lightbox));
+    }
   }
 
   //Newsletter form
   if (document.querySelector("form.newsletter_form")) {
     if (window.localStorage.getItem("newsletter")) {
-      document.querySelector(
-        "#newsletter__body"
-      ).innerText = `You're already receiving email notifications to ${window.localStorage.getItem("newsletter")}`;
+      document.querySelector("#newsletter__body").innerText =
+        `You're already receiving email notifications to ${window.localStorage.getItem("newsletter")}`;
       document.querySelector("form.newsletter_form").remove();
     } else {
       document.querySelector("form.newsletter_form").addEventListener("submit", (event) => {

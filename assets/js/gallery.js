@@ -135,6 +135,7 @@ class Lightbox {
     gallery.querySelector(`[data-index="${this.currentIndex}"]`).scrollIntoView({
       behavior: "instant",
       block: "center",
+      inline: "center",
     });
 
     this.el.classList.remove("is-open");
@@ -184,6 +185,44 @@ class Lightbox {
       clone.querySelector("video").currentTime = originalCurrentTime;
       clone.style.setProperty("--delay", `${delay}s`);
       clone.querySelector("video").play();
+
+      const video = clone.querySelector("video");
+
+      if (video.readyState >= video.HAVE_CURRENT_DATA) {
+        listenToVideoState(video);
+      } else {
+        video.addEventListener("loadeddata", () => {
+          listenToVideoState(video);
+        });
+      }
+      function listenToVideoState(video) {
+        clone.style.setProperty("--duration", `${video.duration}s`);
+        video.addEventListener("playing", () => {
+          clone.classList.add("playing");
+          video.setAttribute("state", "playing");
+        });
+        video.addEventListener("pause", () => {
+          clone.classList.remove("playing");
+          video.setAttribute("state", "paused");
+        });
+      }
+
+      if (clone.querySelector(".video-controller")) {
+        const videoController = clone.querySelector(".video-controller");
+        videoController.addEventListener("click", () => {
+          if (video.paused) {
+            video.play();
+            video.setAttribute("state", "playing");
+            videoController.querySelector("#button-text").innerText = "Pause video";
+            videoController.querySelector("#button-icon").classList.replace("fa-play", "fa-pause");
+          } else {
+            video.pause();
+            video.setAttribute("state", "paused");
+            videoController.querySelector("#button-text").innerText = "Play video";
+            videoController.querySelector("#button-icon").classList.replace("fa-pause", "fa-play");
+          }
+        });
+      }
     }
 
     this.content.innerHTML = "";
@@ -233,6 +272,7 @@ class Gallery {
     this.isDragging = true;
     this.hasMoved = false;
     this.startX = e.clientX;
+    this.track.classList.add("is-dragging");
     this.scrollLeft = this.track.scrollLeft;
   }
 
@@ -251,6 +291,8 @@ class Gallery {
 
   onDragEnd() {
     if (!this.isDragging) return;
+
+    this.track.classList.remove("is-dragging");
 
     this.isDragging = false;
   }

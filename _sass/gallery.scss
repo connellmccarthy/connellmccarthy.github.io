@@ -61,6 +61,11 @@
       max-width: 100vw;
       max-height: 100vh;
       user-select: none;
+      cursor: grab;
+
+      &:active {
+        cursor: grabbing;
+      }
 
       img,
       video {
@@ -90,6 +95,12 @@
     scroll-snap-type: x mandatory;
     scroll-snap-align: center;
     scroll-behavior: smooth;
+
+    &.is-dragging {
+      scroll-snap-type: none;
+      scroll-snap-align: none;
+      scroll-behavior: auto;
+    }
 
     &:active {
       cursor: grabbing;

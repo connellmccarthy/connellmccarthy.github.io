@@ -609,6 +609,20 @@ span.badge {
   scroll-snap-align: center;
   overflow: hidden;
 
+  .video-controller {
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+    cursor: pointer;
+    display: none;
+  }
+
+  &:hover {
+    .video-controller {
+      display: block;
+    }
+  }
+
   video {
     width: 100%;
     object-fit: cover;

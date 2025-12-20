@@ -23,6 +23,15 @@ assign ordered_media = temp_asset | concat: ordered_media %} {% endfor %} {% ass
     >
       {% if filename.last == 'mp4' or filename.last == 'webm' or filename.last == 'mov' %}
       <div class="video" data-parent="gallery_{{ include.slug | append: unique_id }}">
+        <button
+          data-id="video-controller"
+          id="video-controller-{{ include.slug | append: unique_id }}_{{ forloop.index }}"
+          data-for="image_{{ include.slug | append: unique_id }}_{{ forloop.index }}"
+          class="btn btn__basic--dark btn__circle btn__icon btn__scale--subtle video-controller"
+        >
+          <span id="button-text" class="visually-hidden">Pause video</span>
+          <i id="button-icon" class="fas fa-pause" aria-hidden="true"></i>
+        </button>
         <video
           class="gallery__video"
           id="image_{{ include.slug | append: unique_id }}_{{ forloop.index }}"

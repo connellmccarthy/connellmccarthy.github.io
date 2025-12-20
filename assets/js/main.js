@@ -87,30 +87,31 @@ function init() {
       video.parentElement.style.setProperty("--duration", `${video.duration}s`);
       video.addEventListener("playing", () => {
         video.parentElement.classList.add("playing");
+        video.setAttribute("state", "playing");
       });
       video.addEventListener("pause", () => {
         video.parentElement.classList.remove("playing");
+        video.setAttribute("state", "paused");
       });
     }
   }
 
   if (document.querySelector("button.video-controller")) {
-    document.querySelectorAll("button.video-controller").forEach((x) => {
-      const button = x;
-      const button_text = document.querySelector(`#${x.getAttribute("id")} span#button-text`);
-      const button_icon = document.querySelector(`#${x.getAttribute("id")} i#button-icon`);
-      const video = document.querySelector(`video#${x.getAttribute("data-id")}`);
+    document.querySelectorAll("button.video-controller").forEach((button) => {
+      const button_text = button.querySelector(`#button-text`);
+      const button_icon = button.querySelector(`#button-icon`);
+      const video = document.querySelector(`video#${button.getAttribute("data-for")}`);
       button.addEventListener("click", () => {
-        if (video.getAttribute("state") == "playing") {
-          video.pause();
-          video.setAttribute("state", "paused");
-          button_icon.classList.replace("fa-pause", "fa-play");
-          button_text.innerText = "Play video";
-        } else {
+        if (video.paused) {
           video.play();
           video.setAttribute("state", "playing");
           button_icon.classList.replace("fa-play", "fa-pause");
           button_text.innerText = "Pause video";
+        } else {
+          video.pause();
+          video.setAttribute("state", "paused");
+          button_icon.classList.replace("fa-pause", "fa-play");
+          button_text.innerText = "Play video";
         }
       });
     });

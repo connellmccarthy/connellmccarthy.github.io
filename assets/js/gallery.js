@@ -5,6 +5,7 @@ class Lightbox {
     this.closeBtn = this.el.querySelector("[data-lightbox-close]");
     this.prevBtn = this.el.querySelector("[data-lightbox-prev]");
     this.nextBtn = this.el.querySelector("[data-lightbox-next]");
+    this.transitionAnimation = "transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.6s ease-out";
 
     this.slides = [];
     this.currentIndex = 0;
@@ -67,7 +68,7 @@ class Lightbox {
       this.currentX = this.currentX * 0.3;
     }
 
-    const opacity = 1 - Math.min(Math.abs(this.currentX) / 300, 0.5);
+    const opacity = 1 - Math.min(Math.abs(this.currentX) / 300, 0.25);
 
     this.content.style.transform = `translateX(${this.currentX}px)`;
     this.content.style.opacity = opacity;
@@ -77,7 +78,7 @@ class Lightbox {
     if (!this.isDragging) return;
     this.isDragging = false;
 
-    this.content.style.transition = "transform 0.3s ease-out, opacity 0.3s ease-out";
+    this.content.style.transition = this.transitionAnimation;
 
     if (this.currentX < -this.swipeThreshold && this.currentIndex < this.slides.length - 1) {
       this.content.style.transform = "translateX(-100%)";
@@ -86,7 +87,7 @@ class Lightbox {
         this.currentIndex++;
         this.render();
         this.animateIn("left");
-      }, 150);
+      }, 300);
     } else if (this.currentX > this.swipeThreshold && this.currentIndex > 0) {
       this.content.style.transform = "translateX(100%)";
       this.content.style.opacity = "0";
@@ -94,7 +95,7 @@ class Lightbox {
         this.currentIndex--;
         this.render();
         this.animateIn("right");
-      }, 150);
+      }, 300);
     } else {
       this.content.style.transform = "translateX(0)";
       this.content.style.opacity = "1";
@@ -111,7 +112,7 @@ class Lightbox {
 
     this.content.offsetHeight;
 
-    this.content.style.transition = "transform 0.3s ease-out, opacity 0.3s ease-out";
+    this.content.style.transition = this.transitionAnimation;
     this.content.style.transform = "translateX(0)";
     this.content.style.opacity = "1";
   }
@@ -129,16 +130,22 @@ class Lightbox {
   }
 
   close() {
+    const galleryId = this.slides[this.currentIndex].getAttribute("data-parent");
+    const gallery = document.querySelector(`#${galleryId}`);
+    gallery.querySelector(`[data-index="${this.currentIndex}"]`).scrollIntoView({
+      behavior: "instant",
+      block: "center",
+    });
+
     this.el.classList.remove("is-open");
     document.body.style.overflow = "";
 
-    const video = this.content.querySelector("video");
-    if (video) video.pause();
+    this.content.innerHTML = "";
   }
 
   prev() {
     if (this.currentIndex > 0) {
-      this.content.style.transition = "transform 0.3s ease-out, opacity 0.3s ease-out";
+      this.content.style.transition = this.transitionAnimation;
       this.content.style.transform = "translateX(100%)";
       this.content.style.opacity = "0";
       setTimeout(() => {
@@ -151,7 +158,7 @@ class Lightbox {
 
   next() {
     if (this.currentIndex < this.slides.length - 1) {
-      this.content.style.transition = "transform 0.3s ease-out, opacity 0.3s ease-out";
+      this.content.style.transition = this.transitionAnimation;
       this.content.style.transform = "translateX(-100%)";
       this.content.style.opacity = "0";
       setTimeout(() => {
@@ -166,10 +173,16 @@ class Lightbox {
     const mediaEl = this.slides[this.currentIndex];
     const clone = mediaEl.cloneNode(true);
 
-    const currentVideo = this.content.querySelector("video");
-    if (currentVideo) currentVideo.pause();
+    const isVideo = mediaEl.querySelector("video") ? true : false;
+    if (isVideo) {
+      const originalVideo = document.querySelector(
+        `[data-id=${mediaEl.querySelector("video").getAttribute("data-id")}]`
+      );
+      const originalCurrentTime = originalVideo.currentTime;
+      const delay = -(originalVideo.duration * (originalVideo.currentTime / originalVideo.duration));
 
-    if (clone.classList.contains(".video")) {
+      clone.querySelector("video").currentTime = originalCurrentTime;
+      clone.style.setProperty("--delay", `${delay}s`);
       clone.querySelector("video").play();
     }
 

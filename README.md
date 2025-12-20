@@ -47,9 +47,9 @@ To add a gallery of media, use the gallery component. There are two methods.
     ```liquid
     {% capture MEDIA %}
     IMAGE.jpg,
-    IMAGE-18.jpg
+    IMAGE-18.jpg,
     VIDEO.mp4,
-    IMAGE-2.jpg,
+    IMAGE-2.jpg
     {% endcapture %}
     {% include gallery.html path=IMAGE_PATH slug='UNIQUE-SLUG' media=MEDIA %}
     ```

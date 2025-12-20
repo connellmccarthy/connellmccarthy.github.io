@@ -614,12 +614,23 @@ span.badge {
     bottom: 1em;
     right: 1em;
     cursor: pointer;
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+
+    @media screen and (max-width: $break-mobile) {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: all;
+    }
   }
 
   &:hover {
     .video-controller {
-      display: block;
+      visibility: visible;
+      opacity: 1;
+      pointer-events: all;
     }
   }
 

@@ -30,6 +30,30 @@ The command `node products.js` or `npm run products` will import your products f
 
 Articles are under `_articles`, create new markdown files for each post. Images are stored under `assets/articles/[article-slug]/`. Content for the homepage and sidebar are located in the content file under `_data/content.yml`.
 
+##### Gallery Article Component
+
+To add a gallery of media, use the gallery component. There are two methods.
+
+1. If all the media is the same filetype (JPG, MP4, etc.), name them sequentially and call the component via the following include:
+
+```liquid
+{% include gallery.html path=IMAGE_PATH slug='UNIQUE-SLUG' format='FILETYPE' count=NUM_OF_MEDIA %}
+```
+
+It will output all the files starting from 1 to `NUM_OF_MEDIA` (ie. `/{IMAGE_PATH}/{UNIQUE-SLUG}-{NUM}.{FORMAT}`)
+
+2. If you want a variety of media, images and videos, and don't have them all named in sequential order, you can make the array and pass it in:
+
+```liquid
+{% capture MEDIA %}
+IMAGE.jpg,
+IMAGE-18.jpg
+VIDEO.mp4,
+IMAGE-2.jpg,
+{% endcapture %}
+{% include gallery.html path=IMAGE_PATH slug='UNIQUE-SLUG' media=MEDIA %}
+```
+
 ---
 
 ## Running it locally

@@ -37,129 +37,135 @@ em.code-caption {
 .highlight .hll {
   background-color: #ffffcc;
 }
-.highlight .c {
+
+/* Comments */
+.highlight .c,
+.highlight .cm,
+.highlight .c1,
+.highlight .cs,
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
   color: #008000;
-} /* Comment */
-.highlight .err {
+}
+
+/* Errors */
+.highlight .err,
+.token.deleted {
   border: 1px solid #ff0000;
-} /* Error */
-.highlight .k {
+}
+
+/* Keywords */
+.highlight .k,
+.highlight .kc,
+.highlight .kn,
+.highlight .kp,
+.highlight .kr,
+.token.keyword,
+.token.atrule,
+.token.rule {
   color: $syntax-color-pink;
-} /* Keyword */
-.highlight .cm {
-  color: #008000;
-} /* Comment.Multiline */
-.highlight .cp {
-  color: #0000ff;
-} /* Comment.Preproc */
-.highlight .c1 {
-  color: #008000;
-} /* Comment.Single */
-.highlight .cs {
-  color: #008000;
-} /* Comment.Special */
-.highlight .ge {
-  font-style: italic;
-} /* Generic.Emph */
-.highlight .gh {
-  font-weight: bold;
-} /* Generic.Heading */
-.highlight .gp {
-  font-weight: bold;
-} /* Generic.Prompt */
-.highlight .gs {
-  font-weight: bold;
-} /* Generic.Strong */
-.highlight .gu {
-  font-weight: bold;
-} /* Generic.Subheading */
-.highlight .kc {
-  color: #0000ff;
-} /* Keyword.Constant */
-.highlight .kd {
+}
+
+/* Declarations & Types */
+.highlight .kd,
+.token.selector,
+.token.important {
   color: $syntax-color-blue;
-} /* Keyword.Declaration */
-.highlight .kn {
-  color: #0000ff;
-} /* Keyword.Namespace */
-.highlight .kp {
-  color: #0000ff;
-} /* Keyword.Pseudo */
-.highlight .kr {
-  color: #0000ff;
-} /* Keyword.Reserved */
-.highlight .kt {
+}
+
+.highlight .kt,
+.highlight .nc,
+.token.class-name {
   color: #2b91af;
-} /* Keyword.Type */
-.highlight .s {
-  color: $syntax-color-red;
-} /* Literal.String */
-.highlight .n {
-  color: $syntax-color-dark-blue;
 }
-.highlight .na {
-  color: $syntax-color-brown;
-}
-.highlight .nb {
-  color: $syntax-color-light-blue;
-}
-.highlight .nc {
-  color: #2b91af;
-} /* Name.Class */
-.highlight .nf {
-  color: $syntax-color-brown;
-}
-.highlight .nl {
-  color: $syntax-color-red-light;
-}
-.highlight .nt {
+
+/* Strings & Literals */
+.highlight .s,
+.highlight .sb,
+.highlight .sc,
+.highlight .sd,
+.highlight .s2,
+.highlight .se,
+.highlight .sh,
+.highlight .si,
+.highlight .sx,
+.highlight .sr,
+.highlight .s1,
+.highlight .ss,
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
   color: $syntax-color-red;
 }
-.highlight .nv {
-  color: $syntax-color-light-blue;
+
+/* Functions & Methods */
+.highlight .nf,
+.token.function {
+  color: $syntax-color-brown;
 }
+
+/* Numbers */
+.highlight .m,
+.token.number,
+.token.boolean {
+  color: $syntax-color-green;
+}
+
+/* Punctuation & Operators */
+.highlight .p,
+.token.punctuation {
+  color: $syntax-color-blue;
+}
+
+.highlight .ow,
+.token.operator,
+.token.entity,
+.token.url {
+  color: #0000ff;
+}
+
+/* Names / Identifiers */
+.highlight .n,
 .highlight .nx {
   color: $syntax-color-dark-blue;
 }
-.highlight .m {
-  color: $syntax-color-green;
+
+.highlight .na,
+.token.attr-name {
+  color: $syntax-color-brown;
 }
-.highlight .ow {
+
+.highlight .nb,
+.highlight .nv {
+  color: $syntax-color-light-blue;
+}
+
+.highlight .nl {
+  color: $syntax-color-red-light;
+}
+
+.highlight .nt,
+.token.tag {
+  color: $syntax-color-red;
+}
+
+/* Preprocessor */
+.highlight .cp {
   color: #0000ff;
-} /* Operator.Word */
-.highlight .sb {
-  color: $syntax-color-red;
-} /* Literal.String.Backtick */
-.highlight .sc {
-  color: $syntax-color-red;
-} /* Literal.String.Char */
-.highlight .sd {
-  color: $syntax-color-red;
-} /* Literal.String.Doc */
-.highlight .s2 {
-  color: $syntax-color-red;
-} /* Literal.String.Double */
-.highlight .se {
-  color: $syntax-color-red;
-} /* Literal.String.Escape */
-.highlight .sh {
-  color: $syntax-color-red;
-} /* Literal.String.Heredoc */
-.highlight .si {
-  color: $syntax-color-red;
-} /* Literal.String.Interpol */
-.highlight .sx {
-  color: $syntax-color-red;
-} /* Literal.String.Other */
-.highlight .sr {
-  color: $syntax-color-red;
-} /* Literal.String.Regex */
-.highlight .s1 {
-  color: $syntax-color-red;
-} /* Literal.String.Single */
-.highlight .ss {
-  color: $syntax-color-red;
-} /* Literal.String.Symbol */
-.highlight .p {
-  color: $syntax-color-blue;
+}
+
+/* Generic Styles */
+.highlight .ge {
+  font-style: italic;
+}
+
+.highlight .gh,
+.highlight .gp,
+.highlight .gs,
+.highlight .gu {
+  font-weight: bold;
 }

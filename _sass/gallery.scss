@@ -8,7 +8,9 @@
   justify-content: center;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.1s, visibility 0.1s;
+  transition:
+    opacity 0.1s,
+    visibility 0.1s;
 
   &.is-open {
     opacity: 1;

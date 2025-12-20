@@ -231,9 +231,8 @@ function init() {
   //Newsletter form
   if (document.querySelector("form.newsletter_form")) {
     if (window.localStorage.getItem("newsletter")) {
-      document.querySelector(
-        "#newsletter__body"
-      ).innerText = `You're already receiving email notifications to ${window.localStorage.getItem("newsletter")}`;
+      document.querySelector("#newsletter__body").innerText =
+        `You're already receiving email notifications to ${window.localStorage.getItem("newsletter")}`;
       document.querySelector("form.newsletter_form").remove();
     } else {
       document.querySelector("form.newsletter_form").addEventListener("submit", (event) => {

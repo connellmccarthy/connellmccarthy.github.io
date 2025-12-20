@@ -130,13 +130,15 @@ class Lightbox {
   }
 
   close() {
-    const galleryId = this.slides[this.currentIndex].getAttribute("data-parent");
-    const gallery = document.querySelector(`#${galleryId}`);
-    gallery.querySelector(`[data-index="${this.currentIndex}"]`).scrollIntoView({
-      behavior: "instant",
-      block: "center",
-      inline: "center",
-    });
+    if (this.slides.length > 1) {
+      const galleryId = this.slides[this.currentIndex].getAttribute("data-parent");
+      const gallery = document.querySelector(`#${galleryId}`);
+      gallery.querySelector(`[data-index="${this.currentIndex}"]`).scrollIntoView({
+        behavior: "instant",
+        block: "center",
+        inline: "center",
+      });
+    }
 
     this.el.classList.remove("is-open");
     document.body.style.overflow = "";

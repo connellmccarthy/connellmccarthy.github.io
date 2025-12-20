@@ -207,10 +207,25 @@ function init() {
     });
   }
 
-  //gallery drag to scroll
-  if (document.querySelector(".gallery")) {
+  //Article media
+  if (document.querySelector("[data-lightbox]")) {
     const lightbox = new Lightbox();
-    document.querySelectorAll("[data-gallery]").forEach((el) => new Gallery(el, lightbox));
+    if (document.querySelector("[data-article-content]")) {
+      document
+        .querySelector("[data-article-content]")
+        .querySelectorAll("img, .video")
+        .forEach((el) => {
+          el.addEventListener("click", () => {
+            const slides = [];
+            slides.push(el);
+            lightbox.open(slides, 0);
+          });
+        });
+    }
+    //gallery drag to scroll
+    if (document.querySelector("[data-gallery]")) {
+      document.querySelectorAll("[data-gallery]").forEach((el) => new Gallery(el, lightbox));
+    }
   }
 
   //Newsletter form

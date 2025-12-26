@@ -339,6 +339,17 @@ The motion design process turned into a snowball effect, pulling elements from o
 
 ## How it all came together
 
-_insert gallery here_
+{% capture overview_media %}
+ck-overview-1.jpg,
+ck-overview-2.mp4,
+ck-overview-3.jpg,
+ck-overview-4.jpg,
+ck-overview-5.jpg,
+ck-overview-6.jpg
+{% endcapture %}
+
+{% include gallery.html path=image_path slug='ck-overview' media=overview_media %}
+
+_insert vimeo embed here_
 
 Overall, this project was an incredible success and a demonstration of a beautifully designed experience from end to end. A hundred high-value customers stepped up to the challenge, and every day there were jackpot winners who earned over $1000 each as crowds cheered on. The videos and UGC on social media looked amazing, with that bright green Shopify and Culture Kings branding everywhere. Priceless memories were created for customers, and it was an engaging experience for everyone involved. I couldn’t have asked for a better team to collaborate with, and I’m so proud of how it all came together.

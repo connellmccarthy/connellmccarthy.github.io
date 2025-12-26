@@ -16,7 +16,8 @@ code {
 .highlight pre {
   background-color: $color-grey;
   width: 100%;
-  overflow-x: auto;
+  overflow: auto;
+  max-height: 450px;
   display: block;
   padding: 2em;
   border-radius: 0 0 $border-radius-normal $border-radius-normal;

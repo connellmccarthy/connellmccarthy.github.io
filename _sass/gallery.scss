@@ -8,9 +8,7 @@
   justify-content: center;
   opacity: 0;
   visibility: hidden;
-  transition:
-    opacity 0.1s,
-    visibility 0.1s;
+  transition: opacity 0.1s, visibility 0.1s;
 
   &.is-open {
     opacity: 1;
@@ -90,6 +88,8 @@
 
   &__track {
     display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
     gap: 0.6em;
     overflow-x: auto;
     padding: 0 var(--article-padding);
@@ -117,6 +117,7 @@
 
   &__slide {
     flex-shrink: 0;
+    width: fit-content;
     max-width: 85%;
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: $border-radius-large;
@@ -135,20 +136,17 @@
 
     img,
     .video {
-      max-width: 100%;
-      height: auto;
       max-height: var(--max-height);
+      max-width: 100%;
+      width: auto;
       display: block;
       pointer-events: none;
     }
 
-    .video {
+    .video video {
       height: 100%;
-      video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
+      max-height: var(--max-height);
+      width: auto;
     }
   }
 }

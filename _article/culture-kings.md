@@ -100,7 +100,7 @@ export async function setupCultureKingsHandlers(io: Server) {
       // Build metafields payload depending on state for bulk append
       switch (data.state) {
         case GAME_STATE.SHOOTING:
-          //Update Shopify Metafields to shooting + additional data
+          // Update Shopify Metafields to shooting + additional data
           break;
         case GAME_STATE.CASH_OUT:
           // Create discount code, and update metafields with data
@@ -217,19 +217,19 @@ export default function CultureKingsDisplayMain() {
       (gameSession.state === GAME_STATE.SHOOTING || gameSession.state === GAME_STATE.CASH_OUT) &&
       gameSession.extraData.scoreAnimation
     ) {
-      // SETS A NON-EXISTENT TIMEOUT TO ALLOW ENOUGH OF A DELAY FOR THE
-      // creditEarnedScored ELEMENT TO BE REMOVED AND RE-ADDED TO THE DOM, TRIGGERING
-      // THE CSS ANIMATION TO PLAY AGAIN. IT'S UGLY, BUT IT WORKS.
+      // Sets a non-existent timeout to allow enough of a delay for the
+      // creditEarnedScored element to be removed and re-added to the dom,
+      // triggering the css animation to play again. It's ugly, but it works.
       setTimeout(() => {
         setDidScore(true);
         scoreAnimationTimeout = setTimeout(() => {
           setDidScore(false);
-        }, 4000); // DURATION OF THE SCORE ANIMATION
+        }, 4000); // Duration of the score animation
       }, 0);
     }
 
     return () => {
-      // CLEANUP TIMEOUT ON UNMOUNT OR WHEN GAMESESSION CHANGES
+      // Cleanup timeout on unmount or when gameSession changes
       setDidScore(false);
       if (scoreAnimationTimeout) {
         clearTimeout(scoreAnimationTimeout);
@@ -239,10 +239,10 @@ export default function CultureKingsDisplayMain() {
 
   useEffect(() => {
     if (gameSession.state === GAME_STATE.SHOOTING && didScore) {
-      // PLAY THE DEFAULT SCORE VIDEO FROM THE BEGINNING
+      // Play the default score video from the beginning
     }
     if (gameSession.state === GAME_STATE.CASH_OUT && didScore) {
-        // PLAY THE JACKPOT SCORE VIDEO FROM THE BEGINNING
+        // Play the jackpot score video from the beginning
     }
   }, [gameSession, didScore]);
 
@@ -251,47 +251,46 @@ export default function CultureKingsDisplayMain() {
 
       {/* WARM UP STATE */}
       {gameSession.state === GAME_STATE.WARMING_UP && (
-        // WARM UP SCREEN
+        // Warm up screen
       )}
 
       {/* HANDLE SCORING */}
       <div className={didScore ? "" : "hidden"}>
 
-        {/* THE SCORE ANIMATION IS A COMBINATION OF VIDEO AND CSS ANIMATIONS.
-        THE VIDEO PLAYS, AND THE AMOUNT EARNED CSS TEXT ANIMATION PLAYS ON TOP OF IT
-        WITH MATCHING TIMING TO MAKE IT SEEM LIKE ONE COHESIVE ANIMATION */}
+        {/* The score animation is a combination of video and css animations.
+        The video plays, and the amount earned css text animation plays on top of it
+        with matching timing to make it seem like one cohesive animation.*/}
 
         {didScore && (
-          // AMOUNT EARNED TEXT ANIMATION USING CSS
+          // Amount earned text animation using css
         )}
 
-        {/* THE FOLLOWING VIDEOS ARE ALWAYS IN THE DOM TO SAVE ON LOAD TIMES
-        THEY'RE CONDITIONALLY VISIBLE USING CSS BASED ON GAME STATE AND didScore,
-        PLUS WHICH VIDEO TO SHOW BASED ON SCORE AMOUNT */}
+        {/* The following videos are always in the dom to save on load times.
+        They're conditionally visibile using css classes based on gameSession.state and didScore. */}
 
-        {/* DEFAULT SCORE VIDEO */}
+        {/* Default score video */}
 
-        {/* JACKPOT VIDEO */}
+        {/* Jackpot score video */}
       </div>
 
-      {/* shooting state */}
+      {/* SHOOTING STATE */}
       {gameSession.state === GAME_STATE.SHOOTING && !didScore && (
-        // SHOOTING SCREEN
+        // Shooting screen
       )}
 
-      {/* Missed */}
+      {/* MISSED STATE */}
       {gameSession.state === GAME_STATE.MISSED && (
-        // MISSED SCREEN
+        // Missed screen
       )}
 
-      {/* Cash out */}
+      {/* CASH OUT STATE */}
       {gameSession.state === GAME_STATE.CASH_OUT && !didScore && (
-        // CASH OUT SCREEN
+        // Cash out screen
       )}
 
-      {/* IDLE SCREEN */}
-      {/* IDLE VIDEO ALWAYS IN THE BACKGROUND TO SAVE ON LOAD TIMES
-      CONDITIONALLY VISIBLE USING CSS AND GAME STATE */}
+      {/* IDLE STATE */}
+      {/* The interstitial video is always in the background to save on load times,
+      and conditionally visible using css classes based on gameSession.state */}
   );
 }
 ```

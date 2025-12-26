@@ -7,7 +7,7 @@ description: "How we built a high stakes basketball challenge in the heart of La
 cta_heading: "Interested in seeing what I build next?"
 slug: "culture-kings"
 thumbnail: ck-thumbnail.jpg
-social_share: ck.jpg
+social_share: culture-kings.jpg
 credits:
   description: Thanks to everyone who helped make this project what it is.
   groups:

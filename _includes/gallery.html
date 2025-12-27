@@ -13,7 +13,11 @@ assign ordered_media = temp_asset | concat: ordered_media %} {% endfor %} {% ass
   data-offset="{{ offset }}"
   data-count="{{ include.count }}"
 >
-  <div id="gallery_{{ include.slug | append: unique_id }}" class="gallery__track" data-gallery-track>
+  <div
+    id="gallery_{{ include.slug | append: unique_id }}"
+    class="gallery__track {% if media.size == 1 %}solo{% endif %}"
+    data-gallery-track
+  >
     {% for asset in media %} {% assign filename = asset | split: "." %}
     <div
       class="gallery__slide {% if media.size == 1 %}solo{% endif %}"

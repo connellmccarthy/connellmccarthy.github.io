@@ -98,6 +98,10 @@
     scroll-snap-align: center;
     scroll-behavior: smooth;
 
+    &.solo {
+      justify-content: center;
+    }
+
     &.is-dragging {
       scroll-snap-type: none;
       scroll-snap-align: none;
@@ -132,10 +136,6 @@
       transform: scale(0.99);
     }
 
-    &.solo {
-      max-width: 100%;
-    }
-
     img,
     .video {
       max-height: var(--max-height);
@@ -150,6 +150,18 @@
       max-height: var(--max-height);
       max-width: 100%;
       width: auto;
+    }
+
+    &.solo {
+      max-width: 100%;
+
+      img,
+      .video {
+        max-height: unset;
+      }
+      .video video {
+        max-height: unset;
+      }
     }
   }
 }

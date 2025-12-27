@@ -73,11 +73,11 @@ At the Las Vegas Culture Kings store, customers can collect a token for every $5
 
 Culture Kings wanted to reserve the game for customers who spent $200 in-store, so we built a [POS UI extension](https://shopify.dev/docs/api/pos-ui-extensions/latest){:target="blank"} that generated a wallet pass using [Badge.dev](https://www.badge.dev/){:target="blank"} after a customer made a qualifying purchase. The extension presented a unique QR code that the customer would scan to get their wallet pass for the experience. We also built a control panel for staff on the floor to control the game mechanics. This included a code scanner, so when a customer presented their wallet pass, it would pull their data, activate the scoreboard, and the game would start.
 
-{% include gallery.html path=image_path slug='ck-controlpanel' format='jpg' count=2 %}
+{% include gallery.html path=image_path slug='ck-controlpanel' format='jpg' count=3 %}
 
 Once a game started, the customer’s name would flash on the large scoreboards, while a Culture Kings staff member grabbed the mic to MC the event and invited everyone in the store to gather around and watch the challenge. Each participant got a few practice shots, and once they made their first basket, they won $4. At that point, they could choose to walk away and keep their credit, or risk it all for a chance to double it. Most of the time, customers chose to go for double.
 
-![Control Panel for managing the score of a running game.]({{ image_path }}/ck-controlpanel-3.jpg)
+{% include gallery.html path=image_path slug='ck-firstbasket' format='mp4' count=1 %}
 
 The two game boards were a single responsive webview powered by [Remix](https://remix.run/){:target="blank"} that was listening to websocket events sent from the control panel via [Socket.io](http://Socket.io){:target="blank"}, and additionally stored in the [Shopify Order Metafields](https://help.shopify.com/en/manual/shopify-flow/reference/actions/update-order-metafield){:target="blank"}. Utilizing the Shopify Order Metafields was an easy way to avoid requiring a separate database for each game and allowed us to use only the dev tools available from Shopify.
 

@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+<h1 class="visually-hidden">{{ site.title }}</h1>
+
+<!-- HERO -->
+{% include index/hero.html %}
+
+<!-- SHOWREEL -->
+{% include index/showreel.html %}
+
+<!-- ABOUT -->
+{% include index/about.html %}
+
+<!-- PROYECTOS (PREVIEW) -->
+<div class="section" data-aos="fade">
+  <div class="wrapper condensed">
+    {% include index/projects-preview.html %}
+  </div>
+</div>
+
+<!-- BLOG (PREVIEW) -->
+<div class="section" data-aos="fade">
+  <div class="wrapper condensed">
+    {% include index/blog-preview.html %}
+  </div>
+</div>
+
+<!-- FEATURES -->
+{% include index/features.html %}
+
+<!-- EXPERIENCE -->
+{% include index/experience.html %}
+
+<!-- LOCATION -->
+{% include index/location.html %}
+
+<!-- CONTACT -->
+{% include index/contact.html %}
+
+<!-- NEWSLETTER -->
+{% include newsletter.html %}

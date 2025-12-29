@@ -351,7 +351,7 @@ ck-overview-6.jpg
 
 {% include gallery.html path=image_path slug='ck-overview' media=overview_media %}
 
-{% include gallery.html path=image_path slug='ck-overview-vertical' format='mp4' count=2 %}
+{% include gallery.html path=image_path slug='ck-overview-vertical' format='mp4' count=3 %}
 
 {% include instagram.html url='https://www.instagram.com/reel/DR2QtgNCQ-_/' text='A post shared by Harley Finkelstein (@harley)' %}
 

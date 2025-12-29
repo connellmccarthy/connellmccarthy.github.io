@@ -8,9 +8,7 @@
   justify-content: center;
   opacity: 0;
   visibility: hidden;
-  transition:
-    opacity 0.1s,
-    visibility 0.1s;
+  transition: opacity 0.1s, visibility 0.1s;
 
   &.is-open {
     opacity: 1;
@@ -90,6 +88,8 @@
 
   &__track {
     display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
     gap: 0.6em;
     overflow-x: auto;
     padding: 0 var(--article-padding);
@@ -97,6 +97,10 @@
     scroll-snap-type: x mandatory;
     scroll-snap-align: center;
     scroll-behavior: smooth;
+
+    &.solo {
+      justify-content: center;
+    }
 
     &.is-dragging {
       scroll-snap-type: none;
@@ -117,7 +121,10 @@
 
   &__slide {
     flex-shrink: 0;
+    width: fit-content;
     max-width: 85%;
+    height: fit-content;
+
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: $border-radius-large;
     overflow: hidden;
@@ -129,25 +136,31 @@
       transform: scale(0.99);
     }
 
-    &.solo {
-      max-width: 100%;
-    }
-
     img,
     .video {
-      max-width: 100%;
-      height: auto;
       max-height: var(--max-height);
+      max-width: 100%;
+      width: auto;
+      height: auto;
       display: block;
       pointer-events: none;
     }
 
-    .video {
-      height: 100%;
-      video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+    .video video {
+      max-height: var(--max-height);
+      max-width: 100%;
+      width: auto;
+    }
+
+    &.solo {
+      max-width: 100%;
+
+      img,
+      .video {
+        max-height: unset;
+      }
+      .video video {
+        max-height: unset;
       }
     }
   }

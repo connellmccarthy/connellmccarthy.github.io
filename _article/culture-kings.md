@@ -337,6 +337,8 @@ The motion design process turned into a snowball effect, pulling elements from o
 
 {% include gallery.html path=image_path slug='ck-jackpot' format='jpg' count=2 %}
 
+{% include gallery.html path=image_path slug='ck-jackpot' format='mp4' count=1 offset=3 %}
+
 ## How it all came together
 
 {% capture overview_media %}

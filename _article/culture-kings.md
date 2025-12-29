@@ -337,20 +337,21 @@ The motion design process turned into a snowball effect, pulling elements from o
 
 {% include gallery.html path=image_path slug='ck-jackpot' format='jpg' count=2 %}
 
-{% include gallery.html path=image_path slug='ck-jackpot' format='mp4' count=1 offset=3 %}
-
 ## How it all came together
 
 {% capture overview_media %}
 ck-overview-1.jpg,
 ck-overview-2.mp4,
 ck-overview-3.jpg,
+ck-overview-7.mp4,
 ck-overview-4.jpg,
 ck-overview-5.jpg,
 ck-overview-6.jpg
 {% endcapture %}
 
 {% include gallery.html path=image_path slug='ck-overview' media=overview_media %}
+
+{% include gallery.html path=image_path slug='ck-overview-vertical' format='mp4' count=2 %}
 
 {% include instagram.html url='https://www.instagram.com/reel/DR2QtgNCQ-_/' text='A post shared by Harley Finkelstein (@harley)' %}
 

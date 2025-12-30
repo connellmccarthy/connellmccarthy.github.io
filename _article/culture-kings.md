@@ -303,7 +303,7 @@ After we had figured out the game mechanics, I started developing the event bran
 
 ![Collection of reference images, mainly including textural design images.]({{ image_path }}/ck-moodboard.jpg)
 
-Pulling inspiration from the distressed and textural aspects of street art and screen-printed apparel, I started playing with spray paint and ink-bled typography. That all felt right, but it needed a color that would stand out and really reflect this being a Shopify partnership. I chose a super vibrant Aloe green that, when applied to the spray paint, gave off a ‘glow in the dark’ effect that felt truly unique to this event.
+Pulling inspiration from the distressed and textural aspects of street art and screen-printed apparel, I started playing with spray paint and ink-bled typography. That all felt right, but it needed a colour that would stand out and really reflect this being a Shopify partnership. I chose a super vibrant Aloe green that, when applied to the spray paint, gave off a ‘glow in the dark’ effect that felt truly unique to this event.
 
 {% include gallery.html path=image_path slug='ck-brandkit' format='jpg' count=3 %}
 
